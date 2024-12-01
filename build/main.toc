@@ -1,0 +1,22 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Theory}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Formulary}{3}{subsection.1.1}%
+\contentsline {subsubsection}{Thermodynamics}{3}{section*.2}%
+\contentsline {subsubsection}{Continuous one-dimensional flow}{3}{section*.3}%
+\contentsline {subsection}{\numberline {1.2}Foundational principles}{4}{subsection.1.2}%
+\contentsline {subsubsection}{Idealized flow regimes}{4}{section*.16}%
+\contentsline {subsubsection}{Turbulence}{4}{section*.17}%
+\contentsline {subsubsection}{Mach regimes}{4}{section*.18}%
+\contentsline {subsubsection}{Dimensionality of the flow}{4}{section*.19}%
+\contentsline {section}{\numberline {2}Analytical work}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Scope and objectives}{5}{subsection.2.1}%
+\contentsline {subsubsection}{Geometry and components}{5}{section*.20}%
+\contentsline {subsubsection}{Motivation and goals}{5}{section*.21}%
+\contentsline {subsection}{\numberline {2.2}Framework for Analysis}{6}{subsection.2.2}%
+\contentsline {subsubsection}{Important assumptions}{6}{section*.22}%
+\contentsline {subsubsection}{Regions of interest}{6}{section*.23}%
+\contentsline {subsubsection}{Limits of the theory}{6}{section*.24}%
+\contentsline {subsection}{\numberline {2.3}Analytical Descriptions}{7}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Discussion}{8}{section.3}%
+\contentsline {section}{\numberline {4}Conclusion}{9}{section.4}%
+\contentsline {section}{References}{10}{section.4}%
