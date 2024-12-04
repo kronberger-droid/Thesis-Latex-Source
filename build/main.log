@@ -425,17 +425,17 @@ File: figures/logo_en.jpg Graphic file (type bmp)
 \openout2 = `input/01_theory/default.aux'.
 
  (input/01_theory/default.tex (input/01_theory/formulary
-Overfull \hbox (6.72197pt too wide) detected at line 55
+Overfull \hbox (6.72197pt too wide) detected at line 53
 [][][] \OT1/cmr/m/n/10 = [][] = [][] = [][] [] []  []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 []\TU/lmr/m/n/10 Combining the above equations gives
  []
 
 
-Overfull \hbox (14.59837pt too wide) detected at line 61
+Overfull \hbox (14.59837pt too wide) detected at line 59
 [][][] [][] [][] \OT1/cmr/m/n/10 + [] = [][][]  []
  []
 
@@ -448,13 +448,13 @@ Overfull \hbox (14.59837pt too wide) detected at line 61
 
 
 (input/02_analytical-work/default.tex
-(input/02_analytical-work/problem-statement) [5
+(input/02_analytical-work/scope-and-objectives.tex) [5
 
 
 
 ]
-(input/02_analytical-work/framework-for-analysis) [6]
-(input/02_analytical-work/analytical-descriptions) [7])
+(input/02_analytical-work/framework-for-analysis.tex) [6]
+(input/02_analytical-work/analytical-descriptions.tex) [7])
 \openout2 = `input/03_discussion/default.aux'.
 
 
@@ -492,4 +492,4 @@ Overfull \hbox (14.59837pt too wide) detected at line 61
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: DA875EC9CF78C743B3F9D803B664D9F6;3064.
  )
-Output written on main.xdv (10 pages, 49464 bytes).
+Output written on main.xdv (10 pages, 57524 bytes).

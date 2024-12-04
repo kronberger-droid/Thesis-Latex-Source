@@ -10,13 +10,11 @@
 \contentsline {subsubsection}{Dimensionality of the flow}{4}{section*.19}%
 \contentsline {section}{\numberline {2}Analytical work}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Scope and objectives}{5}{subsection.2.1}%
-\contentsline {subsubsection}{Geometry and components}{5}{section*.20}%
-\contentsline {subsubsection}{Motivation and goals}{5}{section*.21}%
-\contentsline {subsection}{\numberline {2.2}Framework for Analysis}{6}{subsection.2.2}%
-\contentsline {subsubsection}{Important assumptions}{6}{section*.22}%
-\contentsline {subsubsection}{Regions of interest}{6}{section*.23}%
-\contentsline {subsubsection}{Limits of the theory}{6}{section*.24}%
-\contentsline {subsection}{\numberline {2.3}Analytical Descriptions}{7}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Discussion}{8}{section.3}%
-\contentsline {section}{\numberline {4}Conclusion}{9}{section.4}%
-\contentsline {section}{References}{10}{section.4}%
+\contentsline {subsection}{\numberline {2.2}Framework for Analysis}{5}{subsection.2.2}%
+\contentsline {subsubsection}{Important assumptions}{5}{section*.20}%
+\contentsline {subsubsection}{Regions of interest}{5}{section*.21}%
+\contentsline {subsubsection}{Limits of the theory}{5}{section*.22}%
+\contentsline {subsection}{\numberline {2.3}Analytical Descriptions}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Discussion}{7}{section.3}%
+\contentsline {section}{\numberline {4}Conclusion}{8}{section.4}%
+\contentsline {section}{References}{9}{section.4}%
