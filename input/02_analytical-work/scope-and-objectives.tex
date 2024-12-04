@@ -1,10 +1,32 @@
-\subsubsection*{Geometry and components}
-\addcontentsline{toc}{subsubsection}{Geometry and components}
-
+\subsubsection{Geometry and components}
 The geometry can be explained in three simple sections: gas from a reservoir (1) flows over a duct into the reactor (2) where it leaves through another duct into a vacuum (3). This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path. This is because the only important thing we left out is any kind of leaks in the system. Those leaks will be most influential around the reactor, since this is the only part not held at a constant pressure by any external part of the system.\\
-We will now get into the specifics about all the important parts of the system:\\
-\textbf{Inlet Reservoir}\\
-It is held at a constant pressure \(P_0\) and a constant temperature \(T_0\) and contains only one gas which is defined by its specific heat ratio \(\gamma\) and by its molar mass \(M_m\). These are all parameters which are set by us in advance. None of these will change throughout a calculation and are to be decided in advance.
 
-\subsubsection*{Motivation and goals}
-\addcontentsline{toc}{subsubsection}{Motivation and goals}
+\missingfigure{Geometry and important values of the flow}
+
+\paragraph{Inlet Reservoir (1)}
+It is held at a constant pressure \(P_0\) and a constant temperature \(T_0\) and contains only one gas which is defined by its specific heat ratio \(\gamma\) and by its molar mass \(M_m\). These are all parameters which are set in advance and won't change after being set, which constraints us to a steady flow.
+
+\paragraph{Inlet Nozzle}
+The duct connecting the inlet reservoir with the reactor will actually be a slightly narrowing duct, due to production constraints. Therefore, it will act like a Nozzle, accelerating the gas until it expands into the reactor.
+
+\paragraph{Reactor (2)}
+The reactor resembles a very small but broad cylinder shape which is opened at the bottom. The sample will be pressed into the opening, which will lead to some leakage out of the system, this will actually force us to decouple the system at the chamber (more about that later). The gas itself reaches the chamber at some velocity and will decelerate rapidly while expanding into the chamber. Therefore, a great part of the chamber will have very slow moving gas inside. Very close to the outlet nozzle the gas will start to accelerate again and will enter it at very high speeds.
+
+\paragraph{Outlet Nozzle}
+With the same geometry as the inlet, but the gas flowing in opposite directions, one would suspect the outlet to act as a subsonic nozzle which could logically be the case, since without a converging section in front it would be impossible to reach sonic velocities and therefore will choke the flow and keep them at subsonic velocities. But actually it is possible for the flow to create a converging section by itself, which will force the flow to be sonic at the beginning of the outlet and will further accelerate into the supersonic regimes, creating a supersonic nozzle. Which of these two possibilities is most likely will be discussed at a later point.
+
+\paragraph{Vacuum (3)}
+After leaving the outlet the gas will first expand into a small cylindrical section after which it will expand freely into the vacuum. The exact pressure left in the vacuum will be very low and small changes won't have great influence onto the flow itself. Therefore,
+
+\newpage
+
+\subsubsection{Motivation and goals}
+The general goal of this thesis is to create a relatively simple, analytical framework to be able to make predictions on how the flow through the system behaves and to approximate values at different positions in the flow to be later used as initial values for more complex numerical simulations. The following section will state specific questions we will then try to answer in the following Sections.
+
+\paragraph{Type of Flow:}
+
+\paragraph{Impact of the leak:}
+
+\paragraph{Flow in the reactor and around the sample:}
+
+\paragraph{Velocity distribution at the outlet:}

@@ -1,11 +1,41 @@
-\subsubsection*{Idealized flow regimes}
-\addcontentsline{toc}{subsubsection}{Idealized flow regimes}
+\subsubsection{Idealized flow regimes}
+There are different idealized flow regimes which can be distinguished by the value of their Knudsen number (\(Kn\)).
 
-\subsubsection*{Turbulence}
-\addcontentsline{toc}{subsubsection}{Turbulence}
+\paragraph{Continuum regime (\(Kn \leq 0.001\))}
+In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct. This makes it possible to describe the fluid itself as a continuous medium. The Navier-Stokes equations govern the calculations in this regime.
 
-\subsubsection*{Mach regimes}
-\addcontentsline{toc}{subsubsection}{Mach regimes}
+\paragraph{Slip regime (\(0.001 \leq Kn \leq 0.1\))}
+Increasing Knudsen numbers mean the mean free path becomes comparable to the characteristic length scale. In this regime, the assumptions for continuum flow still hold, but there are deviations, especially near the boundaries. While continuum mechanics assumes no-slip conditions on the boundary, in this regime, slip on the boundary must be factored in.
 
-\subsubsection*{Dimensionality of the flow}
-\addcontentsline{toc}{subsubsection}{Dimensionality of the flow}
+\paragraph{Transition regime (\(0.1 \leq Kn \leq 10\))}
+This regime is a middle ground between continuum and fully molecular flow. Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely. The interactions between the gas molecules and the boundaries are significant, and the flow characteristics may vary widely.
+
+\paragraph{Molecular regime (\(Kn \geq 10\))}
+In this regime, the mean free path is much larger than the dimensions of boundaries. This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
+
+\newpage
+\subsubsection{Turbulence}
+
+This dimensionless number can be used to predict if it is probable to encounter turbulent flow or laminar flow in some region of the flow studied.
+\paragraph{Laminar Flow (\(Re \le 2300\))}
+\paragraph{Turbulent Flow (\(Re > 2300\))}
+Having high Reynolds numbers means viscous forces are dominated by inertial forces. In this situation eddies and vortices begin to form.
+
+\newpage
+\subsubsection{Mach regimes}
+
+\paragraph{Low subsonic regime (\(Ma < 0.3\))}
+
+\paragraph{Subsonic regime (\(0.3 < Ma < 1.0\))} 
+In this regime, the flow throughout the duct, except at the throat, remains subsonic. The velocity increases as the gas flows through the duct.\\
+\missingfigure{Subsonic nozzle and diffuser}
+\paragraph{Sonic regime (\(Ma = 1\))} 
+Sonic flow occurs at the throat of a converging-diverging duct. It is a limiting phenomenon in converging ducts, achievable only if a diverging section follows, creating a minimum cross-sectional area referred to as the throat.
+
+\paragraph{Supersonic regime (\(Ma > 1\))} 
+Supersonic flow cannot occur inside a purely converging duct. In subsonic conditions, the velocity increases while the cross-sectional area decreases. Once sonic speed is reached, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
+\missingfigure{Supersonic nozzle and diffuser}
+
+
+\newpage
+\subsubsection{Dimensionality of the flow}
