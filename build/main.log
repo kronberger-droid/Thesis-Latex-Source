@@ -675,17 +675,17 @@ File: figures/logo_en.jpg Graphic file (type bmp)
 
 
 (input/01_theory/default.tex (input/01_theory/formulary
-Overfull \hbox (6.72197pt too wide) detected at line 51
+Overfull \hbox (6.72197pt too wide) detected at line 50
 [][][] \OT1/cmr/m/n/10 = [][] = [][] = [][] [] []  []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 []\TU/lmr/m/n/10 Combining the above equations gives
  []
 
 
-Overfull \hbox (14.59837pt too wide) detected at line 57
+Overfull \hbox (14.59837pt too wide) detected at line 56
 [][][] [][] [][] \OT1/cmr/m/n/10 + [] = [][][]  []
  []
 
