@@ -16,3 +16,8 @@ info: No plain database available. Continuing with sqlite database.
 (org.pwmt.zathura:3248): Gdk-WARNING **: 18:32:28.683: ../gdk/wayland/gdkselection-wayland.c:283: error reading selection buffer: Operation was cancelled
 info: Opening plain database via sqlite backend.
 info: No plain database available. Continuing with sqlite database.
+info: Opening plain database via sqlite backend.
+info: No plain database available. Continuing with sqlite database.
+Gdk-Message: 19:47:46.889: Error reading events from display: Broken pipe
+info: Opening plain database via sqlite backend.
+info: No plain database available. Continuing with sqlite database.

@@ -6,7 +6,30 @@
 
 \paragraph{Idealized flow regime}
 
+\newpage
+
 \subsubsection{Limits of the theory}
+It is important to state for which situations the assumptions made earlier are applicable and for which they are not. In the leading section we already made clear which assumptions we made  and on which values they rely on. The goal is now to provide a range of state variables, in which using the following framework makes sense. Also, to show a way to calculate important dimensionless numbers like the Knudsen Number without relying on the continuum model.
+\paragraph{Knudsen Number}
+The whole Theory relies heavily on the continuum model. For every location of the flow, but the vacuum, it will suffice to approximate the state variables at certain locations using a simple continuum model like the one described in section 2.3.1 \todo{link} and use these state variables to calculate the Knudsen number.\\
+A sensible question to ask at this point is: Where in the flow we will most probably encounter the highest Knudsen number and if it will be just one location. Because this will reduce the locations to check for high Knudsen numbers and therefore will simplify the process. To find such most probable Location, given the Definition of the Knudsen number:
+$$
+Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)R}{pL_c}\sqrt{\frac{\pi m T}{2k_B}}
+$$
+$L_c$ can be assumed constant since the height of the reactor and the smallest diameter of the ducts match. And by assuming $\mu$ to be close to constant the Knudsen number becomes a simple proportionality relation.
+$$
+Kn(p,T)\approx\frac{\mu R}{L_c}\sqrt{\frac{\pi m}{2k_B}}\cdot\frac{\sqrt{T}}{p}=\alpha\cdot\frac{\sqrt{T}}{p}\quad\rightarrow\quad Kn\propto \frac{\sqrt{T}}{p}
+$$
+This makes it obvious that areas with low pressure will lead to higher Knudsen numbers and will come closest to the limit of $Kn=0.1$ where continuum regime formulations stop to yield sensible solutions. Therefore, calculating the Knudsen number where the gas leaves the outlet nozzle will be useful to identify the flow regime that governs the gas flow inside the whole assembly.  
 
+\paragraph{Knudsen Number in low pressure Zones}
+When the gas is leaving the outlet the pressure will steadily drop until the method of determining Pressure and Temperature themselves will fail and force us to rely on numerical calculations. Therefore, it makes sense to identify a much more elegant way of calculating the Knudsen number which will be much more applicable in this situation.
 
+$$
+K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
+$$
+
+\newpage
+
+\paragraph{Reynolds Number}
 

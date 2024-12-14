@@ -604,16 +604,16 @@ LaTeX Font Info:    ... okay on input line 3.
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: letterpaper
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
-* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=443.57848pt
-* \textheight=681.15898pt
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=731.23584pt
 * \oddsidemargin=13.08827pt
 * \evensidemargin=13.08827pt
 * \topmargin=-52.36449pt
@@ -675,7 +675,7 @@ File: figures/logo_en.jpg Graphic file (type bmp)
 
 
 (input/01_theory/default.tex (input/01_theory/formulary
-Overfull \hbox (6.72197pt too wide) detected at line 50
+Overfull \hbox (15.11552pt too wide) detected at line 50
 [][][] \OT1/cmr/m/n/10 = [][] = [][] = [][] [] []  []
  []
 
@@ -685,7 +685,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
  []
 
 
-Overfull \hbox (14.59837pt too wide) detected at line 56
+Overfull \hbox (22.99193pt too wide) detected at line 56
 [][][] [][] [][] \OT1/cmr/m/n/10 + [] = [][][]  []
  []
 
@@ -693,14 +693,17 @@ Overfull \hbox (14.59837pt too wide) detected at line 56
 
 
 
-] (input/01_theory/foundational_principles [4] [5]
+] (input/01_theory/foundational_principles [4]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 31.
- [6]) [7])
+ine 24.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+[5] [6]) [7])
 \openout2 = `input/02_analytical-work/default.aux'.
 
-
-(input/02_analytical-work/default.tex
+ (input/02_analytical-work/default.tex
 (input/02_analytical-work/scope-and-objectives.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
@@ -710,22 +713,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
 
 
-]) [9] (input/02_analytical-work/framework-for-analysis.tex) [10]
-(input/02_analytical-work/analytical-descriptions.tex
-
-LaTeX Warning: Marginpar on page 11 moved.
-
-) [11])
+]) [9] (input/02_analytical-work/framework-for-analysis.tex [10] [11])
+[12] (input/02_analytical-work/analytical-descriptions.tex [13] [14] [15])
+[16])
 \openout2 = `input/03_discussion/default.aux'.
 
- (input/03_discussion/default.tex) [12
+ (input/03_discussion/default.tex) [17
 
 
 
 ]
 \openout2 = `input/04_conclusion/default.aux'.
 
- (input/04_conclusion/default.tex) [13
+ (input/04_conclusion/default.tex)
+[18
 
 
 
@@ -740,7 +741,7 @@ LaTeX Warning: Marginpar on page 11 moved.
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [14
+ [19
 
 
 
@@ -749,10 +750,10 @@ LaTeX Warning: Marginpar on page 11 moved.
 \openout8 = `main.tdo'.
 
 
-[15] (main.aux (input/0_intro/default.aux) (input/01_theory/default.aux)
+[20] (main.aux (input/0_intro/default.aux) (input/01_theory/default.aux)
 (input/02_analytical-work/default.aux) (input/03_discussion/default.aux)
 (input/04_conclusion/default.aux) (input/A_appendix/default.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6F19822C30CFB59B7A39492A40545241;3434.
+(rerunfilecheck)             Checksum: 1F3558CF045ADDFDBF2E2EB9A65ADC98;3873.
  )
-Output written on main.xdv (15 pages, 132680 bytes).
+Output written on main.xdv (20 pages, 163708 bytes).
