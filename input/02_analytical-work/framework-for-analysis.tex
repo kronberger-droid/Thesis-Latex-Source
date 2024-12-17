@@ -1,10 +1,15 @@
 \subsubsection{Important assumptions}
-
+Let's first identify two regions in the flow analysis, for which we will make different assumptions. The first one being everything from the gas reservoir until the exit of the outlet. This will be referred as the inside of the assembly. The second one being everything after the exit plane of the outlet, which will be referred as the outside of the assembly. 
+\paragraph{Steady Flow}
+Steadiness of the flow is essentially given by the fact that the temperature $T_0$ and the pressure $p_0$ of the reservoir will be held constant during measurements. Thus, the flow will be driven by the pressure differential between the vacuum and the reservoir alone. So there is no reason for the flow to establish any dynamic behaviors after reaching some equilibrium state, after gas is first released into the system. This is true for regions inside as well as outside the assembly.
 \paragraph{Dimension of the Flow}
+\subparagraph{Inside}
+In this section of the flow a further simplification of the two-dimensional flow through a duct will be used called "quasi one-dimensional" flow. This is possible by reducing the velocity distribution present at any point in a duct to its mean velocity. Therefore, reducing the velocity from a distribution $V(r)$ at every point in the duct to a scalar value $V$ at every point of the duct. This is a general simplification which can be made when using continuum flow analysis inside of ducts and is only bound by the applicability of continuum flow. This makes sense, because approximations of state variables and mass flow is the main goal here. Taking mean values still yield sensible solutions and won't leave us with less information per se.
+\subparagraph{Outside}
+Any further simplification from the radially symmetric expansion into vacuum described in section ..., would not make sense since it would eliminate important information on how the flow behaves when leaving the outlet. Like how much of the gas will actually reach the mass spec and how fast it will be.
+\paragraph{Perfect Gas}
 
-\paragraph{Gas}
-Change
-\paragraph{Idealized flow regime}
+\paragraph{Isentropic, adiabatic Flow}
 
 \newpage
 
@@ -12,7 +17,7 @@ Change
 It is important to state for which situations the assumptions made earlier are applicable and for which they are not. In the leading section we already made clear which assumptions we made  and on which values they rely on. The goal is now to provide a range of state variables, in which using the following framework makes sense. Also, to show a way to calculate important dimensionless numbers like the Knudsen Number without relying on the continuum model.
 \paragraph{Knudsen Number}
 The whole Theory relies heavily on the continuum model. For every location of the flow, but the vacuum, it will suffice to approximate the state variables at certain locations using a simple continuum model like the one described in section 2.3.1 \todo{link} and use these state variables to calculate the Knudsen number.\\
-A sensible question to ask at this point is: Where in the flow we will most probably encounter the highest Knudsen number and if it will be just one location. Because this will reduce the locations to check for high Knudsen numbers and therefore will simplify the process. To find such most probable Location, given the Definition of the Knudsen number:
+A sensible question to ask at this point is: Where in the flow it is the most probable encounter the highest Knudsen number. Because this will reduce the locations to check for high Knudsen numbers and therefore will simplify the process. To find such most probable Location, given the Definition of the Knudsen number:
 $$
 Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)R}{pL_c}\sqrt{\frac{\pi m T}{2k_B}}
 $$

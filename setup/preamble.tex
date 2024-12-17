@@ -1,16 +1,45 @@
-\documentclass{article}
+\documentclass[11pt,a4paper,twoside]{article}
+
+\usepackage[
+  a4paper,
+  bindingoffset=1cm,  % Moderate binding offset
+  inner=3cm,          % Inner margin: space closer to the binding
+  outer=2.5cm,        % Outer margin: space for readability
+  top=2.5cm,
+  bottom=2.5cm
+]{geometry}
 
 % Language setting
-% Replace `english' with e.g. `spanish' to change the document language
 \usepackage[english]{babel}
 
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{multicol}
 \usepackage{todonotes}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+
+\definecolor{baseBackground}{HTML}{FFFFFF} 
+\definecolor{baseLightGray}{HTML}{F2F2F2} 
+\definecolor{baseGray}{HTML}{CCCCCC}       
+\definecolor{baseMediumGray}{HTML}{999999} 
+\definecolor{baseDarkGray}{HTML}{666666}   
+\definecolor{baseDarkerGray}{HTML}{333333} 
+\definecolor{baseNearBlack}{HTML}{111111}  
+\definecolor{baseBlack}{HTML}{000000}      
+
+\definecolor{redColor}{HTML}{B31B1B}     
+\definecolor{orangeColor}{HTML}{D2691E}  
+\definecolor{yellowColor}{HTML}{B8860B}  
+\definecolor{greenColor}{HTML}{228B22}   
+\definecolor{cyanColor}{HTML}{008B8B}    
+\definecolor{blueColor}{HTML}{1E90FF}    
+\definecolor{magentaColor}{HTML}{8B008B} 
+\definecolor{brownColor}{HTML}{8B4513}
+   
+\usepackage{float}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}

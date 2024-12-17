@@ -1,46 +1,159 @@
 \subsubsection{Idealized flow regimes}
-There are different idealized flow regimes which can be distinguished by the value of their Knudsen number (\(Kn\)).
+
+	There are different idealized flow regimes which can be distinguished by the value of their Knudsen number (\(Kn\)).
 
 \paragraph{Continuum regime (\(Kn \leq 0.001\))}
-In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct. This makes it possible to describe the fluid itself as a continuous medium. The Navier-Stokes equations govern the calculations in this regime.
+	
+	In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct. This makes it possible to describe the fluid itself as a continuous medium. The Navier-Stokes equations govern the calculations in this regime.
 
 \paragraph{Slip regime (\(0.001 \leq Kn \leq 0.1\))}
-Increasing Knudsen numbers mean the mean free path becomes comparable to the characteristic length scale. In this regime, the assumptions for continuum flow still hold, but there are deviations, especially near the boundaries. While continuum mechanics assumes no-slip conditions on the boundary, in this regime, slip on the boundary must be factored in.
+
+	Increasing Knudsen numbers mean the mean free path becomes comparable to the characteristic length scale. In this regime, the assumptions for continuum flow still hold, but there are deviations, especially near the boundaries. While continuum mechanics assumes no-slip conditions on the boundary, in this regime, slip on the boundary must be factored in.
 
 \paragraph{Transition regime (\(0.1 \leq Kn \leq 10\))}
-This regime is a middle ground between continuum and fully molecular flow. Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely. The interactions between the gas molecules and the boundaries are significant, and the flow characteristics may vary widely.
+	
+	This regime is a middle ground between continuum and fully molecular flow. Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely. The interactions between the gas molecules and the boundaries are significant, and the flow characteristics may vary widely.
 
 \paragraph{Molecular regime (\(Kn \geq 10\))}
-In this regime, the mean free path is much larger than the dimensions of boundaries. This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
+
+	In this regime, the mean free path is much larger than the dimensions of boundaries. This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
 
 \newpage
+
 \subsubsection{Turbulence}
+
 $$
 Re = \frac{\rho v L_c}{\mu} = \frac{v L_c}{\nu}
 $$
-This dimensionless number can be used to predict if it is probable to encounter turbulent flow or laminar flow in some region of the flow studied.
+
+	This dimensionless number can be used to predict if it is probable to encounter turbulent flow or laminar flow in some region of the flow studied.
+
 \paragraph{Laminar Flow (\(Re \le 2300\))}
-Laminar flow, means higher chance of encountering boundary layers. Velocity changes significantly along the radius of ducts. Low Mixing, mostly diffusion mediated.
+
+	Laminar flow, means higher chance of encountering boundary layers. Velocity changes significantly along the radius of ducts. Low Mixing, mostly diffusion mediated.
+
 \todo{Work out phrasing. This is just what i want to write about.}
 
 \paragraph{Turbulent Flow (\(Re > 2300\))}
-Having high Reynolds numbers means viscous forces are dominated by inertial forces. In this situation eddies and vortices begin to form. More evenly distributed velocity profile. Better for mixing. \todo{same here!}
+
+	Having high Reynolds numbers means viscous forces are dominated by inertial forces. In this situation eddies and vortices begin to form. More evenly distributed velocity profile. Better for mixing. \todo{same here!}
 
 \newpage
+
 \subsubsection{Mach regimes}
 
 \paragraph{Low subsonic regime (\(Ma < 0.3\))}
 
 \paragraph{Subsonic regime (\(0.3 < Ma < 1.0\))} 
-In this regime, the flow throughout the duct, except at the throat, remains subsonic. The velocity increases as the gas flows through the duct.\\
-\missingfigure{Subsonic nozzle and diffuser}
+
+	In this regime, the flow throughout the duct, except at the throat, remains subsonic. The velocity increases as the gas flows through the duct.\\
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[font=\small, scale=1.5]
+
+		% Titles
+		\node[baseBlack] at (1,1.3) {\large Subsonic Nozzle};
+		\node[baseBlack] at (6,1.3) {\large Subsonic Diffuser};
+
+		% Nozzle on the left
+		\draw[baseBlack, thick] (0,1) -- (2,0.5) -- (2,-0.5) -- (0,-1) -- cycle;
+
+		% Flow arrow into nozzle
+		\draw[line width=1.2pt, blueColor, -{Stealth[length=6pt]}] (-1.2,0) -- (0,0) 
+		  node[midway, above, sloped, baseBlack]{subsonic};
+
+		% Parameters in the nozzle
+		% Green parameters (top line)
+		\node[greenColor] at (1.0,0.3) {Ma $\uparrow$ \quad V $\uparrow$};
+
+		% Red parameters (below)
+		\node[redColor] at (1.0,-0.05) {P $\downarrow$ \quad T $\downarrow$ \quad $\rho \downarrow$};
+		% Diffuser on the right
+		\draw[baseBlack, thick] (5,0.5) -- (7,1) -- (7,-1) -- (5,-0.5) -- cycle;
+
+		% Flow arrow into diffuser
+		\draw[line width=1.2pt, blueColor, -{Stealth[length=6pt]}] (3.8,0) -- (5,0) 
+		  node[midway, above, sloped, baseBlack]{subsonic};
+
+		% Parameters in the diffuser
+		% Green parameters (top line)
+		\node[greenColor] at (6.0,0.25) {T $\uparrow$ \quad P $\uparrow$ \quad $\rho \uparrow$};
+
+		% Red parameters (below)
+		\node[redColor] at (6.0,-0.05) {V $\downarrow$ \quad Ma $\downarrow$};
+
+	\end{tikzpicture}
+
+	\caption{ToDo}
+	\label{fig:nozzle_diffuser_super}
+\end{figure}
+
 \paragraph{Sonic regime (\(Ma = 1\))} 
-Sonic flow occurs at the throat of a converging-diverging duct. It is a limiting phenomenon in converging ducts, achievable only if a diverging section follows, creating a minimum cross-sectional area referred to as the throat.
+	Sonic flow occurs at the throat of a converging-diverging duct. It is a limiting phenomenon in converging ducts, achievable only if a diverging section follows, creating a minimum cross-sectional area referred to as the throat.
 
 \paragraph{Supersonic regime (\(Ma > 1\))} 
-Supersonic flow cannot occur inside a purely converging duct. In subsonic conditions, the velocity increases while the cross-sectional area decreases. Once sonic speed is reached, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
-\missingfigure{Supersonic nozzle and diffuser}
 
+	Supersonic flow cannot occur inside a purely converging duct. In subsonic conditions, the velocity increases while the cross-sectional area decreases. Once sonic speed is reached, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, scale=1.5]
+
+% Titles
+\node[baseBlack] at (1,1.3) {\large Supersonic Nozzle};
+\node[baseBlack] at (6,1.3) {\large Supersonic Diffuser};
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Supersonic Nozzle on the left (diverging duct)
+%%%%%%%%%%%%%%%%%%%%%%%%
+% For a diverging nozzle:
+% Left side narrower, right side wider
+\draw[baseBlack, thick] (0,0.5) -- (2,1) -- (2,-1) -- (0,-0.5) -- cycle;
+
+% Flow arrow into nozzle
+\draw[line width=1.2pt, blueColor, -{Stealth[length=6pt]}] (-1.2,0) -- (0,0) 
+  node[midway, above, sloped, baseBlack]{supersonic};
+
+% Parameters in the supersonic nozzle
+% Green parameters (top line)
+\node[greenColor] at (1.0,0.3) {Ma $\uparrow$ \quad V $\uparrow$};
+
+% Red parameters (below)
+\node[redColor] at (1.0,-0.05) {P $\downarrow$ \quad T $\downarrow$ \quad $\rho \downarrow$};
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Supersonic Diffuser on the right (converging duct)
+%%%%%%%%%%%%%%%%%%%%%%%%
+% For a converging diffuser:
+% Left side wider, right side narrower
+\draw[baseBlack, thick] (5,1) -- (7,0.5) -- (7,-0.5) -- (5,-1) -- cycle;
+
+% Flow arrow into diffuser
+\draw[line width=1.2pt, blueColor, -{Stealth[length=6pt]}] (3.8,0) -- (5,0) 
+  node[midway, above, sloped, baseBlack]{supersonic};
+
+% Parameters in the supersonic diffuser
+% Green parameters (top line)
+\node[greenColor] at (6.0,0.25) {T $\uparrow$ \quad P $\uparrow$ \quad $\rho \uparrow$};
+
+% Red parameters (below)
+\node[redColor] at (6.0,-0.05) {V $\downarrow$ \quad Ma $\downarrow$};
+
+\end{tikzpicture}
+
+\caption{To-Do}
+\label{fig:supersonic_nozzle_diffuser}
+\end{figure}
 
 \newpage
+
 \subsubsection{Dimensionality of the flow}
+
+	Dimensionality of the flow describes on how many location parameters the velocity depends on. For example, it makes total sense to describe the velocity $V(\vec{x})$ of a gas flowing through a variable diameter duct only by its x coordinate, so where we are inside the duct. And also how close the point sits to the boundary of the duct since boundary conditions given by the interaction with the wall will restrain the velocity to different values than at locations in the free stream. Radial symmetry will take care of the 3rd dimension and left will be a velocity field $V(x,r)$, only dependent on x and r. It's important notice that even tho the velocity at a point is a vector, in a duct we are only interested in the velocity component along the length of the duct. This is because the gas can either flow in or out of the duct and will do this with some velocity. So essentially it constitutes  a scalar value, usually depicted in a velocity profile like this:\\
+
+\missingfigure{2 Dimensional velocity profile in a duct}
+
+	This also poses the problem, how to treat the velocity once it leaves such a duct and the following geometry lacks any useful symmetries. Essentially, the 2 dimensionality of the flow doesn't make sense anymore and the velocity has to be explicitly dependent on all 3 spacial coordinates, and it has to be dealt with proper field equations since not even the general direction of movement of the flow will be clearly defined. This will be the case for the flow expanding into reactor after leaving the inlet. Since the reactor has no symmetric boundaries in relation to the inlet position. This will make it hard to describe the flow into, inside and out of the reactor in any simple way, among other problems discussed in Section 2.3.1. Luckily this won't be the case for the expansion into the vacuum, after leaving the outlet. Since there the gas leaves a symmetric geometry and won't be forced by any boundaries, making the assumption of a radial symmetric expansion into the vacuum plausible, but this time with a velocity profile which must include some kind of direction of the flow. Which could look like this:\\
+
+\missingfigure{Velocity profile of a 2-dimensional expansion}

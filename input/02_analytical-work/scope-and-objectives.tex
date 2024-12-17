@@ -1,31 +1,43 @@
 \subsubsection{Geometry and components}
-The geometry can be explained in three simple sections: gas from a reservoir (1) flows over a duct into the reactor (2) where it leaves through another duct into a vacuum (3). This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path. This is because the only thing we left out is any kind of leak in the system. Those leaks will be the most influential around the reactor, since this is the only part that is not held at a constant pressure by any external part of the system.\\
+	
+	The geometry can be explained in three simple sections: gas from a reservoir (1) flows over a duct into the reactor (2) where it leaves through another duct into a vacuum (3). This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path. This is because the only thing we left out is any kind of leak in the system. Those leaks will be the most influential around the reactor, since this is the only part that is not held at a constant pressure by any external part of the system.\\
 
 \missingfigure{Geometry and important values of the flow}
 
 \paragraph{Inlet Reservoir (1)}
-It is kept at constant pressure \(P_0\) and constant temperature \(T_0\) and contains only one gas which is defined by its specific heat ratio \(\gamma\) and by its molar mass \(M_m\). These are all parameters which are set in advance and will not change after being set, which constrains us to a steady flow.
+
+	It is kept at constant pressure \(P_0\) and constant temperature \(T_0\) and contains only one gas which is defined by its specific heat ratio \(\gamma\) and by its molar mass \(M_m\). These are all parameters which are set in advance and will not change after being set, which constrains us to a steady flow.
 
 \paragraph{Inlet Nozzle}
-The duct connecting the inlet reservoir with the reactor will actually be a slightly converging duct, due to production constraints. Therefore, it will act like a Nozzle, accelerating the gas until it expands into the reactor.
+
+	The duct connecting the inlet reservoir with the reactor will actually be a slightly converging duct, due to production constraints. Therefore, it will act like a Nozzle, accelerating the gas until it expands into the reactor.
 
 \paragraph{Reactor (2)}
-The reactor resembles a very small but broad cylinder shape which is opened at the bottom. The sample will be pressed into the opening, which will lead to some leakage out of the system, this will actually force us to decouple the system at the chamber (more about that later). The gas itself reaches the chamber at some velocity and will decelerate rapidly while expanding into the chamber. Therefore, a great part of the chamber will have very slow-moving gas inside. Very close to the outlet nozzle the gas will start to accelerate again and will enter it at very high speeds.
+	
+	The reactor resembles a very small but broad cylinder shape which is opened at the bottom. The sample will be pressed into the opening, which will lead to some leakage out of the system, this will actually force us to decouple the system at the chamber (more about that later). The gas itself reaches the chamber at some velocity and will decelerate rapidly while expanding into the chamber. Therefore, a great part of the chamber will have very slow-moving gas inside. Very close to the outlet nozzle the gas will start to accelerate again and will enter it at very high speeds.
 
 \paragraph{Outlet Nozzle}
-With the same geometry as the inlet, but the gas flowing in opposite directions, one would suspect the outlet to act as a subsonic nozzle, which could logically be the case, since without a converging section in front it would be impossible to reach sonic velocities and therefore will choke the flow and keep them at subsonic velocities. However, it is actually possible for the flow to create a converging section by itself, which will force the flow to be sonic at the beginning of the outlet and will further accelerate into the supersonic regimes, creating a supersonic nozzle. Which of these two possibilities is most likely will be discussed at a later point.
+	
+	With the same geometry as the inlet, but the gas flowing in opposite directions, one would suspect the outlet to act as a subsonic nozzle, which could logically be the case, since without a converging section in front it would be impossible to reach sonic velocities and therefore will choke the flow and keep them at subsonic velocities. However, it is actually possible for the flow to create a converging section by itself, which will force the flow to be sonic at the beginning of the outlet and will further accelerate into the supersonic regimes, creating a supersonic nozzle. Which of these two possibilities is most likely will be discussed at a later point.
 
 \paragraph{Vacuum (3)}
-After leaving the outlet, the gas will first expand into a small cylindrical section after which it will expand freely into the vacuum. The exact pressure left in the vacuum will be very low, and small changes will not have great influence onto the flow itself. Therefore,
+
+	After leaving the outlet, the gas will first expand into a small cylindrical section after which it will expand freely into the vacuum. The exact pressure left in the vacuum will be very low, and small changes will not have great influence onto the flow itself. Therefore,
 
 \newpage
 
 \subsubsection{Motivation and goals}
-The general goal of this thesis is to create a relatively simple analytical framework to be able to make predictions about the behavior of the flow through the system and approximate values at different positions in the flow to later be used as initial values for more complex numerical simulations. The following section will state specific questions we will then try to answer in the following sections.
+
+	The general goal of this thesis is to create a relatively simple analytical framework to be able to make predictions about the behavior of the flow through the system and approximate values at different positions in the flow to later be used as initial values for more complex numerical simulations. The following section will state specific questions we will then try to answer in the following sections.
 
 \paragraph{Type of Flow:}
 
+	The first and most important question to answer is which type of flow will be expected inside the assembly. This has major implications on which equations are applicable and down the line which type of numerical simulations will lead to the best results. The main focus here is the Knudsen number and the idealized flow regimes connected to it. With the main goal being to assess the most likely flow regime governing the inside of the assembly and therefore determine the equations applicable to calculate the state variables at different points in the system and the throughput of the system as a whole.\\
+	In preparation for numerical simulations it is also important to find a way to calculate Knudsen numbers and other flow parameters using given datasets of state variables without having to rely on flow regime specific methods. This will help to analyze transient regimes, encountered when the gas expands into the vacuum, using one generally applicable method.  
+
 \paragraph{Impact of the leak:}
+
+	As described in the leading section there will be some leakage expected at the boundary between the reactor casing and the sample holder. This leak will inevitably lead to some leakage and therefore some pressure drop $\Delta P_L$ inside the reactor. This can lead to mayor changes in the flow into and out of the reactor. If the pressure drop is high enough it could even be possible to dominate over the outlet with regard to the mass flow out of the system. Thus leading to mayor differences in the velocity distribution calculated at the outlet. Which is without doubt one of the major questions tried to answer in this work. In summary the goal is finding the pressure drop $\Delta P_L$ caused by the leak and the effective mass flow $\dot{m}_L$ through it.
 
 \paragraph{Flow in the reactor and around the sample:}
 
