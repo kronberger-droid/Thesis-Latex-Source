@@ -1,4 +1,5 @@
 \documentclass[11pt,a4paper,twoside]{article}
+\usepackage[utf8]{inputenc}
 
 \usepackage[
   a4paper,
@@ -14,11 +15,24 @@
 
 \usepackage{amsmath}
 \usepackage{graphicx}
+
+% References
 \usepackage[hidelinks]{hyperref}
+
+% Bibliography
+\usepackage{csquotes}
+\usepackage[style=iso-authortitle, backend=biber]{biblatex}
+\addbibresource{input/B_bibliography/references.bib}
+
 \usepackage{multicol}
 \usepackage{todonotes}
-
+\usepackage{float}
 \usepackage{fontspec}
+
+% Index
+\usepackage{makeidx}
+
+% Color Config
 \usepackage{xcolor}
 
 \definecolor{baseBackground}{HTML}{FFFFFF} 
@@ -38,8 +52,36 @@
 \definecolor{blueColor}{HTML}{1E90FF}    
 \definecolor{magentaColor}{HTML}{8B008B} 
 \definecolor{brownColor}{HTML}{8B4513}
-   
-\usepackage{float}
 
+% Vector Graphics
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
+
+
+\usepackage{fancyhdr}
+
+% Page Layout
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[LE]{\nouppercase{\leftmark}} % Section name on left (even pages)
+\fancyhead[RO]{\nouppercase{\rightmark}} % Subsection name on right (odd pages)
+\fancyfoot[LE,RO]{\thepage}
+
+% Optional: Line for header separation
+\renewcommand{\headrulewidth}{0.4pt} % Thickness of header line
+\renewcommand{\footrulewidth}{0pt}   % No footer line
+
+% Adjust section/subsection formatting
+\usepackage{titlesec}
+\titleformat{\section}[block]{\large\bfseries}{\thesection.}{0.5em}{} % Section
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection.}{0.5em}{} % Subsection
+
+% custom commands
+
+% Inserting a blank page
+\newcommand{\blankpage}{
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
+}
