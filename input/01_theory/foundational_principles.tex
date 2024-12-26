@@ -1,18 +1,102 @@
 \subsubsection{Idealized flow regimes}
 
-	There are different idealized flow regimes which can be distinguished by the value of their Knudsen number (\(Kn\)).
-
+	In gas dynamics a flow can be categorized by its particle interaction using the Knudsen number, which represents the ratio between the mean-free-path of the gas and some characteristic length.
+	$$
+		Kn=\frac{\lambda}{l}
+	$$
+	The characteristic length is usually chosen to be the smallest linear length in the system.
+	For example the throat diameter of a nozzle. \cite{putignano2012supersonic}
 \paragraph{Continuum regime (\(Kn \leq 0.001\))}
 	
 	In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct.
-	This makes it possible to describe the fluid itself as a continuous medium.
+	This makes it possible to describe the fluid itself as a continuous medium with the assumption of non-slip boundary conditions.
 	The Navier-Stokes equations govern the calculations in this regime.
+
+	\begin{figure}[H]
+	\centering
+		\begin{tikzpicture}[scale=1.2]
+
+		% Pipe background with border
+		\fill[baseLightGray] (-3,-1) rectangle (3,1);
+		\draw[baseDarkerGray, thick] (-3,-1) rectangle (3,1);
+
+		% Horizontal centerline
+		\draw[dashed, baseDarkGray] (-3.2,0) -- (3.2,0);
+
+		\draw[dashed, baseDarkGray, thick] (-2,-1.2) node[below] {x} -- (-2,1.4) ;
+
+		% Vertical red dashed centerline
+		\draw[redColor, dashed, thick] (-0.5,-1.2) -- (-0.5,1.4);
+
+		% Parabolic velocity profile (zero velocity at the boundaries)
+		\draw[blueColor, thick, domain=-1:1, smooth] plot ({1 - 3*\x*\x}, \x);
+
+		% Flow lines (arrows reducing length at walls)
+		\foreach \y in {-0.9,-0.6,-0.3,0,0.3,0.6,0.9}
+		    \draw[blueColor, -{Stealth[length=5pt]}] (-2,\y) -- ({1 - 3*\y*\y},\y);
+
+		% Average velocity arrow placed at the centerline
+		\draw[greenColor, thick, -{Stealth[length=7pt]}] (-2,1.2) -- (-0.5,1.2);
+		\node[greenColor] at (-1.2,1.5) {\large $V_{\text{avg}}$};
+
+		% u(r) label at the profile
+		\node[blueColor] at (1,0.5) {\large $u(r)$};
+
+		% r-axis
+		\draw[-{Stealth[length=6pt]}, baseDarkerGray] (-3,-1.2) -- (-3,1.5) node[above] {$r$};
+		\draw (-3.2,0) node[left, baseDarkerGray] {0};
+	
+		\end{tikzpicture}
+	\caption{Velocity distribution at a point $x$ inside a constant area duct with slip boundary conditions. \cite{Cengel2017}}
+	\label{fig:non-slip-flow}
+	\end{figure}
 
 \paragraph{Slip regime (\(0.001 \leq Kn \leq 0.1\))}
 
-	Increasing Knudsen numbers mean the mean free path becomes comparable to the characteristic length scale.
+	For increasing Knudsen numbers the mean free path becomes comparable to the characteristic length scale of the system.
 	In this regime, the assumptions for continuum flow still hold, but there are deviations, especially near the boundaries.
 	While continuum mechanics assumes no-slip conditions on the boundary, in this regime, slip on the boundary must be factored in.
+
+	\begin{figure}[H]
+	\centering
+		\begin{tikzpicture}[scale=1.2]
+
+		% Pipe background with border
+		\fill[baseLightGray] (-3,-1) rectangle (3,1);
+		\draw[baseDarkerGray, thick] (-3,-1) rectangle (3,1);
+
+		% Horizontal centerline
+		\draw[dashed, baseDarkGray] (-3.2,0) -- (3.2,0);
+
+		\draw[dashed, baseDarkGray, thick] (-2,-1.2) node[below] {x} -- (-2,1.4) ;
+
+		% Vertical red dashed centerline
+		\draw[redColor, dashed, thick] (-0.5,-1.2) -- (-0.5,1.4);
+
+		% Parabolic velocity profile (zero velocity at the boundaries)
+		\draw[blueColor, thick, domain=-1:1, smooth] plot ({0.5 - 1.5*\x*\x}, \x);
+
+		% Flow lines (arrows reducing length at walls)
+		\foreach \y in {-0.9,-0.6,-0.3,0,0.3,0.6,0.9}
+		    \draw[blueColor, -{Stealth[length=5pt]}] (-2,\y) -- ({0.5- 1.5*\y*\y},\y);
+
+		% Average velocity arrow placed at the centerline
+		\draw[greenColor, thick, -{Stealth[length=7pt]}] (-2,1.2) -- (-0.5,1.2);
+		\node[greenColor] at (-1.2,1.5) {\large $V_{\text{avg}}$};
+
+		% u(r) label at the profile
+		\node[blueColor] at (1,0.5) {\large $u(r)$};
+
+		% r-axis
+		\draw[-{Stealth[length=6pt]}, baseDarkerGray] (-3,-1.2) -- (-3,1.5) node[above] {$r$};
+		\draw (-3.2,0) node[left, baseDarkerGray] {0};
+	
+		\end{tikzpicture}
+	\caption{Velocity distribution at a point $x$ inside a constant area duct with slip boundary conditions. \cite{Cengel2017}}
+	\label{fig:slip-flow}
+	\end{figure}
+
+	\newpage
 
 \paragraph{Transition regime (\(0.1 \leq Kn \leq 10\))}
 	
@@ -24,85 +108,59 @@
 
 	In this regime, the mean free path is much larger than the dimensions of boundaries.
 	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
-	
-\subsubsection{Expected flow regimes}
-
-\paragraph{Knudsen Number}
-	The whole Theory relies heavily on the continuum model.
-	For every location of the flow, but the vacuum, it will suffice to approximate the state variables at certain locations using a simple continuum model like the one described in section 2.1.
-	 \todo{link} and use these state variables to calculate the Knudsen number.\\
-
-	A sensible question to ask at this point is: Where in the flow it is the most probable encounter the highest Knudsen number.
-	Because this will reduce the locations to check for high Knudsen numbers and therefore will simplify the process.
-	To find such most probable Location, given the Definition of the Knudsen number:
-
-	$$
-	Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)R}{pL_c}\sqrt{\frac{\pi m T}{2k_B}}
-	$$
-
-	$L_c$ can be assumed constant since the height of the reactor and the smallest diameter of the ducts match.
-	And by assuming $\mu$ to be close to constant the Knudsen number becomes a simple proportionality relation.
-
-	$$
-	Kn(p,T)\approx\frac{\mu R}{L_c}\sqrt{\frac{\pi m}{2k_B}}\cdot\frac{\sqrt{T}}{p}=\alpha\cdot\frac{\sqrt{T}}{p}\quad\rightarrow\quad Kn\propto \frac{\sqrt{T}}{p}
-	$$
-
-	This makes it obvious that areas with low pressure will lead to higher Knudsen numbers and will come closest to the limit of $Kn=0.1$ where continuum regime formulations stop to yield sensible solutions.
-	Therefore, calculating the Knudsen number where the gas leaves the outlet nozzle will be useful to identify the flow regime that governs the gas flow inside the whole assembly.
-
-\paragraph{Knudsen Number in low pressure Zones}
-
-	When the gas is leaving the outlet the pressure will steadily drop until the method of determining Pressure and Temperature themselves will fail and force us to rely on numerical calculations.
-	Therefore, it makes sense to identify a much more elegant way of calculating the Knudsen number which will be much more applicable in this situation.
-
-	$$
-	K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
-	$$
-\newpage
+	\cite{rapp2017microfluidics}
 
 \subsubsection{Turbulence}
 
+	The ratio between the viscous and inertial forces in a fluid can be used to determine the probability of turbulence in a flow.
+	
 	$$
-	Re = \frac{\rho v L_c}{\mu} = \frac{v L_c}{\nu}
+		Re = \frac{\rho v L_c}{\mu}
 	$$
 
-	This dimensionless number can be used to predict if it is probable to encounter turbulent flow or laminar flow in some region of the flow studied.
-				
+	\noindent At which value a flow becomes turbulent varies for different flow conditions and geometries. For internal flow through circular pipes it is usually around $Re = 2300$. \cite{Cengel2017}
+	
 \paragraph{Laminar Flow (\(Re \le 2300\))}
 
-	Laminar flow, means higher chance of encountering boundary layers.
-	Velocity changes significantly along the radius of ducts.
-	Low Mixing, mostly diffusion mediated.
-
-\todo{Work out phrasing. This is just what i want to write about.}
-
+	Laminar flow is characterized by many parallel layers of fluid, with minimal mixing between them.
+	Friction at the boundaries leads to little energy loss since fluid at the boundary doesn't interact with neighboring fluid.
+	
 \paragraph{Turbulent Flow (\(Re > 2300\))}
 
-	Having high Reynolds numbers means viscous forces are dominated by inertial forces.
-	In this situation eddies and vortices begin to form.
-	More evenly distributed velocity profile. Better for mixing. \todo{same here!}
+	Turbulent flow leads to greater mixing and velocity fluctuations in the fluid.
+	Which leads to greater momentum and heat transfer, and therefore greater pressure drops. 
 
-\paragraph{Reynolds Number}
+\subsubsection{Dimensionality of the flow}
 
-	The Reynolds number itself does not bare any real significance for the applicability of the formulations used. Nonetheless, deviations in Reynolds number can in reality shape great parts of how the flow behaves and therefore effects important state variables.\\
-	Reynolds numbers per unit length for isentropic expansion range $Re/l \in [10^{-2}, 1]$, whereas the characteristic length is constant at $L_c = 20\cdot 10^{-6}$ and will therefore dominate the equation forcing low Reynolds numbers. \footcite[][681]{ames1953compressible}\\
-	Therefore the flow will stay laminar as long as it is contained inside the assembly and therefore mixing will be most likely diffusion mediated.
-	\footcite[][16]{comsol_microfluidics_guide} 
+	The dimensionality of the flow describes how many spatial coordinates the values in a velocity field depend on.
+	The flow through a constant area duct is usually described as a one-dimensional flow field only depending on the position $x$ along the length of the duct.
+	In the case of variable area ducts the flow will be three-dimensional and has to be calculated for all spatial coordinates.
+	But assuming only a slight change in area along the length of the duct the flow can be approximated using a one-dimensional flow field with enough precision.
+	This is called quasi one dimensional flow.
 
 \newpage
 
 \subsubsection{Mach regimes}
-\index{machnumber}
+
+
+	The Mach number is defined as the ratio between the local velocity and the local speed of sound.
+	
+	$$
+		Ma = \frac{u}{a}
+	$$
+	It is a very important metric when analyzing isentropic flow.
+
 \paragraph{Low subsonic regime (\(Ma < 0.3\))}
 
+	For low Mach numbers, compressibility effects of a gas can be neglected, and the gas can be treated as an incompressible fluid.
 \paragraph{Subsonic regime (\(0.3 < Ma < 1.0\))} 
 
-	In this regime, the flow throughout the duct, except at the throat, remains subsonic.
-	The velocity increases as the gas flows through the duct.\\
-
+	Inside system of variable area ducts the gas flow generally stays subsonic.
+	Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
+	
 	\begin{figure}[H]
 		\centering
-		\begin{tikzpicture}[font=\small, scale=1.5]
+		\begin{tikzpicture}[font=\small, scale=1.4]
 
 			% Titles
 			\node[baseBlack] at (1,1.3) {\large Subsonic Nozzle};
@@ -137,24 +195,30 @@
 
 		\end{tikzpicture}
 
-		\caption{ToDo}
+		\caption{Change of flow properties in subsonic nozzles and diffusers}
 		\label{fig:nozzle_diffuser_super}
 	\end{figure}
 
 \paragraph{Sonic regime (\(Ma = 1\))}
 	
-	Sonic flow occurs at the throat of a converging-diverging duct.
-	It is a limiting phenomenon in converging ducts, achievable only if a diverging section follows, creating a minimum cross-sectional area referred to as the throat.
+	Sonic flow occurs at the exit of a converging duct, if a certain critical pressure ratio between the two reservoirs connected by the duct is reached.
+	This ratio is defined as:
+
+	$$
+		\frac{P^*}{P_t}=\left(\frac{2}{\gamma + 1}\right)^{\gamma/(\gamma - 1)}
+	$$ 
+	It is derived from isentropic flow relations and can be expressed in any state variable.
 	
 \paragraph{Supersonic regime (\(Ma > 1\))} 
 
-	Supersonic flow cannot occur inside a purely converging duct.
-	In subsonic conditions, the velocity increases while the cross-sectional area decreases.
-	Once sonic speed is reached, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
+	If there are critical conditions at the end of a converging duct and a diverging duct follows.
+	The flow continues to accelerate and reaches supersonic speeds.
+	The location where the flow reaches critical condition is called throat and represents the minimal diameter of the duct.\\
+	In supersonic flows, state variables change rapidly causing phenomenons like shock waves and expansion fans.
 	
 	\begin{figure}[H]
 	\centering
-		\begin{tikzpicture}[font=\small, scale=1.5]
+		\begin{tikzpicture}[font=\small, scale=1.4]
 			% Titles
 			\node[baseBlack] at (1,1.3) {\large Supersonic Nozzle};
 			\node[baseBlack] at (6,1.3) {\large Supersonic Diffuser};
@@ -195,92 +259,9 @@
 			% Red parameters (below)
 			\node[redColor] at (6.0,-0.05) {V $\downarrow$ \quad Ma $\downarrow$};
 		\end{tikzpicture}
-	\caption{To-Do}
+	\caption{Change in flow properties in supersonic nozzles and diffusers}
 	\label{fig:supersonic_nozzle_diffuser}
 	\end{figure}
 
 \newpage
-
-\subsubsection{Dimensionality of the flow}
-
-	Dimensionality of the flow describes on how many location parameters the velocity depends on.
-	For example, it makes total sense to describe the velocity $V(\vec{x})$ of a gas flowing through a variable diameter duct only by its x coordinate, so where we are inside the duct.
-	And also how close the point sits to the boundary of the duct since boundary conditions given by the interaction with the wall will restrain the velocity to different values than at locations in the free stream.
-	Radial symmetry will take care of the 3rd dimension and left will be a velocity field $V(x,r)$, only dependent on x and r.
-	It's important notice that even tho the velocity at a point is a vector, in a duct we are only interested in the velocity component along the length of the duct.
-	This is because the gas can either flow in or out of the duct and will do this with some velocity.
-	So essentially it constitutes  a scalar value, usually depicted in a velocity profile like this:\\
-
-	\begin{figure}[H]
-	\centering
-		\begin{tikzpicture}[scale=1.2]
-
-		% Pipe background with border
-		\fill[baseLightGray] (-3,-1) rectangle (3,1);
-		\draw[baseDarkerGray, thick] (-3,-1) rectangle (3,1);
-
-		% Horizontal centerline
-		\draw[dashed, baseDarkGray] (-3.2,0) -- (3.2,0);
-
-		\draw[dashed, baseDarkGray, thick] (-2,-1.2) node[below] {x} -- (-2,1.4) ;
-
-		% Vertical red dashed centerline
-		\draw[redColor, dashed, thick] (-0.5,-1.2) -- (-0.5,1.4);
-
-		% Parabolic velocity profile (zero velocity at the boundaries)
-		\draw[blueColor, thick, domain=-1:1, smooth] plot ({1 - 3*\x*\x}, \x);
-
-		% Flow lines (arrows reducing length at walls)
-		\foreach \y in {-0.9,-0.6,-0.3,0,0.3,0.6,0.9}
-		    \draw[blueColor, -{Stealth[length=5pt]}] (-2,\y) -- ({1 - 3*\y*\y},\y);
-
-		% Average velocity arrow placed at the centerline
-		\draw[greenColor, thick, -{Stealth[length=7pt]}] (-2,1.2) -- (-0.5,1.2);
-		\node[greenColor] at (-1.2,1.5) {\large $V_{\text{avg}}$};
-
-		% u(r) label at the profile
-		\node[blueColor] at (1,0.5) {\large $u(r)$};
-
-		% r-axis
-		\draw[-{Stealth[length=6pt]}, baseDarkerGray] (-3,-1.2) -- (-3,1.5) node[above] {$r$};
-		\draw (-3.2,0) node[left, baseDarkerGray] {0};
-	
-		\end{tikzpicture}
-	\caption[Some text]{Some text \footnotemark }
-	\label{fig:2D-Flow}
-	\end{figure}
-
-	\footnotetext{\footcite{Cengel2017}}
-
-	\noindent This also poses the problem, how to treat the velocity once it leaves such a duct and the following geometry lacks any useful symmetries.
-	Essentially, the 2 dimensionality of the flow doesn't make sense anymore and the velocity has to be explicitly dependent on all 3 spacial coordinates, and it has to be dealt with proper field equations since not even the general direction of movement of the flow will be clearly defined.
-	This will be the case for the flow expanding into reactor after leaving the inlet.
-	Since the reactor has no symmetric boundaries in relation to the inlet position.
-	This will make it hard to describe the flow into, inside and out of the reactor in any simple way, among other problems discussed in Section 2.3.1.
-	Luckily this won't be the case for the expansion into the vacuum, after leaving the outlet.
-	Since there the gas leaves a symmetric geometry and won't be forced by any boundaries, making the assumption of a radial symmetric expansion into the vacuum plausible, but this time with a velocity profile which must include some kind of direction of the flow.\\
-
-\paragraph{Dimension of the Flow}
-
-	\subparagraph{Inside - pseudo 1D}
-
-		In this section of the flow a further simplification of the two-dimensional flow through a duct will be used called "quasi one-dimensional" flow.
-		This is possible by reducing the velocity distribution present at any point in a duct to its mean velocity.
-		Therefore, reducing the velocity from a distribution $V(r)$ at every point in the duct to a scalar value $V$ at every point of the duct.
-		This is a general simplification which can be made when using continuum flow analysis inside of ducts and is only bound by the applicability of continuum flow.
-		This makes sense, because approximations of state variables and mass flow is the main goal here.
-		Taking mean values still yield sensible solutions and won't leave us with less information per se.
-
-	\subparagraph{Outside - radial symmetric 3D}
-
-		Any further simplification from the radially symmetric expansion into vacuum described in section would not make sense since it would eliminate important information on how the flow behaves when leaving the outlet.
-		Like the amount of gas which will reach the mass spec and the velocity distribution.
-\footcite[][120]{anderson2021modern}
-
-\paragraph{Steady Flow}
-
-	Steadiness of the flow is essentially given by the fact that the temperature $T_0$ and the pressure $p_0$ of the reservoir will be held constant during measurements.
-	Thus, the flow will be driven by the pressure differential between the vacuum and the reservoir alone.
-	So there is no reason for the flow to establish any dynamic behaviors after reaching some equilibrium state, after gas is first released into the system.
-	This is true for regions inside as well as outside the assembly.
 

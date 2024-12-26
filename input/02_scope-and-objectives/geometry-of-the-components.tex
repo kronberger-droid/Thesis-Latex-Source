@@ -1,5 +1,3 @@
-\subsubsection{Geometry and components}
-	
 	The geometry can be explained in three simple sections: gas from a reservoir (1) flows over a duct into the reactor (2) where it leaves through another duct into a vacuum (3).
 	This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path.
 	This is because the only thing we left out is any kind of leak in the system.
@@ -39,29 +37,3 @@
 
 \newpage
 
-\subsubsection{Motivation and goals}
-
-	The general goal of this thesis is to create a relatively simple analytical framework to be able to make predictions about the behavior of the flow through the system and approximate values at different positions in the flow to later be used as initial values for more complex numerical simulations.
-	The following section will state specific questions we will then try to answer in the following sections.
-	
-\paragraph{Type of Flow:}
-
-	The first and most important question to answer is which type of flow will be expected inside the assembly.
-	This has major implications on which equations are applicable and down the line which type of numerical simulations will lead to the best results.
-	The main focus here is the Knudsen number and the idealized flow regimes connected to it.
-	With the main goal being to assess the most likely flow regime governing the inside of the assembly and therefore determine the equations applicable to calculate the state variables at different points in the system and the throughput of the system as a whole.\\
-	In preparation for numerical simulations it is also important to find a way to calculate Knudsen numbers and other flow parameters using given datasets of state variables without having to rely on flow regime specific methods. This will help to analyze transient regimes, encountered when the gas expands into the vacuum, using one generally applicable method.  
-
-\paragraph{Impact of the leak:}
-
-	As described in the leading section there will be some leakage expected at the boundary between the reactor casing and the sample holder.
-	This leak will inevitably lead to some leakage and therefore some pressure drop $\Delta P_L$ inside the reactor.
-	This can lead to mayor changes in the flow into and out of the reactor.
-	If the pressure drop is high enough it could even be possible to dominate over the outlet with regard to the mass flow out of the system.
-	Thus leading to mayor differences in the velocity distribution calculated at the outlet.
-	Which is without doubt one of the major questions tried to answer in this work.
-	In summary the goal is finding the pressure drop $\Delta P_L$ caused by the leak and the effective mass flow $\dot{m}_L$ through it.
-	
-\paragraph{Flow in the reactor and around the sample:}
-
-\paragraph{Velocity distribution at the outlet:}

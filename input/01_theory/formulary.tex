@@ -1,15 +1,12 @@
 \subsubsection{Thermodynamics}
 
-
-\subsubsection{Continuous one-dimensional flow}
-
-\textbf{Thermal equation of state:}
+\textbf{Thermal Equation of State:}
 
 \begin{equation}
-	\frac{p}{\rho} = RT \quad \text{[term perf]}
-\end{equation}\\
+	\frac{p}{\rho} = RT \quad \text{[Perfect Gas]}
+\end{equation}
 
-\textbf{Dynamic equation:}
+\textbf{Dynamic Equation:}
 
 \begin{equation}
 	\frac{1}{\rho} dp + V dV = 0
@@ -18,11 +15,11 @@
 \textbf{Speed of Sound:}
 
 \begin{equation}
-	a = \sqrt{\left(\frac{\partial p}{\partial \rho}\right)_s} = \sqrt{\gamma \left(\frac{\partial p}{\partial \rho}\right)_T}
+	a = \sqrt{\left( \frac{\partial p}{\partial \rho} \right)_s} = \sqrt{\gamma \left( \frac{\partial p}{\partial \rho} \right)_T}
 \end{equation}
 
 \begin{equation}
-	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \text{[term perf]} \tag{36}
+	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \text{[Perfect Gas]}
 \end{equation}
 
 \textbf{Mach Number:}
@@ -34,34 +31,78 @@
 \textbf{Dynamic Pressure:}
 
 \begin{equation}
-	q = \frac{1}{2} \rho V^2=\frac{\gamma}{2} p M^2
+	q = \frac{1}{2} \rho V^2 = \frac{\gamma}{2} p M^2
 \end{equation}
 
-From the dynamic equation and the speed of sound relation:
-\begin{equation}
-	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma}\quad \text{[isen, perf]} \tag{34}
-\end{equation}
-
-\textbf{From which:}
+\textbf{Isentropic Relations:}
 
 \begin{equation}
-	\frac{p}{p_t} = \left(\frac{\rho}{\rho_t}\right)^\gamma = \left(\frac{T}{T_t}\right)^{\frac{\gamma}{\gamma - 1}} = \left(\frac{a}{a_t}\right)^{\frac{2\gamma}{\gamma - 1}}\quad \text{[isen, perf]} \tag{35}
+	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma} \quad \text{[Isentropic, Perfect Gas]}
 \end{equation}
 
-Combining the above equations gives Bernoulli's equation for compressible flow:
+\textbf{From this:}
+
 \begin{equation}
-	\frac{\gamma}{\gamma - 1} \left(\frac{p_t}{\rho_t}\right)^{\frac{\gamma - 1}{\gamma}} \left(\frac{p}{p_t}\right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_t}{\rho_t}\quad \text{[isen, perf]} \tag{36}
+	\frac{p}{p_t} = \left( \frac{\rho}{\rho_t} \right)^\gamma = \left( \frac{T}{T_t} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_t} \right)^{\frac{2\gamma}{\gamma - 1}} \quad \text{[Isentropic, Perfect Gas]}
 \end{equation}
 
-\textbf{Usefull Ratios}
+\textbf{Bernoulli's Equation for Compressible Flow:}
+
+\begin{equation}
+	\frac{\gamma}{\gamma - 1} \left( \frac{p_t}{\rho_t} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_t} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_t}{\rho_t}
+\end{equation}
+
+\subsubsection{Control Volume Analysis}
+
+\textbf{Continuity Equation:}
+
+\begin{equation}
+	\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
+\end{equation}
+
+\textbf{Momentum Equation:}
+
+\begin{equation}
+	\frac{d}{dt} \int_V \rho V \, dV + \int_S \rho V (V \cdot dA) = - \int_S p \, dA + \int_V \rho g \, dV
+\end{equation}
+
+\textbf{Energy Equation:}
+
+\begin{equation}
+	\frac{d}{dt} \int_V \rho e \, dV + \int_S \rho h V \cdot dA = \dot{Q} - \int_S p V \cdot dA
+\end{equation}
+
+\subsubsection{Stagnation Properties}
+
+\textbf{Stagnation Temperature:}
+
+\begin{equation}
+	T_0 = T \left( 1 + \frac{\gamma - 1}{2} M^2 \right)
+\end{equation}
+
+\textbf{Stagnation Pressure:}
+
+\begin{equation}
+	p_0 = p \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{\frac{\gamma}{\gamma - 1}}
+\end{equation}
+
+\textbf{Stagnation Density:}
+
+\begin{equation}
+	\rho_0 = \rho \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{\frac{1}{\gamma - 1}}
+\end{equation}
+
+\textbf{Stagnation Speed of Sound:}
+
+\begin{equation}
+	a_0 = a \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{\frac{1}{2}}
+\end{equation}
+
+\textbf{Useful Ratios:}
 
 \begin{gather}
-	\frac{T}{T_t} = \left(1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
-	\quad \text{[adiab, perf]} \tag{43} \\
-	\frac{p}{p_t} = \left(1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
-	\quad \text{[isen, perf]} \tag{44} \\
-	\frac{\rho}{\rho_t} = \left(1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
-	\quad \text{[isen, perf]} \tag{45} \\
-	\frac{a}{a_t} = \left(1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
-	\quad \text{[adiab, perf]} \tag{46}
+	\frac{T}{T_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1} \\
+	\frac{p}{p_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}} \\
+	\frac{\rho}{\rho_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}} \\
+	\frac{a}{a_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
 \end{gather}
