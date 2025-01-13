@@ -110,15 +110,18 @@
 	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
 	\cite{rapp2017microfluidics}
 
+\subsubsection{Flow behaviors in micro channels}
+
+	
+
 \subsubsection{Turbulence}
 
 	The ratio between the viscous and inertial forces in a fluid can be used to determine the probability of turbulence in a flow.
-	
+	This ratio is called the Reynolds number:
 	$$
 		Re = \frac{\rho v L_c}{\mu}
 	$$
-
-	\noindent At which value a flow becomes turbulent varies for different flow conditions and geometries. For internal flow through circular pipes it is usually around $Re = 2300$. \cite{Cengel2017}
+	Where  $\rho$ is the density of the fluid, $v$ is the fluid velocity, $\mu$ is the dynamic viscosity of the fluid the  At which value a flow becomes turbulent varies for different flow conditions and geometries. For internal flow through circular pipes it is usually around $Re = 2300$. \cite{Cengel2017}
 	
 \paragraph{Laminar Flow (\(Re \le 2300\))}
 
@@ -136,15 +139,13 @@
 	The flow through a constant area duct is usually described as a one-dimensional flow field only depending on the position $x$ along the length of the duct.
 	In the case of variable area ducts the flow will be three-dimensional and has to be calculated for all spatial coordinates.
 	But assuming only a slight change in area along the length of the duct the flow can be approximated using a one-dimensional flow field with enough precision.
-	This is called quasi one dimensional flow.
+	This is called quasi one dimensional flow. \cite{anderson2021modern}
 
 \newpage
 
-\subsubsection{Mach regimes}
+\subsubsection{Mach regimes}\todo{add References}
 
-
-	The Mach number is defined as the ratio between the local velocity and the local speed of sound.
-	
+	The Mach number is defined as the ratio between the local velocity $u$ and the local speed of sound $a$.
 	$$
 		Ma = \frac{u}{a}
 	$$

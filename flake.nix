@@ -15,14 +15,7 @@
       ${system} = {
         default = pkgs.mkShell {
           buildInputs = [
-            (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
-              python-lsp-server
-              tabulate
-            ]))
             pkgs.tectonic
-            pkgs.imagemagick
-            pkgs.inkscape
-            pkgs.nushell
           ];
           shellHook = ''
             zathura ./build/main.pdf &
