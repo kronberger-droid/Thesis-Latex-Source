@@ -19,16 +19,17 @@
 \paragraph{Knudsen Number in low pressure Zones}
 
 	When the gas is leaving the outlet the pressure will steadily drop until the method of determining Pressure and Temperature themselves will fail and force us to rely on numerical calculations.
-	Therefore, it makes sense to identify a much more elegant way of calculating the Knudsen number which will be much more applicable in this situation.
+	Therefore, it makes sense to identify a much more elegant way of calculating the local Knudsen number $Kn_L$ which will be much more applicable in this situation.
 	$$
 		K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
 	$$
+	Where $\lambda$ is the mean free path, $\phi$ is some state variable of the flow
 \newpage
 
 \subsubsection{Laminar Flow}
 
 	The Reynolds number itself does not bare any real significance for the applicability of the formulations used. Nonetheless, deviations in Reynolds number can in reality shape great parts of how the flow behaves and therefore effects important state variables.\\
-	Reynolds numbers per unit length for isentropic expansion range $Re/l \in [10^{-2}, 1]$, whereas the characteristic length is constant at $L_c = 20\cdot 10^{-6}$ and will therefore dominate the equation forcing low Reynolds numbers. \cite{ames1953compressible}\\
+	Reynolds numbers per unit length for isentropic expansion range $10^{-2} < Re/l < 1$, whereas the characteristic length is constant at $L_c = 20\cdot 10^{-6}$ and will therefore dominate the equation forcing low Reynolds numbers. \cite{ames1953compressible}\\
 	Therefore the flow will stay laminar as long as it is contained inside the assembly and therefore mixing will be most likely diffusion mediated.
 	\cite{comsol_microfluidics_guide}
 	

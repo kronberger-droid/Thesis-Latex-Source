@@ -1,56 +1,17 @@
 \subsubsection{Thermodynamics}
 
-\textbf{Thermal Equation of State:}
-
-\begin{equation}
-	\frac{p}{\rho} = RT \quad \text{[Perfect Gas]}
-\end{equation}
-
-\textbf{Dynamic Equation:}
-
-\begin{equation}
-	\frac{1}{\rho} dp + V dV = 0
-\end{equation}
-
-\textbf{Speed of Sound:}
-
-\begin{equation}
-	a = \sqrt{\left( \frac{\partial p}{\partial \rho} \right)_s} = \sqrt{\gamma \left( \frac{\partial p}{\partial \rho} \right)_T}
-\end{equation}
-
-\begin{equation}
-	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \text{[Perfect Gas]}
-\end{equation}
-
-\textbf{Mach Number:}
-
-\begin{equation}
-	M = \frac{V}{a}
-\end{equation}
-
-\textbf{Dynamic Pressure:}
-
-\begin{equation}
-	q = \frac{1}{2} \rho V^2 = \frac{\gamma}{2} p M^2
-\end{equation}
-
-\textbf{Isentropic Relations:}
-
-\begin{equation}
-	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma} \quad \text{[Isentropic, Perfect Gas]}
-\end{equation}
-
-\textbf{From this:}
-
-\begin{equation}
-	\frac{p}{p_t} = \left( \frac{\rho}{\rho_t} \right)^\gamma = \left( \frac{T}{T_t} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_t} \right)^{\frac{2\gamma}{\gamma - 1}} \quad \text{[Isentropic, Perfect Gas]}
-\end{equation}
-
-\textbf{Bernoulli's Equation for Compressible Flow:}
-
-\begin{equation}
-	\frac{\gamma}{\gamma - 1} \left( \frac{p_t}{\rho_t} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_t} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_t}{\rho_t}
-\end{equation}
+\textbf{Thermal Equations of State}\\
+	Is in general an equation of the form
+	\begin{equation}
+		p=p(v,\;T)
+	\end{equation}
+	Commonly used equations of state for thermally perfect gases
+	\begin{equation}
+		p = \frac{RT}{\rho} \quad \texttt{[therm perf]}
+	\end{equation}
+	\begin{equation}
+		\frac{1}{\rho} dp + V dV = 0 \quad \texttt{[therm perf]}
+	\end{equation}
 
 \subsubsection{Control Volume Analysis}
 
@@ -72,7 +33,41 @@
 	\frac{d}{dt} \int_V \rho e \, dV + \int_S \rho h V \cdot dA = \dot{Q} - \int_S p V \cdot dA
 \end{equation}
 
-\subsubsection{Stagnation Properties}
+\subsubsection{Continuous one-dimensional}
+
+\textbf{Speed of Sound:}
+
+\begin{equation}
+	a = \sqrt{\left( \frac{\partial p}{\partial \rho} \right)_s} = \sqrt{\gamma \left( \frac{\partial p}{\partial \rho} \right)_T}
+\end{equation}
+
+\begin{equation}
+	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \text{[Perfect Gas]}
+\end{equation}
+
+\textbf{Mach Number:}
+
+\begin{equation}
+	M = \frac{V}{a}
+\end{equation}
+
+\textbf{Isentropic Relations:}
+
+\begin{equation}
+	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma} \quad \text{[Isentropic, Perfect Gas]}
+\end{equation}
+
+\textbf{From this:}
+
+\begin{equation}
+	\frac{p}{p_t} = \left( \frac{\rho}{\rho_t} \right)^\gamma = \left( \frac{T}{T_t} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_t} \right)^{\frac{2\gamma}{\gamma - 1}} \quad \text{[Isentropic, Perfect Gas]}
+\end{equation}
+
+\textbf{Bernoulli's Equation for Compressible Flow:}
+
+\begin{equation}
+	\frac{\gamma}{\gamma - 1} \left( \frac{p_t}{\rho_t} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_t} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_t}{\rho_t}
+\end{equation}
 
 \textbf{Stagnation Temperature:}
 
