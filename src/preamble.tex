@@ -13,8 +13,12 @@
 % Language setting
 \usepackage[english]{babel}
 
+% Maths
 \usepackage{amsmath}
 \usepackage{graphicx}
+
+% Importing files
+\usepackage{import}
 
 % References
 \usepackage[hidelinks]{hyperref}
@@ -22,7 +26,7 @@
 % Bibliography
 \usepackage{csquotes}
 \usepackage[style=iso-numeric, backend=biber]{biblatex}
-\addbibresource{input/B_bibliography/references.bib}
+\addbibresource{src/B_bibliography/references.bib}
 
 \usepackage{multicol}
 \usepackage{todonotes}
@@ -83,3 +87,14 @@
     \mbox{}
     \newpage
 }
+
+\newcommand{\note}[1]{{\color{greenColor}\itshape#1}}
+% Directory definitions
+\def \intro {src/00_intro/}
+\def \foundations {src/01_theory/}
+\def \scope {src/02_scope-and-objectives/}
+\def \analytical {src/03_analytical-work/}
+\def \discussion {src/04_discussion/}
+\def \conclusion {src/05_conclusion/}
+\def \appendi {src/A_appendix/}
+

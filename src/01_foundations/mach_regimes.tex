@@ -1,0 +1,38 @@
+\subsubsection{Mach regimes}
+
+	The Mach number is defined as the ratio between the local velocity $u$ and the local speed of sound $a$.
+	$$
+		Ma = \frac{u}{a}
+	$$
+	It is a very important metric when analyzing isentropic flow.
+
+\paragraph{Low subsonic regime (\(Ma < 0.3\))}
+
+	For low Mach numbers, compressibility effects of a gas can be neglected, and the gas can be treated as an incompressible fluid.
+
+\paragraph{Subsonic regime (\(0.3 < Ma < 1.0\))} 
+
+	Inside system of variable area ducts the gas flow generally stays subsonic.
+	Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
+	
+	\import{src/01_foundations}{subsonic.tex}	
+\paragraph{Sonic regime (\(Ma = 1\))}
+	
+	Sonic flow occurs at the exit of a converging duct, if a certain critical pressure ratio between the two reservoirs connected by the duct is reached.
+	This ratio is defined as:
+	$$
+		\frac{P^*}{P_t}=\left(\frac{2}{\gamma + 1}\right)^{\gamma/(\gamma - 1)}
+	$$ 
+	It is derived from isentropic flow relations and can be expressed in any state variable.
+\paragraph{Supersonic regime (\(Ma > 1\))} 
+
+	If there are critical conditions at the end of a converging duct and a diverging duct follows.
+	The flow continues to accelerate and reaches supersonic speeds.
+	The location where the flow reaches critical condition is called throat and represents the minimal diameter of the duct.\\
+	In supersonic flows, state variables change rapidly causing phenomenons like shock waves and expansion fans.
+	
+	\import{src/01_foundations}{supersonic.tex}
+
+{\color{greenColor}\itshape
+	Add references! There should be two good ones!
+}
