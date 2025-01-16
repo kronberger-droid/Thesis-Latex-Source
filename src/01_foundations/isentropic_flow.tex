@@ -1,3 +1,16 @@
+	Isentropic varying-area flow is one of the most idealized models to describe the behavior of gases flowing through a confined space. The following assumptions are made:
+	\begin{itemize}
+		\item steady, one-dimensional flow
+		\item adiabatic: $\delta q = 0, ds_e = 0$
+		\item no shaft work: $\delta w_s = 0$
+		\item negligible change in potential energy: dz = 0
+		\item reversible: $ds_i = 0$
+	\end{itemize}
+	Being reversible as well as adiabatic, the flow is therefore isentropic.
+
+	\note{
+		Mach number is an important tool since all statevariables can be calculatet using it plus some reference states in the system.
+	}	
 
 	The Mach number is defined as the ratio between the local velocity $u$ and the local speed of sound $a$.
 	$$
@@ -20,7 +33,7 @@
 	Sonic flow occurs at the exit of a converging duct, if a certain critical pressure ratio between the two reservoirs connected by the duct is reached.
 	This ratio is defined as:
 	$$
-		\frac{P^*/P_t}=\left(\frac{2}{\gamma + 1}\right)^{\gamma/(\gamma - 1)}
+		\frac{P^*}{P_t}=\left(\frac{2}{\gamma + 1}\right)^{\gamma/(\gamma - 1)}
 	$$ 
 	It is derived from isentropic flow relations and can be expressed in any state variable.
 \paragraph{Supersonic regime (\(Ma > 1\))} 
@@ -34,4 +47,7 @@
 
 {\color{greenColor}\itshape
 	Add references! There should be two good ones!
+	Go more into derivation? We at least need a explaination for: adiabatic, 1-dimensional, steady, reversibility, perfect gas, 
+	Reversibility is very important since flow entering and leaving the chamber won't be fully reversible.
+	Make a stark distinction between isentropic and isothermal flow.
 }
