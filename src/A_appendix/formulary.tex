@@ -1,6 +1,6 @@
-\subsubsection{Thermodynamics}
+\subsection*{Thermodynamics}
 
-\textbf{Thermal Equations of State}\\
+\subsubsection*{Thermal Equations of State}
 	Is in general an equation of the form
 	\begin{equation}
 		p=p(v,\;T)
@@ -13,29 +13,29 @@
 		\frac{1}{\rho} dp + V dV = 0 \quad \texttt{[therm perf]}
 	\end{equation}
 
-\subsubsection{Control Volume Analysis}
+\subsection*{Control Volume Analysis}
 
-\textbf{Continuity Equation:}
+\subsubsection*{Continuity Equation:}
 
 \begin{equation}
 	\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
 \end{equation}
 
-\textbf{Momentum Equation:}
+\subsubsection*{Momentum Equation:}
 
 \begin{equation}
 	\frac{d}{dt} \int_V \rho V \, dV + \int_S \rho V (V \cdot dA) = - \int_S p \, dA + \int_V \rho g \, dV
 \end{equation}
 
-\textbf{Energy Equation:}
+\subsubsection*{Energy Equation:}
 
 \begin{equation}
 	\frac{d}{dt} \int_V \rho e \, dV + \int_S \rho h V \cdot dA = \dot{Q} - \int_S p V \cdot dA
 \end{equation}
 
-\subsubsection{Continuous one-dimensional}
+\subsection*{Continuous one-dimensional}
 
-\textbf{Speed of Sound:}
+\subsubsection*{Speed of Sound:}
 
 \begin{equation}
 	a = \sqrt{\left( \frac{\partial p}{\partial \rho} \right)_s} = \sqrt{\gamma \left( \frac{\partial p}{\partial \rho} \right)_T}
@@ -45,59 +45,44 @@
 	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \text{[Perfect Gas]}
 \end{equation}
 
-\textbf{Mach Number:}
+\subsubsection*{Mach Number:}
 
 \begin{equation}
 	M = \frac{V}{a}
 \end{equation}
 
-\textbf{Isentropic Relations:}
+\subsubsection*{Isentropic Relations:}
 
 \begin{equation}
-	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma} \quad \text{[Isentropic, Perfect Gas]}
+	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma} \quad \texttt{[isen, perf]}
 \end{equation}
 
-\textbf{From this:}
+\subsubsection*{From this:}
 
 \begin{equation}
-	\frac{p}{p_t} = \left( \frac{\rho}{\rho_t} \right)^\gamma = \left( \frac{T}{T_t} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_t} \right)^{\frac{2\gamma}{\gamma - 1}} \quad \text{[Isentropic, Perfect Gas]}
+	\frac{p}{p_t} = \left( \frac{\rho}{\rho_t} \right)^\gamma = \left( \frac{T}{T_t} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_t} \right)^{\frac{2\gamma}{\gamma - 1}} \quad \texttt{[isen, perf]}
 \end{equation}
 
-\textbf{Bernoulli's Equation for Compressible Flow:}
+\subsubsection*{Bernoulli's Equation for Compressible Flow}
 
 \begin{equation}
 	\frac{\gamma}{\gamma - 1} \left( \frac{p_t}{\rho_t} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_t} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_t}{\rho_t}
 \end{equation}
 
-\textbf{Stagnation Temperature:}
+\subsubsection*{Stagnation Relations}
 
 \begin{equation}
-	T_0 = T \left( 1 + \frac{\gamma - 1}{2} M^2 \right)
+	\frac{T}{T_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
 \end{equation}
-
-\textbf{Stagnation Pressure:}
 
 \begin{equation}
-	p_0 = p \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{\frac{\gamma}{\gamma - 1}}
+	\frac{p}{p_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
 \end{equation}
-
-\textbf{Stagnation Density:}
 
 \begin{equation}
-	\rho_0 = \rho \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{\frac{1}{\gamma - 1}}
+	\frac{\rho}{\rho_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
 \end{equation}
-
-\textbf{Stagnation Speed of Sound:}
 
 \begin{equation}
-	a_0 = a \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{\frac{1}{2}}
+	\frac{a}{a_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
 \end{equation}
-
-\textbf{Useful Ratios:}
-
-\begin{gather}
-	\frac{T}{T_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1} \\
-	\frac{p}{p_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}} \\
-	\frac{\rho}{\rho_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}} \\
-	\frac{a}{a_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
-\end{gather}

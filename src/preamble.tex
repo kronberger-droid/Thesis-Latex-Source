@@ -17,9 +17,6 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 
-% Importing files
-\usepackage{import}
-
 % References
 \usepackage[hidelinks]{hyperref}
 
@@ -62,6 +59,9 @@
 \usetikzlibrary{arrows.meta, positioning}
 \usepackage{fancyhdr}
 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+
 % Page Layout
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
@@ -78,7 +78,10 @@
 \titleformat{\section}[block]{\large\bfseries}{\thesection.}{0.5em}{} % Section
 \titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection.}{0.5em}{} % Subsection
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % custom commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Inserting a blank page
 \newcommand{\blankpage}{
@@ -88,13 +91,5 @@
     \newpage
 }
 
+% Notes which will become text
 \newcommand{\note}[1]{{\color{greenColor}\itshape#1}}
-% Directory definitions
-\def \intro {src/00_intro/}
-\def \foundations {src/01_theory/}
-\def \scope {src/02_scope-and-objectives/}
-\def \analytical {src/03_analytical-work/}
-\def \discussion {src/04_discussion/}
-\def \conclusion {src/05_conclusion/}
-\def \appendi {src/A_appendix/}
-
