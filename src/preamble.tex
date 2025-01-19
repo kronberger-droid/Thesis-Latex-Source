@@ -14,6 +14,7 @@
 \usepackage[english]{babel}
 
 % Maths
+\usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
 
@@ -26,11 +27,10 @@
 \addbibresource{src/B_bibliography/references.bib}
 
 \usepackage{multicol}
-\usepackage{todonotes}
 \usepackage{float}
 \usepackage{fontspec}
 
-% Index
+% For creating an index
 \usepackage{makeidx}
 
 % Color Config
@@ -56,9 +56,14 @@
 
 % Vector Graphics
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{arrows.meta, positioning, 3d}
+\usepackage{tikz-3dplot}
+\usepackage{subcaption}
+
+% For configuring headers and footers 
 \usepackage{fancyhdr}
 
+% For creating plots
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.10}
 

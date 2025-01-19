@@ -1,17 +1,16 @@
-Defined as for internal flows:
+The characteristic length essentially serves the purpose of scaling physical systems.
+In dimensional analysis the goal is to find dimensionless quantities which describe the behavior of the system.
+These quantities are usually dependent on some characteristic scale, in our case the length scale, which describes the geometry of the model abstractly.\\
+For internal flows the characteristic length is defined as:
 $$
-	L_c=\frac{4A}{D_w}
+	L_c=\frac{4A}{P_w} \quad \text{with} \quad P_w = \sum^{\infty}_{i=0} l_i
 $$
-The wetted perimeter is defined as:
-for a fully filled circular pipe:
-$$
-	P_w = \pi D \quad \rightarrow \quad L_c =\frac{4\pi R^2}{\pi 2R}
-$$
-fully filled rectangular ducts:
-$$
-	P_w = 2H + W \quad \rightarrow \quad L_c = \frac{4(HW)}{2H+W} 
-$$
-Letting W go towards infinity lets us approximate $L_c$ for a flow between two parallel plates.
-$$
-	\lim_{H \to \infty} L_c =  \lim_{H \to \infty} \frac{4(HW)}{2H+W} = 2H
-$$ 
+Where $A$ is the cross-sectional area and $P_w$ is the wetted perimeter, which is defined as the sum over the lengths of all surfaces in direct contact with the fluid.
+For gaseous fluids the whole perimeter of the cross-section must be considered, therefore the wetted perimeter reduces to the perimeter of the cross-section.
+The following section provides the characteristic length formulas for common duct shapes. 
+
+\note{ 
+	Add some more context. Why do we need to parallel plates where can we use them?
+}
+\input{src/01_foundations/wetted_perimeter.tex}
+

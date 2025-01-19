@@ -24,15 +24,14 @@
 	\note{
 		This argument makes more sense than calculating some ratio which can be tested, since it is the same as just checking Knudsen number.
 		This is something we can always check during the calculations, since we will calculate p and T anyway.
-		We can Improve this argument by going through it like a mathematical proof.
-		
+		But we can still improve this argumentation and maybe state that checking the Knudsen number at different sections makes sense, but only while calculating, not in advance.
 	}
 	\input{src/03_analytical-work/sutherland-over-temp.tex}
 
 \paragraph{Knudsen Number in low pressure Zones}
 
 	As the gas is leaving the outlet geometry and expands into the vacuum the characteristic length looses its significance.
-	This is because the walls of the vacuum chamber are very far away in comparison to the length-scales of the flow geometry, while the gas expands it will lose pressure to conform to the vacuum and in that process will transform into first transient then free molecular flow.
+	This is because the walls of the vacuum chamber are very far away in comparison to the length-scales of the flow geometry, while the gas expands it will lose pressure to conform to the vacuum and in that process will transition into free molecular flow.
 	This leads to formulations using the mach number also loosing its significance.
 	Therefore, it makes sense to identify a much more elegant way of calculating the local Knudsen number $Kn_L$ which will be much more applicable in this situation.
 	$$
@@ -40,8 +39,7 @@
 	$$
 	Where $\lambda$ is the mean free path, $\phi$ is some state variable of the flow.
 	This way the Knudsen number can be calculated throughout the expansion of the gas and can be used to find the contour lines where the transition between continuum and molecular flow will happen. 
-
-{\color{greenColor}\itshape
+\note{
 Add reference!
 }
 
