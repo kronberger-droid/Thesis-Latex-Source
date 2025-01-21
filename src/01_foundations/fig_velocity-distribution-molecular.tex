@@ -1,0 +1,55 @@
+% src/01_foundations/fig_velocity-distribution-molecular.tex
+\begin{figure}[H]
+\centering
+	\begin{tikzpicture}[scale=1.2]
+
+		% Pipe background with border
+		\fill[baseLightGray] (-3,-1) rectangle (3,1);
+
+		% Horizontal centerline
+		\draw[dashed, baseDarkGray] [dash pattern={on 11.25pt off 3pt on 3.75pt off 3pt}] (-3.2,0) -- (3.2,0);
+
+		% Boundary lines
+		\draw[redColor, thick] (-3,1) -- (3,1);
+		\draw[redColor, thick] (-3,-1) -- (3,-1);
+
+		% r-axis
+		\draw[-{Stealth[length=4pt]}, baseDarkerGray] (-3,-1.2) -- (-3,1.5) node[above] {$r$};
+		\draw (-3.2,0) node[left, baseDarkerGray] {0};
+
+		% Seed for random number generator
+		\pgfmathsetseed{12345}
+
+		% Parameters
+		\def\particleRadius{0.05} % Radius of particles
+		\def\vectorLength{0.3}    % Length of velocity vectors
+		\def\pipeLeft{-3}         % Left boundary of the pipe
+		\def\pipeRight{1}         % Right boundary of the pipe
+		\def\pipeBottom{-1}       % Bottom boundary of the pipe
+		\def\pipeTop{1}           % Top boundary of the pipe
+		\def\numParticles{20}     % Number of particles
+
+		% Add particles with velocity vectors
+		\foreach \i in {1,...,\numParticles} {
+		    % Random position within the pipe, accounting for particle radius and vector length
+		    \pgfmathsetmacro{\xpos}{\pipeLeft + \particleRadius + abs(rand*(\pipeRight - \pipeLeft - 2*\particleRadius))}
+		    \pgfmathsetmacro{\ypos}{\pipeBottom + 2*\particleRadius + abs(rand*(\pipeBottom - \pipeTop + 4*\particleRadius))}
+			
+		    % Random angle for velocity direction
+		    \pgfmathsetmacro{\angle}{360*rand}
+
+		    % Particle
+		    \fill[blueColor] (\xpos,\ypos) circle (\particleRadius);
+
+		    % Velocity vector
+		    \draw[blueColor, -{Stealth[length=2pt]}] (\xpos,\ypos) -- ++({\vectorLength*cos(\angle)},{\vectorLength*sin(\angle)});
+		}
+
+		\draw[dashed, baseDarkGray] (-1,1.2) -- (-1,-1.2) node[below] {$x$} (-1,1.4);
+
+		\draw[greenColor, thick, -{Stealth[length=5pt]}] (-1,0) -- (0,0);
+		\node[greenColor] at (-0.4,0.2) {\large $u_{\text{avg}}$};
+	\end{tikzpicture}
+\caption{Mean velocity parallel to the flow at a point $x$ inside a constant area duct in molecular flow.}
+\label{fig:molecular-flow}
+\end{figure}

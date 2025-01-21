@@ -1,14 +1,13 @@
+% src/01_foundations/fig_velocity-distribution-slip.tex
 \begin{figure}[H]
 \centering
 	\begin{tikzpicture}[scale=1.2]
 
 	% Pipe background with border
 	\fill[baseLightGray] (-3,-1) rectangle (3,1);
-	\draw[baseDarkerGray, thick] (-3,-1) rectangle (3,1);
-
 	
 	% Horizontal centerline
-	\draw[dashed, baseDarkGray] (-3.2,0) -- (3.2,0);
+	\draw[dashed, baseDarkGray] [dash pattern={on 11.25pt off 3pt on 3.75pt off 3pt}] (-3.2,0) -- (3.2,0);
 
 	\draw[dashed, baseDarkGray, thick] (-2,-1.2) node[below] {$x$} -- (-2,1.4) ;
 

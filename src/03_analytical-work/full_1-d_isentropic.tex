@@ -1,8 +1,9 @@
-\note{
-This section treats the internal flow geometry as essentially a double throat nozzle. With both throats being chocked.
-What is the resulting mass flow and where will the shockwave be located?
-Major loss of information in the inlet and outlet region of the reactor.
-The state variables essentially are only dependent on the Mach number and the previously defined stagnation properties and gas parameters.
-}
-
-\input{src/03_analytical-work/1d-flow-geometry.tex}
+By assuming the flow through the assembly will be fully isentropic and pseudo one-dimensional it is possible to calculate the state variables at every point knowing the stagnation conditions and the ratio between the cross-sectional area at the point of interest $A_i$ and the at throat of the assembly $A^*$.\\
+It must be noted that this is a very radical approximation since for the flow to be  considered pseudo one-dimensional the problem must be reduced to consist purely of variable area ducts.
+This clearly overlooks the fact that when entering and leaving the reactor the gas has to perform a right angle turn to follow the flow path.
+Another constraint on the duct geometry to achieve reasonable solutions assuming pseudo one-dimensional flow is that the duct must change its cross-sectional area gradually.
+\cite{anderson2021modern}
+This won't be the case inside the reactor, since there is no way of slicing the reactor chamber to achieve a gradual change in cross-section, especially around the inlet and outlet.
+\input{src/03_analytical-work/fig_1d-flow-geometry.tex}
+\cite{SALAS1986193}
+\cite{EMMONS1958}
