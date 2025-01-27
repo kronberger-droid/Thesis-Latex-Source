@@ -5,5 +5,49 @@ Another constraint on the duct geometry to achieve reasonable solutions assuming
 \cite{anderson2021modern}
 This won't be the case inside the reactor, since there is no way of slicing the reactor chamber to achieve a gradual change in cross-section, especially around the inlet and outlet.
 \input{src/03_analytical-work/fig_1d-flow-geometry.tex}
+This geometry can now be characterized as a double throat, and therefore isentropic flow can result in one of two fundamental solutions.
+One predicting subsonic flow and one predicting supersonic flow after the first throat (2).
 \cite{SALAS1986193}
 \cite{EMMONS1958}
+\subsubsection*{Calculations}
+The first step is to define the critical locations, where the flow fill be chocked.
+Since we are expanding into a vacuum critical conditions will theoretically be met at any one of the throats (2, 4), since they have the same cross-sectional area, therefore:
+$$
+	A_{2,4},\;p_{2,4},\;\rho_{2,4},\;T_{2,4}\quad\xrightarrow{M=1}\quad A^*,\;p^*,\;\rho^*,\;T^*
+$$
+The second reference location corresponding to the stagnation or total conditions is at the entry of the inlet nozzle (1), which can be defined afterward to get quantitative solutions.
+$$
+	A_1,\;p_1,\;\rho_1,\;T_1\quad\xrightarrow{M=0}\quad A_t,\;p_t,\;\rho_t,\;T_t
+$$
+Next step is to calculate the cross-sectional areas for every location:
+$$
+	A_i = \pi \left(\frac{D_i}{2}\right)^2
+		\quad \text{for} \quad
+	i=\{1,2,4,5\}
+		\quad \text{and} \quad
+	A_3 = H_\text{reactor}*D_\text{reactor}
+$$
+Followed by solving the equation for the ratio of cross-sectional area for M numerically which, should yield one subsonic and one supersonic solution.
+$$
+	\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
+	\qquad \eqref{eq:area_ratio_mach}
+$$
+Afterward the ratios of state variables can be determined, which after defining the total conditions can be used to calculate the local variables for every point.
+\cite{hall_isentropic_nodate}
+\begin{alignat*}{2}
+    \frac{T}{T_t}   & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
+    & \qquad & \eqref{eq:total_relation_T} \\
+    \frac{p}{p_t}   & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
+    & \qquad & \eqref{eq:total_relation_p} \\
+    \frac{\rho}{\rho_t} & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
+    & \qquad & \eqref{eq:total_relation_rho}
+\end{alignat*}
+Where $p,\; \rho,\; T$ are the local gas conditions, $p_t,\; \rho_t,\; T_t$ the total gas conditions, $\gamma$ the specific heat ratio and $M$ the local mach number.
+This leads to the following solutions:
+\input{src/03_analytical-work/tab_full-isentropic-values.tex}
+Mass flow must be conserved along the flow and can be calculated using following equation, which derives from equation \eqref{} the isentropic relations and the ideal gas law.
+\cite{benson_mass_nodate}
+$$
+	\dot{m} = A \cdot P_t \cdot \sqrt{\frac{\gamma}{R T_t}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
+$$
+Where $A$ is the local cross-sectional area, $P_t$ the total pressure, $T_t$ the total temperature, $\gamma$ the specific heat ratio, $R$ the specific gas constant and $M$ the mach number.

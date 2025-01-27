@@ -1,11 +1,12 @@
 \documentclass[11pt,a4paper,twoside]{article}
 \usepackage[utf8]{inputenc}
 
+% General Printing Config
 \usepackage[
   a4paper,
-  bindingoffset=1cm,  % Moderate binding offset
-  inner=3cm,          % Inner margin: space closer to the binding
-  outer=2.5cm,        % Outer margin: space for readability
+  bindingoffset=1cm,
+  inner=3cm,
+  outer=2.5cm,
   top=2.5cm,
   bottom=2.5cm
 ]{geometry}
@@ -16,6 +17,7 @@
 % Maths
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{graphicx}
 
 % References
@@ -26,7 +28,15 @@
 \usepackage[style=iso-numeric, backend=biber]{biblatex}
 \addbibresource{src/B_bibliography/references.bib}
 
+% Tables
 \usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{array}
+\usepackage{booktabs}
+
+% Fonts & Fontscaling
 \usepackage{float}
 \usepackage{fontspec}
 
@@ -74,7 +84,7 @@
 \fancyhead[RO]{\nouppercase{\rightmark}} % Subsection name on right (odd pages)
 \fancyfoot[LE,RO]{\thepage}
 
-% Optional: Line for header separation
+% Line for header separation
 \renewcommand{\headrulewidth}{0.4pt} % Thickness of header line
 \renewcommand{\footrulewidth}{0pt}   % No footer line
 
