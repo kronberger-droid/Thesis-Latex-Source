@@ -4,7 +4,12 @@ This clearly overlooks the fact that when entering and leaving the reactor the g
 Another constraint on the duct geometry to achieve reasonable solutions assuming pseudo one-dimensional flow is that the duct must change its cross-sectional area gradually.
 \cite{anderson2021modern}
 This won't be the case inside the reactor, since there is no way of slicing the reactor chamber to achieve a gradual change in cross-section, especially around the inlet and outlet.
-\input{src/03_analytical-work/fig_1d-flow-geometry.tex}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
+    \caption{A descriptive caption for the figure.}
+    \label{fig:example_figure}
+\end{figure}
 This geometry can now be characterized as a double throat, and therefore isentropic flow can result in one of two fundamental solutions.
 One predicting subsonic flow and one predicting supersonic flow after the first throat (2).
 \cite{SALAS1986193}
@@ -45,7 +50,7 @@ Afterward the ratios of state variables can be determined, which after defining 
 Where $p,\; \rho,\; T$ are the local gas conditions, $p_t,\; \rho_t,\; T_t$ the total gas conditions, $\gamma$ the specific heat ratio and $M$ the local mach number.
 This leads to the following solutions:
 \input{src/03_analytical-work/tab_full-isentropic-values.tex}
-Mass flow must be conserved along the flow and can be calculated using following equation, which derives from equation \eqref{} the isentropic relations and the ideal gas law.
+Mass flow must be conserved along the flow and can be calculated using following equation, which derives from the general equation for mass-flow, the isentropic relations and the ideal gas law.
 \cite{benson_mass_nodate}
 $$
 	\dot{m} = A \cdot P_t \cdot \sqrt{\frac{\gamma}{R T_t}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
