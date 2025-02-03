@@ -1,5 +1,4 @@
-
-\subsubsection{Continuum Regime}
+\subsubsection*{Continuum Regime}
 	The whole Theory relies heavily on the continuum model.
 	For every location of the flow, but the vacuum, it will suffice to approximate the state variables at certain locations using a simple continuum model and use these state variables to calculate the Knudsen number.\\
 	A sensible question to ask at this point is: Where in the flow it is the most probable encounter the highest Knudsen number.
@@ -13,6 +12,7 @@
 	$$
 		\mu(T) = \mu_0 \left(\frac{T}{T_0}\right)^{3/2} \frac{T_0 + S_\mu}{T + S_\mu}
 	$$
+	\input{src/03_analytical-work/sutherland-over-temp.tex}
 	$L_c$ can be assumed constant since the height of the reactor and the smallest diameter of the ducts match.
 	And by assuming $\mu$ to be close to constant the Knudsen number becomes a simple proportionality relation.
 	$$
@@ -26,7 +26,6 @@
 		This is something we can always check during the calculations, since we will calculate p and T anyway.
 		But we can still improve this argumentation and maybe state that checking the Knudsen number at different sections makes sense, but only while calculating, not in advance.
 	}
-	\input{src/03_analytical-work/sutherland-over-temp.tex}
 
 \paragraph{Knudsen Number in low pressure Zones}
 
@@ -43,14 +42,14 @@
 Add reference!
 }
 
-\subsubsection{Laminar Flow}
+\subsubsection*{Laminar Flow}
 
 	The Reynolds number itself does not bare any real significance for the applicability of the formulations used. Nonetheless, deviations in Reynolds number can in reality shape great parts of how the flow behaves and therefore effects important state variables.\\
 	Reynolds numbers per unit length for isentropic expansion range $10^{-2} < Re/l < 1$, whereas the characteristic length is constant at $L_c = 20\cdot 10^{-6}$ and will therefore dominate the equation forcing low Reynolds numbers. \cite{ames1953compressible}\\
 	Therefore the flow will stay laminar as long as it is contained inside the assembly and therefore mixing will be most likely diffusion mediated.
 	\cite{comsol_microfluidics_guide}
 	
-\subsubsection{Dimension of the Flow}
+\subsubsection*{Dimension of the Flow}
 
 	\paragraph{Inside - pseudo 1D}
 
@@ -67,7 +66,7 @@ Add reference!
 		Like the amount of gas which will reach the mass spec and the velocity distribution.
 \cite{anderson2021modern}
 
-\subsubsection{Steady Flow}
+\subsubsection*{Steady Flow}
 
 	Steadiness of the flow is essentially given by the fact that the temperature $T_0$ and the pressure $p_0$ of the reservoir will be held constant during measurements.
 	Thus, the flow will be driven by the pressure differential between the vacuum and the reservoir alone.

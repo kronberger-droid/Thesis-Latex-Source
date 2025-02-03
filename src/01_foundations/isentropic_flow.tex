@@ -7,16 +7,11 @@
 		\item reversible: $ds_i = 0$
 	\end{itemize}
 	Being reversible as well as adiabatic, the flow is therefore isentropic.
-
-	\note{
-		Mach number is an important tool since all state variables can be calculated using it plus some reference states in the system.
-	}	
-
 	The Mach number is defined as the ratio between the local velocity $u$ and the local speed of sound $a$.
 	$$
 		Ma = \frac{u}{a}
 	$$
-	It is a very important metric when analyzing isentropic flow.
+	It is a very important metric when analyzing isentropic flow, since state variables are uniquely defined through the mach number at the corresponding location, as long as either the stagnation, or critical conditions of the flow are known.
 
 \paragraph{Low subsonic regime (\(Ma < 0.3\))}
 
@@ -30,12 +25,14 @@
 	\input{src/01_foundations/fig_subsonic.tex}	
 \paragraph{Sonic regime (\(Ma = 1\))}
 	
-	Sonic flow occurs at the exit of a converging duct, if a certain critical pressure ratio between the two reservoirs connected by the duct is reached.
+	Sonic flow occurs at the exit of a converging duct, if the pressure ratio between two reservoirs becomes smaller than the following critical ratio.
+	Which is called chocked flow and constitutes the maximum mass-flow for given stagnation conditions. 
 	This ratio is defined as:
 	$$
 		\frac{P^*}{P_t}=\left(\frac{2}{\gamma + 1}\right)^{\gamma/(\gamma - 1)}
 	$$ 
-	It is derived from isentropic flow relations and can be expressed in any state variable.
+	Where $P_t$ is the stagnation condition, $P^*$ the critical back-pressure and $\gamma$ the specific heat ratio.
+	The ratio is derived from the isentropic flow relation \eqref{eq:total_relation_T} and can be expressed for any state variable.
 \paragraph{Supersonic regime (\(Ma > 1\))} 
 
 	If there are critical conditions at the end of a converging duct and a diverging duct follows.
@@ -44,10 +41,3 @@
 	In supersonic flows, state variables change rapidly causing phenomenons like shock waves and expansion fans.
 	
 	\input{src/01_foundations/fig_supersonic.tex}
-
-{\color{greenColor}\itshape
-	Add references! There should be two good ones!
-	Go more into derivation? We at least need a explaination for: adiabatic, 1-dimensional, steady, reversibility, perfect gas, 
-	Reversibility is very important since flow entering and leaving the chamber won't be fully reversible.
-	Make a stark distinction between isentropic and isothermal flow.
-}

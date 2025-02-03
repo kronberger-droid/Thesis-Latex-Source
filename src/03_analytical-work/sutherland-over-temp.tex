@@ -1,25 +1,25 @@
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.7]
-    \begin{axis}[
-        width=\textwidth,
-        height=0.6\textwidth,
-        xlabel={Temperature $T$ (°C)},
-        ylabel={Dynamic Viscosity $\mu$ (N·s/m$^2$)},
-        xmin=0, xmax=500,
-        ymin=0, ymax=4e-5,
-        domain=0:500,
-        grid=both,
-        legend pos=north west,
-    ]
-        % Sutherland's formula parameters for Air
-        \addplot [
-            thick,
-            blue,
-            samples=200
+    \begin{tikzpicture}[scale=0.7]
+        \begin{axis}[
+            width=\textwidth,
+            height=0.6\textwidth,
+            xlabel={Temperature $T$ (K)},
+            ylabel={Dynamic Viscosity $\mu$ (N·s/m$^2$)},
+            xmin=200, xmax=600,
+            ymin=0, ymax=4e-5,
+            domain=200:600,
+            grid=both,
+            legend pos=north west,
         ]
-        {(1.716e-5) * ((273+x)/273)^(3/2) * (273+111)/(273+x+111)};
-        \addlegendentry{Air}
-    \end{axis}
-\end{tikzpicture}
+            % Sutherland's formula parameters for Air
+            \addplot [
+                thick,
+                blue,
+                samples=200
+            ]
+            {(1.716e-5) * (x/273)^(3/2) * (273+111)/(x+111)};
+            \addlegendentry{Air}
+        \end{axis}
+    \end{tikzpicture}
 \end{figure}
