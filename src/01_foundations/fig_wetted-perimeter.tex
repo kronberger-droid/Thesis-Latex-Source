@@ -1,64 +1,15 @@
 % src/01_foundations/fig_wetted-perimeter.tex
 \subsubsection*{Circular duct or Nozzle}
-\begin{figure}[htbp]
-\centering 
-	\begin{minipage}[c]{0.45\textwidth}
-	    \begin{tikzpicture}
-	        \pgfmathsetmacro{\radius}{1.2}
-			% \pdfmathsetmacro{\xshift}{2}
-	        % Draw the circle
-	        \filldraw[fill=blueColor!10, draw=black, thick] (0,0) circle [radius=\radius];
-	        % radius annotation
-	        \draw[{Stealth}-{Stealth}] (-\radius,0) -- (\radius,0) node[midway, below] {$D$};
-	    \end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}[c]{0.45\textwidth}
-		\raggedleft
-		$$
-			P_{w_\circ} = \pi D \quad \rightarrow \quad L_{c_\circ} = 2R
-		$$
-	\end{minipage}
-\end{figure}
+
+\input{src/01_foundations/fig_wetted-nozzle}
 
 \subsubsection*{Rectangular duct}
-\begin{figure}[htbp]
-\centering 
-	\begin{minipage}[c]{0.45\textwidth}
-	    \begin{tikzpicture}
-	        % Draw the rectangle
-	        \fill[blueColor!10] (0,0) rectangle (4,2);
-	        \draw[thick] (0,0) rectangle (4,2);
-	        % Width annotation
-	        \draw[{Stealth}-{Stealth}] (0,1) -- (4,1) node[midway, below] {$W$};
-	        % Height annotation
-		    \draw[{Stealth}-{Stealth}] (4.5,0) -- (4.5,2) node[midway, right] {$H$};
-	    \end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}[c]{0.45\textwidth}
-		\centering
-		$$
-			P_{w_\square} = 2H + W \quad \rightarrow \quad L_{c_\square} = \frac{2(HW)}{H+W}
-		$$
-	\end{minipage}
-\end{figure}
+
+\input{src/01_foundations/fig_wetted-rect}
 
 \subsubsection*{Two parallel plates}
-\begin{figure}[htbp]
-\centering
-	\begin{minipage}[c]{0.45\textwidth}
-		\begin{tikzpicture}
-		    % Draw the parallel lines
-	        \fill[blueColor!10] (0,0) rectangle (4,2);
-		    \draw[thick] (0,0) -- (4,0);
-		    \draw[thick] (0,2) -- (4,2);
-		    % Distance annotation
-		    \draw[{Stealth}-{Stealth}] (4.5,0) -- (4.5,2) node[midway, right] {$H$};
-		\end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}[c]{0.45\textwidth}
-	\centering
-		$$
-			\lim_{H \to \infty} L_{c_\square} =  \lim_{H \to \infty} \frac{2(HW)}{H+W} = 2H
-		$$
-	\end{minipage}
-\end{figure}
+
+	These will be used in two different places.
+
+\input{src/01_foundations/fig_wetted-two-plates}
+

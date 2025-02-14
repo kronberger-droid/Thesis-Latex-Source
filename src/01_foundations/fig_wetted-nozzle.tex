@@ -1,0 +1,19 @@
+\begin{figure}[htbp]
+\centering 
+	\begin{minipage}[c]{0.45\textwidth}
+	    \begin{tikzpicture}
+	        \pgfmathsetmacro{\radius}{1.2}
+			% \pdfmathsetmacro{\xshift}{2}
+	        % Draw the circle
+	        \filldraw[fill=blueColor!10, draw=black, thick] (0,0) circle [radius=\radius];
+	        % radius annotation
+	        \draw[{Stealth}-{Stealth}] (-\radius,0) -- (\radius,0) node[midway, below] {$D$};
+	    \end{tikzpicture}
+	\end{minipage}
+	\begin{minipage}[c]{0.45\textwidth}
+		\raggedleft
+		$$
+			P_{w_\circ} = \pi D \quad \rightarrow \quad L_{c_\circ} = 2R
+		$$
+	\end{minipage}
+\end{figure}

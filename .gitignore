@@ -1,6 +1,14 @@
-
-nohup.out
-/build
 nohup.out
 /build
 input/B_bibliography/biblatex-iso690/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.xml
+*.gz
+*.toc
