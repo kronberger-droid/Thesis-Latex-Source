@@ -1,18 +1,35 @@
-{\color{greenColor}\itshape
-Which values at the outlet make most sense?
-Do we even need information of what is happening before to describe the outlet?
-Velocity of the gas at absolute zero makes sense or not?
-Does the Duct following the outlet nozzle have influence on the plume?
-Get some kind of formulations of the mass flow inside the plume.
+After the gas reaches sonic speeds at the throat of the outlet nozzle, it expands in the diverging outlet nozzle.
+This leads to a steady pressure drop as the gas reaches the exit plane of the nozzle.
+There are three distinctive expansion patterns characterized by the difference in pressure between the exit of the nozzle and the back pressure of the chamber.
+
+If these values match, this is called fully expanded, which leads to a straight column of gas leaving the nozzle and no shock waves being created.
+Is the pressure of the gas leaving the nozzle lower than the back-pressure.
+The gas inside gives way to the back-pressure, leading to oblique shockwaves forming at the exit, compressing the column of gas, this is called under-expanded.
+If the back-pressure is now lower than the pressure of the gas, in this over-expanded state the gas leaving the nozzle further expands over the edges of the exit, creating what is called expansion fans.
+
+These fans are often called prandl-meyer fans and occur when super-sonic flow has to turn around a sharp edge.
+\note{
+	brandl-meyer angle and maximum angle. More information about connection with caracteristic lines, also explanation on the process of rarification and transistion regime. 
 }
-\subsubsection*{Navier-Stokes Equations}
 
 \subsubsection*{Method of characteristics}
 
+\paragraph*{Use for nozzle design}
+
+The method of characteristics is a mathematical technique used to design supersonic nozzles so that gas flows expand smoothly from sonic to supersonic speeds without generating internal shocks.
+It works by tracing characteristic lines—paths along which flow properties remain constant—through the nozzle region.
+By aligning the walls with these lines it ensures that each incremental flow turn occurs through a series of controlled expansion waves, rather than abrupt angle changes that could cause shocks.
+If fully expanded this leads to a straight column of gas leaving the nozzle, where all of its energy is converted into kinetic energy without significant losses due to shocks.
+
+\paragraph*{}
+\subsubsection*{Navier-Stokes Equations}
+\note{
+	Fundamental equations for solving continuum flow problems. No information about boundary layer thickness and boundary conditions. These need simulations like DSMC to define boundary layer  
+}
 \subsubsection*{Direct simulation Monte Carlo (DSMC)}
-
-\subsubsection*{Typical shock wave pattern}
-
+\note{
+	Fundamentals of montecarlo simulations in general. How does it solve continuum regime even tho it uses molecular simulations. Use for boundary layer approximations.
+}
 \cite{putignano2012supersonic}
 \cite{liu_study_2006}
 \cite{robertson_investigation_1970}

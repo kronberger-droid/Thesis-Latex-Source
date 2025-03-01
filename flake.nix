@@ -18,7 +18,7 @@
             pkgs.tectonic
           ];
           shellHook = ''
-            zathura ./build/main.pdf &
+            zathura ./main.pdf &
             hx README.md
           '';
         };
