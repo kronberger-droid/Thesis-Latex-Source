@@ -3,8 +3,15 @@ This led to the simplification of the reactor being a variable area duct, which 
 Since this change is based on the variable area duct formulation, it won't represent an accurate solution for the given geometry.
 The leak is located at the perimeter of the reactor, which is not an actual location in the current formulation.
 To be able to include the influence of the leak analytically, without using numerical tools, further simplification is needed.
+
 Thus, this section will explore a formulation of the system, where both the inlet reservoir and the reactor are assumed to be reservoirs, with stagnation conditions associated with them.
+In turn disconnecting the two reservoirs and resulting in two independent problems, describing gas from a reservoir flowing into a discharge region with a given back pressure. 
 Representing a change in stagnation conditions which can be attributed to non-isentropic processes happening when the gas enters or leaves the reactor.
+
+Now proper assumptions have to be taken to connect both reservoirs again, first without inclusion of the leak.
+Afterward two possible formulations including the leak will be presented.
+
+\subsubsection*{Formulation without the leak}
 
 \begin{figure}[H]
     \centering
@@ -13,53 +20,47 @@ Representing a change in stagnation conditions which can be attributed to non-is
     \label{fig:disconnected-reservoirs}
 \end{figure}
 
-
-
-
-For an isentropic flow, the mass flow rate is given by
-
+\textbf{Assumptions}\\
+Since this still constitutes a closed system, mass flow must be conserved, thus:
 $$
-	\dot{m} = A_i\, p_t\, \sqrt{\frac{\gamma}{R\,T_t}}\, M\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	\dot{m}_0 = \dot{m}_r = const.
 $$
-
-From Reactor to Vacuum
-
+The reactor still discharges into vacuum, this therefore must lead to chocked flow:
 $$
-	\dot{m}_r = A_r\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\, M\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	M_r = 1
 $$
-
-From Reservoir to Reactor
-
+From the geometry it is given that:
 $$
-	\dot{m}_0 = A_0\, p_0\, \sqrt{\frac{\gamma}{R\,T_0}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	A_0 = A_r = A
 $$
-
-Assumptions
-
+\note{
+	Explain why the temperature is held constant in more detail.
+}
 $$
-	\dot{m}_0 = \dot{m}_r = const.\quad T_0 = T_r,\quad M_r = 1, \quad A_0 = A_r
+	T_r = T_0 = T
 $$
-
+\newpage
+\noindent The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation:\\
+Reservoir $\to$ Reactor:
+$$
+	\dot{m}_0 = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+$$
+Reactor $\to$ Vacuum:
+$$
+	\dot{m}_r = A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+$$
 Thus
-
 $$
 	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 	= p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}.
 $$
-
 Using the isentropic relation
-
 $$
 	p_0 = p_r \left(1 + \frac{\gamma - 1}{2} M_0^2\right)^{\frac{\gamma}{\gamma - 1}}
 $$
-
 Then
-
 $$
 	0 = 
 	M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
 	- \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 $$
-
-If we assume not just the outlet contributes to the mass-flow but also the leak we have to add 
-

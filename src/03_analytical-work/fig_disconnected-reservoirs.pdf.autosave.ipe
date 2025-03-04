@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.30">
-<info created="D:20250303183949" modified="D:20250303183949"/>
+<info created="D:20250303183949" modified="D:20250304101244"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -335,16 +335,15 @@ h
 320 704 l
 320 704 l
 </path>
-<text matrix="1 0 0 1 44 -4" transformations="translations" pos="332 724" stroke="darkred" type="label" width="11.227" height="6.59" depth="0" valign="baseline" size="small">$A^*$</text>
-<text matrix="1 0 0 1 -164 0" transformations="translations" pos="332 724" stroke="darkred" type="label" width="11.227" height="6.59" depth="0" valign="baseline" size="small" style="math">A^*</text>
+<text matrix="1 0 0 1 44 -4" transformations="translations" pos="332 724" stroke="darkred" type="label" width="6.91" height="6.127" depth="0" valign="baseline" size="small">A</text>
+<text matrix="1 0 0 1 -164 0" transformations="translations" pos="332 724" stroke="darkred" type="label" width="6.91" height="6.127" depth="0" valign="baseline" size="small">A</text>
 <path stroke="darkred" dash="dash dot dotted" cap="1" join="1">
 168 704 m
 168 720 l
 168 720 l
 </path>
-<text matrix="1 0 0 1 0 -8" transformations="translations" pos="84 764" stroke="black" type="label" width="40.653" height="6.808" depth="0" valign="baseline">Reservoir</text>
-<text matrix="1 0 0 1 104 -8" transformations="translations" pos="204 764" stroke="black" type="label" width="33.928" height="6.808" depth="0" valign="baseline">Reactor</text>
-<text matrix="1 0 0 1 -400 160" transformations="translations" pos="80 736" stroke="black" type="label" width="40.513" height="6.13" depth="1.74" valign="baseline" size="small">$T_0,\;p_0,\;\rho_0$</text>
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="84 764" stroke="black" type="label" width="37.222" height="6.654" depth="0" valign="baseline">reservoir</text>
+<text matrix="1 0 0 1 104 -8" transformations="translations" pos="204 764" stroke="black" type="label" width="30.497" height="6.128" depth="0" valign="baseline">reactor</text>
 <path stroke="black">
 368 720 m
 368 716
@@ -368,7 +367,7 @@ h
 376 720 m
 376 704 l
 </path>
-<text matrix="1 0 0 1 228 -20" transformations="translations" pos="80 736" stroke="black" type="label" width="40.534" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T_r,\;p_r,\;\rho_r</text>
+<text matrix="1 0 0 1 228 -24" transformations="translations" pos="80 736" stroke="black" type="label" width="37.144" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T,\;p_r,\;\rho_r</text>
 <path layer="beta" stroke="black" dash="dash dot dotted">
 168 764 m
 168 764 l
@@ -376,19 +375,14 @@ h
 168 764 l
 h
 </path>
-<text matrix="1 0 0 1 108 -8" transformations="translations" pos="84 764" stroke="black" type="label" width="58.835" height="6.926" depth="1.93" valign="baseline">back-pressure</text>
-<text matrix="1 0 0 1 332 -8" transformations="translations" pos="84 764" stroke="black" type="label" width="33.486" height="4.289" depth="0" valign="baseline">vacuum</text>
-<text matrix="1 0 0 1 120 -20" transformations="translations" pos="80 736" stroke="black" type="label" width="40.534" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T_r,\;p_r,\;\rho_r</text>
-<text matrix="1 0 0 1 -12 -8" transformations="translations" pos="164 700" stroke="black" type="label" width="26.766" height="6.131" depth="1.36" valign="baseline" size="small">$M\le 1$</text>
-<text matrix="1 0 0 1 208 -8" transformations="translations" pos="164 700" stroke="black" type="label" width="26.766" height="6.127" depth="0" valign="baseline" size="small" style="math">M = 1</text>
+<text matrix="1 0 0 1 88 -8" transformations="translations" pos="84 764" stroke="black" type="label" width="70.126" height="6.926" depth="1.93" valign="baseline">discharge-region</text>
+<text matrix="1 0 0 1 324 -8" transformations="translations" pos="84 764" stroke="black" type="label" width="33.486" height="4.289" depth="0" valign="baseline">vacuum</text>
+<text matrix="1 0 0 1 116 -24" transformations="translations" pos="80 736" stroke="black" type="label" width="29.469" height="3.864" depth="1.74" valign="baseline" size="small" style="math">p_b = p_r</text>
+<text matrix="1 0 0 1 -12 -8" transformations="translations" pos="164 700" stroke="black" type="label" width="29.949" height="6.131" depth="1.36" valign="baseline" size="small" style="math">M_0\le 1</text>
+<text matrix="1 0 0 1 208 -8" transformations="translations" pos="164 700" stroke="black" type="label" width="29.956" height="6.133" depth="0.99" valign="baseline" size="small" style="math">M_r = 1</text>
 <text matrix="1 0 0 1 -76 -4" transformations="translations" pos="164 700" stroke="black" type="label" width="26.766" height="6.127" depth="0" valign="baseline" size="small" style="math">M = 0</text>
 <text matrix="1 0 0 1 148 -4" transformations="translations" pos="164 700" stroke="black" type="label" width="26.766" height="6.127" depth="0" valign="baseline" size="small" style="math">M = 0</text>
-<text matrix="1 0 0 1 4 -20" transformations="translations" pos="80 736" stroke="black" type="label" width="40.52" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T_r,\;p_0,\;\rho_0</text>
-<text matrix="1 0 0 1 340 -20" transformations="translations" pos="80 736" stroke="black" type="label" width="23.569" height="5.782" depth="1.74" valign="baseline" size="small" style="math">p \to 0</text>
-<path matrix="1 0 0 1 4 0" stroke="darkgreen" pen="heavier" arrow="normal/normal" rarrow="normal/normal">
-244 716 m
-296 716 l
-</path>
-<text transformations="translations" pos="268 720" stroke="black" type="label" width="7.749" height="6.918" depth="0" valign="baseline" style="math">\hat{=}</text>
+<text matrix="1 0 0 1 4 -20" transformations="translations" pos="80 736" stroke="black" type="label" width="37.13" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T,\;p_0,\;\rho_0</text>
+<text matrix="1 0 0 1 332 -24" transformations="translations" pos="80 736" stroke="black" type="label" width="23.569" height="5.782" depth="1.74" valign="baseline" size="small" style="math">p \to 0</text>
 </page>
 </ipe>
