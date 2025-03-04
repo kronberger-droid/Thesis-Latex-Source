@@ -1,11 +1,65 @@
-{\color{greenColor}\itshape
-There is no reasonable analytical solution for the leakage.
-Use measurements of pressure drop inside the chamber as reference and interpolate it to get solutions for higher pressure values.
-This forces the reactor to be treated as a reservoir with some static pressure.
-Does this still make sense in terms of conservation of mass?
-Do we need to create some region of expansion and contraction around inlet and outlet to make the equations work?
+In section \ref{sec:one-dim-isentropic} the flow is assumed to be fully isentropic and one-dimensional.
+This led to the simplification of the reactor being a variable area duct, which leads to a change in state-variables along the path of the gas flowing from the inlet to the outlet.
+Since this change is based on the variable area duct formulation, it won't represent an accurate solution for the given geometry.
+The leak is located at the perimeter of the reactor, which is not an actual location in the current formulation.
+To be able to include the influence of the leak analytically, without using numerical tools, further simplification is needed.
+Thus, this section will explore a formulation of the system, where both the inlet reservoir and the reactor are assumed to be reservoirs, with stagnation conditions associated with them.
+Representing a change in stagnation conditions which can be attributed to non-isentropic processes happening when the gas enters or leaves the reactor.
 
-Since there is no way to make the equations work sensibly the goal of this section will be to use the middle of the chamber as the pressure input for the leakage calculation.
-Calculating mass flow for one pressure or maybe two.
-Then let the mass flow of the leak get bigger and bigger and see when the inlet turns supersonic.
-}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_disconnected-reservoirs.pdf}
+    \caption{A descriptive caption for the figure.}
+    \label{fig:disconnected-reservoirs}
+\end{figure}
+
+
+
+
+For an isentropic flow, the mass flow rate is given by
+
+$$
+	\dot{m} = A_i\, p_t\, \sqrt{\frac{\gamma}{R\,T_t}}\, M\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+$$
+
+From Reactor to Vacuum
+
+$$
+	\dot{m}_r = A_r\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\, M\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+$$
+
+From Reservoir to Reactor
+
+$$
+	\dot{m}_0 = A_0\, p_0\, \sqrt{\frac{\gamma}{R\,T_0}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+$$
+
+Assumptions
+
+$$
+	\dot{m}_0 = \dot{m}_r = const.\quad T_0 = T_r,\quad M_r = 1, \quad A_0 = A_r
+$$
+
+Thus
+
+$$
+	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+	= p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}.
+$$
+
+Using the isentropic relation
+
+$$
+	p_0 = p_r \left(1 + \frac{\gamma - 1}{2} M_0^2\right)^{\frac{\gamma}{\gamma - 1}}
+$$
+
+Then
+
+$$
+	0 = 
+	M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
+	- \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+$$
+
+If we assume not just the outlet contributes to the mass-flow but also the leak we have to add 
+

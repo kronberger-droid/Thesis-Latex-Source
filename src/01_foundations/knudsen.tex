@@ -4,12 +4,19 @@
 	$$
 	The characteristic length is usually chosen to be the smallest linear length in the system.
 	For example the throat diameter of a nozzle. \cite{putignano2012supersonic}
-\subsubsection*{Continuum regime (\(Kn \leq 0.001\))}
+
+\subsubsection*{Molecular regime (\(Kn \geq 10\))}
+
+	In this regime, the mean free path is much larger than the dimensions of boundaries.
+	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
+	\cite{rapp2017microfluidics}
+	\input{src/01_foundations/fig_velocity-distribution-molecular.tex}
+
+\subsubsection*{Transition regime (\(0.1 \leq Kn \leq 10\))}
 	
-	In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct.
-	This makes it possible to describe the fluid itself as a continuous medium with the assumption of non-slip boundary conditions.
-	The Navier-Stokes equations govern the calculations in this regime.
-	\input{src/01_foundations/fig_velocity-distribution-continuum.tex}
+	This regime is a middle ground between continuum and fully molecular flow.
+	Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely.
+	The interactions between the gas molecules and the boundaries are significant, and the flow characteristics may vary widely.
 
 \subsubsection*{Slip regime (\(0.001 \leq Kn \leq 0.1\))}
 
@@ -19,15 +26,9 @@
 
 	\input{src/01_foundations/fig_velocity-distribution-slip.tex}
 
-\subsubsection*{Transition regime (\(0.1 \leq Kn \leq 10\))}
+\subsubsection*{Continuum regime (\(Kn \leq 0.001\))}
 	
-	This regime is a middle ground between continuum and fully molecular flow.
-	Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely.
-	The interactions between the gas molecules and the boundaries are significant, and the flow characteristics may vary widely.
-
-\subsubsection*{Molecular regime (\(Kn \geq 10\))}
-
-	In this regime, the mean free path is much larger than the dimensions of boundaries.
-	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
-	\cite{rapp2017microfluidics}
-	\input{src/01_foundations/fig_velocity-distribution-molecular.tex}
+	In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct.
+	This makes it possible to describe the fluid itself as a continuous medium with the assumption of non-slip boundary conditions.
+	The Navier-Stokes equations govern the calculations in this regime.
+	\input{src/01_foundations/fig_velocity-distribution-continuum.tex}
