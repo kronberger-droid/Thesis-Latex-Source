@@ -1,7 +1,7 @@
 In section \ref{sec:one-dim-isentropic} the flow is assumed to be fully isentropic and one-dimensional.
 This led to the simplification of the reactor being a variable area duct, which leads to a change in state-variables along the path of the gas flowing from the inlet to the outlet.
 Since this change is based on the variable area duct formulation, it won't represent an accurate solution for the given geometry.
-The leak is located at the perimeter of the reactor, which is not an actual location in the current formulation.
+The leak is located at the perimeter of the reactor, which is not an actual location in this formulation.
 To be able to include the influence of the leak analytically, without using numerical tools, further simplification is needed.
 
 Thus, this section will explore a formulation of the system, where both the inlet reservoir and the reactor are assumed to be reservoirs, with stagnation conditions associated with them.
@@ -9,6 +9,8 @@ In turn disconnecting the two reservoirs and resulting in two independent proble
 Representing a change in stagnation conditions which can be attributed to non-isentropic processes happening when the gas enters or leaves the reactor.
 
 Now proper assumptions have to be taken to connect both reservoirs again, first without inclusion of the leak.
+Stagnation conditions for the reactor are chosen, resulting in a mass-flow at the outlet.
+Which in turn have to be compensated by the inlet, thus mach number and the conditions inside the reservoir can be derived.  
 Afterward two possible formulations including the leak will be presented.
 
 \subsubsection*{Formulation without the leak}
@@ -33,34 +35,63 @@ From the geometry it is given that:
 $$
 	A_0 = A_r = A
 $$
-\note{
-	Explain why the temperature is held constant in more detail.
-}
+Lastly, to be able to reduce this problem to one unknown, the stagnation conditions of the reservoir and the reactor have to be related, thus reducing the unknowns to just $M_0$.
+One obvious possibility is to just use the isentropic relations (equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}), but this would essentially result in a similar formulation as used in chapter \ref{sec:one-dim-isentropic}.
+Disconnecting the inlet and outlet gives the ability to define non-isentropic relations between the two reservoirs, while also treating them isentropic in isolation.
+\newpage
+
+\noindent For simplicity the back-pressure $p_b$ for the inlet is chosen to be the stagnation condition of the reactor $p_r$ which is connected by the isentropic relation to the stagnation condition of the reservoir $p_0$:
+$$
+	p_b = p_r
+	\quad \to \quad
+	p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
+$$
+Temperature on the other hand will be chosen to be constant.
+This stems from the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
+Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be high even without high mixing.
 $$
 	T_r = T_0 = T
 $$
-\newpage
-\noindent The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation:\\
-Reservoir $\to$ Reactor:
+\textbf{Calculation}\\
+The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation:\\
+Reservoir $\to$ Reactor
 $$
 	\dot{m}_0 = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 $$
-Reactor $\to$ Vacuum:
+Reactor $\to$ Vacuum
 $$
 	\dot{m}_r = A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 $$
-Thus
+Thus from ($\dot{m}_r = \dot{m}_0 = const.$)
+$$
+	A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	=  A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
+$$
 $$
 	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-	= p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}.
+	=  p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 $$
-Using the isentropic relation
+Using the isentropic relation \eqref{eq:total_relation_p} for $p_0$
 $$
-	p_0 = p_r \left(1 + \frac{\gamma - 1}{2} M_0^2\right)^{\frac{\gamma}{\gamma - 1}}
+	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+	=  p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 $$
-Then
+Rearranging leads to an equation only dependent on gamma and the mach number at the inlet.
 $$
-	0 = 
-	M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
-	- \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+	\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+	=  M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
 $$
+Which can be solved analytically, since by squaring both sides and rearranging it resembles a simple quadratic equation:
+$$
+	M_0^4 + \frac{2}{\gamma - 1}M_0^2 - \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}} = 0
+$$
+Now substituting $M_0^2 = f \quad \to \quad M_0 = \sqrt{f}$
+$$
+	f = -\frac{1}{\gamma - 1} \pm \sqrt{\frac{1}{(\gamma - 1)^2}
+	+ \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}}}
+$$
+There is only one real solution for this equation using the positive square root.
+For $\gamma = 1.47$ we get the solution:
+$$
+	f \approx 0.3076 \quad \to \quad M_0 \approx 0.5546
+$$ 
