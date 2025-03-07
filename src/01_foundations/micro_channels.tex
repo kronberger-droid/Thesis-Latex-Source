@@ -10,13 +10,9 @@ It will be mainly based on the review study conducted by Amit Agrawal.
 
 \subsubsection*{Phenomenon of Slip}
 Slip, in comparison to non-slip, refers to the fact that the tangential velocity close to a surface is non-zero.
-Determining this velocity at the boundary is the main focus when slip is to be included in future calculations.
-
-\paragraph*{Slip models}
 Maxwell suggested that on a control surface $s$, at distance half the mean free path away from the surface, one half of the molecules come in from one mean free path away with the tangential velocity $u_\lambda$, the other half is reflected from the surface.
 Assuming a fraction $\sigma$ of the molecules are reflected diffusively (average velocity corresponds to velocity at the wall $u_w$)at the walls, with the remainder $(1-\sigma)$ being reflected specularly (no change in their impinging velocity $u_\lambda$).
-When expanding $u_\lambda$ in a second order Taylor series this yields:
-
+When expanding $u_\lambda$ in a second order Taylor series this yields the second order slip boundary condition used in continuum analysis:
 $$
 	u_g - u_w =
 	\left[
@@ -24,20 +20,12 @@ $$
 		+ \frac{Kn^2}{2} \left(\frac{\partial^2 u}{\partial n^2}\right)_s
 	\right]
 $$ 
-
 Where $u$ stands for the streamwise velocities, where the subscripts $g$, $w$ and $s$ refer to gas, wall and control surface, with $n$ being the normal to the control surface.
 And most importantly $\sigma$ is the tangential momentum accommodation coefficient, or short TMAC.
 
-The TMAC can be expressed in terms of tangential momentum of the incident molecules $\tau_i$ and the tangential momentum of the reflected ones $\tau_r$:
-
-$$
-	\sigma = \frac{\tau_i - \tau_r}{\tau_i}
-$$
-
-Determining the TMAC is
+Determining the TMAC for a specific application is one of the most critical aspects when dealing with slip conditions, as it directly influences the velocity slip at the gas-wall interface and, consequently, the overall behavior of rarefied gas flows.
+This is usually achieved through empirical studies or simulations like direct simulation Monte Carlo which will be discussed in more detail in the next section.
 
 \subsubsection*{Surface Roughness}
-
-\subsubsection*{Numerical simulations}
 
 \subsubsection*{Sudden expansion or contraction}

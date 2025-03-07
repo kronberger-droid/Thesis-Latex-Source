@@ -13,7 +13,7 @@ Stagnation conditions for the reactor are chosen, resulting in a mass-flow at th
 Which in turn have to be compensated by the inlet, thus mach number and the conditions inside the reservoir can be derived.  
 Afterward two possible formulations including the leak will be presented.
 
-\subsubsection*{Formulation without the leak}
+\subsubsection*{Formulations without including the leak}
 
 \begin{figure}[H]
     \centering
@@ -36,22 +36,25 @@ $$
 	A_0 = A_r = A
 $$
 Lastly, to be able to reduce this problem to one unknown, the stagnation conditions of the reservoir and the reactor have to be related, thus reducing the unknowns to just $M_0$.
-One obvious possibility is to just use the isentropic relations (equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}), but this would essentially result in a similar formulation as used in chapter \ref{sec:one-dim-isentropic}.
-Disconnecting the inlet and outlet gives the ability to define non-isentropic relations between the two reservoirs, while also treating them isentropic in isolation.
-\newpage
-
-\noindent For simplicity the back-pressure $p_b$ for the inlet is chosen to be the stagnation condition of the reactor $p_r$ which is connected by the isentropic relation to the stagnation condition of the reservoir $p_0$:
+One obvious possibility is to use the isentropic relations (equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}), for both Temperature and Pressure:
+$$
+	T_b = T_r
+	\quad \to \quad
+	T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)
+$$
+and
 $$
 	p_b = p_r
 	\quad \to \quad
 	p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
 $$
-Temperature on the other hand will be chosen to be constant.
-This stems from the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
-Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be high even without high mixing.
+Disconnecting the inlet and outlet gives the ability to define non-isentropic relations between the two reservoirs.
+Thus, as the second approach Temperature will be held constant between both reservoirs. 
 $$
 	T_r = T_0 = T
 $$
+This approach is going contrary to isentropic formulation, but still seems somehow plausible due to the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
+Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be significant even without high mixing due to low Reynolds numbers present in microfluidics.\\
 \textbf{Calculation}\\
 The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation:\\
 Reservoir $\to$ Reactor
@@ -67,16 +70,36 @@ $$
 	A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 	=  A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
 $$
+Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
+This will be the starting point for both of the following approaches.\\
+\textbf{Isentropic approach}\\
+Using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_r$ and $P_r$ the previously defined conservation of mass equation yields:
+\begin{align*}
+	&A\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\
+	&= A\, p_r\left(1 + \frac{\gamma - 1}{2}M_0^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_0\right)^{-\frac{1}{2}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
+\end{align*}
+Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_0$ only dependent on $\gamma$, since the summing the exponents equals zero.
+$$
+	M_0 = (1 + \frac{\gamma - 1}{2})^{-\frac{\gamma + 1}{2(\gamma - 1)}}
+	\quad \text{with} \quad \gamma = 1.47 \quad \to \quad
+	M_0 = 0.57
+$$
+Thus resulting in following ratios between the conditions in the reactor and the reservoir.
+$$
+	\frac{T_r}{T_0} = ... , \quad \frac{p_r}{T_0} = ... , \quad \frac{\rho_r}{\rho_0} = ...
+$$
+\textbf{Constant temperature approach}\\
+Starting from the general conservation of mass equation, but choosing the temperatures to be equal yields:
 $$
 	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 	=  p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 $$
-Using the isentropic relation \eqref{eq:total_relation_p} for $p_0$
+Again using the isentropic relation \eqref{eq:total_relation_p} for $p_0$
 $$
 	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 	=  p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 $$
-Rearranging leads to an equation only dependent on gamma and the mach number at the inlet.
+Rearranging leads to an equation only dependent on $\gamma$ and the mach number $M_0$ at the inlet.
 $$
 	\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 	=  M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
@@ -94,4 +117,6 @@ There is only one real solution for this equation using the positive square root
 For $\gamma = 1.47$ we get the solution:
 $$
 	f \approx 0.31 \quad \to \quad M_0 \approx 0.55
-$$ 
+$$
+
+\subsubsection*{Formulations including the leak}
