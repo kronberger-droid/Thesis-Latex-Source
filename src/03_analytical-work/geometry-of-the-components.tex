@@ -2,18 +2,24 @@
 	This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path.
 	This is because the only thing we left out is any kind of leak in the system.
 	Those leaks will be the most influential around the reactor, since this is the only part that is not held at a constant pressure by any external part of the system.\\
-\subsubsection*{Inlet Reservoir}
+\subsubsection*{Reservoir}
 
-	It is kept at constant pressure \(P_0\) and constant temperature \(T_0\).
-	For simplicity it contains only one gas which is defined by its specific heat ratio \(\gamma\) and by its molar mass \(M_m\).
-	These are all parameters which are set in advance and will not change after being set.
-	
+	It is kept at constant pressure $P_0$ and constant temperature $T_0$, out of which the density $\rho$ can be calculated.
+	These values will represent the stagnation or total conditions of the system.
+	For simplicity, it contains only one gas which is defined by its specific heat ratio $\gamma$ and by its molar mass $M_m$.
+	The Formulations used yield the changes in pressure, temperature and density as ratios between the local conditions and the stagnation conditions
+	Therefore, there is no need to define stagnation conditions explicitly beforehand, since local conditions can be calculated for by multiplying chosen stagnation conditions with the calculated ratios.
+	Therefore, only the parameters of the gas have to be defined up front, why we will define as:
+	$$
+		\gamma = 1.47, \qquad M_m = 28.013 \frac{\text{g}}{\text{mol}}
+	$$
+	representing nitrogen gas ($\text{N}_2$), since it matches relatively closely with the gases planned to use in experiments.
 \subsubsection*{Inlet Nozzle}
 
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics[width=0.75\textwidth]{src/03_analytical-work/fig_inlet-nozzle-geometry.pdf}
-	    \caption{Non-technical drawing of the inlet nozzle geometry (not to scale)}
+	    \caption{Non-technical drawing of the inlet nozzle geometry (not in proportion)}
 	    \label{fig:geometry-inlet-nozzle}
 	\end{figure}
 	The duct connecting the inlet reservoir with the reactor will be a slightly converging duct, due to production constraints.
@@ -24,7 +30,7 @@
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics[width=0.75\textwidth]{src/03_analytical-work/fig_reactor-geometry.pdf}
-	    \caption{Non-technical drawing of the reactor geometry (not to scale)}
+	    \caption{Non-technical drawing of the reactor geometry (not in proportion)}
 	    \label{fig:geometry-reactor}
 	\end{figure}
 	The reactor resembles a very small but broad cylinder shape which is opened at the bottom.
@@ -35,7 +41,7 @@
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics[width=0.75\textwidth]{src/03_analytical-work/fig_outlet-nozzle-geometry.pdf}
-	    \caption{Non-technical drawing of the outlet nozzle geometry (not to scale)}
+	    \caption{Non-technical drawing of the outlet nozzle geometry (not in proportion)}
 	    \label{fig:geometry-outlet-nozzle}
 	\end{figure}
 	With the same geometry as the inlet, but the gas flowing in opposite directions, one would suspect the outlet to act as a subsonic nozzle, which could logically be the case, since without a converging section in front it would be impossible to reach sonic velocities and therefore will choke the flow and keep them at subsonic velocities.

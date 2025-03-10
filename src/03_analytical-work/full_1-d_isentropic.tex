@@ -52,17 +52,20 @@
 	Where $p,\; \rho,\; T$ are the local gas conditions, $p_t,\; \rho_t,\; T_t$ the total gas conditions, $\gamma$ the specific heat ratio and $M$ the local mach number.
 	This leads to the following solutions:
 	\input{src/03_analytical-work/tab_full-isentropic-values.tex}
-	Mass flow must be conserved along the flow and can be calculated using following equation, which derives from the general equation for mass-flow, the isentropic relations and the ideal gas law.
+	Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [\eqref{eq:total_relation_T} - \eqref{|eq:total_relation_p}] and the ideal gas law \eqref{}.
 	\cite{benson_mass_nodate}
 	$$
 		\dot{m} = A \cdot P_t \cdot \sqrt{\frac{\gamma}{R T_t}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
 	$$
 	Where $A$ is the local cross-sectional area, $P_t$ the total pressure, $T_t$ the total temperature, $\gamma$ the specific heat ratio, $R$ the specific gas constant and $M$ the mach number.
-	\note{
-		Add mass flow for every point to show that mass flow is conserved.
-		Also include calculation of dimensionless numbers!
-	}
 	\cite{Cantwell_AA210A}
+	Now knowing the approximate way state variables change inside the system, the assumption taken regarding the Reynolds and Knudsen number from chapter \ref{sec:expected-flow-regimes} can be tested, for a stagnation pressure $p_t$ somewhere around ambient pressure and the stagnation temperature being relatively high since the gas will be preheated:
+	$$
+		p_t = 1.5\;\text{bar} \qquad T_t = 500\;\text{K}
+	$$
+	Additionally the lowest pressure at the same temperature where continuum flow formulations still hold, will be presented in the following table:
+	
+	
 
 \subsubsection*{Interpretation}
 \note{

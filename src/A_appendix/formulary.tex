@@ -1,25 +1,37 @@
 \subsection*{Thermodynamics}
+\addcontentsline{toc}{subsection}{Thermodynamics}
 
 \subsubsection*{Thermal Equations of State}
 	Is in general an equation of the form
 	\begin{equation}
 		p=p(v,\;T)
 	\end{equation}
-	Commonly used equations of state for thermally perfect gases
+	Commonly used equations of state for thermally perfect gases\\
+	\textbf{Ideal gas law}
 	\begin{equation}
-		p = \frac{RT}{\rho} \quad \texttt{[therm perf]}
+		p = \rho RT \quad \texttt{[therm perf]}
 	\end{equation}
+	\textbf{1D Euler equation}
 	\begin{equation}
 		\frac{1}{\rho} dp + V dV = 0 \quad \texttt{[therm perf]}
 	\end{equation}
 
 \subsection*{Control Volume Analysis}
+\addcontentsline{toc}{subsection}{Control Volume Analysis}
 
 \subsubsection*{Continuity Equation:}
 
-\begin{equation}
-	\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
-\end{equation}
+	\begin{equation}
+		\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
+	\end{equation}
+	In case if one-dimensional flow $\frac{\partial}{\partial t} = 0$ for a given inlet/outlet:
+	\begin{equation}
+		\int \rho (\vec{V} \cdot \hat{n} )d A = \rho\vec{V}\cdot \hat{n} \int d A = \rho V A
+	\end{equation}\label{eq:1-d-massflow}
+	\noindent Thus for steady one-dimensional flow:
+	\begin{equation}
+		0 = \sum \rho V A
+	\end{equation}
 
 \subsubsection*{Momentum Equation:}
 
@@ -33,7 +45,8 @@
 	\frac{d}{dt} \int_V \rho e \, dV + \int_S \rho h V \cdot dA = \dot{Q} - \int_S p V \cdot dA
 \end{equation}
 
-\subsection*{Continuous one-dimensional}
+\subsection*{Continuous one-dimensional flow}
+\addcontentsline{toc}{subsection}{Continuous one-dimensional flow}
 
 \subsubsection*{Speed of Sound:}
 

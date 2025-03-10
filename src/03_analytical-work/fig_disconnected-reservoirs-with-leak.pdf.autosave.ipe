@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.30">
-<info created="D:20250303183949" modified="D:20250310155048"/>
+<info created="D:20250303183949" modified="D:20250310155109"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -382,7 +382,11 @@ h
 <text matrix="1 0 0 1 208 -8" transformations="translations" pos="164 700" stroke="black" type="label" width="29.956" height="6.133" depth="0.99" valign="baseline" size="small" style="math">M_r = 1</text>
 <text matrix="1 0 0 1 -76 -4" transformations="translations" pos="164 700" stroke="black" type="label" width="26.766" height="6.127" depth="0" valign="baseline" size="small" style="math">M = 0</text>
 <text matrix="1 0 0 1 148 -4" transformations="translations" pos="164 700" stroke="black" type="label" width="26.766" height="6.127" depth="0" valign="baseline" size="small" style="math">M = 0</text>
-<text matrix="1 0 0 1 4 -20" transformations="translations" pos="80 736" stroke="black" type="label" width="38.106" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T_t,\;p_t,\;\rho_t</text>
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="80 736" stroke="black" type="label" width="38.106" height="6.13" depth="1.74" valign="baseline" size="small" style="math">T_t,\;p_t,\;\rho_t</text>
 <text matrix="1 0 0 1 332 -24" transformations="translations" pos="80 736" stroke="black" type="label" width="23.569" height="5.782" depth="1.74" valign="baseline" size="small" style="math">p \to 0</text>
+<path matrix="1 0 0 1 88 56" stroke="darkgreen" cap="1" arrow="normal/small">
+272 656 m
+304 656 l
+</path>
 </page>
 </ipe>
