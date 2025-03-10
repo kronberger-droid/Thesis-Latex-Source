@@ -22,28 +22,22 @@
 	Therefore, calculating the Knudsen number where the gas leaves the outlet nozzle will be useful to identify the flow regime that governs the gas flow inside the whole assembly.
 
 	\note{
-		This argument makes more sense than calculating some ratio which can be tested, since it is the same as just checking Knudsen number.
-		This is something we can always check during the calculations, since we will calculate p and T anyway.
-		But we can still improve this argumentation and maybe state that checking the Knudsen number at different sections makes sense, but only while calculating, not in advance.
+		Refine this argument!
 	}
 
-\paragraph{Knudsen Number in low pressure Zones}
-
-	As the gas is leaving the outlet geometry and expands into the vacuum the characteristic length looses its significance.
-	This is because the walls of the vacuum chamber are very far away in comparison to the length-scales of the flow geometry, while the gas expands it will lose pressure to conform to the vacuum and in that process will transition into free molecular flow.
-	This leads to formulations using the mach number also loosing its significance.
-	Therefore, it makes sense to identify a much more elegant way of calculating the local Knudsen number $Kn_L$ which will be much more applicable in this situation.
-	$$
-		K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
-	$$
-	Where $\lambda$ is the mean free path, $\phi$ is some state variable of the flow.
-	This way the Knudsen number can be calculated throughout the expansion of the gas and can be used to find the contour lines where the transition between continuum and molecular flow will happen. 
-\note{
-Add reference!
-}
+	\paragraph{Knudsen Number in low pressure Zones}
+		As the gas is leaving the outlet geometry and expands into the vacuum the characteristic length looses its significance.
+		This is because the walls of the vacuum chamber are very far away in comparison to the length-scales of the flow geometry, while the gas expands it will lose pressure to conform to the vacuum and in that process will transition into free molecular flow.
+		This leads to formulations using the mach number also loosing its significance.
+		Therefore, it makes sense to identify a much more elegant way of calculating the local Knudsen number $Kn_L$ which will be much more applicable in this situation.
+		$$
+			K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
+		$$
+		Where $\lambda$ is the mean free path, $\phi$ is some state variable of the flow.
+		This way the Knudsen number can be calculated throughout the expansion of the gas and can be used to find the contour lines where the transition between continuum and molecular flow will happen. 
+		\cite{bird_dsmc_2013, Grabe2008, LiLam1964}
 
 \subsubsection*{Laminar Flow}
-
 	The Reynolds number itself does not bare any real significance for the applicability of the formulations used. Nonetheless, deviations in Reynolds number can in reality shape great parts of how the flow behaves and therefore effects important state variables.\\
 	Reynolds numbers per unit length for isentropic expansion range $10^{-2} < Re/l < 1$, whereas the characteristic length is constant at $L_c = 20\cdot 10^{-6}$ and will therefore dominate the equation forcing low Reynolds numbers. \cite{ames1953compressible}\\
 	Therefore the flow will stay laminar as long as it is contained inside the assembly and therefore mixing will be most likely diffusion mediated.
@@ -51,8 +45,7 @@ Add reference!
 	
 \subsubsection*{Dimension of the Flow}
 
-	\paragraph{Inside - pseudo 1D}
-
+	\paragraph{Nozzle flow - pseudo 1D}
 		In this section of the flow a further simplification of the two-dimensional flow through a duct will be used called "quasi one-dimensional" flow.
 		This is possible by reducing the velocity distribution present at any point in a duct to its mean velocity.
 		Therefore, reducing the velocity from a distribution $V(r)$ at every point in the duct to a scalar value $V$ at every point of the duct.
@@ -60,11 +53,15 @@ Add reference!
 		This makes sense, because approximations of state variables and mass flow is the main goal here.
 		Taking mean values still yield sensible solutions and won't leave us with less information.
 
-	\paragraph{Outside - radial symmetric 3D}
+	\paragraph*{Flow through the chamber - 3D}
 
-		Any further simplification from the radially symmetric expansion into vacuum described in section would not make sense since it would eliminate important information on how the flow behaves when leaving the outlet.
-		Like the amount of gas which will reach the mass spec and the velocity distribution.
-\cite{anderson2021modern}
+	\paragraph{Free jet into vacuum - 2D}
+
+	\note{
+		Refine sections above. They are not good!
+	}
+
+	\cite{anderson2021modern}
 
 \subsubsection*{Steady Flow}
 

@@ -2,12 +2,6 @@
 	This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path.
 	This is because the only thing we left out is any kind of leak in the system.
 	Those leaks will be the most influential around the reactor, since this is the only part that is not held at a constant pressure by any external part of the system.\\
-	\begin{figure}[H]
-	    \centering
-	    \includegraphics[width=0.9\textwidth]{src/02_scope-and-objectives/fig_technical-drawing.png}
-	    \caption{A descriptive caption for the figure.}
-	    \label{fig:technical-drawing}
-	\end{figure}
 \subsubsection*{Inlet Reservoir}
 
 	It is kept at constant pressure \(P_0\) and constant temperature \(T_0\).
@@ -16,16 +10,34 @@
 	
 \subsubsection*{Inlet Nozzle}
 
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.75\textwidth]{src/03_analytical-work/fig_inlet-nozzle-geometry.pdf}
+	    \caption{Non-technical drawing of the inlet nozzle geometry (not in scale)}
+	    \label{fig:geometry-inlet-nozzle}
+	\end{figure}
 	The duct connecting the inlet reservoir with the reactor will be a slightly converging duct, due to production constraints.
 	Therefore, it will act like a Nozzle, accelerating the gas until it expands into the reactor.
 	
 \subsubsection*{Reactor}
-	
+
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.75\textwidth]{src/03_analytical-work/fig_reactor-geometry.pdf}
+	    \caption{Non-technical drawing of the outlet nozzle geometry (not in scale)}
+	    \label{fig:geometry-reactor}
+	\end{figure}
 	The reactor resembles a very small but broad cylinder shape which is opened at the bottom.
 	The sample will be pressed into the opening, which will lead to some leakage out of the system.
 	
 \subsubsection*{Outlet Nozzle}
 	
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.75\textwidth]{src/03_analytical-work/fig_outlet-nozzle-geometry.pdf}
+	    \caption{Non-technical drawing of the outlet nozzle geometry (not in scale)}
+	    \label{fig:geometry-outlet-nozzle}
+	\end{figure}
 	With the same geometry as the inlet, but the gas flowing in opposite directions, one would suspect the outlet to act as a subsonic nozzle, which could logically be the case, since without a converging section in front it would be impossible to reach sonic velocities and therefore will choke the flow and keep them at subsonic velocities.
 	However, it is actually possible for the flow to create a converging section by itself, which will force the flow to be sonic at the beginning of the outlet and will further accelerate into the supersonic regimes, creating a supersonic nozzle.
 	Which of these two possibilities is most likely will be discussed at a later point.
@@ -34,7 +46,5 @@
 
 	After leaving the outlet, the gas will first expand into a small cylindrical section after which it will expand freely into the vacuum.
 	The exact pressure left in the vacuum will be very low, and small changes will not have great influence onto the flow itself.
-	Therefore,
-
-\newpage
-
+	\note{
+		There can be said a little more.}

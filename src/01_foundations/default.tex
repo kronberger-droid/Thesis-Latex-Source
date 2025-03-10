@@ -1,10 +1,26 @@
 \section{Foundational Principles}
 
+When dealing with advanced fluid dynamical systems, before being able to formulate models to solve them, they have to be categorized.
+This is usually done by determining dimensionless numbers which values ought to describe more the behavior of the gas and its interaction with its surrounding.
+Essentially the values of these dimensionless numbers give a clue on which formulations are applicable and if additional boundary conditions or considerations have to be taken into account.
+This first chapter will go into the details of how to calculate some of the most important dimensionless numbers and give insight on what the values of them imply.
+
+\note{Maybe the following text is actually a little too much?}
+
+Even tho not a dimensionless number, the characteristic length $L_c$ is an important value used to determine how length scales of the geometry and the molecules compare.
+It sits at the basis of both dimensionless numbers used in this work.
+
+One way to characterize a flow of gas is by how regular the flow behaves.
+The Reynolds number serves this purpose by comparing viscous and inertial forces inside a fluid, therefore determining if a flow is either laminar for low values or turbulent for high ones.
+
+Another very important dimensionless number is the Knudsen number, other than the Reynolds number it tries not to encompass flow behavior, but essentially its values decides which models and formulations can be used to solve a specific flow.
+It describes the ratio between the mean free path of the molecules in the gas and the characteristic length of a system.
+High values lead to essentially no interaction between molecules, whereas low numbers hint at particle interaction being much more important.
+
+If the Knudsen number is significantly low, the influence of another dimensionless number becomes significant, describing the ratio between the velocity of the gas and the local speed of sound, called Mach number.
+
 \subsection{Characteristic Length}  
 \input{src/01_foundations/characteristic_length.tex}
-
-\subsection{Dimension of the flow}
-\input{src/01_foundations/flow_dimension.tex}
 
 \subsection{Turbulence and the Reynolds number}
 \input{src/01_foundations/reynolds_number.tex}
@@ -12,7 +28,8 @@
 \subsection{Rarefaction and the Knudsen number}
 \input{src/01_foundations/knudsen.tex}
 
+\subsection{Dimension of the flow}
+\input{src/01_foundations/flow_dimension.tex}
+
 \subsection{Isentropic one-dimensional flow}
 \input{src/01_foundations/isentropic_flow.tex}
-
-
