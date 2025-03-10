@@ -16,9 +16,12 @@
         default = pkgs.mkShell {
           buildInputs = [
             pkgs.tectonic
+            pkgs.zathura
           ];
           shellHook = ''
-            zathura ./main.pdf &
+            zathura main.pdf > zathura.log 2>&1 &
+            ZATHURA_PID=$!
+            trap "kill $ZATHURA_PID" EXIT
             hx README.md
           '';
         };
