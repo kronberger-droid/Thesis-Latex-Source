@@ -4,14 +4,21 @@ Since this change is based on the variable area duct formulation, it won't repre
 The leak is located at the perimeter of the reactor, which is not an actual location in this formulation.
 To be able to include the influence of the leak analytically, without using numerical tools, further simplification is needed.
 
+In section \ref{sec:micro-channels} some phenomenons occuring in micro channels are mentioned, which are hard to account for in analytical calculations.
 Thus, this section will explore a formulation of the system, where both the inlet reservoir and the reactor are assumed to be reservoirs, with stagnation conditions associated with them.
 In turn disconnecting the two reservoirs and resulting in two independent problems, describing gas from a reservoir flowing into a discharge region with a given back pressure. 
-Representing a change in stagnation conditions which can be attributed to non-isentropic processes happening when the gas enters or leaves the reactor.
+Representing a change in stagnation conditions which can be attributed to non-isentropic processes happening while the gas enters or leaves the reactor.
 
-Now proper assumptions have to be taken to connect both reservoirs again, first without inclusion of the leak.
+Now proper assumptions have to be taken to connect both reservoirs again.
+At first without including the leak.
 Stagnation conditions for the reactor are chosen, resulting in a mass-flow at the outlet.
-Which in turn have to be compensated by the inlet, thus mach number and the conditions inside the reservoir can be derived.  
-Afterward two possible formulations including the leak will be presented.
+Which in turn have to be compensated by the inlet, now without forcing sonic conditions at the throat of the inlet.
+Through choosing the back-pressure of the reservoir to be the total pressure of the reactor a connection is established.
+But to be able to solve the system, at least one other value of a state variable in the system of the reservoir has to be assumed.
+Two possible assumptions for Temperature are presented in the following paragraphs.
+
+Afterward, the influence on the inlet mach number $M_2$ of additional mass flow $\dot{m}_L$ leaving the reactor is inspected.
+Trying to find an upper limit for mass flow through the leak, after which the inlet is again forced to reach sonic flow speeds, without having to derive an explicit way to calculate $\dot{m}_L$.
 
 \subsubsection*{Formulations without including the leak}
 
@@ -22,7 +29,7 @@ Afterward two possible formulations including the leak will be presented.
     \label{fig:disconnected-reservoirs}
 \end{figure}
 
-\textbf{Assumptions}\\
+\textbf{General assumptions}\\
 Since this still constitutes a closed system, mass flow must be conserved, thus:
 $$
 	\dot{m}_0 = \dot{m}_r = const.
@@ -31,32 +38,12 @@ The reactor still discharges into vacuum, this therefore must lead to chocked fl
 $$
 	M_r = 1
 $$
-From the geometry it is given that:
+From the geometry in section \ref{sec:geometry} it is given that:
 $$
 	A_0 = A_r = A
 $$
-Lastly, to be able to reduce this problem to one unknown, the stagnation conditions of the reservoir and the reactor have to be related, thus reducing the unknowns to just $M_0$.
-One obvious possibility is to use the isentropic relations (equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}), for both Temperature and Pressure:
-$$
-	T_b = T_r
-	\quad \to \quad
-	T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)
-$$
-and
-$$
-	p_b = p_r
-	\quad \to \quad
-	p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
-$$
-Disconnecting the inlet and outlet gives the ability to define non-isentropic relations between the two reservoirs.
-Thus, as the second approach Temperature will be held constant between both reservoirs. 
-$$
-	T_r = T_0 = T
-$$
-This approach is going contrary to isentropic formulation, but still seems somehow plausible due to the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
-Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be significant even without high mixing due to low Reynolds numbers present in microfluidics.\\
 \textbf{Calculation}\\
-The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation:\\
+The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation \eqref{}\\
 Reservoir $\to$ Reactor
 $$
 	\dot{m}_0 = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
@@ -73,23 +60,41 @@ $$
 Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
 This will be the starting point for both of the following approaches.\\
 \textbf{Isentropic approach}\\
-Using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_r$ and $P_r$ the previously defined conservation of mass equation yields:
+$$
+	T_b = T_r
+	\quad \to \quad
+	T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)
+$$
+and
+$$
+	p_b = p_r
+	\quad \to \quad
+	p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
+$$
+Assuming the conditions of the discharge region to match the values in the reactor and using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_b$ and $P_b$ the previously defined conservation of mass equation yields:
 \begin{align*}
 	&A\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\
 	&= A\, p_r\left(1 + \frac{\gamma - 1}{2}M_0^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_0\right)^{-\frac{1}{2}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
 \end{align*}
 Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_0$ only dependent on $\gamma$, since the summing the exponents equals zero.
 $$
-	M_0 = (1 + \frac{\gamma - 1}{2})^{-\frac{\gamma + 1}{2(\gamma - 1)}}
-	\quad \text{with} \quad \gamma = 1.47 \quad \to \quad
-	M_0 = 0.57
+	M_0 = (1 + \frac{\gamma - 1}{2})^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
+	\quad \text{for} \quad \gamma = 1.47
 $$
 Thus resulting in following ratios between the conditions in the reactor and the reservoir.
 $$
-	\frac{T_r}{T_0} = ... , \quad \frac{p_r}{T_0} = ... , \quad \frac{\rho_r}{\rho_0} = ...
+	\frac{T_r}{T_0} = 0.93\;, \quad \frac{p_r}{p_0} = 0.79\;, \quad \frac{\rho_r}{\rho_0} = 0.85
 $$
 \textbf{Constant temperature approach}\\
-Starting from the general conservation of mass equation, but choosing the temperatures to be equal yields:
+\note{
+	Add good intro!
+}
+Thus, as the second approach Temperature will be held constant between both reservoirs. 
+$$
+	T_r = T_0 = T
+$$
+This approach is going contrary to isentropic formulation, but still seems somehow plausible due to the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
+Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be significant even without high mixing due to low Reynolds numbers present in microfluidics.\\
 $$
 	p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 	=  p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}

@@ -8,9 +8,12 @@
 	\end{equation}
 	Commonly used equations of state for thermally perfect gases\\
 	\textbf{Ideal gas law}
+	\note{
+		add different formulations, and check if R
+	}
 	\begin{equation}
 		p = \rho RT \quad \texttt{[therm perf]}
-	\end{equation}
+	\end{equation}\label{eq:ideal_gas}
 	\textbf{1D Euler equation}
 	\begin{equation}
 		\frac{1}{\rho} dp + V dV = 0 \quad \texttt{[therm perf]}
@@ -24,11 +27,12 @@
 	\begin{equation}
 		\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
 	\end{equation}
-	In case if one-dimensional flow $\frac{\partial}{\partial t} = 0$ for a given inlet/outlet:
+	In case of one-dimensional flow $\frac{\partial}{\partial t} = 0$ for a given inlet/outlet:
 	\begin{equation}
 		\int \rho (\vec{V} \cdot \hat{n} )d A = \rho\vec{V}\cdot \hat{n} \int d A = \rho V A
 	\end{equation}\label{eq:1-d-massflow}
-	\noindent Thus for steady one-dimensional flow:
+	\noindent
+	Thus for steady one-dimensional flow:
 	\begin{equation}
 		0 = \sum \rho V A
 	\end{equation}
@@ -80,39 +84,39 @@
 \subsubsection*{From this:}
 
 \begin{equation}
-	\frac{p}{p_t} = \left( \frac{\rho}{\rho_t} \right)^\gamma = \left( \frac{T}{T_t} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_t} \right)^{\frac{2\gamma}{\gamma - 1}}
+	\frac{p}{p_0} = \left( \frac{\rho}{\rho_0} \right)^\gamma = \left( \frac{T}{T_0} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_0} \right)^{\frac{2\gamma}{\gamma - 1}}
 	\quad \texttt{[isen, perf]}
 \end{equation}
 
 \subsubsection*{Bernoulli's Equation for Compressible Flow}
 
 \begin{equation}
-	\frac{\gamma}{\gamma - 1} \left( \frac{p_t}{\rho_t} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_t} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_t}{\rho_t} 
+	\frac{\gamma}{\gamma - 1} \left( \frac{p_0}{\rho_0} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_0} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_0}{\rho_0} 
 	\quad \texttt{[isen, perf]}
 \end{equation}
 
 \subsubsection*{Stagnation Relations}
 
 \begin{equation}
-	\frac{T}{T_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
+	\frac{T}{T_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
 	\quad \texttt{[adiab, perf]}
 	\label{eq:total_relation_T}
 \end{equation}
 
 \begin{equation}
-	\frac{p}{p_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
+	\frac{p}{p_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
 	\quad \texttt{[isen, perf]}
 	\label{eq:total_relation_p}
 \end{equation}
 
 \begin{equation}
-	\frac{\rho}{\rho_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
+	\frac{\rho}{\rho_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
 	\quad \texttt{[isen, perf]}
 	\label{eq:total_relation_rho}
 \end{equation}
 
 \begin{equation}
-	\frac{a}{a_t} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
+	\frac{a}{a_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
 	\quad \texttt{[adiab, perf]}
 \end{equation}
 

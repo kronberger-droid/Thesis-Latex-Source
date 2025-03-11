@@ -9,8 +9,9 @@
 	    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
 	    \caption{A descriptive caption for the figure.}
 	\end{figure}
-	This geometry can now be characterized as a double throat, and therefore isentropic flow can result in one of two fundamental solutions.
-	One predicting subsonic flow and one predicting supersonic flow after the first throat (2).
+	This geometry can now be characterized as a double throat, and therefore one-dimensional isentropic flow will yield one of in two fundamental solutions.
+	Depending on how the steady state in the system is reached, flow velocity of the stream will either stay subsonic and therefore decrease when entering the reactor or become sonic at the throat (2) and continue to accelerate.
+	Other non-trivial solutions won't be discussed.
 	\cite{SALAS1986193, EMMONS1958}
 
 \subsubsection*{Calculations}
@@ -23,45 +24,38 @@
 	$$
 	The second reference location corresponding to the stagnation or total conditions is at the entry of the inlet nozzle (1), which can be defined afterward to get quantitative solutions.
 	$$
-		A_1,\;p_1,\;\rho_1,\;T_1\quad\xrightarrow{M=0}\quad A_t,\;p_t,\;\rho_t,\;T_t
+		A_1,\;p_1,\;\rho_1,\;T_1\quad\xrightarrow{M=0}\quad A_0,\;p_0,\;\rho_0,\;T_t
 	$$
-	Next step is to calculate the cross-sectional areas for every location:
+	Next step is to take the cross-sectional areas at every point defined in chapter \ref{sec:geometry}, and calculate their ratios to the throat areas.
+	To use them for solving the following equation relating them to M, numerically yielding one subsonic and one supersonic solution depending on their initial conditions.
 	$$
-		A_i = \pi \left(\frac{D_i}{2}\right)^2
-			\quad \text{for} \quad
-		i=\{1,2,4,5\}
-			\quad \text{and} \quad
-		A_3 = H_\text{reactor}\cdot D_\text{reactor}
-	$$
-	Followed by solving the equation for the ratio of cross-sectional area for M numerically which, should yield one subsonic and one supersonic solution.
-	$$
-		\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
+		\frac{A_i}{A^*} = \frac{1}{M_i} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
 		\qquad \eqref{eq:area_ratio_mach}
 	$$
-	Afterward the ratios of state variables can be determined, which after defining the total conditions can be used to calculate the local variables for every point.
+	Afterward the ratio of the local state variables to the total conditions can be determined, which can be used after, defining total conditions for the system, to calculate the local variables for every point.
 	\cite{hall_isentropic_nodate}
 
 	\begin{alignat*}{2}
-	    \frac{T}{T_t}   & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
+	    \frac{T_i}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} M_i^2 \right)^{-1}
 	    & \qquad & \eqref{eq:total_relation_T} \\
-	    \frac{p}{p_t}   & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
+	    \frac{p_i}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} M_i^2 \right)^{-\frac{\gamma}{\gamma - 1}}
 	    & \qquad & \eqref{eq:total_relation_p} \\
-	    \frac{\rho}{\rho_t} & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
+	    \frac{\rho_i}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} M_i^2 \right)^{-\frac{1}{\gamma - 1}}
 	    & \qquad & \eqref{eq:total_relation_rho}
 	\end{alignat*}
-	Where $p,\; \rho,\; T$ are the local gas conditions, $p_t,\; \rho_t,\; T_t$ the total gas conditions, $\gamma$ the specific heat ratio and $M$ the local mach number.
+	Where $p,\; \rho,\; T$ are the local gas conditions, $p_0,\; \rho_0,\; T_0$ the total gas conditions, $\gamma$ the specific heat ratio and $M_i$ the local mach number.
 	This leads to the following solutions:
 	\input{src/03_analytical-work/tab_full-isentropic-values.tex}
-	Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [\eqref{eq:total_relation_T} - \eqref{|eq:total_relation_p}] and the ideal gas law \eqref{}.
+	Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}] and the ideal gas law \eqref{eq:ideal_gas}.
 	\cite{benson_mass_nodate}
 	$$
-		\dot{m} = A \cdot P_t \cdot \sqrt{\frac{\gamma}{R T_t}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
+		\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{R T_0}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
 	$$
-	Where $A$ is the local cross-sectional area, $P_t$ the total pressure, $T_t$ the total temperature, $\gamma$ the specific heat ratio, $R$ the specific gas constant and $M$ the mach number.
+	Where $A$ is the local cross-sectional area, $P_0$ the total pressure, $T_0$ the total temperature, $\gamma$ the specific heat ratio, $R$ the specific gas constant and $M$ the mach number.
 	\cite{Cantwell_AA210A}
 	Now knowing the approximate way state variables change inside the system, the assumption taken regarding the Reynolds and Knudsen number from chapter \ref{sec:expected-flow-regimes} can be tested, for a stagnation pressure $p_t$ somewhere around ambient pressure and the stagnation temperature being relatively high since the gas will be preheated:
 	$$
-		p_t = 1.5\;\text{bar} \qquad T_t = 500\;\text{K}
+		p_0 = 1.5\;\text{bar} \qquad T_0 = 500\;\text{K}
 	$$
 	Additionally the lowest pressure at the same temperature where continuum flow formulations still hold, will be presented in the following table:
 	
@@ -69,5 +63,5 @@
 
 \subsubsection*{Interpretation}
 \note{
-	Go more into the solutions. Especially into the non physicality of the high mach numbers inside. Also mention non isentropic processes. This is a idealized situation this will always lead to maximum massflow in comparison to other formulation.
+	Go more into the solutions. Especially into the non physicality of the high mach numbers inside. Also mention non-isentropic processes. This is a idealized situation this will always lead to maximum mass flow in comparison to other formulation.
 }
