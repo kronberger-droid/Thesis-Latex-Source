@@ -12,7 +12,7 @@
             grid=both,
             legend pos=north west,
         ]
-            % Sutherland's formula parameters for Air
+            % Sutherland's formula for Air
             \addplot [
                 thick,
                 blue,
@@ -20,6 +20,15 @@
             ]
             {(1.716e-5) * (x/273)^(3/2) * (273+111)/(x+111)};
             \addlegendentry{Air}
+
+            % Linear interpolation of the above function (dashed red)
+            \addplot [
+                thick,
+                dashed,
+                red
+            ]
+            {(4.23e-8)*x + 4.85e-6};
+            \addlegendentry{\shortstack{Linear interp.: $\mu(x)=4.23\times10^{-8}x+4.85\times10^{-6}$\\ slope $=4.23\times10^{-8}$}}
         \end{axis}
     \end{tikzpicture}
 \end{figure}
