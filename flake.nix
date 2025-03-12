@@ -17,6 +17,12 @@
           buildInputs = [
             pkgs.tectonic
             pkgs.zathura
+            (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
+              python-lsp-server
+              numpy
+              matplotlib
+              scipy
+            ]))
           ];
           shellHook = ''
             zathura main.pdf > zathura.log 2>&1 &

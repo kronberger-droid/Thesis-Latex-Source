@@ -32,16 +32,12 @@
 		\frac{A_i}{A^*} = \frac{1}{M_i} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
 		\qquad \eqref{eq:area_ratio_mach}
 	$$
-	Afterward the ratio of the local state variables to the total conditions can be determined, which can be used after, defining total conditions for the system, to calculate the local variables for every point.
+	Afterward the ratio of the local state variables to the total conditions can be determined using equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}, which can be used after, defining the total conditions of the system, to calculate the local variables for every point.
 	\cite{hall_isentropic_nodate}
-
 	\begin{alignat*}{2}
-	    \frac{T_i}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} M_i^2 \right)^{-1}
-	    & \qquad & \eqref{eq:total_relation_T} \\
-	    \frac{p_i}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} M_i^2 \right)^{-\frac{\gamma}{\gamma - 1}}
-	    & \qquad & \eqref{eq:total_relation_p} \\
-	    \frac{\rho_i}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} M_i^2 \right)^{-\frac{1}{\gamma - 1}}
-	    & \qquad & \eqref{eq:total_relation_rho}
+	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-1}\qquad &\eqref{eq:total_relation_T}\\
+	    \frac{p}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-\frac{\gamma}{\gamma - 1}}&\eqref{eq:total_relation_T}\\
+	    \frac{\rho}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-\frac{1}{\gamma - 1}}&\eqref{eq:total_relation_T}
 	\end{alignat*}
 	Where $p,\; \rho,\; T$ are the local gas conditions, $p_0,\; \rho_0,\; T_0$ the total gas conditions, $\gamma$ the specific heat ratio and $M_i$ the local mach number.
 	This leads to the following solutions:
@@ -50,6 +46,7 @@
 	\cite{benson_mass_nodate}
 	$$
 		\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{R T_0}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
+		\qquad \eqref{}
 	$$
 	Where $A$ is the local cross-sectional area, $P_0$ the total pressure, $T_0$ the total temperature, $\gamma$ the specific heat ratio, $R$ the specific gas constant and $M$ the mach number.
 	\cite{Cantwell_AA210A}
@@ -61,9 +58,36 @@
 	\end{align*}
 	Additionally, the lower limit for the reservoir pressure $p_{0,\;min}$ where some part of the system transitions to the molecular regime, will be determined.
 	Again for temperatures $T_{0,\;1},\;T_{0,\;2}$
-	
-
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		 & $T_t$ & 1 & 2 & 3 (sub) & 3 (sup) & 4 & 5 (sub) & 5 (sup) \\ \hline
+		 & 300 K & 0.001 & 0.002 & 0.001 & \cellcolor[HTML]{FFADA8}0.2 & 0.002 & 0.001 & 0.009 \\
+		\multirow{-2}{*}{Kn} & 500 K & 0.002 & 0.003 & 0.002 & 0.02 & 0.003 & 0.002 & 0.02 \\ \hline
+	     & 300 K & - & 0.0001 & 0.4 & $\sim$0 & 0.0001 & 0.005 & 0.0002  \\
+		\multirow{-2}{*}{Re} & 500 K & - & 0.001 & 0.8 & 0.0001 & 0.001 & 0.01 & 0.0005 \\ \hline 
+		\end{tabular}
+		\caption{Knudsen and Reynolds number for total pressure $p_0 = 1.5 \text{bar}$ and total temperatures of $T_0 = 300, 500 \text{K}$ using values from table \ref{tab:isentropic_flow}. Where red color signifies transition possible transitional regime.}
+		\label{tab:knudsen-reynolds-isentropic}
+	\end{table}
+	\noindent It now becomes clear that the assumptions made in chapter \ref{sec:expected-flow-regimes} are accurate:
+	\begin{itemize}
+		\item Slip on the boundaries is to expect.
+		\item The Mach number has major influence on the value of the Knudsen number, thus high Mach numbers point to possible transition to molecular regime.
+		\item The outlet always corresponds to the highest Knudsen number with exception to the hypersonic solution found in the middle of the reactor. Which will be discussed more in the following paragraph.
+		\item Reynolds numbers are very low, therefore no turbulences are expected.
+	\end{itemize}
 \subsubsection*{Interpretation}
-\note{
-	Go more into the solutions. Especially into the non physicality of the high mach numbers inside. Also mention non-isentropic processes. This is a idealized situation this will always lead to maximum mass flow in comparison to other formulation.
-}
+	The equation relating area ratio and Mach number has in general two solutions.
+	This leads to the two solutions for every point which is not defined as a (total or critical) reference point will have mathematically true solutions
+	One corresponding to subsonic flow and the other one to supersonic flow, which of those are applicable in the situation is to decide.
+
+	For the outlet it is easier to discern since when exausting into a vacuum the flow will be forced supersonic.
+	This is expected even tho there is actually no specific converging section when leaving the reactor, especially if the reactor is seen as a reservoir by itself, like it will in chapter \ref{sec:disconnected-reservoirs}.
+	In short, the flow itself when flowing over the edge of a sudden contraction in the flow geometry, can itself form a kind of converging section and still accelerate to sonic conditions.
+	This will be discussed in the next chapter in more detail.
+
+	\note{
+		Mention non-isentropic behavior non viability of the hypersonic solution!
+	}	 

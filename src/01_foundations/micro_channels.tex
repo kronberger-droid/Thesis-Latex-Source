@@ -1,31 +1,36 @@
-Going from macro scale channels to microscales has some major implications for the behavior of the gas.
-The primary factor for these differences is slipping at the boundary of the surfaces.
-This is due to the fact that at small characteristic length scales the Knudsen number ($Kn$), whose value describes the interaction of the molecules in the gas and its boundaries, becomes relatively high ($Kn > 0.001$).
-Which usually puts the gas flow in the category of compressible flow with slip at the boundaries.
+	Going from macro scale channels to microscales has some major implications for the behavior of the gas.
+	The primary factor for these differences is slipping at the boundary of the surfaces.
+	This is due to the fact that at small characteristic length scales the Knudsen number ($Kn$), whose value describes the interaction of the molecules in the gas and its boundaries, becomes relatively high ($Kn > 0.001$).
+	Which usually puts the gas flow in the category of compressible flow with slip at the boundaries.
 
-Most of these behaviors have to be studied using complex simulations or experimental results and are sometimes not fully explained.
-Therefore, this section is not intended to give concrete definitions or formulations, but to provide as many relevant references regarding behaviors in microfluidics as possible.
-It will be mainly based on the review study conducted by Amit Agrawal.
-\cite{agrawal_comprehensive_2011}
+	Most of these behaviors have to be studied using complex simulations or experimental results and are sometimes not fully explained.
+	Therefore, this section is not intended to give concrete definitions or formulations, but to provide as many relevant references regarding behaviors in microfluidics as possible.
+	It will be mainly based on the review study conducted by Amit Agrawal.
+	\cite{agrawal_comprehensive_2011}
 
 \subsubsection*{Phenomenon of Slip}
-Slip, in comparison to non-slip, refers to the fact that the tangential velocity close to a surface is non-zero.
-Maxwell suggested that on a control surface $s$, at distance half the mean free path away from the surface, one half of the molecules come in from one mean free path away with the tangential velocity $u_\lambda$, the other half is reflected from the surface.
-Assuming a fraction $\sigma$ of the molecules are reflected diffusively (average velocity corresponds to velocity at the wall $u_w$)at the walls, with the remainder $(1-\sigma)$ being reflected specularly (no change in their impinging velocity $u_\lambda$).
-When expanding $u_\lambda$ in a second order Taylor series this yields the second order slip boundary condition used in continuum analysis:
-$$
-	u_g - u_w =
-	\left[
-		\frac{2-\sigma}{\sigma}Kn\left(\frac{\partial u}{\partial n}\right)_s
-		+ \frac{Kn^2}{2} \left(\frac{\partial^2 u}{\partial n^2}\right)_s
-	\right]
-$$ 
-Where $u$ stands for the streamwise velocities, where the subscripts $g$, $w$ and $s$ refer to gas, wall and control surface, with $n$ being the normal to the control surface.
-And most importantly $\sigma$ is the tangential momentum accommodation coefficient, or short TMAC.
+	Slip, in comparison to non-slip, refers to the fact that the tangential velocity close to a surface is non-zero.
+	Maxwell suggested that on a control surface $s$, at distance half the mean free path away from the surface, one half of the molecules come in from one mean free path away with the tangential velocity $u_\lambda$, the other half is reflected from the surface.
+	Assuming a fraction $\sigma$ of the molecules are reflected diffusively (average velocity corresponds to velocity at the wall $u_w$)at the walls, with the remainder $(1-\sigma)$ being reflected specularly (no change in their impinging velocity $u_\lambda$).
+	When expanding $u_\lambda$ in a second order Taylor series this yields the second order slip boundary condition used in continuum analysis:
+	$$
+		u_g - u_w =
+		\left[
+			\frac{2-\sigma}{\sigma}Kn\left(\frac{\partial u}{\partial n}\right)_s
+			+ \frac{Kn^2}{2} \left(\frac{\partial^2 u}{\partial n^2}\right)_s
+		\right]
+		\qquad \eqref{}
+	$$ 
+	Where $u$ stands for the streamwise velocities, where the subscripts $g$, $w$ and $s$ refer to gas, wall and control surface, with $n$ being the normal to the control surface.
+	And most importantly $\sigma$ is the tangential momentum accommodation coefficient, or short TMAC.
 
-Determining the TMAC for a specific application is one of the most critical aspects when dealing with slip conditions, as it directly influences the velocity slip at the gas-wall interface and, consequently, the overall behavior of rarefied gas flows.
-This is usually achieved through empirical studies or simulations like direct simulation Monte Carlo which will be discussed in more detail in the next section.
+	Determining the TMAC for a specific application is one of the most critical aspects when dealing with slip conditions, as it directly influences the velocity slip at the gas-wall interface and, consequently, the overall behavior of rarefied gas flows.
+	This is usually achieved through empirical studies or simulations like direct simulation Monte Carlo which will be discussed in more detail in the next section.
 
 \subsubsection*{Surface Roughness}
 
 \subsubsection*{Sudden expansion or contraction}
+
+\note{
+	Add segway over to why making the reactor a reservoir solves some of the problems while still not ignoring them.
+}

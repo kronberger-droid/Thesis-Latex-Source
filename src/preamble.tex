@@ -43,7 +43,7 @@
 \usepackage{makeidx}
 
 % Color Config
-\usepackage{xcolor}
+\usepackage[table,xcdraw]{xcolor}
 
 \definecolor{baseBackground}{HTML}{FFFFFF} 
 \definecolor{baseLightGray}{HTML}{F2F2F2} 
@@ -57,9 +57,10 @@
 \definecolor{redColor}{HTML}{B31B1B}     
 \definecolor{orangeColor}{HTML}{D2691E}  
 \definecolor{yellowColor}{HTML}{B8860B}  
-\definecolor{greenColor}{HTML}{228B22}   
+\definecolor{greenColor}{HTML}{2D8A56}   
 \definecolor{cyanColor}{HTML}{008B8B}    
-\definecolor{blueColor}{HTML}{1E90FF}    
+\definecolor{blueColor}{HTML}{074799}    
+\definecolor{lightBlueColor}{HTML}{ADD8E6}    
 \definecolor{magentaColor}{HTML}{8B008B} 
 \definecolor{brownColor}{HTML}{8B4513}
 
@@ -67,14 +68,49 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, 3d}
 \usepackage{tikz-3dplot}
-\usepackage{subcaption}
+
+% For smaller captions
+\usepackage[font=small]{caption}
+
+\usepackage{listings}
+\lstset{
+    basicstyle=\footnotesize\ttfamily, % Default font
+    numbers=left,              % Location of line numbers
+    numberstyle=\tiny,          % Style of line numbers
+    % stepnumber=2,              % Margin between line numbers
+    numbersep=10pt,              % Margin between line numbers and text
+    tabsize=2,                  % Size of tabs
+    extendedchars=true,
+    breaklines=true,            % Lines will be wrapped
+    keywordstyle=\color{redColor},
+    frame=b,
+    stringstyle=\color{white}\ttfamily, % Color of strings
+    showspaces=false,
+    showtabs=false,
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    % backgroundcolor=\color{lightgray},
+    showstringspaces=false
+}
+\lstloadlanguages{ % Check documentation for further languages ...
+     Python
+}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
 
 % For configuring headers and footers 
 \usepackage{fancyhdr}
 
+% For inserting multipage pdfs
+\usepackage{pdfpages}
+
 % For creating plots
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.10}
+\pgfplotsset{compat=newest}
 
 % Page Layout
 \pagestyle{fancy}

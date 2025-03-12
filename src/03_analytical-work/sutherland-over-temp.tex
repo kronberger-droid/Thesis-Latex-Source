@@ -1,6 +1,6 @@
 \begin{figure}[H]
 \centering
-    \begin{tikzpicture}[scale=0.7]
+    \begin{tikzpicture}[scale=0.85]
         \begin{axis}[
             width=\textwidth,
             height=0.6\textwidth,
@@ -15,20 +15,31 @@
             % Sutherland's formula for Air
             \addplot [
                 thick,
-                blue,
+                blueColor,
                 samples=200
             ]
             {(1.716e-5) * (x/273)^(3/2) * (273+111)/(x+111)};
-            \addlegendentry{Air}
+            \addlegendentry{Nitrogen ($\text{N}^2$) using Sutherlands formula}
 
             % Linear interpolation of the above function (dashed red)
             \addplot [
                 thick,
                 dashed,
-                red
+                redColor
             ]
-            {(4.23e-8)*x + 4.85e-6};
-            \addlegendentry{\shortstack{Linear interp.: $\mu(x)=4.23\times10^{-8}x+4.85\times10^{-6}$\\ slope $=4.23\times10^{-8}$}}
+            {(4.18e-8)*x + 5.75e-6};
+            \addlegendentry{\shortstack{Best fit: $\mu(T)\approx 4.18\cdot 10^{-8}\; T + 5.75\cdot 10^{-6}$}}
+
+            % Linear interpolation of the above function (dashed red)
+            \addplot [
+                thick,
+                dashed,
+                greenColor
+            ]
+            {(5.51e-8)*x};
+            \addlegendentry{\shortstack{Best fit forcing intercept zero: $\mu(T)\approx 5.51\cdot 10^{-8}\; T$}}
         \end{axis}
     \end{tikzpicture}
+    \caption{Values for the dynamic viscosity of nitrogen using the Sutherland formula, with addition of two square-error, best-fits of the Sutherland formula in the range of $200 < T < 600$, one with intercept being forced to zero.}
+    \label{plt:sutherland}
 \end{figure}
