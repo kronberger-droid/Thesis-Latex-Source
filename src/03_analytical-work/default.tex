@@ -1,29 +1,35 @@
 \section{Analytical work}
-
-\note{
-	Add short introduction where the content of the Chapters are introduced and the general goal and scope of the calculation is defined.
-	Going through the main chapters and their purposes.
-}
+	Now that the fundamental principles used are set, this chapter focuses on answering as many questions from chapter \ref{}.
+	First the geometry is defined in a more rigorous way, to be able to define the characteristic lengths for every important point inside the assembly.
+	While also defining the conditions inside the reservoir and the vacuum and how they influence the flow.
+	Afterward, the expected flow regimes will be assumed, to confirm that the isentropic continuum flow regime is applicable.
+	These assumptions will be confirmed by the following analytical calculations.
+	Where first the assembly will be approximated by a variable area duct, without any leakage in the system, where one-dimensional isentropic flow formulations can be applied, and the assumptions made in the preceding chapter can be tested.
+	Since this approximation come with a cost, mainly by ignoring the geometry and possible non-isentropic behavior in the reactor.
+	Therefore, a short section going into behaviors in micro-channels and the problem of slip on the boundaries follows, which paves the way for a more elegant formulation, where the reactor is seen as its own reservoir with given stagnation conditions.
+	Since a change in stagnation conditions corresponds to non-isentropic flow behavior, is trying to include those while still treating the parts isentropically in isolation.
+	This makes it possible to include mass-flow of the leak in the reactor, whose influence on the Mach number of the inlet throat will be explored.
+	Ending with a short argument on why using the given formulations are not applicable to solve the velocity distribution at the outlet and therefore possible numerical solutions are presented.
 
 \subsection{Geometry of the components}\label{sec:geometry}
-\input{src/03_analytical-work/geometry-of-the-components.tex}
+	\input{src/03_analytical-work/geometry-of-the-components.tex}
 
 \subsection{Expected Flow Regimes}\label{sec:expected-flow-regimes}
-\input{src/03_analytical-work/expected_flow_regimes.tex}
-\newpage
+	\input{src/03_analytical-work/expected_flow_regimes.tex}
+	\newpage
 
 \subsection{One-dimensional isentropic variable area flow}\label{sec:one-dim-isentropic}
-\input{src/03_analytical-work/full_1-d_isentropic.tex}
-\newpage
+	\input{src/03_analytical-work/full_1-d_isentropic.tex}
+	\newpage
 
 \subsection{Flow behaviors in micro channels}\label{sec:micro-channels}
-\input{src/01_foundations/micro_channels.tex}
-\newpage
+	\input{src/01_foundations/micro_channels.tex}
+	\newpage
 
 \subsection{Impact of the leak}\label{sec:disconnected-reservoirs}
-\input{src/03_analytical-work/reactor_reservoir_leak.tex}
-\newpage
+	\input{src/03_analytical-work/reactor_reservoir_leak.tex}
+	\newpage
 
 \subsection{Under-expanded nozzle plume at outlet}\label{sec:outlet_plume}
-\input{src/03_analytical-work/under_expanded_plume_outlet.tex}
-\newpage
+	\input{src/03_analytical-work/under_expanded_plume_outlet.tex}
+	\newpage

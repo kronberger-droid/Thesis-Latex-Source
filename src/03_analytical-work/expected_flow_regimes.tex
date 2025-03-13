@@ -5,7 +5,7 @@
 	Because this will reduce the locations to check for high Knudsen numbers when other formulations to calculate the state variables are used and therefore will simplify the process.
 	To find such most probable Location, starting from the Definition of the Knudsen number.
 	$$
-		Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)}{pL_c}\sqrt{\frac{\pi M_m R T}{2}}
+		Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)}{pL_c}\sqrt{\frac{\pi R T}{2}}
 	$$
 	Where $\lambda$ is the mean free path, $L_c$ is the characteristic length, $k_B$ is the Boltzmann constant, $R$ is the specific gas constant, $T$ is the temperature of the fluid, $p$ is the pressure of the fluid, $M_m$ is the molar mass and $\mu$ is the dynamic viscosity.\\
 	The dynamic viscosity can be calculated using Sutherland's formula.
@@ -20,34 +20,53 @@
 	One of them forcing the intercept to be zero.
 	This will shift the values where Knudsen number reaches the continuum limit but won't have much influence on the behavior of the Knudsen number, thus version of the best-fit will be used for the following argument.
 	\input{src/03_analytical-work/sutherland-over-temp.tex}
-	Assuming $L_c$ to be the throat diameter $A_{2,\;4}$ since this will cause the highest Knudsen number therefore a part of the system with a lower value of $L_c$ will just reach transient flow sooner.
-	Also by using the best-fit line with intercept forced zero with a slope of $k = 5.51/cdot 10^{-8}$ from plot \ref{plt:sutherland} the Knudsen number can be reduced to a simple proportionality relation:
+	Assuming $L_c$ to be the throat diameter $A_{2,\;4} = 2 \cdot 10^{-6}\; \text{m}$ since this will cause the highest Knudsen number therefore a part of the system with a lower value of $L_c$ will just reach transient flow sooner.
+	Also by using the best-fit line with intercept forced zero with a slope of $k = 5.51 \cdot 10^{-8} \; \frac{\text{sPa}}{\text{K}}$ from the plot in figure \ref{plt:sutherland} the Knudsen number can be reduced to a simple proportionality relation:
 	$$
 		Kn(p,T) \approx
-		\frac{ k \cdot T }{ L_c } \sqrt{ \frac{ \pi M_m R}{ 2 } } \cdot \frac{ \sqrt{ T }}{ p }
+		\frac{ k \cdot T }{ L_c } \sqrt{ \frac{ \pi R}{ 2 } } \cdot \frac{ \sqrt{ T }}{ p }
 		\coloneqq \alpha \cdot \frac{ T^{ 3/2 } }{ p }
 		\quad \rightarrow \quad
 		Kn \propto \frac{ T^{ 3/2 } }{ p }
 	$$
-	This right now doesn't just jet give a clear picture where in the assembly to expect the highest Knudsen number.
-	But it already gives a clue that at a given temperature $T$, the only way to be able to reach low Knudsen numbers and be able to use continuum flow formulations, is to lower the pressure.
-
-	To now pin down the location in a flow from high pressure to low pressure like in our case, the relation between temperature and pressure must be examined.
+	Using the simplification of $Kn(p,\;T)$ finding an approximate value of $\alpha$ for our case is possible:
+	$$
+		\alpha = \frac{k}{L_c}\sqrt{\frac{\pi R}{2}}
+		\to \alpha = \frac{5.55\cdot 10^{-8} \frac{\text{sPa}}{K}}{20\cdot10^{-6}\text{m}}\sqrt{\frac{\pi 2.96\cdot 10^{2} \frac{\text{J}}{\text{kgK}}}{2}}
+		\approx 0.06 \frac{\text{Pa}}{\text{T}^{3/2}}
+	$$
+	Since $\alpha$ is now approximated, the pressures and temperatures can be determined where continuum flow in our system will most likely break down:
+	$$
+		p = \alpha \frac{T^{3/2}}{Kn} \quad \text{where} \quad Kn = 0.1
+	$$
+	Assuming temperature to be held constant at either 300 or 500 K, the corresponding pressure leading to a transition to molecular flow can be found.
+	\begin{align*}
+		T &= 300\;\text{K}\quad\to\quad p = 0.06\frac{\text{Pa}}{\text{T}^{3/2}} \frac{(300\;\text{K}^{3/2})}{0.1} = 0.03\;\text{bar}\\
+		T &= 500\;\text{K}\quad\to\quad p = 0.06\frac{\text{Pa}}{\text{T}^{3/2}} \frac{(500\;\text{K}^{3/2})}{0.1} = 0.07\;\text{bar}
+ 	\end{align*}
+	Therefore, very low pressures are needed to bring the flow through our assembly to transition into molecular flow, but since the purpose of the reactor is to experiment at "high" pressures close to ambient, we can assume the flow to be continuum throughout the whole assembly.
+	
+	But this still doesn't yet give a clear picture where in the assembly to expect the highest Knudsen number.
+	But it already gives a clue that at a given temperature $T$, the only way the flow may reach low Knudsen numbers and transition to molecular flow is in regions with low pressure.
+	To now pin down the most probable location for this to happen, the relation between pressure and temperature must be examined, since now continuum flow can be assumed, the changes in Temperature and pressure can be plotted over the Mach number.
+	Since it is the main driving force for change in state variables in isentropic continuum flow.
 
 	\input{src/03_analytical-work/fig_isentropic-relations.tex}
 
+	From figure \ref{plt:isentropic-change-over-Ma} it becomes clear that temperature changes less rapidly in relation to the Mach number.
+	Thus, as long as the stagnation conditions of the system yield a Knudsen number which places the gas in the continuum regime, moving more towards molecular regime, always means accelerating the flow.
+	Since flow in closed geometries usually are assumed to be subsonic inside and only surpass sonic velocities when exiting the geometry into an ambient pressure which is low enough to accelerate it over Mach one, now the location where a transition occurs becomes clear.
+	It most likely starts at the exit plane of the outlet nozzle, moving further into the assembly as stagnation pressures are lowered.
 	\note{
-		Finish the argument: Change of pressure is more rapid than change in temperature. Also approximate $\alpha$ and then make a statement!
+		Maybe a little end note with a segway to Knudsen number in low pressure zones.
 	}
-
-
 	\paragraph{Knudsen Number in low pressure Zones}
 		As the gas is leaving the outlet geometry and expands into the vacuum the characteristic length looses its significance.
 		This is because the walls of the vacuum chamber are very far away in comparison to the length-scales of the flow geometry, while the gas expands it will lose pressure to conform to the vacuum and in that process will transition into free molecular flow.
 		This leads to formulations using the mach number also loosing its significance.
 		Therefore, it makes sense to identify a much more elegant way of calculating the local Knudsen number $Kn_L$ which will be much more applicable in this situation.
 		$$
-			K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
+			K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right| \qquad \eqref{}
 		$$
 		Where $\lambda$ is the mean free path, $\phi$ is some state variable of the flow.
 		This way the Knudsen number can be calculated throughout the expansion of the gas and can be used to find the contour lines where the transition between continuum and molecular flow will happen. 
