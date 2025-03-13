@@ -58,19 +58,7 @@
 	\end{align*}
 	Additionally, the lower limit for the reservoir pressure $p_{0,\;min}$ where some part of the system transitions to the molecular regime, will be determined.
 	Again for temperatures $T_{0,\;1},\;T_{0,\;2}$
-	\begin{table}[H]
-		\centering
-		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-		\hline
-		 & $T_t$ & 1 & 2 & 3 (sub) & 3 (sup) & 4 & 5 (sub) & 5 (sup) \\ \hline
-		 & 300 K & 0.001 & 0.002 & 0.001 & \cellcolor[HTML]{FFADA8}0.2 & 0.002 & 0.001 & 0.009 \\
-		\multirow{-2}{*}{Kn} & 500 K & 0.002 & 0.003 & 0.002 & 0.02 & 0.003 & 0.002 & 0.02 \\ \hline
-	     & 300 K & - & 0.0001 & 0.4 & $\sim$0 & 0.0001 & 0.005 & 0.0002  \\
-		\multirow{-2}{*}{Re} & 500 K & - & 0.001 & 0.8 & 0.0001 & 0.001 & 0.01 & 0.0005 \\ \hline 
-		\end{tabular}
-		\caption{Knudsen and Reynolds number for total pressure $p_0 = 1.5 \text{bar}$ and total temperatures of $T_0 = 300, 500 \text{K}$ using values from table \ref{tab:isentropic_flow}. Where red color signifies transition possible transitional regime.}
-		\label{tab:knudsen-reynolds-isentropic}
-	\end{table}
+	\input{src/03_analytical-work/tab_knudsen-full-isentropic.tex}
 	\noindent It now becomes clear that the assumptions made in chapter \ref{sec:expected-flow-regimes} are accurate:
 	\begin{itemize}
 		\item Slip on the boundaries is to expect.
