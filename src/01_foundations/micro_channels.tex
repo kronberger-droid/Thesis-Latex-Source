@@ -5,8 +5,7 @@
 
 	Most of these behaviors have to be studied using complex simulations or experimental results and are sometimes not fully explained.
 	Therefore, this section is not intended to give concrete definitions or formulations, but to provide as many relevant references regarding behaviors in microfluidics as possible.
-	It will be mainly based on the review study conducted by Amit Agrawal.
-	\cite{agrawal_comprehensive_2011}
+	It will be mainly based on the review study conducted by Amit Agrawal in 2011.
 
 \subsubsection*{Phenomenon of Slip}
 	Slip, in comparison to non-slip, refers to the fact that the tangential velocity close to a surface is non-zero.
@@ -27,10 +26,20 @@
 	Determining the TMAC for a specific application is one of the most critical aspects when dealing with slip conditions, as it directly influences the velocity slip at the gas-wall interface and, consequently, the overall behavior of rarefied gas flows.
 	This is usually achieved through empirical studies or simulations like direct simulation Monte Carlo which will be discussed in more detail in the next section.
 
-\subsubsection*{Surface Roughness}
+\note{
+	Go over the following paragraphs, and write them more in my style.
+}
 
 \subsubsection*{Sudden expansion or contraction}
+	When the flow exits a confined duct into the reactor, the geometry no longer resembles a uniform channel but rather a sudden expansion or contraction.
+	Agrawal shows that in such cases the assumption of strict isentropic behavior breaks down as the abrupt change in cross‐section induces local flow separation, vena contracta effects, and additional losses.
+	These non‐isentropic phenomena lead to variations in the stagnation conditions downstream; the static pressure and temperature no longer remain uniquely determined by the inlet conditions but adjust in response to the complex expansion dynamics.
+	By considering the reactor as a reservoir with its own stagnation state, the analytical formulation accommodates the changes introduced by the sudden geometric transitions.
+	In this formulation, the mass flow entering and exiting the reactor is governed not only by the duct geometry but also by the additional pressure losses and momentum deficits associated with the rapid expansion or contraction.
 
-\note{
-	Add segway over to why making the reactor a reservoir solves some of the problems while still not ignoring them.
-}
+\subsubsection*{Surface Roughness}
+	Similarly, surface roughness plays a critical role in modifying the effective slip conditions at the channel walls, as detailed by Agrawal (2011).
+	At the microscale, even minor deviations from a smooth surface can lead to enhanced momentum exchange between the gas and the wall, effectively reducing the local slip length compared to that predicted by the ideal Maxwell model.
+	This increased friction at the wall alters the pressure distribution and thus the stagnation conditions within the flow.
+	In the context of the reactor-reservoir model, the presence of surface roughness must be accounted for by modifying the boundary conditions to reflect the non-ideal accommodation of tangential momentum.
+	Incorporating roughness effects—either through empirical corrections or higher-order slip models—allows for a more realistic prediction of the flow behavior, particularly in regions where the geometric changes force deviations from the classical isentropic relations.\cite{agrawal_comprehensive_2011, wang_analyses_2008}

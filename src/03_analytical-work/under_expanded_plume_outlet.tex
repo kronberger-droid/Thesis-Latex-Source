@@ -1,40 +1,48 @@
-After the gas reaches sonic speeds at the throat of the outlet nozzle, it expands in the diverging outlet nozzle.
-This leads to a steady pressure drop as the gas reaches the exit plane of the nozzle.
-There are three distinctive expansion patterns characterized by the difference in pressure between the exit of the nozzle and the back pressure of the chamber.
-
-If these values match, this is called fully expanded, which leads to a straight column of gas leaving the nozzle and no shock waves being created.
-Is the pressure of the gas leaving the nozzle lower than the back-pressure.
-The gas inside gives way to the back-pressure, leading to oblique shockwaves forming at the exit, compressing the column of gas, this is called under-expanded.
-If the back-pressure is now lower than the pressure of the gas, in this over-expanded state the gas leaving the nozzle further expands over the edges of the exit, creating what is called expansion fans.
-
-These fans are called Prandl-Meyer fans and occur when super-sonic flow has to turn around a sharp edge.
-\note{
-	Prandtl–Meyer angle and maximum angle. More information about connection with characteristic lines, also explanation on the process of rarefication and transition regime. 
-}
+Once the gas emerges from the reactor and enters the outlet nozzle, it undergoes a rapid expansion into a low-pressure or near-vacuum environment.
+This regime differs significantly from the upstream flow: velocity increases dramatically, density drops, and shock formations or rarefaction waves can appear.
+Traditional one-dimensional isentropic models cannot fully capture these effects, especially if there is phase change (e.g., condensation) or a transition to free-molecular flow.
+Hence, more advanced modeling approaches are required.
 
 \subsubsection*{Method of characteristics}
 
-\paragraph*{Ideal nozzle design}
+	\paragraph*{Ideal nozzle design}
+		The method of characteristics is a mathematical technique used to design supersonic nozzles so that gas flows expand smoothly from sonic to supersonic speeds without generating internal shocks.
+		It works by tracing characteristic lines—paths along which flow properties remain constant—through the nozzle region.
+		By aligning the walls with these lines it ensures that each incremental flow turn occurs through a series of controlled expansion waves, rather than abrupt angle changes that could cause shocks.
+		If fully expanded this leads to a straight column of gas leaving the nozzle, where all of its energy is converted into kinetic energy without significant losses due to shocks.
 
-The method of characteristics is a mathematical technique used to design supersonic nozzles so that gas flows expand smoothly from sonic to supersonic speeds without generating internal shocks.
-It works by tracing characteristic lines—paths along which flow properties remain constant—through the nozzle region.
-By aligning the walls with these lines it ensures that each incremental flow turn occurs through a series of controlled expansion waves, rather than abrupt angle changes that could cause shocks.
-If fully expanded this leads to a straight column of gas leaving the nozzle, where all of its energy is converted into kinetic energy without significant losses due to shocks.
+	\paragraph*{Determining flow field for free expansion}
+		In an under-expanded jet, the method of characteristics can also be applied immediately downstream of the nozzle exit to predict the initial spread of the flow.
+		It does this by mapping local Mach numbers and density profiles along characteristic lines, thus giving a first approximation for velocity and pressure distributions.
+		In supersonic expansions, Prandtl–Meyer expansion fans define the maximum turning angle the gas can undergo around a sharp corner.
+		By incorporating these fans, the method of characteristics predicts the outer boundary of the flow—effectively identifying the angle outside which the density and mass flux become negligible.
+		This angle is critical for determining the lateral extent of the under-expanded plume and for estimating where essentially all of mass flow is confined.
 
-\paragraph*{Determining flow field for free expansion}
-
-Some text here!
-
-\cite{robertson_investigation_1970}
-\cite{Cassanova1965}
+		Notably, findings from Cassanova and Stephenson (1965)—even though their nozzle half-angle does not match ours—still offer valuable reference points regarding expansion ratios and associated flow features.
+		However, a key limitation arises if condensation or other non-ideal processes occur.
+		Experiments show that for working fluids like nitrogen, condensation in the expansion region can alter the thermodynamic state and produce deviations from these idealized solutions.
+		Consequently, while the method of characteristics remains valuable for nozzle design and near-exit expansions, it cannot fully capture condensation effects or strong rarefaction phenomena further downstream.
+		\cite{robertson_investigation_1970, Cassanova1965}
 
 \subsubsection*{Navier-Stokes Equations}
-\note{
-	Fundamental equations for solving continuum flow problems. No information about boundary layer thickness and boundary conditions. These need simulations like DSMC to define boundary layer  
-}
+	A second option is to solve the Navier–Stokes equations numerically, using no-slip or first/second-order slip boundary conditions as appropriate.
+	Near the nozzle exit—where the flow is still predominantly continuum—Navier–Stokes simulations can provide detailed velocity and pressure fields, including shock structures and boundary-layer effects.
+	As the gas expands and its density decreases, however, continuum assumptions start to break down.
+	While slip or transitional models can extend the validity range, ultimately they cannot fully describe the molecular-level interactions that dominate in highly rarefied regions.
+	Consequently, beyond a certain distance from the nozzle exit or under conditions favorable to partial condensation, Navier–Stokes solutions must be supplemented by more advanced kinetic-based methods.
+
 \subsubsection*{Direct simulation Monte Carlo (DSMC)}
-\note{
-	Fundamentals of montecarlo simulations in general. How does it solve continuum regime even tho it uses molecular simulations. Use for boundary layer approximations.
-}
-\cite{putignano2012supersonic}
-\cite{liu_study_2006}
+	To address the shortcomings of both the method of characteristics (under non-ideal conditions) and Navier–Stokes (when rarefaction becomes significant), the Direct Simulation Monte Carlo (DSMC) method is indispensable.
+	DSMC performs a stochastic simulation of molecular motion and collisions, making it particularly well suited for:
+	\begin{itemize}
+		\item Transitional Regimes: Where the mean free path is comparable to or larger than the nozzle scale, DSMC accurately captures Knudsen-layer effects and velocity-slip phenomena.
+		\item Condensation Phenomena: By including collision physics and intermolecular potentials, DSMC can handle the onset of condensation or two-phase flow more reliably than continuum or purely isentropic approaches.
+		\item Free Expansion: As the jet spreads into the vacuum and transitions toward free-molecular flow, DSMC seamlessly handles extremely high Mach numbers and very low densities, maintaining physical fidelity across a wide range of Knudsen numbers.
+	\end{itemize}
+	Although more computationally expensive than continuum-based methods, DSMC provides the most robust depiction of outlet flows—particularly for condensable gases like nitrogen—and ensures high accuracy from near-nozzle regions all the way to the fully rarefied state.
+	\cite{putignano2012supersonic, liu_study_2006}
+
+\subsubsection*{Summary}
+	Overall, while the method of characteristics remains a cornerstone of ideal nozzle design and near-exit expansions (including the prediction of Prandtl–Meyer fans and maximum turning angles), condensation and severe rarefaction invalidate its purely isentropic assumption further downstream.
+	Navier–Stokes simulations can capture intermediate regimes near the exit, but eventually fail in the highly rarefied or partially condensed flow domain.
+	For a comprehensive treatment of under-expanded plumes—particularly with nitrogen or other condensable working fluids—the DSMC technique offers the necessary level of detail, bridging the gap from continuum flow at the nozzle exit to free-molecular flow far downstream.
