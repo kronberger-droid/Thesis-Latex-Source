@@ -12,17 +12,9 @@ Do-To's:
   - still some mistakes
   - make a good introduction
 - Analytical Work
-  - Good introduction
-  - Expected flow regimes
-    - continuum flow needs some work
-  - finish dimension of the flow
+  - dimension of the flow 1D can be more reference based.
   - one-dim insentropic
     - add interpretation
-  - flow behaviours in micro-channels
-    - finish the last paragraphs
-    - make connection to formulation of the leak due to unknown factors inside the reactor
-  - under-expanded nozzle plume
-    - finish the last paragraphs
 - Discusion
   - create red line through the thesis
   - make reference to what was done
@@ -31,3 +23,7 @@ Do-To's:
   - create it! (doesn't have to be long!)
 - Formularium
   - add all the formulars used at the end and provide references.
+- Figures:
+  - Add figures to Dimension of the flow: similar to geometry of the components.
+  - Create alternative figure for Scope and objectives.
+  - rotate the nozzles in geometry of the components

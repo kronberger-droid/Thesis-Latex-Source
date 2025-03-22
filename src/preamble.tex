@@ -125,8 +125,8 @@
 
 % Adjust section/subsection formatting
 \usepackage{titlesec}
-\titleformat{\section}[block]{\large\bfseries}{\thesection.}{0.5em}{} % Section
-\titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection.}{0.5em}{} % Subsection
+\titleformat{\section}[block]{\large\bfseries}{\thesection}{0.5em}{} % Section
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection}{0.5em}{} % Subsection
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,5 +141,8 @@
     \newpage
 }
 
-% Notes which will become text
+% Notes will become green text
 \newcommand{\note}[1]{{\color{greenColor}\itshape#1}}
+
+% Mistakes will become red text
+\newcommand{\mistake}[1]{{\color{redColor}\itshape#1}}
