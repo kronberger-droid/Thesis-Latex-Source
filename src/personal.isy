@@ -1,3 +1,9 @@
 <ipestyle name="personal">
-<color name="blueishish" value="0.02745 0.27843 0.6"/>
+  <color name="blueish" value="0.02745 0.27843 0.60000"/>
+
+  <color name="flow1D" value="0.92941 0.97255 0.69412"/>
+
+  <color name="flow2D" value="0.49804 0.80392 0.73333"/>
+
+  <color name="flow3D" value="0.17255 0.49804 0.72157"/>
 </ipestyle>
