@@ -23,7 +23,3 @@ Do-To's:
   - create it! (doesn't have to be long!)
 - Formularium
   - add all the formulars used at the end and provide references.
-- Figures:
-  - Add figures to Dimension of the flow: similar to geometry of the components.
-  - Create alternative figure for Scope and objectives.
-  - rotate the nozzles in geometry of the components
