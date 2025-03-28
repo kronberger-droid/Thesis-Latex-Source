@@ -4,17 +4,18 @@
 	A sensible question to ask at this point is, where in the flow is it most probable to encounter the highest Knudsen number.
 	Because this will reduce the locations to check for high Knudsen numbers when other formulations to calculate the state variables are used and therefore will simplify the process.
 	To find such most probable Location, starting from the Definition of the Knudsen number.
-	$$
+	\cite{halwidl_development_2016, anderson2021modern}
+	\begin{equation}
 		Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)}{pL_c}\sqrt{\frac{\pi R T}{2}}
-	$$
+	\end{equation}
 	Where $\lambda$ is the mean free path, $L_c$ is the characteristic length, $k_B$ is the Boltzmann constant, $R$ is the specific gas constant, $T$ is the temperature of the fluid, $p$ is the pressure of the fluid, $M_m$ is the molar mass and $\mu$ is the dynamic viscosity.\\
-	The dynamic viscosity can be calculated using Sutherland's formula.
-	$$
+	The dynamic viscosity can be calculated using Sutherland's formula. \cite{Hirschfelder1954MolecularTO}
+	\begin{equation}
 		\mu(T) = \mu_0 \left(\frac{T}{T_0}\right)^{3/2} \frac{T_0 + S_\mu}{T + S_\mu}
-	$$
+	\end{equation}
 	Where $mu_0$ is the reference viscosity at the reference temperature $T_0$ and $S_\mu$ representing the Sutherland constant, whose values are dependent on the chosen gas. For nitrogen these have the following values \cite{kim2004numericalanalysisflowcharacteristics}
 	$$
-		S_\mu = 111\;K\;,\quad T_0 = 300.55\;K\;,\quad\mu_0 = 17,81\; \text{Pa s} 
+		S_\mu = 111\;K\;,\quad T_0 = 300.55\;K\;,\quad\mu_0 = 17,81\; \text{sPa} 
 	$$
 	Following plot shows the exact values using the Sutherland formula, plus two mean linear approximations in the range of 200-600 K, for the given values.
 	One of them forcing the intercept to be zero.
@@ -22,13 +23,13 @@
 	\input{src/03_analytical-work/sutherland-over-temp.tex}
 	Assuming $L_c$ to be the throat diameter $A_{2,\;4} = 2 \cdot 10^{-6}\; \text{m}$ since this will cause the highest Knudsen number therefore a part of the system with a lower value of $L_c$ will just reach transient flow sooner.
 	Also by using the best-fit line with intercept forced zero with a slope of $k = 5.51 \cdot 10^{-8} \; \frac{\text{sPa}}{\text{K}}$ from the plot in figure \ref{plt:sutherland} the Knudsen number can be reduced to a simple proportionality relation:
-	$$
+	\begin{equation}
 		Kn(p,T) \approx
 		\frac{ k \cdot T }{ L_c } \sqrt{ \frac{ \pi R}{ 2 } } \cdot \frac{ \sqrt{ T }}{ p }
 		\coloneqq \alpha \cdot \frac{ T^{ 3/2 } }{ p }
 		\quad \rightarrow \quad
 		Kn \propto \frac{ T^{ 3/2 } }{ p }
-	$$
+	\end{equation}
 	Using the simplification of $Kn(p,\;T)$ finding an approximate value of $\alpha$ for our case is possible:
 	$$
 		\alpha = \frac{k}{L_c}\sqrt{\frac{\pi R}{2}}
@@ -37,12 +38,12 @@
 	$$
 	Since $\alpha$ is now approximated, the pressures and temperatures can be determined where continuum flow in our system will most likely break down:
 	$$
-		p = \alpha \frac{T^{3/2}}{Kn} \quad \text{where} \quad Kn = 0.1
+		p_\text{trans} = \alpha \frac{T^{3/2}}{Kn} \quad \text{where} \quad Kn = 0.1
 	$$
 	Assuming temperature to be held constant at either 300 or 500 K, the corresponding pressure leading to a transition to molecular flow can be found.
 	\begin{align*}
-		T &= 300\;\text{K}\quad\to\quad p = 0.06\frac{\text{Pa}}{\text{T}^{3/2}} \frac{(300\;\text{K}^{3/2})}{0.1} = 0.03\;\text{bar}\\
-		T &= 500\;\text{K}\quad\to\quad p = 0.06\frac{\text{Pa}}{\text{T}^{3/2}} \frac{(500\;\text{K}^{3/2})}{0.1} = 0.07\;\text{bar}
+		T_{0,1} &= 300\;\text{K} \quad \to \quad p_{\text{trans},1} = 0.03\;\text{bar}\\
+		T_{0,2} &= 500\;\text{K} \quad \to \quad p_{\text{trans},2} = 0.07\;\text{bar}
  	\end{align*}
 	Therefore, very low pressures are needed to bring the flow through our assembly to transition into molecular flow, but since the purpose of the reactor is to experiment at "high" pressures close to ambient, we can assume the flow to be continuum throughout the whole assembly.
 	
@@ -57,17 +58,15 @@
 	Thus, as long as the stagnation conditions of the system yield a Knudsen number which places the gas in the continuum regime, moving more towards molecular regime, always means accelerating the flow.
 	Since flow in closed geometries usually are assumed to be subsonic inside and only surpass sonic velocities when exiting the geometry into an ambient pressure which is low enough to accelerate it over Mach one, now the location where a transition occurs becomes clear.
 	It most likely starts at the exit plane of the outlet nozzle, moving further into the assembly as stagnation pressures are lowered.
-	\note{
-		Maybe a little end note with a segway to Knudsen number in low pressure zones.
-	}
+
 	\paragraph{Knudsen Number in low pressure Zones}
 		As the gas is leaving the outlet geometry and expands into the vacuum the characteristic length looses its significance.
 		This is because the walls of the vacuum chamber are very far away in comparison to the length-scales of the flow geometry, while the gas expands it will lose pressure to conform to the vacuum and in that process will transition into free molecular flow.
 		This leads to formulations using the mach number also loosing its significance.
 		Therefore, it makes sense to identify a much more elegant way of calculating the local Knudsen number $Kn_L$ which will be much more applicable in this situation.
-		$$
-			K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right| \qquad \eqref{}
-		$$
+		\begin{equation}
+			K n_L = \frac{\lambda}{\phi} \left| \frac{d\phi}{dx} \right|
+		\end{equation}
 		Where $\lambda$ is the mean free path, $\phi$ is some state variable of the flow.
 		This way the Knudsen number can be calculated throughout the expansion of the gas and can be used to find the contour lines where the transition between continuum and molecular flow will happen. 
 		\cite{bird_dsmc_2013, Grabe2008, LiLam1964}
@@ -79,8 +78,8 @@
 	\cite{comsol_microfluidics_guide}
 	
 \subsubsection*{Steady Flow}
-
 	Steadiness of the flow is essentially given by the fact that the temperature $T_0$ and the pressure $p_0$ of the reservoir will be held constant during measurements.
 	Thus, the flow will be driven by the pressure differential between the vacuum and the reservoir alone.
 	So there is no reason for the flow to establish any dynamic behaviors after reaching some equilibrium state, after gas is first released into the system.
 	This is true for regions inside as well as outside the assembly.
+	\cite{LiLam1964}

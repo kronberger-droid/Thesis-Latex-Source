@@ -6,8 +6,8 @@
 	This won't be the case inside the reactor, since there is no way of slicing the reactor chamber to achieve a gradual change in cross-section, especially around the inlet and outlet.
 	\begin{figure}[H]
 	    \centering
-	    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
-	    \caption{A descriptive caption for the figure.}
+	    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
+	    \caption{Idealized geometry of the reactor assembly modeled as a one-dimensional variable-area duct. The yellow region represents the domain where quasi one-dimensional isentropic flow is assumed (as described in section \ref{sec:geometry}). Grey indicates stagnant gas, green arrow indicates subsonic flow at the inlet, and the red arrow indicates supersonic flow at the outlet. Flow in the central reactor region is most likely slow-moving.}
 	\end{figure}
 	This geometry can now be characterized as a double throat, and therefore one-dimensional isentropic flow will yield one of in two fundamental solutions.
 	Depending on how the steady state in the system is reached, flow velocity of the stream will either stay subsonic and therefore decrease when entering the reactor or become sonic at the throat (2) and continue to accelerate.
@@ -20,41 +20,48 @@
 	Since the outlet is expanding into vacuum, resulting in a pressure ratio tending towards zero, therefore the flow therefore must be chocked and can be recognized as a critical point.
 	Maximum mass-flow occurs if the flow is chocked. Therefore, to keep up with the mass-flow of the outlet, the inlet must also be chocked: 
 	$$
-		A_{2,4},\;p_{2,4},\;\rho_{2,4},\;T_{2,4}\quad\xrightarrow{M=1}\quad A^*,\;p^*,\;\rho^*,\;T^*
+		A_{2,4},\;p_{2,4},\;\rho_{2,4},\;T_{2,4}
+			\quad \xrightarrow {Ma = 1} \quad
+		A^*,\;p^*,\;\rho^*,\;T^*
 	$$
 	The second reference location corresponding to the stagnation or total conditions is at the entry of the inlet nozzle (1), which can be defined afterward to get quantitative solutions.
 	$$
-		A_1,\;p_1,\;\rho_1,\;T_1\quad\xrightarrow{M=0}\quad A_0,\;p_0,\;\rho_0,\;T_t
+		A_1,\;p_1,\;\rho_1,\;T_1
+			\quad \xrightarrow{Ma=0} \quad
+		A_0,\;p_0,\;\rho_0,\;T_t
 	$$
 	Next step is to take the cross-sectional areas at every point defined in chapter \ref{sec:geometry}, and calculate their ratios to the throat areas.
 	To use them for solving the following equation relating them to M, numerically yielding one subsonic and one supersonic solution depending on their initial conditions.
 	$$
-		\frac{A_i}{A^*} = \frac{1}{M_i} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
+		\frac{A_i}{A^*} = \frac{1}{Ma_i} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
 		\qquad \eqref{eq:area_ratio_mach}
 	$$
 	Afterward the ratio of the local state variables to the total conditions can be determined using equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}, which can be used after, defining the total conditions of the system, to calculate the local variables for every point.
 	\cite{hall_isentropic_nodate}
 	\begin{alignat*}{2}
-	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-1}\qquad &\eqref{eq:total_relation_T}\\
-	    \frac{p}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-\frac{\gamma}{\gamma - 1}}&\eqref{eq:total_relation_T}\\
-	    \frac{\rho}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-\frac{1}{\gamma - 1}}&\eqref{eq:total_relation_T}
+	    \frac{T_i}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-1}\qquad &\eqref{eq:total_relation_T}\\
+	    \frac{p_i}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-\frac{\gamma}{\gamma - 1}}&\eqref{eq:total_relation_T}\\
+	    \frac{\rho_i}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} Ma_i^2 \right)^{-\frac{1}{\gamma - 1}}&\eqref{eq:total_relation_T}
 	\end{alignat*}
-	Where $p,\; \rho,\; T$ are the local gas conditions, $p_0,\; \rho_0,\; T_0$ the total gas conditions, $\gamma$ the specific heat ratio and $M_i$ the local mach number.
+	Where $p_i,\; \rho_i,\; T_i$ are the local gas conditions, $p_0,\; \rho_0,\; T_0$ the total gas conditions, $\gamma$ the specific heat ratio and $Ma_i$ the local mach number.
 	This leads to the following solutions:
 	\input{src/03_analytical-work/tab_full-isentropic-values.tex}
-	Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}] and the ideal gas law \eqref{eq:ideal_gas}.
+	Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}] and the ideal gas law.
 	\cite{benson_mass_nodate}
-	$$
+	\begin{equation}
 		\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{R T_0}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
-		\qquad \eqref{}
-	$$
+	\end{equation}\label{eq:1-d-massflow}
 	Where $A$ is the local cross-sectional area, $P_0$ the total pressure, $T_0$ the total temperature, $\gamma$ the specific heat ratio, $R$ the specific gas constant and $M$ the mach number.
 	\cite{Cantwell_AA210A}
 
 	Now knowing the approximate way state variables change inside the system, the assumption taken in chapter \ref{sec:expected-flow-regimes} regarding the Reynolds and Knudsen number can be tested for the following values:
 	\begin{align*}
-		p_{0,\;1} = 1.5\;\text{bar} &\qquad T_{0,\;1} = 300\;\text{K}\\
-		p_{0,\;2} = 1.5\;\text{bar} &\qquad T_{0,\;2} = 500\;\text{K}
+		p_{0,\;1} = 1.5\;\text{bar}
+			&\qquad T_{0,1} = 300\;\text{K}
+			\qquad \text{at} \qquad \dot{m}_1 = 0.000 \frac{\text{kg}}{\text{s}}\\
+		p_{0,\;2} = 1.5\;\text{bar}
+			&\qquad T_{0,2} = 500\;\text{K}
+			\qquad \text{at} \qquad \dot{m}_2 = 0.000 \frac{\text{kg}}{\text{s}}
 	\end{align*}
 	Additionally, the lower limit for the reservoir pressure $p_{0,\;min}$ where some part of the system transitions to the molecular regime, will be determined.
 	Again for temperatures $T_{0,\;1},\;T_{0,\;2}$
@@ -62,8 +69,9 @@
 	\noindent It now becomes clear that the assumptions made in chapter \ref{sec:expected-flow-regimes} are accurate:
 	\begin{itemize}
 		\item Slip on the boundaries is to expect.
-		\item The Mach number has major influence on the value of the Knudsen number, thus high Mach numbers point to possible transition to molecular regime.
-		\item The outlet always corresponds to the highest Knudsen number with exception to the hypersonic solution found in the middle of the reactor. Which will be discussed more in the following paragraph.
+		\item The Mach number has major influence on the value of the Knudsen number, thus high Mach numbers point to possible transition to molecular regime. This will most likely only happen at the outlet nozzle exit if stagnation pressure is low enough.
+		\item The outlet always corresponds to the highest Knudsen number with exception to the hypersonic solution found in the middle of the reactor. Which corresponds to a mathematically true but physically most likely impossible solution as described previously.
+		\item Disregarding the non-physical solutions, the flow through the assembly will be in continuum regime with slip boundary condition.
 		\item Reynolds numbers are very low, therefore no turbulences are expected.
 	\end{itemize}
 \subsubsection*{Interpretation}
@@ -75,7 +83,4 @@
 	This is expected even tho there is actually no specific converging section when leaving the reactor, especially if the reactor is seen as a reservoir by itself, like it will in chapter \ref{sec:disconnected-reservoirs}.
 	In short, the flow itself when flowing over the edge of a sudden contraction in the flow geometry, can itself form a kind of converging section and still accelerate to sonic conditions.
 	This will be discussed in the next chapter in more detail.
-
-	\note{
-		Mention non-isentropic behavior non viability of the hypersonic solution!
-	}	 
+	\note{Mention non-isentropic behavior with segway to flow behaviors in microchannels and chapter 3.5}	 

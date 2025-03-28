@@ -1,7 +1,8 @@
 Once the gas emerges from the reactor and enters the outlet nozzle, it undergoes a rapid expansion into a low-pressure or near-vacuum environment.
 This regime differs significantly from the upstream flow: velocity increases dramatically, density drops, and shock formations or rarefaction waves can appear.
-Traditional one-dimensional isentropic models cannot fully capture these effects, especially if there is phase change (e.g., condensation) or a transition to free-molecular flow.
+The one-dimensional isentropic models used until now cannot fully capture these effects, especially if there is phase change (e.g., condensation) or a transition to free-molecular flow.
 Hence, more advanced modeling approaches are required.
+\cite{jousten_handbook_2016, anderson2021modern}
 
 \subsubsection*{Method of characteristics}
 
@@ -10,6 +11,7 @@ Hence, more advanced modeling approaches are required.
 		It works by tracing characteristic lines—paths along which flow properties remain constant—through the nozzle region.
 		By aligning the walls with these lines it ensures that each incremental flow turn occurs through a series of controlled expansion waves, rather than abrupt angle changes that could cause shocks.
 		If fully expanded this leads to a straight column of gas leaving the nozzle, where all of its energy is converted into kinetic energy without significant losses due to shocks.
+		\cite{khare_rocket_2021, fernandes_shape_2023}
 
 	\paragraph*{Determining flow field for free expansion}
 		In an under-expanded jet, the method of characteristics can also be applied immediately downstream of the nozzle exit to predict the initial spread of the flow.
@@ -22,7 +24,7 @@ Hence, more advanced modeling approaches are required.
 		However, a key limitation arises if condensation or other non-ideal processes occur.
 		Experiments show that for working fluids like nitrogen, condensation in the expansion region can alter the thermodynamic state and produce deviations from these idealized solutions.
 		Consequently, while the method of characteristics remains valuable for nozzle design and near-exit expansions, it cannot fully capture condensation effects or strong rarefaction phenomena further downstream.
-		\cite{robertson_investigation_1970, Cassanova1965}
+		\cite{robertson_investigation_1970, Cassanova1965, noauthor_zucrow_nodate, jousten_handbook_2016}
 
 \subsubsection*{Navier-Stokes Equations}
 	A second option is to solve the Navier–Stokes equations numerically, using no-slip or first/second-order slip boundary conditions as appropriate.
@@ -30,13 +32,14 @@ Hence, more advanced modeling approaches are required.
 	As the gas expands and its density decreases, however, continuum assumptions start to break down.
 	While slip or transitional models can extend the validity range, ultimately they cannot fully describe the molecular-level interactions that dominate in highly rarefied regions.
 	Consequently, beyond a certain distance from the nozzle exit or under conditions favorable to partial condensation, Navier–Stokes solutions must be supplemented by more advanced kinetic-based methods.
+	\cite{anderson_fundamentals_2017, anderson2021modern}
 
 \subsubsection*{Direct simulation Monte Carlo (DSMC)}
 	To address the shortcomings of both the method of characteristics (under non-ideal conditions) and Navier–Stokes (when rarefaction becomes significant), the Direct Simulation Monte Carlo (DSMC) method is indispensable.
 	DSMC performs a stochastic simulation of molecular motion and collisions, making it particularly well suited for:
 	\begin{itemize}
 		\item Transitional Regimes: Where the mean free path is comparable to or larger than the nozzle scale, DSMC accurately captures Knudsen-layer effects and velocity-slip phenomena.
-		\item Condensation Phenomena: By including collision physics and intermolecular potentials, DSMC can handle the onset of condensation or two-phase flow more reliably than continuum or purely isentropic approaches.
+		\item Condensation Phenomena: By including collision physics and intermolecular potentials, DSMC can handle the onset of condensation or two-phase flow more reliably than continuum or purely isentropic approaches. \cite{EMMONS1958}
 		\item Free Expansion: As the jet spreads into the vacuum and transitions toward free-molecular flow, DSMC seamlessly handles extremely high Mach numbers and very low densities, maintaining physical fidelity across a wide range of Knudsen numbers.
 	\end{itemize}
 	Although more computationally expensive than continuum-based methods, DSMC provides the most robust depiction of outlet flows—particularly for condensable gases like nitrogen—and ensures high accuracy from near-nozzle regions all the way to the fully rarefied state.

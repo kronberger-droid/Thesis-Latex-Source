@@ -1,4 +1,4 @@
-This is the whole source of my bachelors thesis at TU Wien.
+This is the whole source of my Bachelor's thesis at Technical University Vienna.
 
 It includes:
 - every latex file used to compile main.pdf (compilation using [tectonic](https://tectonic-typesetting.github.io/en-US/))
@@ -9,17 +9,14 @@ It includes:
 
 Do-To's:
 - Scope and objectives
-  - still some mistakes
   - make a good introduction
-- Analytical Work
-  - dimension of the flow 1D can be more reference based.
-  - one-dim insentropic
-    - add interpretation
-- Discusion
+- Discussion
   - create red line through the thesis
   - make reference to what was done
   - mention things not done too.
 - Conclusion
   - create it! (doesn't have to be long!)
-- Formularium
-  - add all the formulars used at the end and provide references.
+- Formulary
+  - add all the formulas used at the end and provide references.
+- General:
+  - Calculate mass-flows for same reservoir pressures, so it can be compared and add comparison.

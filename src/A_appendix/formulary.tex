@@ -2,122 +2,118 @@
 \addcontentsline{toc}{subsection}{Thermodynamics}
 
 \subsubsection*{Thermal Equations of State}
-	Is in general an equation of the form
-	\begin{equation}
+	Is in general an equation* of the form
+	\begin{equation*}
 		p=p(v,\;T)
-	\end{equation}
+	\end{equation*}
 	Commonly used equations of state for thermally perfect gases\\
 	\textbf{Ideal gas law}
 	\note{
 		add different formulations, and check if R
 	}
-	\begin{equation}
+	\begin{equation*}
 		p = \rho RT \quad \texttt{[therm perf]}
-	\end{equation}\label{eq:ideal_gas}
-	\textbf{1D Euler equation}
-	\begin{equation}
+	\end{equation*}
+	\textbf{1D Euler equation*}
+	\begin{equation*}
 		\frac{1}{\rho} dp + V dV = 0 \quad \texttt{[therm perf]}
-	\end{equation}
+	\end{equation*}
 
 \subsection*{Control Volume Analysis}
 \addcontentsline{toc}{subsection}{Control Volume Analysis}
 
-\subsubsection*{Continuity Equation:}
+\subsubsection*{Continuity Equation*:}
 
-	\begin{equation}
+	\begin{equation*}
 		\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
-	\end{equation}
+	\end{equation*}
 	In case of one-dimensional flow $\frac{\partial}{\partial t} = 0$ for a given inlet/outlet:
-	\begin{equation}
+	\begin{equation*}
 		\int \rho (\vec{V} \cdot \hat{n} )d A = \rho\vec{V}\cdot \hat{n} \int d A = \rho V A
-	\end{equation}\label{eq:1-d-massflow}
+	\end{equation*}
 	\noindent
 	Thus for steady one-dimensional flow:
-	\begin{equation}
+	\begin{equation*}
 		0 = \sum \rho V A
-	\end{equation}
+	\end{equation*}
 
-\subsubsection*{Momentum Equation:}
+\subsubsection*{Momentum Equation*:}
 
-\begin{equation}
+\begin{equation*}
 	\frac{d}{dt} \int_V \rho V \, dV + \int_S \rho V (V \cdot dA) = - \int_S p \, dA + \int_V \rho g \, dV
-\end{equation}
+\end{equation*}
 
-\subsubsection*{Energy Equation:}
+\subsubsection*{Energy Equation*:}
 
-\begin{equation}
+\begin{equation*}
 	\frac{d}{dt} \int_V \rho e \, dV + \int_S \rho h V \cdot dA = \dot{Q} - \int_S p V \cdot dA
-\end{equation}
+\end{equation*}
 
 \subsection*{Continuous one-dimensional flow}
 \addcontentsline{toc}{subsection}{Continuous one-dimensional flow}
 
 \subsubsection*{Speed of Sound:}
 
-\begin{equation}
+\begin{equation*}
 	a = \sqrt{\left( \frac{\partial p}{\partial \rho} \right)_s} = \sqrt{\gamma \left( \frac{\partial p}{\partial \rho} \right)_T}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \texttt{[therm perf]}
-\end{equation}
+\end{equation*}
 
 \subsubsection*{Mach Number:}
 
-\begin{equation}
+\begin{equation*}
 	M = \frac{V}{a}
-\end{equation}
+\end{equation*}
 
 \subsubsection*{Area-ratio in terms of mach number:}
-\begin{equation}
+\begin{equation*}
 	\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
 	\quad \texttt{[isen, perf]}     
-	\label{eq:area_ratio_mach}
-\end{equation}
+\end{equation*}
 \subsubsection*{Isentropic Relations:}
 
-\begin{equation}
+\begin{equation*}
 	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma}
 	\quad \texttt{[isen, perf]}
-\end{equation}
+\end{equation*}
 
 \subsubsection*{From this:}
 
-\begin{equation}
+\begin{equation*}
 	\frac{p}{p_0} = \left( \frac{\rho}{\rho_0} \right)^\gamma = \left( \frac{T}{T_0} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_0} \right)^{\frac{2\gamma}{\gamma - 1}}
 	\quad \texttt{[isen, perf]}
-\end{equation}
+\end{equation*}
 
 \subsubsection*{Bernoulli's Equation for Compressible Flow}
 
-\begin{equation}
+\begin{equation*}
 	\frac{\gamma}{\gamma - 1} \left( \frac{p_0}{\rho_0} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_0} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_0}{\rho_0} 
 	\quad \texttt{[isen, perf]}
-\end{equation}
+\end{equation*}
 
 \subsubsection*{Stagnation Relations}
 
-\begin{equation}
+\begin{equation*}
 	\frac{T}{T_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
 	\quad \texttt{[adiab, perf]}
-	\label{eq:total_relation_T}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	\frac{p}{p_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
 	\quad \texttt{[isen, perf]}
-	\label{eq:total_relation_p}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	\frac{\rho}{\rho_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
 	\quad \texttt{[isen, perf]}
-	\label{eq:total_relation_rho}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 	\frac{a}{a_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
 	\quad \texttt{[adiab, perf]}
-\end{equation}
+\end{equation*}
 
 \blankpage

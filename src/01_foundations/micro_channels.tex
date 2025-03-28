@@ -12,23 +12,18 @@
 	Maxwell suggested that on a control surface $s$, at distance half the mean free path away from the surface, one half of the molecules come in from one mean free path away with the tangential velocity $u_\lambda$, the other half is reflected from the surface.
 	Assuming a fraction $\sigma$ of the molecules are reflected diffusively (average velocity corresponds to velocity at the wall $u_w$)at the walls, with the remainder $(1-\sigma)$ being reflected specularly (no change in their impinging velocity $u_\lambda$).
 	When expanding $u_\lambda$ in a second order Taylor series this yields the second order slip boundary condition used in continuum analysis:
-	$$
+	\begin{equation}
 		u_g - u_w =
 		\left[
 			\frac{2-\sigma}{\sigma}Kn\left(\frac{\partial u}{\partial n}\right)_s
 			+ \frac{Kn^2}{2} \left(\frac{\partial^2 u}{\partial n^2}\right)_s
 		\right]
-		\qquad \eqref{}
-	$$ 
+	\end{equation}
 	Where $u$ stands for the streamwise velocities, where the subscripts $g$, $w$ and $s$ refer to gas, wall and control surface, with $n$ being the normal to the control surface.
 	And most importantly $\sigma$ is the tangential momentum accommodation coefficient, or short TMAC.
 
 	Determining the TMAC for a specific application is one of the most critical aspects when dealing with slip conditions, as it directly influences the velocity slip at the gas-wall interface and, consequently, the overall behavior of rarefied gas flows.
 	This is usually achieved through empirical studies or simulations like direct simulation Monte Carlo which will be discussed in more detail in the next section.
-
-\note{
-	Go over the following paragraphs, and write them more in my style.
-}
 
 \subsubsection*{Sudden expansion or contraction}
 	When the flow exits a confined duct into the reactor, the geometry no longer resembles a uniform channel but rather a sudden expansion or contraction.

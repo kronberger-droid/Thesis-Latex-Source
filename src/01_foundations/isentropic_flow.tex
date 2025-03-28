@@ -9,59 +9,59 @@
 	Being reversible as well as adiabatic, the flow is therefore isentropic.
 	The gas is still considered perfect and follows the perfect gas law, as it is crucial in the derivation for the following relations which are the foundation for solving isentropic one-dimensional gas flows.
 	Flow velocity for continuum flows is usually encoded into the Mach number, which is defined as the ratio between the local velocity $u$ and the local speed of sound $a$.
-	$$
-		Ma = \frac{u}{a}\qquad \eqref{}
-	$$
+	\begin{equation}
+		Ma = \frac{u}{a}
+	\end{equation}
 	It is a very important metric when analyzing isentropic flow, since state variables are uniquely defined through the mach number at the corresponding location, as long as either the stagnation, or critical conditions of the flow are known.
 	For isentropic flow one-dimensional flow it can be directly linked to the geometry of the duct and can be calculated by defining a state in the system where Mach number is equal to 1, the so-called throat.
 	Then its area is related to the Mach number by following non-linear equation:
-	$$
+	\begin{equation}
 		\frac{A}{A^*} = \frac{1}{Ma} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
-		\qquad \eqref{eq:area_ratio_mach}
-	$$
+	\end{equation}\label{eq:area_ratio_mach}
 	Where $A$ represents the area of the duct at some location, $A^*$ the area of the throat, $Ma$ the Mach number at the given location and $\gamma$ the ratio of heats.
 	One of the most important ideas in isentropic flow are the stagnation/total conditions, which represent the state of a moving gas when fully decelerating it isentropicaly ($Ma = 0$).
 	They exist for the fundamental state variables of the gas notated as ($P_0,\;T_0,\;\rho_0$) and represent conserved quantities when dealing with isentropic flow.
 	This stagnation state does not have to exist in the system, but can also be derived if velocity and state variables at some point in the system are known.
 	Total conditions represent the highest values of any state variable reachable in the system, while still being insentropic.
 	Therefore, changes of state variables are usually represented in relation to the total conditions of the corresponding state variables, and depend only on the ratio of heats of the gas $\gamma$ and the Mach number $Ma$.
-	\begin{alignat*}{2}
-	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-1} \qquad &\eqref{eq:total_relation_T}\\
-	    \frac{p}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-\frac{\gamma}{\gamma - 1}} &\eqref{eq:total_relation_p}\\
-	    \frac{\rho}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-\frac{1}{\gamma - 1}} &\eqref{eq:total_relation_rho}
-	\end{alignat*}
+	\begin{alignat}{2}
+	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-1} \label{eq:total_relation_T}\\
+	    \frac{p}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-\frac{\gamma}{\gamma - 1}} \label{eq:total_relation_p}\\
+	    \frac{\rho}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-\frac{1}{\gamma - 1}} \label{eq:total_relation_rho}
+	\end{alignat}
 
-	\paragraph{Low subsonic regime (\(Ma < 0.3\))}
+	\paragraph{Low subsonic regime ($Ma < 0.3$)}
 		For low Mach numbers, compressibility effects of a gas can be neglected, and the gas can be treated as an incompressible fluid.
+		In figures locations where the flow is probable to have very low Mach-numbers will be indicated by a yellow arrow (as seen in figure \ref{fig:technical-drawing}).
 
-	\paragraph{Subsonic regime (\(0.3 < Ma < 1.0\))} 
+	\paragraph{Subsonic regime ($0.3 < Ma < 1.0$)} 
 		Inside system of variable area ducts the gas flow generally stays subsonic.
-		Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.\\
+		Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.
+		In figures, locations where the flow can be assumed subsonic will be indicated by a green arrow (as seen in figure \ref{fig:technical-drawing}).\\
 		\input{src/01_foundations/fig_subsonic.tex}
 
-	\paragraph{Sonic regime (\(Ma = 1\))}
+	\paragraph{Sonic regime ($Ma = 1$)}
 		Sonic flow occurs at the exit of a converging duct, if the pressure ratio between two reservoirs becomes smaller than the following critical ratio.
 		Which is called chocked flow and constitutes the maximum mass-flow for given stagnation conditions. 
 		This ratio is defined as:
-		$$
-			\frac{P^*}{P_0}=\left(\frac{2}{\gamma + 1}\right)^{-\frac{\gamma}{\gamma - 1}} \qquad \eqref{}
-		$$ 
+		\begin{equation}
+			\frac{P^*}{P_0}=\left(\frac{2}{\gamma + 1}\right)^{-\frac{\gamma}{\gamma - 1}}
+		\end{equation}\label{eq:critical-pressure}
 		Where $P_t$ is the stagnation condition, $P^*$ the critical back-pressure and $\gamma$ the specific heat ratio.
 		The ratio is derived from the isentropic flow relation \eqref{eq:total_relation_T} and can be expressed for any state variable.
 
-	\paragraph{Supersonic regime (\(Ma > 1\))} 
+	\paragraph{Supersonic regime ($Ma > 1$)} 
 		If there are critical conditions at the end of a converging duct and a diverging duct follows.
 		The flow continues to accelerate and reaches supersonic speeds.
 		The location where the flow reaches critical condition is called throat and represents the minimal diameter of the duct.\\
 		In supersonic flows, state variables change rapidly causing phenomenons like shock waves and expansion fans.
+		Just like the previous regimes, this regime will be indicated using an arrow colored red.
 		\input{src/01_foundations/fig_supersonic.tex}
 
 \subsubsection*{Relation of dimensionless numbers in continuum flow}
-	It is actually possible to relate the three dimensionless numbers mentioned in the preceding chapters.
+	It is possible to relate the three dimensionless numbers mentioned in the preceding chapters.
 	Leading to following relation:
-	$$
-		Kn = \frac{Ma}{Re}\sqrt{\frac{\gamma \pi}{2}} \qquad \eqref{}
-	$$
-\note{
-	Maybe add a notice that essentially everything calculated will use isentropic one-dimensional flow!
-}
+	\begin{equation}
+		Kn = \frac{Ma}{Re}\sqrt{\frac{\gamma \pi}{2}}
+	\end{equation}
+	Where $Ma$ is the Mach-number, $Re$ the Reynolds-number and $Kn$ the Knudsen-number at some point in the flow of gas with the ratio of heat $\gamma$.
