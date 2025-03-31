@@ -19,136 +19,167 @@ Two possible assumptions for Temperature are presented in the following paragrap
 
 Afterward, the influence on the inlet mach number $M_2$ of additional mass flow $\dot{m}_L$ leaving the reactor is inspected.
 Trying to find an upper limit for mass flow through the leak, after which the inlet is again forced to reach sonic flow speeds, without having to derive an explicit way to calculate $\dot{m}_L$.
+\newpage
 
 \subsubsection*{Formulations without including the leak}
+	In the absence of a leak, the system reduces to a single flow path from the inlet reservoir, through the reactor volume, and out to the vacuum.
+	All mass entering the reactor must exit via the outlet nozzle, eliminating any additional flow paths.
+	Consequently, the boundary conditions become simpler, and standard relationships between the inlet and reactor stagnation states can be applied directly.
+	This section formulates those relationships and illustrates how isentropic or isothermal assumptions may be used without the complexities introduced by a leak.
 	\begin{figure}[H]
 	    \centering
-	    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_disconnected-reservoirs.pdf}
-	    \caption{Idealized system separating the reactor from the inlet and outlet regions to account for non-isentropic effects. The yellow regions represent domains where one-dimensional flow is assumed. Grey indicates stagnant gas, red arrows indicate subsonic flow, and the dark red arrow indicates supersonic flow at the outlet. An entropy change $\Delta s$ occurs between the discharge region and the reactor, and the converging section at the outlet represents the flow constraining itself as it accelerates as mentioned in \ref{sec:geometry}.}
+	    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_disconnected-reservoirs.pdf}
+	    \caption{Idealized system separating the reactor from the inlet and outlet regions to account for non-isentropic effects. The yellow regions represent domains where one-dimensional flow is assumed. Grey indicates stagnant gas, green arrow indicates subsonic flow, and the red arrow indicates supersonic flow at the outlet. An entropy change $\Delta s$ occurs between the gas flowing into the discharge region and the reactor, and the converging section at the outlet represents the flow constraining itself as it accelerates as mentioned in \ref{sec:geometry}.}
 	    \label{fig:disconnected-reservoirs}
 	\end{figure}
-
-	\textbf{General assumptions}\\
-		Since this still constitutes a closed system, mass flow must be conserved, thus:
-		$$
-			\dot{m}_0 = \dot{m}_r = const.
-		$$
-		The reactor still discharges into vacuum, this therefore must lead to chocked flow:
-		$$
-			M_r = 1
-		$$
-		From the geometry in section \ref{sec:geometry} it is given that:
-		$$
-			A_0 = A_r = A
-		$$
-	\textbf{Calculation}\\
-		The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation \eqref{eq:1-d-massflow}\\
-		Reservoir $\to$ Reactor
-		\begin{equation}
-			\dot{m}_0 = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-		\end{equation}\label{eq:massflow-inlet}
-		Reactor $\to$ Vacuum
-		\begin{equation}
-			\dot{m}_r = A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-		\end{equation}\label{eq:massflow-outlet}
-		Thus from ($\dot{m}_r = \dot{m}_0 = const.$)
-		$$
-			A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-			=  A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
-		$$
-		Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
-		This will be the starting point for both of the following approaches.\\
-	\textbf{Isentropic approach}\\
-		\note{ Add intro! }
-		$$
-			T_b = T_r
+	\noindent Since this still constitutes a closed system, mass flow must be conserved, thus:
+	$$
+		\dot{m}_0 = \dot{m}_r = const.
+	$$
+	The reactor still discharges into vacuum, this therefore must lead to chocked flow:
+	$$
+		M_r = 1
+	$$
+	From the geometry in section \ref{sec:geometry} it is given that:
+	$$
+		A_0 = A_r = A
+	$$
+	The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation \eqref{eq:1-d-massflow}\\
+	Reservoir $\to$ Reactor
+	\begin{equation}
+		\dot{m}_0 = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		\label{eq:massflow-inlet}
+	\end{equation}
+	Reactor $\to$ Vacuum
+	\begin{equation}
+		\dot{m}_r = A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		\label{eq:massflow-outlet}
+	\end{equation}
+	Thus from ($\dot{m}_r = \dot{m}_0 = const.$)
+	$$
+		A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		=  A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
+	$$
+	Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
+	This will be the starting point for both of the following approaches.\\
+	\newpage
+\paragraph{Isentropic approach}
+	In this approach, the reactor is treated as a downstream reservoir with distinct stagnation conditions, implying that irreversibilities have occurred somewhere in the flow path.
+	Instead of modeling the associated entropy generation, local isentropic relations are used to connect the inlet reservoir’s stagnation state to the reactor boundary.
+	This method effectively embeds any non-isentropic effects into a “shift” in stagnation values, so the reactor’s reduced pressure and/or temperature serve as an isentropic back condition.
+	As a result, flow properties in the nozzles or ducts can still be obtained from standard one-dimensional isentropic equations, even though the actual flow inside the reactor may be more complex.
+	$$
+		T_b = T_r
+		\quad \to \quad
+		T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)
+	$$
+	and
+	$$
+		p_b = p_r
+		\quad \to \quad
+		p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
+	$$
+	Assuming the conditions of the discharge region to match the values in the reactor and using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_b$ and $P_b$ the previously defined conservation of mass equation yields:
+	$$
+		A\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\
+	$$
+	$$
+		=
+	$$
+	$$
+		A\, p_r\left(1 + \frac{\gamma - 1}{2}M_0^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_0\right)^{-\frac{1}{2}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	$$
+	Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_0$ only dependent on $\gamma$, since the summing the exponents equals zero.
+	$$
+		M_0 = (1 + \frac{\gamma - 1}{2})^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
+		\quad \text{for} \quad \gamma = 1.47
+	$$
+	Thus resulting in following ratios between the conditions in the reactor and the reservoir.
+	$$
+		\frac{T_r}{T_0} = 0.93\;,
+			\quad
+		\frac{p_r}{p_0} = 0.79\;,
+			\quad
+		\frac{\rho_r}{\rho_0} = 0.85\;,
+			\quad
+		\dot{m} = 7.0 \cdot 10^{-8}\; \frac{\text{kg}}{\text{s}}
+	$$
+	\newpage
+\paragraph{Constant temperature approach}
+	The isothermal approach similarly separates the reactor as an independent reservoir, but enforces a uniform temperature shared with the inlet reservoir.
+	Despite holding temperature constant, a pressure difference can still arise, which inherently indicates a net entropy change.
+	This scenario is plausible if the reactor walls maintain a uniform thermal environment, allowing the gas to remain at the same temperature while the pressure drops.
+	The resulting non-isentropic behavior is thus represented by a constant-temperature boundary condition, and simpler local flow equations remain usable, provided the irreversibilities are captured in the overall pressure imbalance between inlet and reactor. 
+	$$
+		T_r = T_0 = T
+	$$
+	This approach is going contrary to isentropic formulation, but still seems somehow plausible due to the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
+	Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be significant even without high mixing due to low Reynolds numbers present in microfluidics.
+	$$
+		p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+		=  p_0\, Ma_0\,\left(1+\frac{\gamma-1}{2}\,Ma_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	$$
+	Again using the isentropic relation \eqref{eq:total_relation_p} for $p_0$
+	$$
+		p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+		=  p_r \left(1 + \frac{\gamma - 1}{2}Ma_0^2 \right)^{\frac{\gamma}{\gamma - 1}}\, Ma_0\,\left(1+\frac{\gamma-1}{2}\,Ma^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	$$
+	Rearranging leads to an equation only dependent on $\gamma$ and the mach number $Ma_0$ at the inlet.
+	$$
+		\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
+		=  Ma_0\,\left(1+\frac{\gamma-1}{2}\,Ma_0^2\right)^{\frac{1}{2}}
+	$$
+	Which can be solved analytically, since by squaring both sides and rearranging it resembles a simple quadratic equation:
+	\begin{equation}
+		Ma^4 + \frac{2}{\gamma - 1}Ma_0^2 - \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}} = 0
+	\end{equation}
+	Now substituting $Ma_0^2 = f \quad \to \quad Ma_0 = \sqrt{f}$
+	\begin{equation}
+		f = -\frac{1}{\gamma - 1} \pm \sqrt{\frac{1}{(\gamma - 1)^2}
+		+ \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}}}
+	\end{equation}
+	There is only one real solution for this equation using the positive square root.
+	For $\gamma = 1.47$ we get the solution:
+	$$
+		f = 0.31
 			\quad \to \quad
-			T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)
-		$$
-		and
-		$$
-			p_b = p_r
-			\quad \to \quad
-			p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
-		$$
-		Assuming the conditions of the discharge region to match the values in the reactor and using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_b$ and $P_b$ the previously defined conservation of mass equation yields:
-		\begin{align*}
-			&A\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\
-			&= A\, p_r\left(1 + \frac{\gamma - 1}{2}M_0^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_0\right)^{-\frac{1}{2}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
-		\end{align*}
-		Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_0$ only dependent on $\gamma$, since the summing the exponents equals zero.
-		$$
-			M_0 = (1 + \frac{\gamma - 1}{2})^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
-			\quad \text{for} \quad \gamma = 1.47
-		$$
-		Thus resulting in following ratios between the conditions in the reactor and the reservoir.
-		$$
-			\frac{T_r}{T_0} = 0.93\;, \quad \frac{p_r}{p_0} = 0.79\;, \quad \frac{\rho_r}{\rho_0} = 0.85
-		$$
-	\textbf{Constant temperature approach}\\
-		\note{
-			Add good intro!
-		}
-		Thus, as the second approach Temperature will be held constant between both reservoirs. 
-		$$
-			T_r = T_0 = T
-		$$
-		This approach is going contrary to isentropic formulation, but still seems somehow plausible due to the fact that the gas in the reservoir just like the whole assembly will be preheated to a certain temperature.
-		Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be significant even without high mixing due to low Reynolds numbers present in microfluidics.\\
-		$$
-			p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-			=  p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-		$$
-		Again using the isentropic relation \eqref{eq:total_relation_p} for $p_0$
-		$$
-			p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-			=  p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-		$$
-		Rearranging leads to an equation only dependent on $\gamma$ and the mach number $M_0$ at the inlet.
-		$$
-			\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-			=  M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
-		$$
-		Which can be solved analytically, since by squaring both sides and rearranging it resembles a simple quadratic equation:
-		\begin{equation}
-			M_0^4 + \frac{2}{\gamma - 1}M_0^2 - \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}} = 0
-		\end{equation}
-		Now substituting $M_0^2 = f \quad \to \quad M_0 = \sqrt{f}$
-		\begin{equation}
-			f = -\frac{1}{\gamma - 1} \pm \sqrt{\frac{1}{(\gamma - 1)^2}
-			+ \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}}}
-		\end{equation}
-		There is only one real solution for this equation using the positive square root.
-		For $\gamma = 1.47$ we get the solution:
-		$$
-			f \approx 0.31 \quad \to \quad M_0 \approx 0.55
-		$$
-		\note{
-			Which corresponds to a massflow of: trough the system. Compare to full isentropic.
-		}
-		\newpage
+		Ma_0 = 0.55
+	$$
+	Which corresponds to the following ration between the conditions in the reactor and the reservoir, which results in the given mass-flow:
+	$$
+		\frac{T_r}{T_0} = 0.93\;, \quad \frac{p_r}{p_0} = 0.80\;, \quad \frac{\rho_r}{\rho_0} = 0.86\;, \quad
+		\dot{m} = 6.8 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
+	$$
+	at reservoir conditions of $T_0 = 500\;\text{K}$ and $p_0 = 1.5\;\text{bar}$.
+	Which is in the same order of magnitude as the mass-flow for the fully isentropic formulation in Section \ref{sec:one-dim-isentropic}.
+	The discrepancy in mass-flow can be attributed to the change in entropy, indicated by the change in stagnation conditions.
+	\newpage
 
 \subsubsection*{Formulations including the leak}
 	Including the leak can now be achieved by assuming additional mass flow out of the reactor, the inlet now has to compensate.
 	$$
 		\dot{m}_0 = \dot{m}_r + \dot{m}_L
-		\quad \to \quad
+			\quad \to \quad
 		\dot{m}_L = \dot{m}_0 + \dot{m}_r
 	$$
 	This forces the total conditions of the reservoir to increase in order to keep the conditions in the reactor the same.
 	Therefore, increasing the Mach number until a critical ratio \eqref{eq:critical-pressure} is reached, and the flow becomes sonic at the throat of the inlet.
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_disconnected-reservoirs-with-leak.pdf}
+	    \caption{
+			Idealized system separating the reactor from the inlet and outlet regions to account for non-isentropic effects, now including a leak path from the reactor.
+			The yellow regions represent domains where one-dimensional flow is assumed, gray indicates stagnant gas and the red arrows indicate supersonic flow.
+			An entropy change $\Delta s$ occurs between the discharge region and the reactor, and the converging section at the outlet represents the flow constraining itself as it accelerates, as mentioned in Section \ref{sec:geometry}
+		}
+	    \label{fig:disconnected-reservoirs-leak}
+	\end{figure}
 	Using isentropic mass flow equations this is described by assuming both mach numbers to be one in equation \eqref{eq:massflow-inlet} and \eqref{eq:massflow-outlet}.
 	$$
 		\dot{m}_L =
-		A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, \left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
+		A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, \left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 		- A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 	$$
-	\begin{figure}[H]
-	    \centering
-	    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_disconnected-reservoirs-with-leak.pdf}
-	    \caption{A descriptive caption for the figure.}
-	    \label{fig:disconnected-reservoirs-leak}
-	\end{figure}
 	To express the temperature $T_0$ and pressure $p_0$ of the reservoir in terms of the conditions in the reactor, it will again be assumed the conditions in the discharge-region and the reactor match.
 	This formulation is chosen due to the fact that it yielded a higher Mach number for the inlet, thus will reach sonic conditions first.
 	Therefore, representing the "worst case" in the sense that it yields the lowest amount of mass flow needed to force the inlet sonic.
@@ -156,17 +187,17 @@ Trying to find an upper limit for mass flow through the leak, after which the in
 	\begin{equation}
 		m_L =
 		A p_r\sqrt{\frac{\gamma}{R T_r}}\cdot
-		\left[
 			\left(
 				1 + \frac{\gamma - 1}{2}
 			\right)
 				^{-\frac{\gamma + 1}{2\,(\gamma - 1)}}
-		\right]
 	\end{equation}
-	Assuming $p_r = 1 bar$ in the reactor at a temperature $T_r = 500\;\text{K}$ this yields:
+	Assuming again the reservoir conditions to be $p_0 = 1.5\;\text{bar}$ and $T_0 = 500\;\text{K}$ which can be used to calculate the reservoir conditions using the critical ratios mentioned in Section \ref{sec:isentropic-1D-foundations}.
+	The additional mass-flow through the leak, leading to sonic conditions at the inlet throat can be calculated.
 	$$
-		m_L = 8.1507\cdot 10^{-8}\frac{\text{kg}}{\text{s}}.
-	$$	
-	\note{
-		Compare with Mass flow of full isentropic case and for disconnected reservoirs without leak. Maybe not even here but in the chapters themselves.
-	}
+		m_L = 3.6 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}.
+	$$
+	Which is around half of the mass-flow calculated for the disconnected reservoirs.
+	Thus, it can be concluded that if the mass-flow through the leak is comparable to the mass-flow through the outlet, this will lead to the inlet throat going sonic, which could lead to a major change in behavior of the gas after leaving the inlet, like shock-waves and rapid changes in state-variables.
+
+	Since this still would constitute a coupled system, where the leak influences the outlet through for example pressure drops and also the other way around, the exact distribution of mass-flow between the two and also the reservoir conditions at which the inlet goes sonic have to be explored further through simulation.

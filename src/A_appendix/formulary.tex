@@ -1,119 +1,111 @@
-\subsection*{Thermodynamics}
-\addcontentsline{toc}{subsection}{Thermodynamics}
+This formulary gathers the key equations used in your thesis on micro-reactor gas dynamics.
+Only the most important, frequently referenced equations are included, with some additional useful relations used to derive some of the given equations.
 
-\subsubsection*{Thermal Equations of State}
-	Is in general an equation* of the form
-	\begin{equation*}
-		p=p(v,\;T)
-	\end{equation*}
-	Commonly used equations of state for thermally perfect gases\\
-	\textbf{Ideal gas law}
-	\note{
-		add different formulations, and check if R
-	}
-	\begin{equation*}
-		p = \rho RT \quad \texttt{[therm perf]}
-	\end{equation*}
-	\textbf{1D Euler equation*}
-	\begin{equation*}
-		\frac{1}{\rho} dp + V dV = 0 \quad \texttt{[therm perf]}
-	\end{equation*}
+\subsection*{Thermodynamics}
+\begin{itemize}
+    \item \textbf{Thermal Equation of State:}  
+    An equation of state relates pressure, specific volume, and temperature:
+    $$
+	    p = p(v,\,T)
+    $$
+    \item \textbf{Ideal Gas Law (Thermally Perfect):}  
+    $$
+	    p = \rho R T \quad \texttt{[therm perf]}
+    $$
+    \item \textbf{1D Euler Equation (for a perfect gas):}  
+    $$
+	    \frac{1}{\rho}\,dp + V\,dV = 0 \quad \texttt{[therm perf]}
+    $$
+\end{itemize}
 
 \subsection*{Control Volume Analysis}
-\addcontentsline{toc}{subsection}{Control Volume Analysis}
+\begin{itemize}
+    \item \textbf{Continuity Equation:}  
+    $$
+	    \frac{d}{dt} \int_V \rho\,dV + \int_S \rho\, \vec{V}\cdot d\vec{A} = 0
+    $$
+    For steady, one-dimensional flow (constant cross-sectional area):
+    $$
+		\sum \rho\,V\,A = 0
+    $$
+\end{itemize}
 
-\subsubsection*{Continuity Equation*:}
+\subsection*{Continuous One-Dimensional Flow}
+\begin{itemize}
+    \item \textbf{Speed of Sound:}  
+    $$
+	    a = \sqrt{\left(\frac{\partial p}{\partial \rho}\right)_s} = \sqrt{\gamma\,\frac{p}{\rho}} = \sqrt{\gamma\,R\,T} \quad \texttt{[therm perf]}
+    $$
+    \item \textbf{Mach Number:}  
+    $$
+	    Ma = \frac{V}{a}\quad\eqref{eq:mach-number}
+    $$
+    \item \textbf{Area-Mach Relation (Isentropic Flow):}  
+    $$
+	    \frac{A}{A^*} = \frac{1}{Ma}\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}Ma^2\right)\right]^{\frac{\gamma+1}{2(\gamma-1)}} \quad \texttt{[isen, perf]}\quad\eqref{eq:area_ratio_mach}
+    $$
+    \item \textbf{Isentropic Relations:}  
+    From the constant $ p/\rho^\gamma $ we obtain:
+    $$
+	    \frac{p}{p_0} = \left(\frac{\rho}{\rho_0}\right)^\gamma = \left(\frac{T}{T_0}\right)^{\frac{\gamma}{\gamma-1}} = \left(\frac{a}{a_0}\right)^{\frac{2\gamma}{\gamma-1}} \quad \texttt{[isen, perf]}
+    $$
+    \item \textbf{Bernoulli’s Equation for Compressible Flow:}  
+    $$
+	    \frac{\gamma}{\gamma-1}\left(\frac{p_0}{\rho_0}\right)^{\frac{\gamma-1}{\gamma}}\left(\frac{p}{p_0}\right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma-1}\frac{p_0}{\rho_0} \quad \texttt{[isen, perf]}
+    $$
+    \item \textbf{Stagnation/Total Relations:}  
+    $$
+	    \frac{T}{T_0} = \left(1+\frac{\gamma-1}{2}Ma^2\right)^{-1} \quad \texttt{[adiab, perf]} \quad \eqref{eq:total_relation_T}
+    $$
+    $$
+	    \frac{p}{p_0} = \left(1+\frac{\gamma-1}{2}Ma^2\right)^{-\frac{\gamma}{\gamma-1}} \quad \texttt{[isen, perf]} \quad \eqref{eq:total_relation_p}
+    $$
+    $$
+	    \frac{\rho}{\rho_0} = \left(1+\frac{\gamma-1}{2}Ma^2\right)^{-\frac{1}{\gamma-1}} \quad \texttt{[isen, perf]} \quad \eqref{eq:total_relation_rho}
+    $$
+    \item \textbf{Critical Ratios:}  
+    $$
+	    \frac{T_0}{T^*} = \frac{\gamma+1}{2}
+			\qquad
+	    \frac{\rho_0}{\rho^*} = \left(\frac{\gamma+1}{2}\right)^{\frac{1}{\gamma-1}}
+			\qquad
+	    \frac{p_0}{p^*} = \left(\frac{\gamma+1}{2}\right)^{\frac{\gamma}{\gamma-1}} \quad \eqref{eq:critical-pressure}
+    $$
+\end{itemize}
 
-	\begin{equation*}
-		\frac{d}{dt} \int_V \rho \, dV + \int_S \rho V \cdot dA = 0
-	\end{equation*}
-	In case of one-dimensional flow $\frac{\partial}{\partial t} = 0$ for a given inlet/outlet:
-	\begin{equation*}
-		\int \rho (\vec{V} \cdot \hat{n} )d A = \rho\vec{V}\cdot \hat{n} \int d A = \rho V A
-	\end{equation*}
-	\noindent
-	Thus for steady one-dimensional flow:
-	\begin{equation*}
-		0 = \sum \rho V A
-	\end{equation*}
+\subsection*{Dimensionless Numbers \& Viscosity}
+\begin{itemize}
+    \item \textbf{Reynolds Number:}  
+    $$
+	    \text{Re} = \frac{\rho\,V\,L}{\mu} = \frac{V\,L}{\nu} \quad \eqref{eq:reynolds-number}
+    $$
+    \item \textbf{Knudsen Number:}  
+    $$
+	    \text{Kn} = \frac{\lambda}{L_c}\quad \eqref{eq:knudsen-number}
+    $$
+	\item \textbf{Relation between major dimensionless numbers}
+	$$
+		Kn = \frac{Ma}{Re}\sqrt{\frac{\gamma \pi}{2}} \quad \eqref{eq:nondim-relation}
+	$$
+    \item \textbf{Sutherland’s Formula (Dynamic Viscosity):}  
+    $$
+	    \mu(T) = \mu_0\left(\frac{T}{T_0}\right)^{3/2}\frac{T_0+S}{T+S} \quad \eqref{eq:sutherland}
+    $$
+\end{itemize}
 
-\subsubsection*{Momentum Equation*:}
+\subsection*{Mass Flow Rate (Compressible, Isentropic Flow)}
+$$
+	\dot{m} = A\,p_0\,\sqrt{\frac{\gamma}{R\,T_0}}\,M\left(1+\frac{\gamma-1}{2}M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}} \quad \eqref{eq:1-d-massflow}
+$$
 
-\begin{equation*}
-	\frac{d}{dt} \int_V \rho V \, dV + \int_S \rho V (V \cdot dA) = - \int_S p \, dA + \int_V \rho g \, dV
-\end{equation*}
-
-\subsubsection*{Energy Equation*:}
-
-\begin{equation*}
-	\frac{d}{dt} \int_V \rho e \, dV + \int_S \rho h V \cdot dA = \dot{Q} - \int_S p V \cdot dA
-\end{equation*}
-
-\subsection*{Continuous one-dimensional flow}
-\addcontentsline{toc}{subsection}{Continuous one-dimensional flow}
-
-\subsubsection*{Speed of Sound:}
-
-\begin{equation*}
-	a = \sqrt{\left( \frac{\partial p}{\partial \rho} \right)_s} = \sqrt{\gamma \left( \frac{\partial p}{\partial \rho} \right)_T}
-\end{equation*}
-
-\begin{equation*}
-	a = \sqrt{\gamma \frac{p}{\rho}} = \sqrt{\gamma RT} \quad \texttt{[therm perf]}
-\end{equation*}
-
-\subsubsection*{Mach Number:}
-
-\begin{equation*}
-	M = \frac{V}{a}
-\end{equation*}
-
-\subsubsection*{Area-ratio in terms of mach number:}
-\begin{equation*}
-	\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
-	\quad \texttt{[isen, perf]}     
-\end{equation*}
-\subsubsection*{Isentropic Relations:}
-
-\begin{equation*}
-	\frac{p}{\rho^\gamma} = \text{constant} = \frac{p_t}{\rho_t^\gamma}
-	\quad \texttt{[isen, perf]}
-\end{equation*}
-
-\subsubsection*{From this:}
-
-\begin{equation*}
-	\frac{p}{p_0} = \left( \frac{\rho}{\rho_0} \right)^\gamma = \left( \frac{T}{T_0} \right)^{\frac{\gamma}{\gamma - 1}} = \left( \frac{a}{a_0} \right)^{\frac{2\gamma}{\gamma - 1}}
-	\quad \texttt{[isen, perf]}
-\end{equation*}
-
-\subsubsection*{Bernoulli's Equation for Compressible Flow}
-
-\begin{equation*}
-	\frac{\gamma}{\gamma - 1} \left( \frac{p_0}{\rho_0} \right)^{\frac{\gamma - 1}{\gamma}} \left( \frac{p}{p_0} \right)^{\frac{1}{\gamma}} + \frac{V^2}{2} = \frac{\gamma}{\gamma - 1} \frac{p_0}{\rho_0} 
-	\quad \texttt{[isen, perf]}
-\end{equation*}
-
-\subsubsection*{Stagnation Relations}
-
-\begin{equation*}
-	\frac{T}{T_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1}
-	\quad \texttt{[adiab, perf]}
-\end{equation*}
-
-\begin{equation*}
-	\frac{p}{p_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}}
-	\quad \texttt{[isen, perf]}
-\end{equation*}
-
-\begin{equation*}
-	\frac{\rho}{\rho_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}}
-	\quad \texttt{[isen, perf]}
-\end{equation*}
-
-\begin{equation*}
-	\frac{a}{a_0} = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{2}}
-	\quad \texttt{[adiab, perf]}
-\end{equation*}
-
-\blankpage
+\subsection*{Additional Useful Relations}
+\begin{itemize}
+    \item \textbf{Prandtl-Meyer Function (Expansion Fan):}  
+    $$
+    \nu(M) = \sqrt{\frac{\gamma+1}{\gamma-1}}\,\arctan\!\left(\sqrt{\frac{\gamma-1}{\gamma+1}(M^2-1)}\right) - \arctan\!\left(\sqrt{M^2-1}\right)
+    $$
+    The maximum turning angle is given by:
+    $$
+	    \theta_{\text{max}} = \nu(M\to\infty) - \nu(M) \quad \eqref{eq:max-turning-angle}
+    $$
+\end{itemize}

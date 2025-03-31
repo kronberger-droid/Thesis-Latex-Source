@@ -1,6 +1,7 @@
 	In fluid dynamics a flow can be categorized by its particle interaction using the Knudsen number, which represents the ratio between the mean-free-path $\lambda$ of the gas and the characteristic length $L_c$ of the flow geometry.
 	\begin{equation}
 		Kn=\frac{\lambda}{L_c}
+		\label{eq:knudsen-number}
 	\end{equation}
 
 \subsubsection*{Molecular regime (\(Kn \geq 10\))}
@@ -8,7 +9,7 @@
 	In this regime, the mean free path is much larger than the dimensions of boundaries.
 	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
 
-	\input{src/01_foundations/fig_velocity-distribution-molecular.tex}
+	\input{src/02_foundations/fig_velocity-distribution-molecular.tex}
 
 \subsubsection*{Transition regime (\(0.1 \leq Kn \leq 10\))}
 	
@@ -22,7 +23,7 @@
 	In this regime, the assumptions for continuum flow still hold, but there are deviations, especially near the boundaries.
 	While continuum mechanics assumes no-slip conditions on the boundary, in this regime, slip on the boundary must be factored in.
 
-	\input{src/01_foundations/fig_velocity-distribution-slip.tex}
+	\input{src/02_foundations/fig_velocity-distribution-slip.tex}
 
 \subsubsection*{Continuum regime (\(Kn \leq 0.001\))}
 	
@@ -30,7 +31,7 @@
 	This makes it possible to describe the fluid itself as a continuous medium with the assumption of non-slip boundary conditions.
 	The Navier-Stokes equations govern the calculations in this regime.
 
-	\input{src/01_foundations/fig_velocity-distribution-continuum.tex}
+	\input{src/02_foundations/fig_velocity-distribution-continuum.tex}
 
 	In this work the continuum formulations will be used exclusively, with the reasons more clearly described in chapter \ref{sec:expected-flow-regimes}.
 	\cite{rapp2017microfluidics, putignano2012supersonic, halwidl_development_2016, leishman_internal_2023}

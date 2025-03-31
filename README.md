@@ -8,15 +8,10 @@ It includes:
 - **calc** folder will also include every program (python, matlab, smath, ... ) written in the course of writing this thesis. (but not at this moment!)
 
 Do-To's:
-- Scope and objectives
-  - make a good introduction
-- Discussion
-  - create red line through the thesis
-  - make reference to what was done
-  - mention things not done too.
+- Acknowledgements
+  - create it!
+- Abstract
+  - create it!
 - Conclusion
-  - create it! (doesn't have to be long!)
-- Formulary
-  - add all the formulas used at the end and provide references.
-- General:
-  - Calculate mass-flows for same reservoir pressures, so it can be compared and add comparison.
+  - create it!
+- Read over the whole thesis and correct mistakes and bad formulations!

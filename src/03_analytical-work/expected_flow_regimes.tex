@@ -5,13 +5,14 @@
 	Because this will reduce the locations to check for high Knudsen numbers when other formulations to calculate the state variables are used and therefore will simplify the process.
 	To find such most probable Location, starting from the Definition of the Knudsen number.
 	\cite{halwidl_development_2016, anderson2021modern}
-	\begin{equation}
+	$$
 		Kn(p,T) = \frac{\lambda}{L_c} = \frac{\mu(T)}{pL_c}\sqrt{\frac{\pi R T}{2}}
-	\end{equation}
+	$$
 	Where $\lambda$ is the mean free path, $L_c$ is the characteristic length, $k_B$ is the Boltzmann constant, $R$ is the specific gas constant, $T$ is the temperature of the fluid, $p$ is the pressure of the fluid, $M_m$ is the molar mass and $\mu$ is the dynamic viscosity.\\
 	The dynamic viscosity can be calculated using Sutherland's formula. \cite{Hirschfelder1954MolecularTO}
 	\begin{equation}
 		\mu(T) = \mu_0 \left(\frac{T}{T_0}\right)^{3/2} \frac{T_0 + S_\mu}{T + S_\mu}
+		\label{eq:sutherland}
 	\end{equation}
 	Where $mu_0$ is the reference viscosity at the reference temperature $T_0$ and $S_\mu$ representing the Sutherland constant, whose values are dependent on the chosen gas. For nitrogen these have the following values \cite{kim2004numericalanalysisflowcharacteristics}
 	$$

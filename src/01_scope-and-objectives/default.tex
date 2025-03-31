@@ -1,16 +1,17 @@
 \section{Scope and objectives}\label{sec:scope-objectives}
-	The general goal of this thesis is to create a relatively simple analytical framework to be able to make predictions about the behavior of the flow through the system and approximate values at different positions in the flow to later be used as initial values for more complex numerical simulations.
-	The following section will state specific questions we will then try to answer in the following sections.
+	The aim of this thesis is to develop a straightforward analytical framework that predicts flow behavior and estimates state variables at key positions within a micro-reactor assembly.
+	These estimates will later serve as initial conditions for more detailed numerical simulations.
+	Figure \ref{fig:technical-drawing} illustrates the reactor configuration, where reactants are mixed in the reservoir, pass through the inlet and reaction volume, and finally exit into the vacuum through the outlet—with a portion of the gas leaking at the reactor’s sealing interface.
 	\begin{figure}[H]
 	    \centering
-	    \includegraphics[width=\textwidth]{src/02_scope-and-objectives/fig_technical-drawing.pdf}
+	    \includegraphics[width=\textwidth]{src/01_scope-and-objectives/fig_technical-drawing.pdf}
 	    \caption{Schematics of the micro-reactor assembly \cite{lagin2025poster}: The reactants are mixed in the reservoir, pass progressively through the inlet (green arrow), reaction volume (yellow arrow), and exhaust into the vacuum through the outlet (red arrow). The exhaust gas composition is analyzed via quadrupole mass spectroscopy. The part of the gas in the reaction volume leaks through the space between the sample and the sealing surface of the reactor (blue arrow).}
 	    \label{fig:technical-drawing}
 	\end{figure}
-	\note{add a little more content here.}
-	
+	In the sections that follow, we address four main objectives: identifying the dominant flow regime, quantifying the impact of leakage, characterizing the gas state in the vicinity of the sample, and predicting the velocity distribution at the outlet.
+	To achieve these goals, the analysis relies on established concepts such as the Knudsen and Reynolds numbers, along with one-dimensional isentropic flow theory.
+	This foundation, which is detailed in the subsequent chapter on foundational principles, not only clarifies the interaction between the reactor’s geometry and gas dynamics but also lays the groundwork for future numerical simulations and experimental studies.	
 \subsection{Type of Flow}
-
 	The type of flow has major implications on which mathematical formulations and simulations are applicable, as well as the way the gas particles interact with each other and the walls of the assembly. 
 	The main focus here is the Knudsen number and the idealized flow regimes connected to it.
 	With the main goal being to assess the most likely flow regime governing the inside of the assembly and therefore determine the equations applicable to calculate the state variables at different points in the system and the throughput of the system as a whole.
@@ -18,20 +19,17 @@
 	In preparation for numerical simulations it is also important to find a way to calculate Knudsen numbers and other flow parameters using given datasets of state variables without having to rely on flow regime specific methods. This will help to analyze transient regimes, encountered when the gas expands into the vacuum, using one generally applicable method.  
 
 \subsection{Impact of the leak}
-
 	As described in the leading section there will be some leakage expected at the boundary between the reactor casing and the sample holder.
 	This leak will inevitably lead to some mass-flow and therefore some pressure drop $\Delta P_L$ inside the reactor.
 	This can lead to major changes to the steady state of the system, therefore influencing the velocity distribution at the outlet.
 	In summary the goal is finding the pressure drop $\Delta P_L$ caused by the leak and the effective mass flow $\dot{m}_L$ through it and use them to predict probable behaviors.
 
 \subsection{Behavior of the gas around the sample}
-
 	Knowing more about the state the gas is in close to the sample is very helpful.
 	These can be used to estimate values for diffusion rates to and from the surface, boundary layer thickness, and mean velocities and momentum of particles reaching the reactive surface. 
 	Important metrics are the velocity, pressure and temperature of the gas and the type of flow.
 
 \subsection{Velocity distribution at the outlet}
-
 	After the gas leaves the outlet nozzle, it expands into a vacuum chamber where the gas atoms are ionized by an electron beam and picked up by the mass-spec, to measure the ratio of different products.
 	This won't be the case for all atoms, since for an atom to be ionized it has to cross the electron beam, which is localized in space.
 	The remaining gas has to be pumped out and doesn't contribute to the ratio measured by the mass-spec.

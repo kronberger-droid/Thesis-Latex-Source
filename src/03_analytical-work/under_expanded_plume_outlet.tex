@@ -14,17 +14,41 @@ Hence, more advanced modeling approaches are required.
 		\cite{khare_rocket_2021, fernandes_shape_2023}
 
 	\paragraph*{Determining flow field for free expansion}
-		In an under-expanded jet, the method of characteristics can also be applied immediately downstream of the nozzle exit to predict the initial spread of the flow.
-		It does this by mapping local Mach numbers and density profiles along characteristic lines, thus giving a first approximation for velocity and pressure distributions.
-		In supersonic expansions, Prandtl–Meyer expansion fans define the maximum turning angle the gas can undergo around a sharp corner.
+		Mach lines are a concept usually encountered in 2-D supersonic flows (i.e.\ $M > 1$). 
+		They are a pair of bounding lines which separate the region of disturbed flow from the 
+		undisturbed part of the flow. These lines occur in pairs and are oriented at an angle
+		$\mu = \arcsin\!\bigl(\frac{1}{M}\bigr)$ (the Mach angle) with respect to the direction 
+		of motion. In a 3-D flow field, these lines form a Mach cone, whose half-angle is the 
+		Mach angle itself.
+
+		In an under-expanded jet, the method of characteristics can also be applied immediately 
+		downstream of the nozzle exit to predict the initial spread of the flow. It does this by 
+		mapping local Mach numbers and density profiles along characteristic lines, thus giving 
+		a first approximation for velocity and pressure distributions.
+
+		In supersonic expansions, Prandtl–Meyer expansion fans define the maximum turning angle $\theta_{max}$ the gas can undergo around a sharp corner.
+		Which can be calculated using the following equation:
+		\begin{equation*}
+			\theta_{max} = \nu_{max} - \nu(Ma)
+		\end{equation*}
+		\begin{equation}
+			\theta_{max} = \frac{\pi}{2} \left(\sqrt{\frac{\gamma + 1}{\gamma - 1}} - 1\right) - \sqrt{\frac{\gamma + 1}{\gamma - 1}}\arctan{\sqrt{\frac{\gamma - 1}{\gamma + 1}(Ma^2 - 1)}} + \arctan{\sqrt{Ma^2 -1}}
+			\label{eq:max-turning-angle}
+		\end{equation}
+		Where $\nu_max,\nu(Ma)$ are the Prandl-Meyer functions, $Ma$ is the mach number before the turn and $\gamma$ is the ratio of heats for the given gas.
 		By incorporating these fans, the method of characteristics predicts the outer boundary of the flow—effectively identifying the angle outside which the density and mass flux become negligible.
 		This angle is critical for determining the lateral extent of the under-expanded plume and for estimating where essentially all of mass flow is confined.
-
-		Notably, findings from Cassanova and Stephenson (1965)—even though their nozzle half-angle does not match ours—still offer valuable reference points regarding expansion ratios and associated flow features.
+		Using equation \eqref{eq:max-turning-angle} for the mach number at the outlet nozzle exit calculated in section \ref{sec:one-dim-isentropic} the maximum turning angle yields:
+		$$
+			\theta_{max} = 68.9^\circ
+			\qquad \text{with} \qquad
+			Ma = 3.06\;,\quad \gamma = 1.47
+		$$
+		Notably, findings from Cassanova and Stephenson \cite{Cassanova1965} — even though the nozzle half-angle does not match — still offer valuable reference points regarding expansion ratios and associated flow features.
 		However, a key limitation arises if condensation or other non-ideal processes occur.
 		Experiments show that for working fluids like nitrogen, condensation in the expansion region can alter the thermodynamic state and produce deviations from these idealized solutions.
 		Consequently, while the method of characteristics remains valuable for nozzle design and near-exit expansions, it cannot fully capture condensation effects or strong rarefaction phenomena further downstream.
-		\cite{robertson_investigation_1970, Cassanova1965, noauthor_zucrow_nodate, jousten_handbook_2016}
+		\cite{jousten_handbook_2016, robertson_investigation_1970, noauthor_zucrow_nodate}
 
 \subsubsection*{Navier-Stokes Equations}
 	A second option is to solve the Navier–Stokes equations numerically, using no-slip or first/second-order slip boundary conditions as appropriate.
@@ -44,7 +68,7 @@ Hence, more advanced modeling approaches are required.
 	\end{itemize}
 	Although more computationally expensive than continuum-based methods, DSMC provides the most robust depiction of outlet flows—particularly for condensable gases like nitrogen—and ensures high accuracy from near-nozzle regions all the way to the fully rarefied state.
 	\cite{putignano2012supersonic, liu_study_2006}
-
+	\newpage
 \subsubsection*{Summary}
 	Overall, while the method of characteristics remains a cornerstone of ideal nozzle design and near-exit expansions (including the prediction of Prandtl–Meyer fans and maximum turning angles), condensation and severe rarefaction invalidate its purely isentropic assumption further downstream.
 	Navier–Stokes simulations can capture intermediate regimes near the exit, but eventually fail in the highly rarefied or partially condensed flow domain.
