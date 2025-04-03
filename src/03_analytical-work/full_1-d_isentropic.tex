@@ -57,7 +57,7 @@ Other non-trivial solutions will not be considered.
 			\dot{m}_2 \approx 8.5 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
 	\end{align*}
 
-	The following table summarizes the calculated Reynolds and Knudsen numbers at various points within the assembly for two stagnation temperatures ($T_0$ = 300 K and 500 K) and a stagnation pressure of $p_0 = 1.5\,\text{bar}$, along with the estimated pressures $p_{\text{trans}}$ at which the flow transitions from continuum to molecular regime.
+	The following table summarizes the calculated Reynolds and Knudsen numbers at various points within the assembly for two stagnation temperatures ($T_0$ = 300 K and 500 K) and a stagnation pressure of $p_0 = 1.5\,\text{bar}$.
 
 	\input{src/03_analytical-work/tab_knudsen-full-isentropic.tex}
 
@@ -65,19 +65,19 @@ Other non-trivial solutions will not be considered.
 	These calculations validate the assumptions made in chapter~\ref{sec:expected-flow-regimes}, confirming that:
 	\begin{itemize}
 	    \item High Mach numbers significantly influence the Knudsen number; thus, molecular flow transition is most probable at the outlet nozzle exit at sufficiently low stagnation pressures.
-	    \item The outlet consistently exhibits the highest Knudsen number, with the exception of a mathematically possible but physically unrealistic hypersonic solution found inside the reactor.
+	    \item The outlet consistently exhibits the highest Knudsen number, with the exception to a mathematically possible but physically unrealistic hypersonic solution found inside the reactor.
 	    \item Excluding non-physical solutions, the flow remains in the continuum regime with slip boundary conditions.
 	    \item Reynolds numbers remain very low, indicating laminar flow without turbulence.
 	\end{itemize}
 
 \subsubsection*{Interpretation}
 
-	The equation relating the area ratio to Mach number typically yields two mathematical solutions at every location (excluding reference points with fixed conditions).
+	The equation relating the area ratio to Mach number typically yields two mathematically consistent solutions at every location (excluding reference points with fixed conditions).
 	These correspond to subsonic and supersonic flows, respectively, and their applicability depends on physical constraints.
 
 	For the outlet nozzle, the correct physical solution is supersonic, since the flow exhausts into a vacuum.
 	This holds even in the absence of a clearly defined converging section downstream of the reactor.
-	As will be discussed in chapter~\ref{sec:disconnected-reservoirs}, the flow itself may effectively create a converging geometry as it passes over a sudden geometric contraction, enabling acceleration to sonic conditions and beyond.
+	As discussed in Section~\ref{sec:expected-flow-regimes}, the flow itself may effectively create a converging geometry as it passes over a sudden geometric contraction, enabling acceleration to sonic conditions and beyond.
 
 	While the above analysis establishes a baseline using one-dimensional isentropic flow theory, real micro-channels often exhibit additional phenomena such as slip effects at the boundaries and significant viscous losses.
 	These effects are particularly important at small scales and can substantially alter the actual flow behavior.
