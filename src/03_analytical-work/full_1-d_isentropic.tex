@@ -1,73 +1,84 @@
-	By assuming the flow through the assembly will be fully isentropic and pseudo one-dimensional it is possible to calculate the state variables at every point knowing the stagnation conditions and the ratio between the cross-sectional area at the point of interest $A_i$ and the at throat of the assembly $A^*$.\\
-	It must be noted that this is a very radical approximation since for the flow to be  considered pseudo one-dimensional the problem must be reduced to consist purely of variable area ducts.
-	This clearly overlooks the fact that when entering and leaving the reactor the gas has to perform a right angle turn to follow the flow path.
-	Another constraint on the duct geometry to achieve reasonable solutions assuming pseudo one-dimensional flow is that the duct must change its cross-sectional area gradually.
-	\cite{anderson2021modern}
-	This won't be the case inside the reactor, since there is no way of slicing the reactor chamber to achieve a gradual change in cross-section, especially around the inlet and outlet.
-	\begin{figure}[H]
-	    \centering
-	    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
-	    \caption{Idealized geometry of the reactor assembly modeled as a one-dimensional variable-area duct. The yellow region represents the domain where quasi one-dimensional isentropic flow is assumed (as described in section \ref{sec:geometry}). Grey indicates stagnant gas, green arrow indicates subsonic flow at the inlet, and the red arrow indicates supersonic flow at the outlet. Flow in the central reactor region is most likely slow-moving.}
-	\end{figure}
-	This geometry can now be characterized as a double throat, and therefore one-dimensional isentropic flow will yield one of in two fundamental solutions.
-	Depending on how the steady state in the system is reached, flow velocity of the stream will either stay subsonic and therefore decrease when entering the reactor or become sonic at the throat (2) and continue to accelerate.
-	Other non-trivial solutions won't be discussed.
-	\cite{SALAS1986193, EMMONS1958}
+By assuming fully isentropic and pseudo one-dimensional flow throughout the assembly, it is possible to determine the state variables at any point, provided that the stagnation conditions and the area ratio between the cross-sectional area at the point of interest $A_i$ and the throat area $A^*$ are known.
+
+However, it must be emphasized that this represents a considerable simplification, as pseudo one-dimensional flow strictly requires the geometry to be approximated by smoothly varying ducts.
+This assumption neglects the abrupt directional changes that occur as the gas enters and exits the reactor.
+Moreover, pseudo one-dimensional formulations typically demand gradual changes in cross-sectional area, which clearly is not the case at the sharp transitions near the reactor inlet and outlet.
+\cite{anderson2021modern}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
+    \caption{
+        Idealized geometry of the reactor assembly modeled as a one-dimensional variable-area duct.
+        The yellow region represents the domain where quasi one-dimensional isentropic flow is assumed (as described in section~\ref{sec:geometry}).
+        Grey indicates stagnant gas, the green arrow indicates subsonic flow at the inlet, and the red arrow indicates supersonic flow at the outlet.
+        Flow within the central reactor region is most likely slow-moving.
+    }
+\end{figure}
+
+The simplified geometry can now be recognized as a double-throat configuration, and one-dimensional isentropic flow theory provides two fundamental solutions for this setup.
+Depending on how steady-state conditions are established, the flow either remains subsonic (with velocity decreasing upon entry into the reactor), or it reaches sonic conditions at the inlet throat (2) and continues to accelerate downstream.
+Other non-trivial solutions will not be considered.
+\cite{SALAS1986193, EMMONS1958}
 
 \subsubsection*{Calculations}
-
-	The first step is to define the critical locations, where the flow fill be chocked.
-	Since the outlet is expanding into vacuum, resulting in a pressure ratio tending towards zero, therefore the flow therefore must be chocked and can be recognized as a critical point.
-	Maximum mass-flow occurs if the flow is chocked. Therefore, to keep up with the mass-flow of the outlet, the inlet must also be chocked: 
+	The first step is identifying critical locations where the flow becomes choked.
+	Given the outlet expansion into vacuum, the pressure ratio approaches zero, ensuring choked flow at this location.
+	Because maximum mass-flow through the assembly occurs under choked conditions, the inlet must also be choked to match the mass-flow rate:
 	$$
 		A_{2,4},\;p_{2,4},\;\rho_{2,4},\;T_{2,4}
 			\quad \xrightarrow {Ma = 1} \quad
 		A^*,\;p^*,\;\rho^*,\;T^*
 	$$
-	The second reference location corresponding to the stagnation or total conditions is at the entry of the inlet nozzle (1), which can be defined afterward to get quantitative solutions.
+	The second critical location corresponds to the stagnation (total) conditions at the inlet nozzle entry (1), defined by zero velocity:
 	$$
 		A_1,\;p_1,\;\rho_1,\;T_1
 			\quad \xrightarrow{Ma=0} \quad
 		A_0,\;p_0,\;\rho_0,\;T_t
 	$$
-	Next step is to take the cross-sectional areas $A_i$ at every point $i$ defined in chapter \ref{sec:geometry}, and calculate their ratios to the throat area $A_{2,\;4}$.
-	To use them for solving equation \eqref{eq:area_ratio_mach} relating mach number and area-ratio $\frac{A^*}{A_i}(Ma)$, numerically yielding one subsonic and one supersonic solution depending on the initial condition given to the solver in appendix \ref{apx:mach-py}.
+	Next, cross-sectional areas $A_i$ at all points $i$ defined in chapter~\ref{sec:geometry} are used to calculate their respective area ratios relative to the throat area $A_{2,4}$.
+	These area ratios allow for solving equation~\eqref{eq:area_ratio_mach}, which numerically yields both subsonic and supersonic solutions depending on initial conditions, as detailed in appendix~\ref{apx:mach-py}.
 
-	Afterward the ratio of the local state variables to the total conditions can be determined using equations \eqref{eq:total_relation_T} - \eqref{eq:total_relation_rho}, which can be used, after defining the total conditions of the system, to calculate the local variables for every point.
+	Subsequently, local state variables relative to stagnation conditions can be computed using equations~\eqref{eq:total_relation_T}–\eqref{eq:total_relation_rho}.
+	Once stagnation conditions are specified, the local state variables at each location in the assembly are directly determined.
+
 	\input{src/03_analytical-work/tab_full-isentropic-values.tex}
-	Now knowing the approximate way state variables change inside the system, the assumption taken in chapter \ref{sec:expected-flow-regimes} regarding the Reynolds and Knudsen number can be tested for the following values.
-	With the mass flow being conserved throughout the system it can be calculated from equation \eqref{eq:1-d-massflow} using given stagnation conditions and any pair of cross-sectional area and mach number $Ma$ at some point $i$.
+
+	With approximate state variables known throughout the assembly, assumptions regarding Reynolds and Knudsen numbers made in chapter~\ref{sec:expected-flow-regimes} can now be tested.
+	Given that mass flow is conserved, it can be calculated from equation~\eqref{eq:1-d-massflow} using stagnation conditions and any given pair of cross-sectional area and Mach number at a location $i$:
 	\begin{align*}
-		p_{0,\;1} = 1.5\;\text{bar}
+		p_{0,1} = 1.5\;\text{bar}
 			&\qquad T_{0,1} = 300\;\text{K}
-				\qquad \text{at} \qquad
+				\qquad \text{yields} \qquad
 			\dot{m}_1 \approx 1.1 \cdot 10^{-7} \; \frac{\text{kg}}{\text{s}}\\
-		p_{0,\;2} = 1.5\;\text{bar}
+		p_{0,2} = 1.5\;\text{bar}
 			&\qquad T_{0,2} = 500\;\text{K}
-				\qquad \text{at} \qquad
+				\qquad \text{yields} \qquad
 			\dot{m}_2 \approx 8.5 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
 	\end{align*}
-	Additionally, the lower limit for the reservoir pressure $p_{0,\;min}$ where some part of the system transitions to the molecular regime, will be determined.
-	Again for temperatures $T_{0,\;1},\;T_{0,\;2}$
+
+	The following table summarizes the calculated Reynolds and Knudsen numbers at various points within the assembly for two stagnation temperatures ($T_0$ = 300 K and 500 K) and a stagnation pressure of $p_0 = 1.5\,\text{bar}$, along with the estimated pressures $p_{\text{trans}}$ at which the flow transitions from continuum to molecular regime.
+
 	\input{src/03_analytical-work/tab_knudsen-full-isentropic.tex}
-	\noindent It now becomes clear that the assumptions made in chapter \ref{sec:expected-flow-regimes} are accurate:
+
+	\newpage
+	These calculations validate the assumptions made in chapter~\ref{sec:expected-flow-regimes}, confirming that:
 	\begin{itemize}
-		\item Slip on the boundaries is to expect.
-		\item The Mach number has major influence on the value of the Knudsen number, thus high Mach numbers point to possible transition to molecular regime. This will most likely only happen at the outlet nozzle exit if stagnation pressure is low enough.
-		\item The outlet always corresponds to the highest Knudsen number with exception to the hypersonic solution found in the middle of the reactor. Which corresponds to a mathematically true but physically most likely impossible solution as described previously.
-		\item Disregarding the non-physical solutions, the flow through the assembly will be in continuum regime with slip boundary condition.
-		\item Reynolds numbers are very low, therefore no turbulences are expected.
+	    \item High Mach numbers significantly influence the Knudsen number; thus, molecular flow transition is most probable at the outlet nozzle exit at sufficiently low stagnation pressures.
+	    \item The outlet consistently exhibits the highest Knudsen number, with the exception of a mathematically possible but physically unrealistic hypersonic solution found inside the reactor.
+	    \item Excluding non-physical solutions, the flow remains in the continuum regime with slip boundary conditions.
+	    \item Reynolds numbers remain very low, indicating laminar flow without turbulence.
 	\end{itemize}
+
 \subsubsection*{Interpretation}
-	The equation relating area ratio and Mach number has in general two solutions.
-	This leads to the two solutions for every point which is not defined as a (total or critical) reference point will have mathematically true solutions
-	One corresponding to subsonic flow and the other one to supersonic flow, which of those are applicable in the situation is to decide.
 
-	For the outlet it is easier to discern since when exhausting into a vacuum the flow will be forced supersonic.
-	This is expected even tho there is actually no specific converging section when leaving the reactor, especially if the reactor is seen as a reservoir by itself, like it will in chapter \ref{sec:disconnected-reservoirs}.
-	In short, the flow itself when flowing over the edge of a sudden contraction in the flow geometry, can itself form a kind of converging section and still accelerate to sonic conditions.
-	This will be discussed in the next chapter in more detail.
+	The equation relating the area ratio to Mach number typically yields two mathematical solutions at every location (excluding reference points with fixed conditions).
+	These correspond to subsonic and supersonic flows, respectively, and their applicability depends on physical constraints.
 
-	While the above analysis provides a baseline using one-dimensional isentropic flow, real micro-channels often experience additional effects such as slip at the boundaries and non-negligible viscous losses.
-	These phenomena can significantly alter the flow, especially at small scales.
-	The next section therefore examines such microchannel-specific behaviors and their impact on the flow assumptions made so far.
+	For the outlet nozzle, the correct physical solution is supersonic, since the flow exhausts into a vacuum.
+	This holds even in the absence of a clearly defined converging section downstream of the reactor.
+	As will be discussed in chapter~\ref{sec:disconnected-reservoirs}, the flow itself may effectively create a converging geometry as it passes over a sudden geometric contraction, enabling acceleration to sonic conditions and beyond.
+
+	While the above analysis establishes a baseline using one-dimensional isentropic flow theory, real micro-channels often exhibit additional phenomena such as slip effects at the boundaries and significant viscous losses.
+	These effects are particularly important at small scales and can substantially alter the actual flow behavior.
+	The next section therefore investigates these microchannel-specific effects and their implications for the validity of the assumptions made thus far.

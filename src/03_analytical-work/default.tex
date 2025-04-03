@@ -1,19 +1,26 @@
+% src/03_analytical-work/default.tex
+
 \section{Analytical work}
-	Now that the fundamental principles used are set, this chapter focuses on answering as many questions from chapter \ref{sec:scope-objectives}.
-	First the geometry is defined in a more rigorous way, to be able to define the characteristic lengths for every important point inside the assembly.
-	While also defining the conditions inside the reservoir and the vacuum and how they influence the flow.
-	Afterward, the expected flow regimes will be assumed, to confirm that the isentropic continuum flow regime is applicable.
-	These assumptions will be confirmed by the following analytical calculations.
-	Where first the assembly will be approximated by a variable area duct, without any leakage in the system, where one-dimensional isentropic flow formulations can be applied, and the assumptions made in the preceding chapter can be tested.
-	Since this approximation come with a cost, mainly by ignoring the geometry and possible non-isentropic behavior in the reactor.
-	Therefore, a short section going into behaviors in micro-channels and the problem of slip on the boundaries follows, which paves the way for a more elegant formulation, where the reactor is seen as its own reservoir with given stagnation conditions.
-	Since a change in stagnation conditions corresponds to non-isentropic flow behavior, is trying to include those while still treating the parts isentropically in isolation.
-	This makes it possible to include mass-flow of the leak in the reactor, whose influence on the Mach number of the inlet throat will be explored.
-	Ending with a short argument on why using the given formulations are not applicable to solve the velocity distribution at the outlet and therefore possible numerical solutions are presented.
+	Now that the fundamental principles have been established, this chapter focuses on addressing the key questions outlined in Chapter~\ref{sec:scope-objectives}.
+	First, the geometry of the assembly is defined more rigorously to enable the determination of characteristic lengths and cross-sectional areas at all relevant locations.
+	Additionally, the conditions within the reservoir and the vacuum environment are specified, as they significantly influence the resulting flow behavior.
+
+	Subsequently, the expected flow regimes are discussed to verify whether the isentropic continuum flow model introduced earlier is applicable.
+	These assumptions will then be validated through analytical calculations.
+	As a starting point, the assembly is approximated as a variable-area duct without leakage, allowing the application of one-dimensional isentropic flow formulations and a direct assessment of the assumptions made in the preceding chapter.
+
+	This simplification, however, comes at a cost—primarily by neglecting the detailed geometry of the reactor and potential non-isentropic effects.
+	Therefore, a dedicated section will briefly address flow behavior in micro-channels, particularly the problem of slip at the boundaries.
+	This lays the groundwork for a refined approach in which the reactor is treated as a separate reservoir with its own stagnation conditions.
+
+	Recognizing that variations in stagnation conditions inherently correspond to non-isentropic flow behavior, this framework attempts to capture such effects while still applying isentropic analysis to isolated components of the system.
+	This also enables the inclusion of mass flow through leaks in the reactor, whose influence on the Mach number at the inlet throat will be investigated.
+
+	Finally, it will be argued why the presented formulations are insufficient to accurately resolve the velocity distribution at the outlet.
+	As a result, possible numerical approaches for addressing this limitation will be discussed.
 
 \subsection{Geometry and flow characteristics of the components}\label{sec:geometry}
 	\input{src/03_analytical-work/geometry-of-the-components.tex}
-	\newpage
 
 \subsection{Expected flow regimes}\label{sec:expected-flow-regimes}
 	\input{src/03_analytical-work/expected_flow_regimes.tex}

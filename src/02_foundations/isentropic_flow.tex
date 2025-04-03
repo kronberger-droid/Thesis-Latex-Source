@@ -1,30 +1,39 @@
-	Isentropic varying-area flow is one of the most idealized models to describe the behavior of gases flowing through a confined space. The following assumptions are made:
+	Isentropic, one-dimensional, varying-area flow is one of the most idealized models used to describe the behavior of gases flowing through confined geometries.
+	To simplify the analysis and make the governing equations solvable in a straightforward way, several assumptions are applied:
 	\begin{itemize}
-		\item steady, one-dimensional flow
-		\item adiabatic: $\delta q = 0, ds_e = 0$
-		\item no shaft work: $\delta w_s = 0$
-		\item negligible change in potential energy: dz = 0
-		\item reversible: $ds_i = 0$
+	    \item \textbf{Steady, one-dimensional flow}\\
+		Flow properties vary only along the direction of flow.
+	    \item \textbf{Adiabatic conditions}\\
+		No heat exchange with the surroundings is considered ($\delta q = 0, ds_e = 0$).
+	    \item \textbf{No external work input}\\
+		No mechanical shaft work is performed ($\delta w_s = 0$).
+	    \item \textbf{Negligible change in potential energy}\\
+		Elevation differences are assumed insignificant ($dz = 0$).
+	    \item \textbf{Reversible process}\\
+		No internal entropy generation occurs ($ds_i = 0$).
 	\end{itemize}
-	Being reversible as well as adiabatic, the flow is therefore isentropic.
+	These simplifications imply that the flow is isentropic, meaning both adiabatic and reversible.
+	This allows the use of analytical relations to describe the flow behavior and connect the state variables along the flow path.
 	The gas is still considered perfect and follows the perfect gas law, as it is crucial in the derivation for the following relations which are the foundation for solving isentropic one-dimensional gas flows.
-	Flow velocity for continuum flows is usually encoded into the Mach number, which is defined as the ratio between the local velocity $u$ and the local speed of sound $a$.
+
+	Flow velocity for continuum flows is usually encoded into the Mach number, which is defined as the ratio between the flow velocity $V$ and the local speed of sound $a$.
 	\begin{equation}
-		Ma = \frac{u}{a}
+		Ma = \frac{V}{a}
 		\label{eq:mach-number}
 	\end{equation}
 	It is a very important metric when analyzing isentropic flow, since state variables are uniquely defined through the mach number at the corresponding location, as long as either the stagnation, or critical conditions of the flow are known.
 	For isentropic flow one-dimensional flow it can be directly linked to the geometry of the duct and can be calculated by defining a state in the system where Mach number is equal to 1, the so-called throat.
-	Then its area is related to the Mach number by following non-linear equation:
+	Then its area can be related to the Mach number by following non-linear equation:
 	\begin{equation}
 		\frac{A}{A^*} = \frac{1}{Ma} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
 		\label{eq:area_ratio_mach}
 	\end{equation}
-	Where $A$ represents the area of the duct at some location, $A^*$ the area of the throat, $Ma$ the Mach number at the given location and $\gamma$ the ratio of heats.
-	One of the most important ideas in isentropic flow are the stagnation/total conditions, which represent the state of a moving gas when fully decelerating it isentropicaly ($Ma = 0$).
+	where $A$ is the local cross-sectional area, $A^*$ the throat area (minimum cross-section), $Ma$ the Mach number at the given location, and $\gamma$ the specific heat ratio.
+
+	One of the most important ideas in isentropic flow are the stagnation/total conditions, which represent the state of a moving gas when fully decelerating it isentropically ($Ma = 0$).
 	They exist for the fundamental state variables of the gas notated as ($P_0,\;T_0,\;\rho_0$) and represent conserved quantities when dealing with isentropic flow.
-	This stagnation state does not have to exist in the system, but can also be derived if velocity and state variables at some point in the system are known.
-	Total conditions represent the highest values of any state variable reachable in the system, while still being insentropic.
+	This stagnation state does not have to exist in the system, but can be derived if state variables and the geometry at some point in the system are known.
+	Total conditions represent the highest values for any state variable in the system other than velocity, as long as the flow stays isentropic.
 	Therefore, changes of state variables are usually represented in relation to the total conditions of the corresponding state variables, and depend only on the ratio of heats of the gas $\gamma$ and the Mach number $Ma$.
 	\begin{alignat}{2}
 	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} Ma^2 \right)^{-1} \label{eq:total_relation_T}\\
@@ -34,56 +43,61 @@
 
 	\paragraph{Low subsonic regime ($Ma < 0.3$)}
 		For low Mach numbers, compressibility effects of a gas can be neglected, and the gas can be treated as an incompressible fluid.
-		In figures locations where the flow is probable to have very low Mach-numbers will be indicated by a yellow arrow (as seen in figure \ref{fig:technical-drawing}).
+		In the figures, regions where the flow is expected to have very low Mach numbers are indicated by yellow arrows (as shown in Figure~\ref{fig:technical-drawing}).
 
 	\paragraph{Subsonic regime ($0.3 < Ma < 1.0$)} 
 		Inside system of variable area ducts the gas flow generally stays subsonic.
-		Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within converging ducts.
-		In figures, locations where the flow can be assumed subsonic will be indicated by a green arrow (as seen in figure \ref{fig:technical-drawing}).\\
+		Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within purely converging ducts.
+		In the figures, regions where the flow is expected to be subsonic are indicated by green arrows (as shown in Figure~\ref{fig:technical-drawing}).\\
 		\begin{figure}[H]
 		    \centering
 		    \includegraphics[width=0.85\textwidth]{src/02_foundations/fig_variable-change-subsonic.pdf}
 			\caption{
 				Schematic illustrating changes in state variables for subsonic flow in a 
-			    converging nozzle (left) and a diverging diffuser (right).
-				A green arrow indicates subsonic flow entering each device.
+				converging nozzle (left) and a diverging diffuser (right).
+				Colored arrows indicate different flow regimes: green for subsonic flow, orange for sonic flow, red for supersonic flow, and yellow for slow subsonic flow.
 				In the nozzle, Mach number and velocity increase while pressure, temperature, and density decrease.
 				Conversely, in the diffuser, Mach number and velocity decrease, and pressure, temperature, and density rise.
+				Additionally, the schematic shows that supersonic flow can only be achieved if the flow first passes through a sonic condition (choked flow) at the nozzle throat.
 				\cite{Cengel2017}
 			}
 		\end{figure}
 
 	\paragraph{Sonic regime ($Ma = 1$)}
-		Sonic flow occurs at the exit of a converging duct, if the pressure ratio between two reservoirs becomes smaller than the following critical ratio.
-		Which is called chocked flow and constitutes the maximum mass-flow for given stagnation conditions. 
-		This ratio is defined as:
+		Sonic flow occurs at the exit of a converging duct when the pressure ratio between the upstream and downstream reservoirs drops below a certain critical value. 
+		This condition is referred to as \emph{choked flow} and represents the maximum possible mass flow rate for the given stagnation conditions. 
+		The corresponding critical pressure ratio is defined as:
 		\begin{equation}
 			\frac{P^*}{P_0}=\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma}{\gamma - 1}}
 			\label{eq:critical-pressure}
 		\end{equation}
-		Where $P_0$ is the stagnation condition, $P^*$ the critical back-pressure and $\gamma$ the specific heat ratio.
-		The ratio is derived from the isentropic flow relation \eqref{eq:total_relation_T} and can be expressed for any state variable which are explicitly stated in the formulary.
+		where $P_0$ is the stagnation pressure, $P^*$ the critical back pressure, and $\gamma$ the ratio of specific heats.
 
-	\paragraph{Supersonic regime ($Ma > 1$)} 
+		In a converging-diverging nozzle, this sonic condition occurs precisely at the throat—the location of minimum cross-sectional area. 
+		Once the flow becomes choked at the throat, any further decrease in back pressure does not affect the mass flow rate but causes the flow to accelerate beyond the throat, leading to supersonic conditions in the diverging section. 
+		The critical pressure ratio can be derived from the isentropic flow relations (see Equation~\eqref{eq:total_relation_T}) and can equivalently be expressed in terms of other thermodynamic variables, as summarized in the formulary.
+
+	\paragraph{Supersonic regime ($Ma > 1$)}
 		If there are critical conditions at the end of a converging duct and a diverging duct follows.
 		The flow continues to accelerate and reaches supersonic speeds.
 		The location where the flow reaches critical condition is called throat and represents the minimal diameter of the duct.\\
 		In supersonic flows, state variables change rapidly causing phenomenons like shock waves and expansion fans.
-		Just like the previous regimes, this regime will be indicated using an arrow colored red.
+		Just like for previous regimes, this regime will be indicated using an arrow colored red.
 		\cite{Cantwell_AA210A}
 		\begin{figure}[H]
 		    \centering
 		    \includegraphics[width=0.85\textwidth]{src/02_foundations/fig_variable-change-supersonic.pdf}
 			\caption{
 				Schematic illustrating changes in state variables for supersonic flow in a diverging nozzle (left) and a converging diffuser (right).
-				A red arrow indicates supersonic flow entering each device.
+				Colored arrows indicate different flow regimes: orange for sonic flow, red for supersonic flow, and green for subsonic flow.
 				In the nozzle, Mach number and velocity increase while pressure, temperature, and density decrease.
 				Conversely, in the diffuser, Mach number and velocity decrease, and pressure, temperature, and density rise.
+				Supersonic flow can only be established if the flow first reaches sonic conditions at the throat, followed by further expansion.
 				\cite{Cengel2017}
 			}
 		\end{figure}
-	\paragraph{Massflow}
-		Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}] and the ideal gas law.
+	\paragraph{Mass flow}
+		Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations (Equations~\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}) and the ideal gas law.
 		\cite{benson_mass_nodate}
 		\begin{equation}
 			\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{R T_0}} \cdot M \cdot \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}

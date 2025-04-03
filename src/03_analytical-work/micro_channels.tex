@@ -1,17 +1,17 @@
-	Going from macro scale channels to microscales has some major implications for the behavior of the gas.
-	The primary factor for these differences is slipping at the boundary of the surfaces.
-	This is due to the fact that at small characteristic length scales the Knudsen number ($Kn$), whose value describes the interaction of the molecules in the gas and its boundaries, becomes relatively high ($Kn > 0.001$).
-	Which usually puts the gas flow in the category of compressible flow with slip at the boundaries.
+Going from macroscale channels to microscales introduces significant changes in the behavior of gas flows.
+A primary factor causing these differences is the phenomenon of velocity slip at surfaces.
+At small characteristic length scales, the Knudsen number ($Kn$)—which characterizes the ratio of molecular mean free path to the characteristic dimension of the flow—becomes relatively high ($Kn > 0.001$), placing the flow in the compressible regime with slip boundary conditions.
 
-	Most of these behaviors have to be studied using complex simulations or experimental results and are sometimes not fully explained.
-	Therefore, this section is not intended to give concrete definitions or formulations, but to provide as many relevant references regarding behaviors in microfluidics as possible.
-	It will be mainly based on the review study conducted by Amit Agrawal in 2011.
+Most microscale flow behaviors require detailed studies through complex simulations or experiments, as the underlying mechanisms are often not fully explained analytically.
+This section, therefore, does not provide definitive formulations but instead aims to summarize and reference critical phenomena relevant to microfluidics, primarily drawing from the comprehensive review by Amit Agrawal (2011).
 
 \subsubsection*{Phenomenon of Slip}
-	Slip, in comparison to non-slip, refers to the fact that the tangential velocity close to a surface is non-zero.
-	Maxwell suggested that on a control surface $s$, at distance half the mean free path away from the surface, one half of the molecules come in from one mean free path away with the tangential velocity $u_\lambda$, the other half is reflected from the surface.
-	Assuming a fraction $\sigma$ of the molecules are reflected diffusively (average velocity corresponds to velocity at the wall $u_w$)at the walls, with the remainder $(1-\sigma)$ being reflected specularly (no change in their impinging velocity $u_\lambda$).
-	When expanding $u_\lambda$ in a second order Taylor series this yields the second order slip boundary condition used in continuum analysis:
+	In contrast to the classical no-slip condition, the slip boundary condition assumes a non-zero tangential velocity of gas molecules at the wall.
+	Maxwell proposed a theoretical model for slip by considering a hypothetical control surface $s$ located half a mean free path from the wall.
+	At this surface, half the gas molecules originate from one mean free path away with a tangential velocity $u_\lambda$, while the other half reflect from the wall surface.
+	A fraction $\sigma$ of the reflected molecules undergo diffuse reflection (taking on the wall velocity $u_w$), whereas the remaining fraction $(1 - \sigma)$ is reflected specularly (retaining their incoming velocity $u_\lambda$).
+
+	Expanding $u_\lambda$ as a second-order Taylor series yields the second-order slip boundary condition commonly employed in continuum analyses:
 	\begin{equation}
 		u_g - u_w =
 		\left[
@@ -19,22 +19,32 @@
 			+ \frac{Kn^2}{2} \left(\frac{\partial^2 u}{\partial n^2}\right)_s
 		\right]
 	\end{equation}
-	Where $u$ stands for the streamwise velocities, where the subscripts $g$, $w$ and $s$ refer to gas, wall and control surface, with $n$ being the normal to the control surface.
-	And most importantly $\sigma$ is the tangential momentum accommodation coefficient, or short TMAC.
 
-	Determining the TMAC for a specific application is one of the most critical aspects when dealing with slip conditions, as it directly influences the velocity slip at the gas-wall interface and, consequently, the overall behavior of rarefied gas flows.
-	This is usually achieved through empirical studies or simulations like direct simulation Monte Carlo which will be discussed in more detail in the next section.
+	Here, $u$ denotes the streamwise velocity, and subscripts $g$, $w$, and $s$ indicate gas, wall, and control surface, respectively, while $n$ represents the direction normal to the surface.
+	Crucially, $\sigma$ denotes the tangential momentum accommodation coefficient (TMAC).
 
-\subsubsection*{Sudden expansion or contraction}
-	When the flow exits a confined duct into the reactor, the geometry no longer resembles a uniform channel but rather a sudden expansion or contraction.
-	Agrawal shows that in such cases the assumption of strict isentropic behavior breaks down as the abrupt change in cross‐section induces local flow separation, vena contracta effects, and additional losses.
-	These non‐isentropic phenomena lead to variations in the stagnation conditions downstream; the static pressure and temperature no longer remain uniquely determined by the inlet conditions but adjust in response to the complex expansion dynamics.
-	By considering the reactor as a reservoir with its own stagnation state, the analytical formulation accommodates the changes introduced by the sudden geometric transitions.
-	In this formulation, the mass flow entering and exiting the reactor is governed not only by the duct geometry but also by the additional pressure losses and momentum deficits associated with the rapid expansion or contraction.
+	Determining the TMAC accurately for a specific application is critical, as it directly impacts velocity slip at the gas-wall interface, thus significantly influencing rarefied flow behavior.
+	Typically, TMAC values are obtained experimentally or from computational methods such as direct simulation Monte Carlo (DSMC), as discussed further in the next section.
+
+	Additionally, near-wall flow at high Knudsen numbers leads to the formation of a thin region called the Knudsen layer, extending approximately one mean free path from the wall.
+	Within this layer, non-equilibrium effects dominate, and continuum assumptions—including traditional slip conditions—become increasingly inaccurate.
+	Consequently, explicit modeling of the Knudsen layer is necessary for highly rarefied conditions, typically by introducing modified boundary conditions or employing higher-order molecular models.
+
+\subsubsection*{Sudden Expansion or Contraction}
+	When flow exits from a confined duct into the reactor, the geometry abruptly transitions, resembling a sudden expansion or contraction.
+	As shown by Agrawal (2011), under these conditions, the assumption of strict isentropic behavior is no longer valid.
+	The rapid geometric changes induce phenomena such as flow separation, formation of vena contracta regions, and associated pressure and momentum losses.
+
+	These non-isentropic effects result in local changes to the stagnation conditions downstream of the geometric discontinuities, meaning static pressure and temperature become influenced by the complex expansion dynamics rather than solely by inlet conditions.
+	Treating the reactor as a reservoir with distinct stagnation conditions allows the analytical framework to accommodate these additional effects.
+	Within this approach, mass flow through the reactor becomes influenced by both geometric configuration and the additional losses due to sudden expansions or contractions.
 
 \subsubsection*{Surface Roughness}
-	Similarly, surface roughness plays a critical role in modifying the effective slip conditions at the channel walls, as detailed by Agrawal (2011).
-	At the microscale, even minor deviations from a smooth surface can lead to enhanced momentum exchange between the gas and the wall, effectively reducing the local slip length compared to that predicted by the ideal Maxwell model.
-	This increased friction at the wall alters the pressure distribution and thus the stagnation conditions within the flow.
-	In the context of the reactor-reservoir model, the presence of surface roughness must be accounted for by modifying the boundary conditions to reflect the non-ideal accommodation of tangential momentum.
-	Incorporating roughness effects—either through empirical corrections or higher-order slip models—allows for a more realistic prediction of the flow behavior, particularly in regions where the geometric changes force deviations from the classical isentropic relations.\cite{agrawal_comprehensive_2011, wang_analyses_2008}
+	Surface roughness significantly influences effective slip conditions at microscale channel walls, as detailed by Agrawal (2011).
+	At small scales, even slight surface imperfections enhance momentum exchange between gas molecules and the channel wall.
+	This increased interaction effectively reduces the slip length relative to idealized smooth surfaces predicted by Maxwell's model.
+
+	Enhanced wall friction due to roughness impacts the pressure distribution and alters local stagnation conditions within the flow.
+	Within the reactor-reservoir modeling approach, surface roughness must therefore be considered through appropriate modifications to boundary conditions, typically by adjusting the TMAC or employing higher-order slip corrections.
+	Including such roughness effects enables more realistic predictions of flow behavior, particularly in regions with significant deviations from classical isentropic relationships.
+	\cite{agrawal_comprehensive_2011, wang_analyses_2008}
