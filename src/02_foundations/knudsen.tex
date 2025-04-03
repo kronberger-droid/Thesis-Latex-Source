@@ -1,37 +1,56 @@
-	In fluid dynamics a flow can be categorized by its particle interaction using the Knudsen number, which represents the ratio between the mean-free-path $\lambda$ of the gas and the characteristic length $L_c$ of the flow geometry.
+	In fluid dynamics a flow can also be categorized by its particle interaction using the Knudsen number, which represents the ratio between the mean-free-path $\lambda$ of the gas and the characteristic length $L_c$ of the flow geometry.
 	\begin{equation}
 		Kn=\frac{\lambda}{L_c}
 		\label{eq:knudsen-number}
 	\end{equation}
 
 \subsubsection*{Molecular regime (\(Kn \geq 10\))}
-
-	In this regime, the mean free path is much larger than the dimensions of boundaries.
+	In this regime, the mean free path $\lambda$ is much larger than the distance between boundaries.
 	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
-
-	\input{src/02_foundations/fig_velocity-distribution-molecular.tex}
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.52\textwidth]{src/02_foundations/fig_molecular-regime.pdf}
+		\caption{
+			Schematic of particle velocities at a cross-section in a circular duct under molecular flow conditions.
+			The red lines denote the duct boundaries, the green arrow and line represent the mean velocity at position $x$, blue dots and arrows represent individual particles and their velocity.
+		}
+		\label{fig:molecular-flow}
+	\end{figure}
 
 \subsubsection*{Transition regime (\(0.1 \leq Kn \leq 10\))}
-	
-	This regime is a middle ground between continuum and fully molecular flow.
+	This regime constitutes the middle ground between continuum and molecular flow.
 	Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely.
 	The interactions between the gas molecules and the boundaries are significant, and the flow characteristics may vary widely.
+	The transition between continuum and molecular flow is commonly referred to as rarefaction, with fully developed molecular flow being classified as rarefied flow. 
 
 \subsubsection*{Slip regime (\(0.001 \leq Kn \leq 0.1\))}
-
-	For increasing Knudsen numbers the mean free path becomes comparable to the characteristic length scale of the system.
-	In this regime, the assumptions for continuum flow still hold, but there are deviations, especially near the boundaries.
-	While continuum mechanics assumes no-slip conditions on the boundary, in this regime, slip on the boundary must be factored in.
-
-	\input{src/02_foundations/fig_velocity-distribution-slip.tex}
+	For increasing Knudsen numbers, the mean free path of the gas molecules becomes comparable to the characteristic length scale of the system.
+	In this regime, the assumptions of continuum flow still largely hold, but noticeable deviations arise, particularly near the boundaries.
+	While continuum mechanics assumes a strict no-slip condition at the boundary, in this transitional regime, a finite slip velocity must be considered.
+	This effect is associated with the presence of a Knudsen layer — a thin region adjacent to the boundary where molecular collisions and wall interactions cause non-equilibrium behavior, leading to a breakdown of the continuum assumption.
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.5\textwidth]{src/02_foundations/fig_slip-regime.pdf}
+		\caption{
+			Schematic of the velocity distribution at a cross-section in a circular duct under slip flow conditions.
+			The red lines indicate the duct boundaries, the green arrow and line denote the mean velocity at position $x$, and the blue function with arrows shows the velocity profile modified by slip effects at the walls. \cite{Cengel2017}
+		}
+		\label{fig:slip-flow}
+	\end{figure}
 
 \subsubsection*{Continuum regime (\(Kn \leq 0.001\))}
-	
-	In this regime, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct.
+	As the characteristic length starts to become much larger than the mean free path of the gas, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct.
 	This makes it possible to describe the fluid itself as a continuous medium with the assumption of non-slip boundary conditions.
 	The Navier-Stokes equations govern the calculations in this regime.
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=0.5\textwidth]{src/02_foundations/fig_continuum-regime.pdf}
+		\caption{
+			Schematic of the velocity distribution at a cross-section in a circular duct under continuum flow conditions.
+			The red lines mark the duct boundaries, the green arrow and line indicate the mean velocity at position $x$, and the blue curve with arrows represents the classical velocity profile typical of fully developed laminar flow. \cite{Cengel2017}
+		}
+		\label{fig:non-slip-flow}
+	\end{figure}
 
-	\input{src/02_foundations/fig_velocity-distribution-continuum.tex}
-
-	In this work the continuum formulations will be used exclusively, with the reasons more clearly described in chapter \ref{sec:expected-flow-regimes}.
+	In this work the continuum formulations will be used exclusively, with the reasons more clearly described in Section \ref{sec:expected-flow-regimes}.
 	\cite{rapp2017microfluidics, putignano2012supersonic, halwidl_development_2016, leishman_internal_2023}

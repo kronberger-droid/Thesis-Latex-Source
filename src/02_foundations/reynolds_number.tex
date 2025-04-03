@@ -1,10 +1,12 @@
-To distinguish between different kinds of flow behaviors in fluid mechanics a dimensionless quantity is introduced, which describes the ratio between inertial forces and viscous forces inside a fluid.
-This quantity is called the Reynolds number and is defined as:
+% src/02_foundations/reynolds_number.tex
+
+To categorize the qualitative movement of a fluid, specifically whether it exhibits smooth, layered motion or chaotic, fluctuating behavior, the Reynolds number is introduced as a dimensionless quantity characterizing the ratio of inertial to viscous forces.
+This quantity is defined as:
 \begin{equation}
-	Re = \frac{\rho u L_c}{\mu} = \frac{u L}{\nu}
+	Re = \frac{\rho V L_c}{\mu} = \frac{V L_c}{\nu}
 	\label{eq:reynolds-number}
 \end{equation}
-Where $\rho$ is the fluid density, $u$ is the flow speed, $L$ is a characteristic length (such as pipe diameter), $\mu$ is the dynamic viscosity, and $\nu$ is the kinematic viscosity.
+Where $\rho$ is the fluid density, $V$ is the flow speed, $L_c$ is a characteristic length (such as pipe diameter), $\mu$ is the dynamic viscosity, and $\nu$ is the kinematic viscosity.
 These flow behaviors can be sorted into three categories depending on the value of the Reynolds number:
 \begin{itemize}
 	\item Laminar flow $Re < 2000$: where fluid moves in smooth layers, with minimal mixing between those layers.

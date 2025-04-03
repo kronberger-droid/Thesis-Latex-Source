@@ -18,6 +18,43 @@ Only the most important, frequently referenced equations are included, with some
     $$
 \end{itemize}
 
+\subsection*{Navier–Stokes Equations (Compressible, Viscous Flow)}
+The general form of the Navier–Stokes equations for a compressible, viscous fluid (assuming Newtonian fluid and neglecting external forces other than pressure) is given by:
+
+\begin{itemize}
+    \item \textbf{Continuity equation:}
+    $$
+        \frac{\partial \rho}{\partial t} + \nabla\cdot(\rho \vec{V}) = 0
+    $$
+
+    \item \textbf{Momentum equation:}
+    $$
+        \frac{\partial (\rho \vec{V})}{\partial t} + \nabla\cdot(\rho \vec{V}\vec{V}) 
+        = -\nabla p + \nabla\cdot \boldsymbol{\tau}
+    $$
+
+    where the viscous stress tensor for Newtonian fluids is defined as:
+    $$
+        \boldsymbol{\tau} = \mu\left[ (\nabla \vec{V}) + (\nabla \vec{V})^T - \frac{2}{3}(\nabla\cdot \vec{V})\boldsymbol{I}\right]
+    $$
+
+    Here, $\mu$ is dynamic viscosity, and $\boldsymbol{I}$ is the identity tensor.
+
+    \item \textbf{Energy equation:}
+    $$
+        \frac{\partial}{\partial t}\left(\rho e_t\right) 
+        + \nabla \cdot \left[\vec{V}\left(\rho e_t + p\right)\right]
+        = \nabla \cdot \left( k\nabla T + \boldsymbol{\tau}\cdot\vec{V} \right)
+    $$
+
+    where total energy per unit mass is defined as:
+    $$
+        e_t = e + \frac{|\vec{V}|^2}{2}
+    $$
+
+    and $k$ represents the thermal conductivity.
+\end{itemize}
+
 \subsection*{Control Volume Analysis}
 \begin{itemize}
     \item \textbf{Continuity Equation:}  

@@ -1,26 +1,55 @@
 \begin{table}[H]
     \centering
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
     \hline
-    \multirow{2}{*}{} & \multirow{2}{*}{$T_t$}
-    & \multirow{2}{*}{1} & \multirow{2}{*}{2} & \multirow{2}{*}{\color{greenColor} 3 (sub)}
-    & \multirow{2}{*}{\color{redColor} 3 (sup)} & \multirow{2}{*}{4}
-    & \multirow{2}{*}{\color{redColor} 5 (sub)} & \multirow{2}{*}{\color{greenColor}5 (sup)} \\
+    \multirow{2}{*}{\small $p_0 = 1.5\;\text{bar}$} 
+        & \multirow{2}{*}{$T_0$} 
+        & \multirow{2}{*}{1} 
+        & \multirow{2}{*}{2} 
+        & \multirow{2}{*}{\color{greenColor} 3 (sub)} 
+        & \multirow{2}{*}{\color{redColor} 3 (sup)} 
+        & \multirow{2}{*}{4} 
+        & \multirow{2}{*}{\color{redColor} 5 (sub)} 
+        & \multirow{2}{*}{\color{greenColor} 5 (sup)} \\
     & & & & & & & & \\ \hline
 
-    \multirow{2}{*}{Re}
-      & 300 K & - & 0.0001 & 0.4 & $\sim 0$ & 0.0001 & 0.005 & 0.0002 \\
-      & 500 K & - & 0.001  & 0.8 & 0.0001   & 0.001  & 0.01  & 0.0005 \\ \hline
+    \multirow{2}{*}{Re $\cdot10^{-3}$} 
+      & 300 K 
+          & - 
+          & 0.1 
+          & 400 
+          & $\sim 0$ 
+          & 0.1 
+          & 5 
+          & 0.2 \\ \cline{2-9}
+      & 500 K 
+          & - 
+          & 1 
+          & 800 
+          & 0.1 
+          & 1 
+          & 10 
+          & 0.5 \\ \hline
 
-    \multirow{2}{*}{Kn}
-      & 300 K & 0.001 & 0.002 & 0.001 & \cellcolor[HTML]{FFADA8}0.2
-              & 0.002 & 0.001 & 0.009 \\
-      & 500 K & 0.002 & 0.003 & 0.002 & 0.02
-              & 0.003 & 0.002 & 0.02 \\ \hline
+    \multirow{2}{*}{Kn $\cdot10^{-3}$} 
+      & 300 K 
+          & 1 
+          & 2 
+          & 1 
+          & \cellcolor[HTML]{FFADA8}200 
+          & 2 
+          & 1 
+          & 9 \\ \cline{2-9}
+      & 500 K 
+          & 2 
+          & 3 
+          & 2 
+          & 20 
+          & 3 
+          & 2 
+          & 20 \\ \hline
     \end{tabular}
-    \caption{Knudsen and Reynolds numbers for $p_0 = 1.5\,\mathrm{bar}$ 
-        and $T_0 = 300, 500\,\mathrm{K}$ using values from 
-        table~\ref{tab:isentropic_flow}. The cell highlighted red indicates 
-        a transitional regime, whereas the titles colored red and green correspond to the less and more likely solutions from table \ref{tab:isentropic_flow} respectively}
+    \caption{Knudsen and Reynolds numbers for $p_0 = 1.5\,\mathrm{bar}$ and $T_0 = 300, 500\,\mathrm{K}$ using values from table~\ref{tab:isentropic_flow}. [All Reynolds numbers are scaled by $10^{-3}$ and all Knudsen numbers by $10^{-3}$]. The cell highlighted red indicates a transitional regime, whereas the titles colored red and green correspond to the less and more likely solutions from Table~\ref{tab:isentropic_flow} respectively.}
     \label{tab:test-knudsen-reynolds-isentropic}
 \end{table}

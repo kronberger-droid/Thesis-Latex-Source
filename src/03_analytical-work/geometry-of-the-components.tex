@@ -1,85 +1,99 @@
-	The geometry can be explained in three simple sections: gas from a reservoir flows over the inlet into the micro-reactor where it leaves through the outlet into a vacuum. 
-	This is a stark simplification, but for a great part of this thesis, this is how we will imagine our flow path.
-	This is because the only thing we left out is any kind of leak in the system.
-	Those leaks will be the most influential around the reactor, since this is the only part that is not held at a constant pressure by any external part of the system.\\
+% src/03_analytical-work/geometry-of-the-components.tex
+
+The flow geometry can be divided into three simplified sections: gas flows from a reservoir, enters the micro-reactor through an inlet, and exits through an outlet into a vacuum.
+This model is a deliberate simplification and will serve as the primary representation of the flow path throughout much of this thesis.
+The only aspect neglected in this simplification is the presence of leaks, which predominantly affect the reactor section, as it is the only part not maintained at a constant pressure by external means.
 
 \subsubsection*{Reservoir}
-	It is kept at constant pressure $P_0$ and constant temperature $T_0$, out of which the density $\rho$ can be calculated.
-	These values will represent the stagnation or total conditions of the system, where the flow velocity is zero. The parts of the flow where stagnation conditions are assumed will be represented using a gray hue.
-	For simplicity, it contains only one gas which is defined by its specific heat ratio $\gamma$ and by its molar mass $M_m$.
-	The Formulations used yield the changes in pressure, temperature and density as ratios between the local conditions and the stagnation conditions
-	Therefore, there is no need to define stagnation conditions explicitly beforehand, since local conditions can be calculated for by multiplying chosen stagnation conditions with the calculated ratios.
-	Therefore, only the parameters of the gas have to be defined up front, which will be defined as:
+	The reservoir is maintained at constant pressure $P_0$ and temperature $T_0$, from which the density $\rho_0$ can be determined.
+	These values define the stagnation (or total) conditions of the system, where the flow velocity is zero.
+	Regions where stagnation conditions are assumed will be indicated using a gray hue in the figures.
+
+	For simplicity, the reservoir is assumed to contain a single gas, characterized by its specific heat ratio $\gamma$ and molar mass $M_m$.
+	Since the analytical formulations used in this thesis express changes in pressure, temperature, and density as ratios relative to the stagnation conditions, it is not necessary to specify the absolute stagnation values beforehand.
+	Instead, only the gas properties need to be defined:
 	$$
 		\gamma = 1.47\;, \qquad M_m = 28.013\; \frac{\text{g}}{\text{mol}}
 	$$
 	representing nitrogen gas ($\text{N}_2$), since it is comparable to the gases planned to use in experiments.
 	\newpage
 
-\subsubsection*{Inlet/Outlet Nozzles}
-	\paragraph{Inlet}
-		The duct connecting the inlet reservoir with the reactor will be a slightly converging duct, due to production constraints.
-		Therefore, it will act like a Nozzle, accelerating the gas until it expands into the reactor.
-	
-	\paragraph{Outlet}
-		With the same geometry as the inlet, but the gas flowing in opposite directions, one would suspect the outlet to act as a subsonic nozzle, which could logically be the case, since without a converging section in front it would be impossible to reach sonic velocities and therefore will choke the flow and keep them at subsonic velocities.
-		However, it is actually possible for the flow to create a converging section by itself, which will force the flow to be sonic at the beginning of the outlet and will further accelerate into the supersonic regimes, creating a supersonic nozzle.
-		\cite{jousten_handbook_2016}
-	\begin{figure}[H]
-	    \centering
-	    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_nozzle-geometries.pdf}
-	    \caption{
-			Schematic of the inlet and outlet nozzle assembly.
-			Yellow-shaded regions denote domains where one-dimensional flow is assumed.
-			Flow is indicated by colored arrows: green arrows represent subsonic flow and red arrows indicate supersonic flow.
-			In the downstream expansion region, the flow is modeled as two-dimensionally rotationally symmetric (green-shaded).
-			This schematic is not drawn to scale
-		}
-	    \label{fig:geometry-nozzles}
-	\end{figure}
+\subsubsection*{Inlet and Outlet Nozzles}
 
-	\paragraph{Nozzle flow - pseudo 1D}
-		In these sections of the flow a simplification of the two-dimensional flow through a duct will be used called "quasi one-dimensional" flow.
-		This is possible by reducing the velocity distribution present at any point along the length of a duct to its mean velocity.
-		Therefore, reducing the velocity from a distribution $V(r)$ at every point in the duct to a scalar value $V$ at every point of the duct.
-		This is a general simplification which can be made when using continuum flow analysis inside of ducts with reasonable small change in cross-sectional area and is only bound by the applicability of continuum flow as described in chapter \ref{sec:flow-dimension-foundations}.
-		One-dimensional flow will be represented using a yellow hue, as seen in the volume of the nozzles in figure \ref{fig:geometry-nozzles}.
-		\cite{anderson2021modern}
-		\newpage
+	\paragraph{Inlet}
+	The duct connecting the inlet reservoir to the reactor is slightly converging, primarily due to manufacturing constraints.
+	As a result, it acts as a nozzle, accelerating the gas as it expands into the reactor.
+
+	\paragraph{Outlet}
+		Although the outlet shares the same geometry as the inlet, the gas flows in the opposite direction.
+		One might initially expect it to behave as a subsonic nozzle, since without a converging section upstream, sonic velocities would not typically be achievable.
+		In such a case, the flow would remain subsonic, as choking would not occur.
+		However, under certain conditions, the flow can establish an effective converging section on its own.
+		This allows the flow to become sonic at the entrance of the outlet and to further accelerate into the supersonic regime, effectively forming a supersonic nozzle.
+		\cite{jousten_handbook_2016}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_nozzle-geometries.pdf}
+		    \caption{
+		        Schematic of the inlet and outlet nozzle assembly.
+		        Yellow-shaded regions denote domains where one-dimensional flow is assumed.
+		        Flow directions are indicated by colored arrows: green arrows represent subsonic flow and red arrows indicate supersonic flow.
+		        In the downstream expansion region, the flow is modeled as two-dimensionally rotationally symmetric (green-shaded).
+		        This schematic is not drawn to scale.
+		    }
+		    \label{fig:geometry-nozzles}
+		\end{figure}
+
+\paragraph{Nozzle Flow -- Quasi One-Dimensional Approximation}
+	In both nozzle sections, the two-dimensional flow is simplified using the quasi one-dimensional flow model.
+	This approach reduces the local velocity distribution across the duct cross-section to its mean value.
+	Consequently, the velocity field $V(r)$ at each cross-section is approximated by a scalar velocity $V$.
+	This simplification is valid for ducts with reasonably small variations in cross-sectional area and within the limits of continuum flow, as discussed in Chapter~\ref{sec:flow-dimension-foundations}.
+	One-dimensional flow regions are indicated using a yellow hue, as shown in the nozzle volumes in Figure~\ref{fig:geometry-nozzles}.
+	\cite{anderson2021modern}
+	\newpage
+
 \subsubsection*{Micro-Reactor Volume}
-	The reactor resembles a very small but broad cylinder shape which is opened at the bottom.
-	The sample will be pressed into the opening, which will lead to some leakage out of the system.
+	The reactor consists of a small, broad cylindrical volume with an opening at the bottom.
+	The sample is pressed onto this opening, resulting in leakage along the interface.
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_reactor-geometry.pdf}
 	    \caption{
-			Schematic of the reactor geometry.
-			The reactor volume is shown in blue to represent the region where three-dimensional flow occurs.
-			The sample surface is indicated in red, and the leak is marked by a blue outline along the reactor perimeter.
-			Flow characteristics are depicted by colored arrows: yellow arrows for slow-moving flow, green arrows for subsonic flow, and red arrows for supersonic flow.
-			This diagram is not drawn to scale.
-		}
+	        Schematic of the reactor geometry.
+	        The reactor volume is shown in blue, representing the region where three-dimensional flow occurs.
+	        The sample surface is indicated in red, and the leak is marked by a blue outline along the reactor perimeter.
+	        Flow characteristics are depicted by colored arrows: yellow arrows for slow-moving flow, green arrows for subsonic flow, and red arrows for supersonic flow.
+	        This diagram is not drawn to scale.
+	    }
 	    \label{fig:geometry-reactor}
 	\end{figure}
 
-	\paragraph*{Flow through the reactor - 3D}
-		After the gas flow leaves the inlet nozzle and streams into the reactor chamber, the geometry of the assembly has no symmetry to reduce the dimension of the velocity field.
-		Additionally, there is rapid expansion of the gas since the constraints given by the walls of the nozzle are now gone and the gas flows over a sharp corner.
-		Therefore, the flow field has to be dependent on all spacial dimensions and essentially means the only way to get an accurate representation of the flow field the Navier-Stokes equations have to be solved.
-		This won't be possible using only analytical tools, therefore in the following sections two simplifications of the flow through the reactor will be used.
-		At first, assuming pseudo one-dimensional flow throughout the reactor, which is definitely wrong, since the flux area is neither expanding very slowly, nor the flow will be isentropic, due to the expansion into free space.
-		To address this issue and still be able to use analytical tools to solve the system, in chapter \ref{sec:disconnected-reservoirs} the reactor will be assumed to be a reservoir.
-		Three-dimensional flow will be represented using a blue hue as seen in the middle of the reactor in figure \ref{fig:geometry-reactor}.
+	\paragraph*{Flow through the Reactor -- Three-Dimensional}
+		After the gas exits the inlet nozzle and enters the reactor chamber, the geometry no longer exhibits any symmetry that would allow for a reduction in dimensionality of the velocity field.
+		Additionally, the flow undergoes rapid expansion as the confinement provided by the nozzle walls vanishes and the gas flows past a sharp corner.
+		As a result, the flow field depends on all spatial dimensions.
+		An accurate description of the flow would therefore require solving the full Navier-Stokes equations.
+
+		However, this is not feasible using analytical methods alone.
+		To address this, two simplifications will be employed in the following sections.
+		First, the flow through the reactor will be approximated as pseudo one-dimensional, even though this assumption is clearly invalid due to the rapid expansion and the non-isentropic nature of the flow.
+		To overcome these limitations while retaining analytical tractability, Chapter~\ref{sec:disconnected-reservoirs} will introduce an alternative approach in which the reactor is treated as a separate reservoir with defined stagnation conditions.
+
+		Three-dimensional flow regions will be indicated using a blue hue, as shown in the reactor volume in Figure~\ref{fig:geometry-reactor}.
 
 \subsubsection*{Vacuum}
-	After leaving the outlet, the gas will first expand into a small cylindrical section after which it will expand freely into the vacuum.
-	The exact pressure left in the vacuum chamber does not influence the gas flow inside the assembly since the large pressure ratio between reactor and vacuum will force the flow to be chocked, and thus the back pressure looses its influence.
-	Due to the sharp change in pressure and the high velocity of the gas particles the gas will transition to the molecular regime after leaving the outlet nozzle.
+	After exiting the outlet, the gas first expands into a small cylindrical section before freely expanding into the surrounding vacuum.
+	The exact residual pressure in the vacuum chamber does not influence the gas flow inside the assembly.
+	This is because the large pressure ratio between the reactor and the vacuum causes the flow to become choked, rendering the back pressure irrelevant.
+	Due to the sharp pressure drop and the high velocity of the gas particles, the flow transitions to the molecular regime after leaving the outlet nozzle.
 
-	\paragraph{Free jet into vacuum - 2D}
-		Similar to the flow into the reactor, the flow out of the system into the vacuum chamber won't be reducible to pseudo one-dimensional flow anymore.
-		But this time the fact that the outlet nozzle is radially symmetric and there is no further geometry constraining the flow after it leaves the outlet.
-		The flow can be at least assumed to inherit the radial symmetry from the outlet nozzle, thus reducing the spacial parameters of the flow field to the distance from the nozzle and the distance from the axis of symmetry of the outlet nozzle $r$.
-		Furthermore, due to the gas expanding into vacuum and therefore the pressure dropping rapidly the gas will go through the process of rarefication, thus after some distance from the nozzle even continuum formulations break down.
-		This will be discussed in more detail in chapter \ref{sec:outlet_plume} where possible ways to formulate solutions using numerical techniques.
+	\paragraph{Free Jet into Vacuum -- Two-Dimensional}
+		Similar to the flow expansion into the reactor, the flow exiting into the vacuum chamber cannot be approximated using quasi one-dimensional flow.
+		However, unlike the reactor region, the outlet nozzle possesses radial symmetry, and no further geometry constrains the flow after it exits.
+		Therefore, it is reasonable to assume that the flow inherits this radial symmetry, reducing the spatial parameters of the flow field to the distance from the nozzle and the radial distance from the axis of symmetry, denoted by $r$.
+
+		Furthermore, as the gas expands into the vacuum and the pressure rapidly decreases, the flow undergoes rarefaction.
+		Beyond a certain distance from the nozzle, the continuum assumption breaks down and molecular effects dominate.
+		This transition and possible approaches to describe the flow behavior will be discussed in more detail in Chapter~\ref{sec:outlet_plume}, where numerical techniques for modeling the plume will be introduced.
 		\cite{anderson2021modern}
