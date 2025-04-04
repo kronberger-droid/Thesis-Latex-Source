@@ -2,30 +2,32 @@
 \addcontentsline{toc}{subsection}{Primary Symbols and Definitions}
 
 \begin{multicols}{2}
-\noindent$a$ \quad speed of sound \\
-$A$ \quad cross-sectional area \\
+\noindent$A$ \quad cross-sectional area \\
+$P_w$ \quad wetted perimeter \\
 $\rho$ \quad mass density \\
+$\mu$ \quad dynamic viscosity \\
+$\nu$ \quad kinematic viscosity \\
 $c_p$ \quad specific heat at constant pressure \\
 $c_v$ \quad specific heat at constant volume \\
-$h$ \quad enthalpy per unit mass, $ u + pv $ \\
+$\gamma$ \quad ratio of specific heats \\
+$M_m$ \quad molecular mass \\
 $L_c$ \quad characteristic length \\
-$M$ \quad Mach number, $ \frac{V}{a} $ \\
+$a$ \quad speed of sound \\
+$Ma$ \quad Mach number \\
+$Re$ \quad Reynolds number \\ 
+$Kn$ \quad Knudsen number \\
+$\dot{m}$ \quad mass flow \\
 $p$ \quad pressure \\
-$q$ \quad dynamic pressure, $ \frac{\rho V^2}{2} $ \\
 $R$ \quad specific gas constant \\
-$s$ \quad entropy per unit mass \\
+$s$ \quad entropy\\
 $T$ \quad absolute temperature \\
-$u$ \quad internal energy per unit mass \\
-$v$ \quad specific volume, $ \frac{1}{\rho} $ \\
 $u$ \quad velocity components parallel to flow \\
 $v$ \quad velocity components perpendicular to flow \\
 $V$ \quad speed of flow \\
 $V_\infty$ \quad maximum speed at absolute zero\\
-$\beta$ \quad $ \sqrt{M^2 - 1} $ \\
-$\gamma$ \quad $ \frac{c_p}{c_v} $ (ratio of specific heats) \\
+$\sigma$ \quad tangential momentum accommodation coefficient (TMAC) \\
 $\theta$ \quad shock-wave angle from upstream direction \\
-$\mu$ \quad Mach angle, $ \sin^{-1} \frac{1}{M} $ \\
-$\mu$ \quad absolute viscosity \\
+$\mu$ \quad Mach angle, $ \sin^{-1} \frac{1}{Ma} $ \\
 $\nu$ \quad Prandtl-Meyer angle \\
 \end{multicols}
 
@@ -36,10 +38,16 @@ $\nu$ \quad Prandtl-Meyer angle \\
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ll}
 $\infty$ & free-stream conditions \\
-$0$ & total/stagnation conditions \\
+$0$ & stagnation/reservoir conditions (local speed equals zero) \\
+$1$ & inlet nozzle inlet conditions (usually equals reservoir conditions) \\
+$2$ & inlet nozzle exit conditions \\
+$3$ & reactor center conditions \\
+$4$ & outlet nozzle inlet conditions \\
+$5$ & outlet nozzle exit conditions \\
+$r$ & stagnation reactor conditions (local speed equals zero) \\
+$b$ & reservoir discharge region conditions \\
+$L$ & leak conditions \\
 $*$ & critical conditions (local speed equals local speed of sound) \\
-perf & thermally and calorically perfect gas \\
-therm perf & thermally perfect, calorically imperfect gas \\
 \end{tabular}
 \end{flushleft}
 

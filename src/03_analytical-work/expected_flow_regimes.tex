@@ -16,14 +16,14 @@
 	The dynamic viscosity is evaluated using Sutherland's formula.
 	\cite{Hirschfelder1954MolecularTO}
 	\begin{equation}
-		\mu(T) = \mu_0 \left(\frac{T}{T_0}\right)^{3/2} \frac{T_0 + S_\mu}{T + S_\mu}
+		\mu(T) = \mu_{ref} \left(\frac{T}{T_{ref}}\right)^{3/2} \frac{T_{ref} + S_\mu}{T + S_\mu}
 		\label{eq:sutherland}
 	\end{equation}
-	Here, $\mu_0$ is the reference viscosity at the reference temperature $T_0$, and $S_\mu$ is the Sutherland constant, both dependent on the gas species.
+	Here, $\mu_{ref}$ is the reference viscosity at the reference temperature $T_{ref}$, and $S_\mu$ is the Sutherland constant, both dependent on the gas species.
 	For nitrogen, the following values apply:
 	\cite{kim2004numericalanalysisflowcharacteristics}
 	$$
-		S_\mu = 111\;\text{K}, \quad T_0 = 300.55\;\text{K}, \quad \mu_0 = 17.81\; \text{sPa}
+		S_\mu = 111\;\text{K}, \quad T_{ref} = 300.55\;\text{K}, \quad \mu_{ref} = 17.81\; \text{sPa}
 	$$
 	The following plot shows the dynamic viscosity over temperature using Sutherland's formula, along with two linear approximations over the temperature range of 200–600~K.
 	One of the approximations is constrained to pass through the origin.
