@@ -22,6 +22,8 @@
               numpy
               matplotlib
               scipy
+              scikit-learn
+              pandas
             ]))
           ];
           shellHook = ''

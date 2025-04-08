@@ -8,8 +8,8 @@ Moreover, pseudo one-dimensional formulations typically demand gradual changes i
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_1d-flow-geometry}
-    \caption{
-        Idealized geometry of the reactor assembly modeled as a one-dimensional variable-area duct.
+    \caption[Idealized geometry of the reactor assembly modeled as a one-dimensional variable-area duct.]{
+        \textbf{Idealized geometry of the reactor assembly modeled as a one-dimensional variable-area duct.}
         The yellow region represents the domain where quasi one-dimensional isentropic flow is assumed (as described in section~\ref{sec:geometry}).
         Grey indicates stagnant gas, the green arrow indicates subsonic flow at the inlet, and the red arrow indicates supersonic flow at the outlet.
         Flow within the central reactor region is most likely slow-moving.
@@ -27,13 +27,13 @@ Other non-trivial solutions will not be considered.
 	Because maximum mass-flow through the assembly occurs under choked conditions, the inlet must also be choked to match the mass-flow rate:
 	$$
 		A_{2,4},\;p_{2,4},\;\rho_{2,4},\;T_{2,4}
-			\quad \xrightarrow {Ma = 1} \quad
+			\quad \xrightarrow {\mathrm{Ma} = 1} \quad
 		A^*,\;p^*,\;\rho^*,\;T^*
 	$$
 	The second critical location corresponds to the stagnation (total) conditions at the inlet nozzle entry (1), defined by zero velocity:
 	$$
 		A_1,\;p_1,\;\rho_1,\;T_1
-			\quad \xrightarrow{Ma=0} \quad
+			\quad \xrightarrow{\mathrm{Ma}=0} \quad
 		A_0,\;p_0,\;\rho_0,\;T_0
 	$$
 	Next, cross-sectional areas $A_i$ at all points $i$ defined in chapter~\ref{sec:geometry} are used to calculate their respective area ratios relative to the throat area $A_{2,4}$.
@@ -52,7 +52,7 @@ Other non-trivial solutions will not be considered.
 				\qquad \text{yields} \qquad
 			\dot{m}_1 \approx 1.1 \cdot 10^{-7} \; \frac{\text{kg}}{\text{s}}\\
 		p_{0,2} = 1.5\;\text{bar}
-			&\qquad T_{0,2} = 500\;\text{K}
+			&\qquad T_{0,2} = 600\;\text{K}
 				\qquad \text{yields} \qquad
 			\dot{m}_2 \approx 8.5 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
 	\end{align*}

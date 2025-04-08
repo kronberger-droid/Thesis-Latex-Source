@@ -69,10 +69,20 @@
 % Vector Graphics
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, 3d}
-\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+\usepackage{textcomp} % for \textmu
+\usepackage{siunitx}   % if you use \SI, \si, \unit
+\usepackage{ifthen}
 
 % For smaller captions
-\usepackage[font=small]{caption}
+\usepackage{caption}
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    labelsep=period
+}
 
 \usepackage{listings}
 \lstset{
@@ -110,10 +120,6 @@
 % For inserting multipage pdfs
 \usepackage{pdfpages}
 
-% For creating plots
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-
 % Page Layout
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
@@ -148,3 +154,9 @@
 
 % Mistakes will become red text
 \newcommand{\mistake}[1]{{\color{redColor}\itshape#1}}
+
+% Notation list command
+\newcommand{\varentry}[2]{%
+  \noindent #1\\[-0.8ex]%
+  \hspace{1em}#2\\[1ex]%
+}

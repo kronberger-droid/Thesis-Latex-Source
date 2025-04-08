@@ -7,16 +7,30 @@ The only aspect neglected in this simplification is the presence of leaks, which
 \subsubsection*{Reservoir}
 	The reservoir is maintained at constant pressure $P_0$ and temperature $T_0$, from which the density $\rho_0$ can be determined.
 	These values define the stagnation (or total) conditions of the system, where the flow velocity is zero.
-	Regions where stagnation conditions are assumed will be indicated using a gray hue in the figures.
+	Throughout this work, regions where stagnation conditions are assumed will be visually distinguished using a gray hue in the figures.
 
 	For simplicity, the reservoir is assumed to contain a single gas, characterized by its specific heat ratio $\gamma$ and molar mass $M_m$.
-	Since the analytical formulations used in this thesis express changes in pressure, temperature, and density as ratios relative to the stagnation conditions, it is not necessary to specify the absolute stagnation values beforehand.
-	Instead, only the gas properties need to be defined:
+	The analytical formulations employed in this thesis generally express changes in pressure, temperature, and density as ratios relative to the stagnation conditions, making it unnecessary to specify their absolute values when analyzing state changes.
+	However, when calculating quantities such as mass flow rates and dimensionless numbers—including the Reynolds and Knudsen numbers—explicit reference values for stagnation pressure and temperature are required to ensure proper scaling and physical interpretability.
+	For this purpose, the following gas properties are defined:
 	$$
-		\gamma = 1.47\;, \qquad M_m = 28.013\; \frac{\text{g}}{\text{mol}}
+		\gamma = 1.47\;,\qquad M_m = 28.013\; \frac{\text{g}}{\text{mol}}
 	$$
-	representing nitrogen gas ($\text{N}_2$), since it is comparable to the gases planned to use in experiments.
-	\newpage
+	representing nitrogen gas ($\text{N}_2$), as it closely approximates the behavior of the gases intended for experimental use.
+
+	To enable consistent comparison between the different formulations presented in the following sections, a set of reference stagnation conditions is introduced.
+	Specifically, two stagnation temperatures are defined:
+	$$
+		T_{0_{min}} = 300\,\text{K}
+			\quad and \quad
+		T_{0_{min}} = 600\,\text{K}.
+	$$
+	These values span the expected operating range, with the former near ambient room temperature and the latter reflecting the maximum temperature the reservoir will be heated to.
+	Both are paired with a reference stagnation pressure of:
+	$$
+		p_{0_{ref}} = 1.5\,\text{bar}
+	$$
+	Which is assumed to yield values near ambient pressure inside the reactor volume.
 
 \subsubsection*{Inlet and Outlet Nozzles}
 
@@ -34,8 +48,8 @@ The only aspect neglected in this simplification is the presence of leaks, which
 		\begin{figure}[H]
 		    \centering
 		    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_nozzle-geometries.pdf}
-		    \caption{
-		        Schematic of the inlet and outlet nozzle assembly.
+		    \caption[Schematic of the inlet and outlet nozzle assembly.]{
+		        \textbf{Schematic of the inlet and outlet nozzle assembly:}
 		        Yellow-shaded regions denote domains where one-dimensional flow is assumed.
 		        Flow directions are indicated by colored arrows: green arrows represent subsonic flow and red arrows indicate supersonic flow.
 		        In the downstream expansion region, the flow is modeled as two-dimensionally rotationally symmetric (green-shaded).
@@ -59,8 +73,8 @@ The only aspect neglected in this simplification is the presence of leaks, which
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics[width=\textwidth]{src/03_analytical-work/fig_reactor-geometry.pdf}
-	    \caption{
-	        Schematic of the reactor geometry.
+	    \caption[Schematic of the reactor geometry.]{
+	        \textbf{Schematic of the reactor geometry:}
 	        The reactor volume is shown in blue, representing the region where three-dimensional flow occurs.
 	        The sample surface is indicated in red, and the leak is marked by a blue outline along the reactor perimeter.
 	        Flow characteristics are depicted by colored arrows: yellow arrows for slow-moving flow, green arrows for subsonic flow, and red arrows for supersonic flow.
@@ -85,7 +99,8 @@ The only aspect neglected in this simplification is the presence of leaks, which
 \subsubsection*{Vacuum}
 	After exiting the outlet, the gas first expands into a small cylindrical section before freely expanding into the surrounding vacuum.
 	The exact residual pressure in the vacuum chamber does not influence the gas flow inside the assembly.
-	This is because the large pressure ratio between the reactor and the vacuum causes the flow to become choked, rendering the back pressure irrelevant.
+	This is because the large pressure ratio between the reactor and the vacuum causes the flow to become choked, meaning that the gas reaches sonic velocity at the nozzle throat.
+	When the flow is choked, the mass flow rate is fixed by the upstream conditions (pressure and temperature), so further reductions in the downstream (back) pressure have no effect on the flow rate.
 	Due to the sharp pressure drop and the high velocity of the gas particles, the flow transitions to the molecular regime after leaving the outlet nozzle.
 
 	\paragraph{Free Jet into Vacuum -- Two-Dimensional}

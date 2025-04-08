@@ -1,0 +1,145 @@
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+% --- LEFT AXIS for Reynolds (log scale from 1 to 2000) ---
+\begin{axis}[
+  name=axre,
+  width=13cm,
+  height=8cm,
+  xmin=0, xmax=3.5,
+  ymode=log,
+  ymin=1, ymax=2000,        
+  axis lines=left,
+  axis line style={-},  
+  xlabel={\footnotesize Mach number},
+  ylabel={\footnotesize Reynolds number},
+  ytick={1,10,100,1000,2000},
+  yticklabels={$10^0$,$10^1$,$10^2$,$10^3$,$2000$},
+  tick label style={font=\footnotesize},
+  minor x tick num=4,
+  minor y tick num=4,
+  clip=true
+]
+
+% ----------------------------------------------------------------
+%  REYNOLDS (Green), with line styles and markers:
+% ----------------------------------------------------------------
+
+% Re, T0=300, Lc=20 µm (green, dotted, triangle marker)
+\addplot[greenColor, dotted, line width=1.1pt,
+  mark=triangle*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Re300_20] {knre_data.dat};
+
+% Re, T0=300, Lc=40 µm (green, solid, triangle marker)
+\addplot[greenColor, solid, line width=1.1pt,
+  mark=triangle*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Re300_40] {knre_data.dat};
+
+% Re, T0=600, Lc=20 µm (green, dotted, square marker)
+\addplot[greenColor, dotted, line width=1.1pt,
+  mark=square*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Re600_20] {knre_data.dat};
+
+% Re, T0=600, Lc=40 µm (green, solid, square marker)
+\addplot[greenColor, solid, line width=1.1pt,
+  mark=square*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Re600_40] {knre_data.dat};
+
+\end{axis}
+
+% --- RIGHT AXIS for Knudsen (log scale, auto-scaling) ---
+\begin{axis}[
+  name=axkn,
+  width=13cm,
+  height=8cm,
+  xmin=0, xmax=3.5,
+  ymode=log,
+  axis x line=none,
+  axis y line=right,
+  axis line style={-},    
+  ylabel={\footnotesize Knudsen number},
+  tick label style={font=\footnotesize},
+  at={(axre.south west)},
+  anchor=south west,
+  clip=true,
+	legend style={
+		at={(0.5,1.05)},
+		anchor=south,
+		font=\scriptsize,
+		legend columns=3,
+		column sep=0.3cm,
+		legend cell align={left}
+	}
+]
+
+% ----------------------------------------------------------------
+%  KNUDSEN (Blue), with line styles and markers:
+% ----------------------------------------------------------------
+
+% Kn, T0=300, Lc=20 µm (blue, dotted, triangle marker)
+\addplot[blueColor, dotted, line width=1.1pt,
+  mark=triangle*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Kn300_20] {knre_data.dat};
+
+% Kn, T0=300, Lc=40 µm (blue, solid, triangle marker)
+\addplot[blueColor, solid, line width=1.1pt,
+  mark=triangle*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Kn300_40] {knre_data.dat};
+
+% Kn, T0=600, Lc=20 µm (blue, dotted, square marker)
+\addplot[blueColor, dotted, line width=1.1pt,
+  mark=square*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Kn600_20] {knre_data.dat};
+
+% Kn, T0=600, Lc=40 µm (blue, solid, square marker)
+\addplot[blueColor, solid, line width=1.1pt,
+  mark=square*, mark size=1.5pt, mark options={solid},
+  mark repeat=20, forget plot]
+  table[x=Ma, y=Kn600_40] {knre_data.dat};
+
+% Reference line at Kn=0.1 (red, dotted)
+\addplot[redColor, dotted, line width=1pt, forget plot]
+  table[x=Ma, y expr=0.1] {knre_data.dat};
+
+% ----------------------------------------------------------------
+%  LEGEND ENTRIES (6 dummy plots showing color/style/marker)
+% ----------------------------------------------------------------
+
+\addlegendimage{blueColor, solid, line width = 1pt}
+\addlegendentry{Kn}
+
+\addlegendimage{black, dotted, line width = 1pt}
+\addlegendentry{$L_c = 20 \mu m$}
+
+\addlegendimage{only marks, mark=triangle*, mark options={solid}, black}
+\addlegendentry{$T_0 = 300\,\mathrm{K}$}
+
+\addlegendimage{greenColor, solid, line width = 1pt}
+\addlegendentry{Re}
+
+\addlegendimage{black, solid, line width = 1pt}
+\addlegendentry{$L_c = 40 \mu m$}
+
+\addlegendimage{only marks, mark=square*, mark options={solid}, black}
+\addlegendentry{$T_0 = 600\,\mathrm{K}$}
+
+
+\end{axis}
+
+\end{tikzpicture}
+\caption{
+	\textbf{Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales.}
+	The plot shows values of $\mathrm{Re}$ and $\mathrm{Kn}$ for two temperatures ($T_0 = 300\,\mathrm{K}$ and $T_0 = 600\,\mathrm{K}$) and two characteristic lengths ($L_c = 20\,\mu\mathrm{m}$ and $L_c = 40\,\mu\mathrm{m}$), with each combination encoded via line style and marker shape.
+	The reference pressure $p_\mathrm{ref}$ is fixed and chosen such that it corresponds to the limiting cases of the considered $T_0$ and $L_c$.
+	The horizontal dotted red line indicates the threshold ($\mathrm{Kn} = 0.1$, $\mathrm{Re} = 2000$) beyond which transitional flow behavior is expected.
+}
+\label{fig:knudsen-reynolds-plot}
+\end{figure}
