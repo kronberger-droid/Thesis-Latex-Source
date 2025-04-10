@@ -1,0 +1,12 @@
+A key aspect when calculating dimensionless numbers like Knudsen and Reynolds number is capturing the temperature dependence of the dynamic viscosity.
+For this purpose, Sutherland's law is used to express the dynamic viscosity $\mu(T)$ as 
+\begin{equation}
+  \mu(T)
+  = \mu_{\text{ref}}
+    \left(\frac{T}{T_{\text{ref}}}\right)^{3/2}
+    \frac{T_{\text{ref}} + S_\mu}{T + S_\mu},
+	\label{eq:sutherland}
+\end{equation}
+where $\mu_{\text{ref}}$, $T_{\text{ref}}$, and $S_\mu$ are empirical constants.
+This formulation provides a reasonable approximation for many gases within a broad temperature range.
+

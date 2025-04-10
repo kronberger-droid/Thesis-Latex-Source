@@ -27,13 +27,13 @@ Other non-trivial solutions will not be considered.
 	Because maximum mass-flow through the assembly occurs under choked conditions, the inlet must also be choked to match the mass-flow rate:
 	$$
 		A_{2,4},\;p_{2,4},\;\rho_{2,4},\;T_{2,4}
-			\quad \xrightarrow {\mathrm{Ma} = 1} \quad
+			\quad \xrightarrow {M = 1} \quad
 		A^*,\;p^*,\;\rho^*,\;T^*
 	$$
 	The second critical location corresponds to the stagnation (total) conditions at the inlet nozzle entry (1), defined by zero velocity:
 	$$
 		A_1,\;p_1,\;\rho_1,\;T_1
-			\quad \xrightarrow{\mathrm{Ma}=0} \quad
+			\quad \xrightarrow{M=0} \quad
 		A_0,\;p_0,\;\rho_0,\;T_0
 	$$
 	Next, cross-sectional areas $A_i$ at all points $i$ defined in chapter~\ref{sec:geometry} are used to calculate their respective area ratios relative to the throat area $A_{2,4}$.
@@ -47,28 +47,21 @@ Other non-trivial solutions will not be considered.
 	With approximate state variables known throughout the assembly, assumptions regarding Reynolds and Knudsen numbers made in chapter~\ref{sec:expected-flow-regimes} can now be tested.
 	Given that mass flow is conserved, it can be calculated from equation~\eqref{eq:1-d-massflow} using stagnation conditions and any given pair of cross-sectional area and Mach number at a location $i$:
 	\begin{align*}
-		p_{0,1} = 1.5\;\text{bar}
-			&\qquad T_{0,1} = 300\;\text{K}
+		p_{0_{ref}} = 1.5\;\text{bar}
+			&\qquad T_{0_{min}} = 300\;\text{K}
 				\qquad \text{yields} \qquad
 			\dot{m}_1 \approx 1.1 \cdot 10^{-7} \; \frac{\text{kg}}{\text{s}}\\
-		p_{0,2} = 1.5\;\text{bar}
-			&\qquad T_{0,2} = 600\;\text{K}
+		p_{0_{ref}} = 1.5\;\text{bar}
+			&\qquad T_{0_{max}} = 600\;\text{K}
 				\qquad \text{yields} \qquad
-			\dot{m}_2 \approx 8.5 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
+			\dot{m}_2 \approx 7.8 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
 	\end{align*}
 
-	The following table summarizes the calculated Reynolds and Knudsen numbers at various points within the assembly for two stagnation temperatures ($T_0$ = 300 K and 500 K) and a stagnation pressure of $p_0 = 1.5\,\text{bar}$.
+	The following table summarizes the calculated Reynolds and Knudsen numbers at various points within the assembly for two stagnation temperatures ($T_{0_{min}} = 300 \text{K}$ and $T_{0_{max}} = 500 \text{K}$) and a stagnation pressure of $p_{0_{ref}} = 1.5\,\text{bar}$.
 
 	\input{src/03_analytical-work/tab_knudsen-full-isentropic.tex}
 
 	\newpage
-	These calculations validate the assumptions made in chapter~\ref{sec:expected-flow-regimes}, confirming that:
-	\begin{itemize}
-	    \item High Mach numbers significantly influence the Knudsen number; thus, molecular flow transition is most probable at the outlet nozzle exit at sufficiently low stagnation pressures.
-	    \item The outlet consistently exhibits the highest Knudsen number, with the exception to a mathematically possible but physically unrealistic hypersonic solution found inside the reactor.
-	    \item Excluding non-physical solutions, the flow remains in the continuum regime with slip boundary conditions.
-	    \item Reynolds numbers remain very low, indicating laminar flow without turbulence.
-	\end{itemize}
 
 \subsubsection*{Interpretation}
 

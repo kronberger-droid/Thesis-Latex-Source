@@ -24,27 +24,27 @@ Hence, more advanced modeling approaches are required.
 		In supersonic expansions, Prandtl–Meyer expansion fans define the maximum turning angle $\theta_{max}$ the gas can undergo around a sharp corner.
 		Which can be calculated using the following equation:
 		\begin{equation*}
-			\theta_{max} = \nu_{max} - \nu(Ma)
+			\theta_{max} = \nu_{max} - \nu(M)
 		\end{equation*}
 		\begin{equation}
-			\theta_{max} = \frac{\pi}{2} \left(\sqrt{\frac{\gamma + 1}{\gamma - 1}} - 1\right) - \sqrt{\frac{\gamma + 1}{\gamma - 1}}\arctan{\sqrt{\frac{\gamma - 1}{\gamma + 1}(Ma^2 - 1)}} + \arctan{\sqrt{Ma^2 -1}}
+			\theta_{max} = \frac{\pi}{2} \left(\sqrt{\frac{\gamma + 1}{\gamma - 1}} - 1\right) - \sqrt{\frac{\gamma + 1}{\gamma - 1}}\arctan{\sqrt{\frac{\gamma - 1}{\gamma + 1}(Ma^2 - 1)}} + \arctan{\sqrt{M^2 -1}}
 			\label{eq:max-turning-angle}
 		\end{equation}
-		Where $\nu_{max},\nu(Ma)$ are the Prandl-Meyer functions, $Ma$ is the mach number before the turn and $\gamma$ is the ratio of heats for the given gas.
+		Where $\nu_{max},\nu(M)$ are the Prandl-Meyer functions, $M$ is the mach number before the turn and $\gamma$ is the ratio of heats for the given gas.
 		By incorporating these fans, the method of characteristics predicts the outer boundary of the flow—effectively identifying the angle outside which the density and mass flux become negligible.
 		This angle is critical for determining the lateral extent of the under-expanded plume and for estimating where essentially all of mass flow is confined.
 		Using equation \eqref{eq:max-turning-angle} for the mach number at the outlet nozzle exit calculated in Section~\ref{sec:one-dim-isentropic} the maximum turning angle yields:
 		$$
 			\theta_{max} = 68.9^\circ
 			\qquad \text{with} \qquad
-			Ma = 3.06\;,\quad \gamma = 1.47
+			M = 3.06\;,\quad \gamma = 1.47
 		$$
 		Notably, findings from Cassanova and Stephenson \cite{Cassanova1965} — even though the nozzle half-angle does not match — still offer valuable reference points regarding the resulting velocity field and associated flow features.
 		However, a key limitation arises if condensation or other non-ideal processes occur.
 		Experiments show that for working fluids like nitrogen, condensation in the expansion region can alter the thermodynamic state and produce deviations from these idealized solutions.
 		\begin{figure}[H]
-			\raggedright
-		    \includegraphics[width=0.95\textwidth]{src/03_analytical-work/fig_velocity-distribution-reduced.pdf}
+			\centering
+		    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_velocity-distribution-reduced.pdf}
 			\caption[Method of Characteristics Flow Field Solution \cite{Cassanova1965}]{
 				\textbf{Method of Characteristics Flow Field Solution \cite{Cassanova1965}:}
 				for values of $A_0/A^* = 3.73,\;\gamma=1.4,M_e =2.88$.

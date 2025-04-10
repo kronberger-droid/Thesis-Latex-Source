@@ -75,11 +75,11 @@ The general form of the Navier–Stokes equations for a compressible, viscous fl
     $$
     \item \textbf{Mach Number:}  
     $$
-	    Ma = \frac{V}{a}\quad\eqref{eq:mach-number}
+	    M = \frac{V}{a}\quad\eqref{eq:mach-number}
     $$
     \item \textbf{Area-Mach Relation (Isentropic Flow):}  
     $$
-	    \frac{A}{A^*} = \frac{1}{Ma}\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}Ma^2\right)\right]^{\frac{\gamma+1}{2(\gamma-1)}} \quad \texttt{[isen, perf]}\quad\eqref{eq:area_ratio_mach}
+	    \frac{A}{A^*} = \frac{1}{M}\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{\frac{\gamma+1}{2(\gamma-1)}} \quad \texttt{[isen, perf]}\quad\eqref{eq:area_ratio_mach}
     $$
     \item \textbf{Isentropic Relations:}  
     From the constant $ p/\rho^\gamma $ we obtain:
@@ -92,13 +92,13 @@ The general form of the Navier–Stokes equations for a compressible, viscous fl
     $$
     \item \textbf{Stagnation/Total Relations:}  
     $$
-	    \frac{T}{T_0} = \left(1+\frac{\gamma-1}{2}Ma^2\right)^{-1} \quad \texttt{[adiab, perf]} \quad \eqref{eq:total_relation_T}
+	    \frac{T}{T_0} = \left(1+\frac{\gamma-1}{2}M^2\right)^{-1} \quad \texttt{[adiab, perf]} \quad \eqref{eq:total_relation_T}
     $$
     $$
-	    \frac{p}{p_0} = \left(1+\frac{\gamma-1}{2}Ma^2\right)^{-\frac{\gamma}{\gamma-1}} \quad \texttt{[isen, perf]} \quad \eqref{eq:total_relation_p}
+	    \frac{p}{p_0} = \left(1+\frac{\gamma-1}{2}M^2\right)^{-\frac{\gamma}{\gamma-1}} \quad \texttt{[isen, perf]} \quad \eqref{eq:total_relation_p}
     $$
     $$
-	    \frac{\rho}{\rho_0} = \left(1+\frac{\gamma-1}{2}Ma^2\right)^{-\frac{1}{\gamma-1}} \quad \texttt{[isen, perf]} \quad \eqref{eq:total_relation_rho}
+	    \frac{\rho}{\rho_0} = \left(1+\frac{\gamma-1}{2}M^2\right)^{-\frac{1}{\gamma-1}} \quad \texttt{[isen, perf]} \quad \eqref{eq:total_relation_rho}
     $$
     \item \textbf{Critical Ratios:}  
     $$
@@ -114,19 +114,19 @@ The general form of the Navier–Stokes equations for a compressible, viscous fl
 \begin{itemize}
     \item \textbf{Reynolds Number:}  
     $$
-	    \text{Re} = \frac{\rho\,V\,L}{\mu} = \frac{V\,L}{\nu} \quad \eqref{eq:reynolds-number}
+	    Re = \frac{\rho\,V\,L}{\mu} = \frac{V\,L}{\nu} \quad \eqref{eq:reynolds-number}
     $$
     \item \textbf{Knudsen Number:}  
     $$
-	    \text{Kn} = \frac{\lambda}{L_c}\quad \eqref{eq:knudsen-number}
+	    Kn = \frac{\lambda}{L_c} = \quad \eqref{eq:knudsen-number}
     $$
 	\item \textbf{Relation between major dimensionless numbers}
 	$$
-		Kn = \frac{Ma}{Re}\sqrt{\frac{\gamma \pi}{2}} \quad \eqref{eq:nondim-relation}
+		Kn = \frac{M}{Re}\sqrt{\frac{\gamma \pi}{2}} \quad \eqref{eq:nondim-relation}
 	$$
     \item \textbf{Sutherland’s Formula (Dynamic Viscosity):}  
     $$
-	    \mu(T) = \mu_0\left(\frac{T}{T_0}\right)^{3/2}\frac{T_0+S}{T+S} \quad \eqref{eq:sutherland}
+	    \mu(T) = \mu_0\left(\frac{T}{T_0}\right)^{3/2}\frac{T_0+S}{T+S} \quad \eqref{}
     $$
 \end{itemize}
 

@@ -1,33 +1,31 @@
-\subsubsection{Continuum Regime}
-The Knudsen number (\(Kn\)) serves as a crucial indicator for the validity of continuum theory: low values (\(Kn < 0.1\)) justify treating the fluid as a continuous medium, while higher values signal a transition into rarefied (transitional or free-molecular) flow \cite{halwidl_development_2016,anderson2021modern}. Since the present work relies on the continuum assumption, we must ensure that \(Kn\) remains sufficiently small throughout the flow domain. 
+\subsubsection*{Continuum Regime}
+	The whole Theory relies heavily on the continuum model.
+	For every location of the flow, but the vacuum, it will be assumed that it suffices to approximate the state variables (T, p, ρ) at certain locations using a simple one-dimensional continuum model presented in more detail in Section~\ref{sec:one-dim-isentropic} and use these state variables to calculate the Knudsen number.
 
-However, due to the micro-scale geometry involved, parts of the flow may enter the slip regime (\(0.001 \lesssim Kn < 0.1\)). In this range, continuum models remain largely valid, but additional slip-layer boundary conditions are required to fully capture near-wall effects. Implementing such slip boundary conditions can be complex, and therefore we omit them here.
+	The plot in Figure~\ref{fig:knudsen-reynolds-plot} was created by calculating local temperatures and pressures using Equations~\eqref{eq:total_relation_T} and \eqref{eq:total_relation_p} for the reference total conditions given in Section~\ref{sec:geometry}.
+	Further, calculating Knudsen number using Equation~\eqref{eq:knudsen-number}, where dynamic viscosity is expressed using Sutherland's formula~\eqref{eq:sutherland} with the following empirical constants \cite{kim2004numericalanalysisflowcharacteristics}:
+	$$
+		S_\mu = 111\;\text{K} \qquad T_{ref} = 300.55\;\text{K} \qquad \mu_{ref} = 17.81\; \text{sPa}
+	$$
+	Now the corresponding Reynolds numbers are calculated using the known relation between dimensionless numbers as stated in Equation~\eqref{eq:nondim-relation}.
+	The values are plotted for two different characteristic lengths, $L_c = 20\;\mu m$ corresponding to throats of the inlet and outlet nozzles and $L_c = 40\;\mu m$ corresponding to the reactor volume and the maximum diameters of the inlet and outlet nozzles.
 
-\paragraph{Knudsen Number.}
-	The Knudsen number is given by
-	\begin{equation}
-	  Kn(p,T) 
-	  = \frac{\lambda}{L_c} 
-	  = \frac{\mu(T)}{p\,L_c}\,\sqrt{\frac{\pi\,T\,R_u}{2\,M_m}},
-	\end{equation}
-	where \(\lambda\) is the mean free path, \(L_c\) a characteristic length, \(\mu(T)\) the dynamic viscosity, \(p\) the local pressure, \(T\) the temperature, \(M_m\) the molar mass, and \(R_u\) the universal gas constant. The temperature dependence of \(\mu\) is described by Sutherland’s law:
-	\begin{equation}
-	  \mu(T)
-	  = \mu_{\text{ref}}
-	    \left(\frac{T}{T_{\text{ref}}}\right)^{3/2}
-	    \frac{T_{\text{ref}} + S_\mu}{T + S_\mu},
-	\end{equation}
-	with \(S_\mu=111\,\mathrm{K}\), \(T_{\text{ref}}=300.55\,\mathrm{K}\), and \(\mu_{\text{ref}}=17.81 \times 10^{-6}\,\mathrm{Pa\,s}\) for nitrogen \cite{kim2004numericalanalysisflowcharacteristics}.
+	Figure~\ref{fig:knudsen-reynolds-plot} clearly shows that for a flow with Mach numbers under 3.5 within the assembly, Knudsen numbers typically remain below 0.1, validating the continuum assumption.
+	Although some regions may fall within the slip regime -- where slip boundary conditions have to be introduced to yield more accurate solutions -- continuum-based models remain applicable. 
+	At the same time, the Reynolds number remains well under 2000, indicating laminar flow, which points to minimal mixing inside the assembly \cite{ames1953compressible, comsol_microfluidics_guide}.
+	\newpage
 
-	\paragraph{Reynolds Number.}
-	To assess the potential for turbulence, we compute the Reynolds number,
-	\begin{equation}
-	  Re = \frac{\rho\,U\,L_c}{\mu(T)},
-	\end{equation}
-	where \(\rho\) is the density and \(U\) the flow velocity.
-
-	\input{src/03_analytical-work/plt_expected-flow-regimes.tex}
-	Figure~ that for subsonic flow within the micro-channels, \(Kn\) typically remains below \(0.1\), validating the continuum assumption. At the same time, the Reynolds number remains well under \(100\), indicating laminar flow \cite{ames1953compressible, comsol_microfluidics_guide}. Although some regions may fall within the slip regime, continuum-based models remain largely applicable. 
+	\begin{figure}[H]
+		\centering
+		\input{src/03_analytical-work/plt_expected-flow-regimes.tex}
+		\caption[Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales.]{
+			\textbf{Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales:}
+			The plot shows values of $\mathrm{Re}$ and $\mathrm{Kn}$ for two temperatures ($T_0 = 300\,\mathrm{K}$ and $T_0 = 600\,\mathrm{K}$) and two characteristic lengths ($L_c = 20\,\mu\mathrm{m}$ and $L_c = 40\,\mu\mathrm{m}$), with each combination encoded via line style and marker shape.
+			The reference pressure $p_\mathrm{ref}$ is fixed and chosen such that it corresponds to the limiting cases of the considered $T_0$ and $L_c$.
+			The horizontal dotted red line indicates the threshold ($\mathrm{Kn} = 0.1$, $\mathrm{Re} = 2000$) beyond which transitional flow behavior is expected.
+		}
+		\label{fig:knudsen-reynolds-plot}
+	\end{figure}
 
 	\paragraph{Transition to Free Molecular Flow.}
 		Upon exiting the nozzle into vacuum, the gas pressure drops rapidly, leading to a potentially large mean free path.
