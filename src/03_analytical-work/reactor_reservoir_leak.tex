@@ -5,7 +5,6 @@ Section \ref{sec:micro-channels} introduces several phenomena relevant to micro-
 To reconnect the two reservoirs analytically—initially without including the leak—additional assumptions are made. Stagnation conditions for the reactor are prescribed so that the resulting mass flow at the outlet can be balanced by the inlet conditions, without imposing sonic flow at the inlet throat. To solve this system, a connection between the inlet reservoir conditions and those within the reactor must be established. Two approaches are considered: First, the back pressure and temperature of the discharge region are assumed to correspond to the reactor chamber conditions and are linked isentropically to the inlet reservoir. Second, the temperature is assumed constant, while the pressure follows the same isentropic relation. This simplification effectively models possible heat exchange within the reactor.
 
 Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the reactor through the leak is considered. The impact of this additional flow on the inlet Mach number $M_0$ is analyzed, aiming to identify an upper limit for the leak mass flow. This limit is defined by the point at which the inlet is again forced to reach sonic conditions. Notably, this analysis does not attempt to derive an explicit formula for $\dot{m}_L$ but instead focuses on the qualitative influence of the leak on the inlet flow conditions.
-\newpage
 
 \subsubsection*{Formulations without including the leak}
 	In the absence of a leak, the system reduces to a single flow path from the inlet reservoir, through the reactor volume, and out to the vacuum.
@@ -53,7 +52,6 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	$$
 	Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
 	This will be the starting point for both of the following approaches.\\
-	\newpage
 \paragraph{Isentropic approach}
 	In this approach, the reactor is treated as a downstream reservoir with distinct stagnation conditions, implying that irreversibilities have occurred somewhere in the flow path.
 	Instead of modeling the associated entropy generation, local isentropic relations are used to connect the inlet reservoir’s stagnation state to the reactor boundary.
@@ -96,7 +94,6 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 		\dot{m} = 6.4 \cdot 10^{-8}\; \frac{\text{kg}}{\text{s}}
 	$$
 	At reservoir conditions of $T_{0_{max}} = 600\;\text{K}$ and $p_{0_{ref}} = 1.5\;\text{bar}$.
-	\newpage
 \paragraph{Constant temperature approach}
 	The isothermal approach similarly separates the reactor as an independent reservoir, but enforces a uniform temperature shared with the inlet reservoir.
 	Despite holding temperature constant, a pressure difference can still arise, which inherently indicates a net entropy change.
@@ -151,7 +148,6 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	Which is in the same order of magnitude as the mass-flow for the fully isentropic formulation in Section \ref{sec:one-dim-isentropic}.
 	The discrepancy in mass-flow can be attributed to the change in entropy, indicated by the change in stagnation conditions.
 	Also, now that the temperature of the discharge area and the reactor don't match anymore, heat transfer has to be assumed.
-	\newpage
 
 \subsubsection*{Formulations Including the Leak}
 	Including the leak can be accounted for by assuming an additional mass flow leaving the reactor, which the inlet must compensate:

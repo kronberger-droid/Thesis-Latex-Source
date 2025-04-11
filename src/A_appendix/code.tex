@@ -8,14 +8,18 @@ See:\quad \url{https://smath.com/}\\
 \newpage
 \includegraphics[page=3, width=0.95\textwidth]{code/calculations_thesis.pdf}
 \newpage
-\blankpage
 
 \subsection{Python}
 Packages:
 \begin{itemize}
 	\item NumPy: \quad \url{https://numpy.org/}
 	\item SciPy: \quad \url{https://scipy.org/}
+	\item Pandas: \quad \url{https://pandas.pydata.org/}
 \end{itemize}
 \subsubsection{Solve Mach number from area ratio}
 \label{apx:mach-py}
 \lstinputlisting[label=code:newton-solver-mach, caption=Solve Mach number from area ratio using scipy fsolve]{code/solve_mach_number.py}
+
+\subsubsection{Dataset for Knudsen and Reynolds number plot}
+\label{apx:knudsen-plot-py}
+\lstinputlisting[label=apx:knudsen-plot-py, caption=Generating data for plot of Knudsen and Reynolds numbers for different temperatures and characteristic lengths]{code/plot_data_knudsen_reynolds.py}
