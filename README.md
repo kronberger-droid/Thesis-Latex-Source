@@ -10,5 +10,3 @@ It includes:
 To-Do:
 
 - Go over everything and make important thing's italic.
-- P30-33: adding context for finding of Casanova and more content.
-- OVERALL: remove repetition of "one of the".

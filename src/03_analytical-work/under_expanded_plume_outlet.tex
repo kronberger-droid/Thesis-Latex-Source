@@ -27,8 +27,26 @@ Hence, more advanced modeling approaches are required.
 			\label{eq:max-turning-angle}
 		\end{equation}
 
-		Using Equation \eqref{eq:max-turning-angle} with a Mach number of $M = 3.06$ and $\gamma = 1.47$, we find a maximum turning angle of $\theta_{max} = 68.9^\circ$.
-		This angle marks the theoretical limit for gas expansion after leaving the nozzle.
+		Using Equation \eqref{eq:max-turning-angle} with a Mach number of $M=3.06$ and $\gamma=1.47$, the maximum turning angle yields:
+		$$
+			\theta_{max} = 68.9^\circ
+		$$
+		This value marks the theoretical limit for gas expansion after leaving the nozzle.
+
+		Additionally, under the assumption that the specific heat at constant pressure remains roughly constant, one can view the final jet velocity as arising from the nearly complete conversion of thermal energy into kinetic energy.
+		Because $T_0 / T$ in such expansions can be very large, $T$ can often be approximated by the stagnation temperature $T_0$.
+		The resulting “terminal velocity” $v_{\infty}$ takes the form
+
+		\begin{equation}
+			v_{\infty} = \sqrt{\frac{2R}{M_m} \cdot \frac{\gamma}{\gamma - 1} \cdot T_0},
+		\end{equation}
+
+		where $\gamma$ is the specific heat ratio, $R$ is the universal gas constant, and $W$ is the molar mass of the gas. This relation offers a concise way to estimate the maximum jet velocity once the internal energy is nearly fully converted to directed kinetic energy.
+		Using the reference parameters given in Section~\ref{sec:geometry} the terminal velocity yields:
+		$$
+			v_\infty(T_{0_{min}}) = 0000 \quad \text{and} \quad v_\infty(T_{0_{min}}) = 000
+		$$
+		Figure~\ref{fig:velocity-distribution-reduced} shows the best-matching solution identified in the findings of Cassanova \cite{Cassanova1965}, demonstrating how the method of characteristics can predict the post-nozzle flow field under similar conditions.
 
 		\begin{figure}[H]
 			\centering
@@ -39,6 +57,7 @@ Hence, more advanced modeling approaches are required.
 				The black curves represent isochor lines, the red curve shows rotational freezing for reservoir pressure $~1\;\text{atm}$ -- which corresponds to the pressure in the reactor volume in our case -- and the blue curves indicate fractions of the total mass flow enclosed between each curve and the $x$-axis. 
 				This figure has been reduced for readability; see Appendix~\ref{apx:flow-field} for more details.
 			}
+			\label{fig:velocity-distribution-reduced}
 		\end{figure}
 
 		Rotational freezing occurs in rapidly expanding gases when molecules no longer exchange rotational energy effectively, due to fewer collisions.
