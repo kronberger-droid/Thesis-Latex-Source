@@ -14,45 +14,49 @@ Hence, more advanced modeling approaches are required.
 		This approach is not feasible in this case since the length of the nozzle grows as the back pressure gets lower, the ideal nozzle for the high vacuum found in the surrounding chamber would not be able to fit due to space constraints.
 		\cite{khare_rocket_2021, fernandes_shape_2023}
 
-	\paragraph*{Determining flow field for free expansion}
-		Mach lines are a concept usually encountered in two-dimensional supersonic flows. 
-		These lines occur in pairs and are oriented at an angle $\mu = \arcsin\!\bigl(\frac{1}{M}\bigr)$ called the Mach angle, with respect to the direction of motion.
-		In a 3-D flow field, these lines form a Mach cone, whose half-angle is the Mach angle itself.
-		In an under-expanded jet, the method of characteristics can also be applied immediately downstream of the nozzle exit to predict the initial spread of the flow.
-		It does this by mapping local Mach numbers and density profiles along characteristic lines, thus giving 
-		a first approximation for velocity and pressure distributions.
-		In supersonic expansions, Prandtl–Meyer expansion fans define the maximum turning angle $\theta_{max}$ the gas can undergo around a sharp corner.
-		Which can be calculated using the following equation:
-		\begin{equation*}
-			\theta_{max} = \nu_{max} - \nu(M)
-		\end{equation*}
+	\paragraph*{Determining Flow Field for Free Expansion}
+		In supersonic flows, Mach lines form at a specific angle called the Mach angle, given by $\mu = \arcsin\left(\frac{1}{M}\right)$, relative to the flow direction.
+		In three-dimensional flows, these Mach lines form a Mach cone with a half-angle equal to the Mach angle.
+		The method of characteristics is a useful analytical tool for predicting the initial flow properties, including local Mach numbers, densities, velocities, and pressures, immediately after the nozzle exit.
+
+		During supersonic expansions, gas flows experience changes in direction described by Prandtl–Meyer expansion fans.
+		These fans set the maximum angle, $\theta_{max}$, that a gas can turn around a sharp corner, defining the outer boundary beyond which gas density and mass flow become very small.
+		The maximum turning angle is calculated by:
 		\begin{equation}
-			\theta_{max} = \frac{\pi}{2} \left(\sqrt{\frac{\gamma + 1}{\gamma - 1}} - 1\right) - \sqrt{\frac{\gamma + 1}{\gamma - 1}}\arctan{\sqrt{\frac{\gamma - 1}{\gamma + 1}(Ma^2 - 1)}} + \arctan{\sqrt{M^2 -1}}
+			\theta_{max} = \frac{\pi}{2} \left(\sqrt{\frac{\gamma + 1}{\gamma - 1}} - 1\right) - \sqrt{\frac{\gamma + 1}{\gamma - 1}}\arctan{\sqrt{\frac{\gamma - 1}{\gamma + 1}(M^2 - 1)}} + \arctan{\sqrt{M^2 -1}}
 			\label{eq:max-turning-angle}
 		\end{equation}
-		Where $\nu_{max},\nu(M)$ are the Prandl-Meyer functions, $M$ is the mach number before the turn and $\gamma$ is the ratio of heats for the given gas.
-		By incorporating these fans, the method of characteristics predicts the outer boundary of the flow—effectively identifying the angle outside which the density and mass flux become negligible.
-		This angle is critical for determining the lateral extent of the under-expanded plume and for estimating where essentially all of mass flow is confined.
-		Using equation \eqref{eq:max-turning-angle} for the mach number at the outlet nozzle exit calculated in Section~\ref{sec:one-dim-isentropic} the maximum turning angle yields:
-		$$
-			\theta_{max} = 68.9^\circ
-			\qquad \text{with} \qquad
-			M = 3.06\;,\quad \gamma = 1.47
-		$$
-		Notably, findings from Cassanova and Stephenson \cite{Cassanova1965} — even though the nozzle half-angle does not match — still offer valuable reference points regarding the resulting velocity field and associated flow features.
-		However, a key limitation arises if condensation or other non-ideal processes occur.
-		Experiments show that for working fluids like nitrogen, condensation in the expansion region can alter the thermodynamic state and produce deviations from these idealized solutions.
+
+		Using Equation \eqref{eq:max-turning-angle} with a Mach number of $M = 3.06$ and $\gamma = 1.47$, we find a maximum turning angle of $\theta_{max} = 68.9^\circ$.
+		This angle marks the theoretical limit for gas expansion after leaving the nozzle.
+
 		\begin{figure}[H]
 			\centering
 		    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_velocity-distribution-reduced.pdf}
 			\caption[Method of Characteristics Flow Field Solution \cite{Cassanova1965}]{
 				\textbf{Method of Characteristics Flow Field Solution \cite{Cassanova1965}:}
-				for values of $A_0/A^* = 3.73,\;\gamma=1.4,M_e =2.88$.
-				The black curves represent isochor lines, the red curve shows rotational freezing for reservoir pressure $~1atm$, and the blue curves indicate fractions of the total mass flow enclosed between each curve and the $x$-axis. 
+				for values of $A_0/A^* = 3.73,\;\gamma=1.4,M_e =2.88$ a half-angle of $\theta = 15^\circ$.
+				The black curves represent isochor lines, the red curve shows rotational freezing for reservoir pressure $~1\;\text{atm}$ -- which corresponds to the pressure in the reactor volume in our case -- and the blue curves indicate fractions of the total mass flow enclosed between each curve and the $x$-axis. 
 				This figure has been reduced for readability; see Appendix~\ref{apx:flow-field} for more details.
 			}
 		\end{figure}
-		Consequently, while the method of characteristics remains valuable for nozzle design and near-exit expansions, it cannot fully capture condensation effects or strong rarefaction phenomena further downstream.
+
+		Rotational freezing occurs in rapidly expanding gases when molecules no longer exchange rotational energy effectively, due to fewer collisions.
+		Typically, rotational energy stops changing after about ten collisions, compared to just one collision for translational energy.
+		When rotational freezing happens, the rotational temperature separates from the translational temperature, affecting the gas's pressure and density profiles significantly.
+		This separation means that predictions near the nozzle exit become less accurate if rotational freezing isn't considered.
+		Rotational freezing happens before translational freezing, meaning rotational energy modes stop adjusting earlier, while translational motion continues to change further downstream.
+
+		Boundary layer effects, caused by friction near nozzle walls, also influence gas flow.
+		These effects decrease the exit Mach number and reduce density at the edges of the jet.
+		The boundary layer can create differences between theoretical predictions and experimental results, particularly at lower Knudsen numbers, by redistributing momentum within the gas flow.
+		Adjustments like those provided by the Cohen-Reshotko method help correct predictions by accounting for these boundary layer impacts.
+
+		Experiments, such as those by Cassanova and Stephenson, support the method of characteristics for analyzing free expansions and confirm it provides accurate predictions of gas density changes from continuous flow conditions to rarefied conditions.
+		However, these studies also highlight important limitations due to condensation and boundary layer effects.
+		Condensation, especially at pressures between 1–7 atm for nitrogen, significantly alters the gas's thermodynamic properties, limiting the method's accuracy.
+
+		In summary, while the method of characteristics effectively predicts initial flow conditions, fully accurate modeling of supersonic expansions must also consider rotational freezing, boundary layer effects, and potential condensation.
 		\cite{jousten_handbook_2016, robertson_investigation_1970, noauthor_zucrow_nodate}
 
 \subsubsection*{Navier-Stokes Equations}
