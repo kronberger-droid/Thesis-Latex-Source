@@ -10,3 +10,4 @@ It includes:
 To-Do:
 
 - Go over everything and make important thing's italic.
+- Corrections Jiri
