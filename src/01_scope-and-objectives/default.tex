@@ -1,9 +1,15 @@
 \section{Scope and objectives}\label{sec:scope-objectives}
-	The aim of this thesis is to develop a straightforward analytical framework that predicts flow behavior and estimates state variables at key positions within a micro-reactor assembly.
-	These estimates will later serve as initial conditions for more detailed numerical simulations.
-	Figure \ref{fig:technical-drawing} illustrates the reactor configuration, where reactants are mixed in the reservoir, pass through the inlet into the reaction volume where it reacts with the active sample surface, and finally exit into the ultra low pressure analysis section through the outlet.
-	Simultaneously, gas leaks through the sealing interface into the sample transfer section of the vacuum chamber.
+	The aim of this thesis is to develop a straightforward analytical framework that predicts gas flow behavior and estimates key state variables at strategically relevant positions within a micro-reactor assembly.  
+	These state variables include pressure, temperature, density, and flow velocity, which together provide a macroscopic description of the system's thermodynamic and transport conditions.  
+	Accurate knowledge of these parameters is essential for understanding the overall flow dynamics and for defining reliable boundary and initial conditions for subsequent numerical simulations of microscopic or reactive flow phenomena.
 
+	Figure~\ref{fig:technical-drawing} illustrates the reactor configuration. Reactants are first introduced into the reservoir, where they mix before entering the reaction zone through a narrow inlet.  
+	Within the reaction volume, gas molecules interact with the active surface of the sample under controlled conditions.  
+	The flow then continues through the outlet into the ultra-low-pressure analysis section, where residual gases are removed.  
+	In parallel, a small fraction of the gas leaks through the sealing interface into the sample transfer section of the surrounding vacuum chamber, affecting local pressure distributions.
+
+	This model focuses on the continuum flow regime and provides estimates of state variables at critical locations such as the reservoir, inlet, reaction chamber, outlet, and leak path.  
+	These estimates form the foundation for assessing flow behavior under near-ambient pressures and will later be refined by high-resolution numerical methods and experimental validation.
 	\begin{figure}[H]
 	    \centering
 	    \includegraphics[width=\textwidth]{src/01_scope-and-objectives/fig_technical-drawing.pdf}
