@@ -1,16 +1,22 @@
 \subsubsection*{Continuum Regime}
-	The whole Theory relies heavily on the continuum model.
+	The whole theory relies heavily on the continuum model.
 	For every location of the flow, but the vacuum, it will be assumed that it suffices to approximate the state variables (T, p, ρ) at certain locations using a simple one-dimensional continuum model presented in more detail in Section~\ref{sec:one-dim-isentropic} and use these state variables to calculate the Knudsen number.
 
 	The plot in Figure~\ref{fig:knudsen-reynolds-plot} was created by calculating local temperatures and pressures using Equations~\eqref{eq:total_relation_T} and \eqref{eq:total_relation_p} for the reference total conditions given in Section~\ref{sec:geometry}.
-	Further, calculating Knudsen number using Equation~\eqref{eq:knudsen-number}, where dynamic viscosity is expressed using Sutherland's formula~\eqref{eq:sutherland} with the following empirical constants \cite{kim2004numericalanalysisflowcharacteristics}:
+	Further, calculating Knudsen number using Equation~\eqref{eq:knudsen-number}, where dynamic viscosity is expressed using Sutherland's formula~\eqref{eq:sutherland} with the following empirical constants which are generally used for nitrogen gas \cite{kim2004numericalanalysisflowcharacteristics}:
 	$$
-		S_\mu = 111\;\text{K} \qquad T_{ref} = 300.55\;\text{K} \qquad \mu_{ref} = 17.81\; \text{sPa}
+		\text{Nitrogen }(N_2):
+			\qquad
+		S_\mu = 111\;\text{K}
+			\qquad
+		T_{ref} = 300.55\;\text{K}
+			\qquad
+		\mu_{ref} = 17.81\; \text{sPa}
 	$$
 	Now the corresponding Reynolds numbers are calculated using the known relation between dimensionless numbers as stated in Equation~\eqref{eq:nondim-relation}.
 	The values are plotted for two different characteristic lengths, $L_c = 20\;\mu m$ corresponding to throats of the inlet and outlet nozzles and $L_c = 40\;\mu m$ corresponding to the reactor volume and the maximum diameters of the inlet and outlet nozzles.
 
-	Figure~\ref{fig:knudsen-reynolds-plot} clearly shows that for a flow with Mach numbers under 3.5 within the assembly, Knudsen numbers typically remain below 0.1, validating the continuum assumption.
+	Figure~\ref{fig:knudsen-reynolds-plot} clearly shows that for a flow with Mach numbers under 3.5 which is expected within the assembly, Knudsen numbers typically remain below 0.1, validating the continuum assumption.
 	Although some regions may fall within the slip regime -- where slip boundary conditions have to be introduced to yield more accurate solutions -- continuum-based models remain applicable. 
 	At the same time, the Reynolds number remains well under 2000, indicating laminar flow, which points to minimal mixing inside the assembly \cite{ames1953compressible, comsol_microfluidics_guide}.
 
@@ -19,9 +25,9 @@
 		\input{src/03_analytical-work/plt_expected-flow-regimes.tex}
 		\caption[Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales.]{
 			\textbf{Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales:}
-			The plot shows values of $\mathrm{Re}$ and $\mathrm{Kn}$ for two temperatures ($T_0 = 300\,\mathrm{K}$ and $T_0 = 600\,\mathrm{K}$) and two characteristic lengths ($L_c = 20\,\mu\mathrm{m}$ and $L_c = 40\,\mu\mathrm{m}$), with each combination encoded via line style and marker shape.
+			The plot shows values of $\mathrm{Re}$ and $\mathrm{Kn}$ for two temperatures ($T_0 = 300\,\mathrm{K}$ and $T_0 = 600\,\mathrm{K}$) and two characteristic lengths ($L_c = 20\,\mu\mathrm{m}$ and $L_c = 40\,\mu\mathrm{m}$) over the expected Mach numbers inside the assembly for Nitrogen.
 			The reference pressure $p_\mathrm{ref}$ is fixed and chosen such that it corresponds to the limiting cases of the considered $T_0$ and $L_c$.
-			The horizontal dotted red line indicates the threshold ($\mathrm{Kn} = 0.1$, $\mathrm{Re} = 2000$) beyond which transitional flow behavior is expected.
+			The horizontal dotted green line indicates the threshold ($\mathrm{Kn} = 0.1$, $\mathrm{Re} = 2000$) beyond which transitional flow behavior is expected.
 		}
 		\label{fig:knudsen-reynolds-plot}
 	\end{figure}

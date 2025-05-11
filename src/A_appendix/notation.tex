@@ -46,18 +46,27 @@ $\nu$       & Prandtl-Meyer angle \\
 
 \begin{flushleft}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ll}
+\begin{tabular}{cl}
+\multicolumn{2}{l}{Generally used:} \\
 $\infty$ & free-stream conditions \\
-$0$ & stagnation/reservoir conditions (local speed equals zero) \\
-$1$ & inlet nozzle inlet conditions (usually equals reservoir conditions) \\
+$*$ & critical conditions typically called the throat ($M = 1$) \\
+$0$ & stagnation/reservoir conditions ($M=0$) \\
+
+\multicolumn{2}{l}
+{Used in Section~\ref{sec:one-dim-isentropic} as pos-$i$ where $i \in \{1, 2, 3, 4, 5\}$ stands for:}\\
+
+$1$ & inlet nozzle inlet conditions (assumed to equal reservoir conditions) \\
 $2$ & inlet nozzle exit conditions \\
 $3$ & reactor center conditions \\
 $4$ & outlet nozzle inlet conditions \\
 $5$ & outlet nozzle exit conditions \\
-$r$ & stagnation reactor conditions (local speed equals zero) \\
+
+\multicolumn{2}{l}
+{Used in Section~\ref{sec:disconnected-reservoirs}:} \\
+$r$ & reactor conditions \\
+$in$ & inlet conditions \\
 $b$ & reservoir discharge region conditions \\
 $L$ & leak conditions \\
-$*$ & critical conditions (local speed equals local speed of sound) \\
 \end{tabular}
 \end{flushleft}
 

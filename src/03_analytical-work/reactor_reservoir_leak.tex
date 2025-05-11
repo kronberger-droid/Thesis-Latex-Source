@@ -4,7 +4,7 @@ Section \ref{sec:micro-channels} introduces several phenomena relevant to micro-
 
 To reconnect the two reservoirs analytically—initially without including the leak—additional assumptions are made. Stagnation conditions for the reactor are prescribed so that the resulting mass flow at the outlet can be balanced by the inlet conditions, without imposing sonic flow at the inlet throat. To solve this system, a connection between the inlet reservoir conditions and those within the reactor must be established. Two approaches are considered: First, the back pressure and temperature of the discharge region are assumed to correspond to the reactor chamber conditions and are linked isentropically to the inlet reservoir. Second, the temperature is assumed constant, while the pressure follows the same isentropic relation. This simplification effectively models possible heat exchange within the reactor.
 
-Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the reactor through the leak is considered. The impact of this additional flow on the inlet Mach number $M_0$ is analyzed, aiming to identify an upper limit for the leak mass flow. This limit is defined by the point at which the inlet is again forced to reach sonic conditions. Notably, this analysis does not attempt to derive an explicit formula for $\dot{m}_L$ but instead focuses on the qualitative influence of the leak on the inlet flow conditions.
+Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the reactor through the leak is considered. The impact of this additional flow on the inlet Mach number $M_{in}$ is analyzed, aiming to identify an upper limit for the leak mass flow. This limit is defined by the point at which the inlet is again forced to reach sonic conditions. Notably, this analysis does not attempt to derive an explicit formula for $\dot{m}_L$ but instead focuses on the qualitative influence of the leak on the inlet flow conditions.
 
 \subsubsection*{Formulations without including the leak}
 	In the absence of a leak, the system reduces to a single flow path from the inlet reservoir, through the reactor volume, and out to the vacuum.
@@ -24,20 +24,20 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	\end{figure}
 	\noindent Since this still constitutes a closed system, mass flow must be conserved, thus:
 	$$
-		\dot{m}_0 = \dot{m}_r = const.
+		\dot{m}_{in} = \dot{m}_r = const.
 	$$
 	The reactor still discharges into vacuum, this therefore must lead to chocked flow:
 	$$
-		M_0 = 1
+		M_r = 1
 	$$
 	From the geometry in section \ref{sec:geometry} it is given that:
 	$$
-		A_0 = A_r = A
+		A_{in} = A_r = A
 	$$
 	The mass flow rates from the reactor into vacuum, can be calculated using the isentropic mass flow equation \eqref{eq:1-d-massflow}\\
 	Reservoir $\to$ Reactor
 	\begin{equation}
-		\dot{m}_0 = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		\dot{m}_{in} = A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 		\label{eq:massflow-inlet}
 	\end{equation}
 	Reactor $\to$ Vacuum
@@ -45,10 +45,10 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 		\dot{m}_r = A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 		\label{eq:massflow-outlet}
 	\end{equation}
-	Thus from ($\dot{m}_r = \dot{m}_0 = const.$)
+	Thus from ($\dot{m}_r = \dot{m}_{in} = const.$)
 	$$
 		A\, p_r\, \sqrt{\frac{\gamma}{R\,T}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-		=  A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
+		=  A\, p_0\, \sqrt{\frac{\gamma}{R\,T}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\\\
 	$$
 	Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
 	This will be the starting point for both of the following approaches.\\
@@ -60,13 +60,13 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	$$
 		T_b = T_r
 		\quad \to \quad
-		T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)
+		T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)
 	$$
 	and
 	$$
 		p_b = p_r
 		\quad \to \quad
-		p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}
+		p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)^{\frac{\gamma}{\gamma - 1}}
 	$$
 	Assuming the conditions of the discharge region to match the values in the reactor and using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_b$ and $P_b$ the previously defined conservation of mass equation yields:
 	$$
@@ -76,11 +76,11 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 		=
 	$$
 	$$
-		A\, p_r\left(1 + \frac{\gamma - 1}{2}M_0^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_0\right)^{-\frac{1}{2}}\, Ma_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		A\, p_r\left(1 + \frac{\gamma - 1}{2}M_{in}^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_{in}\right)^{-\frac{1}{2}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 	$$
-	Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_0$ only dependent on $\gamma$, since the summing the exponents equals zero.
+	Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_{in}$ only dependent on $\gamma$, since the summing the exponents equals zero.
 	$$
-		M_0 = \left(1 + \frac{\gamma - 1}{2}\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
+		M_{in} = \left(1 + \frac{\gamma - 1}{2}\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
 		\quad \text{for} \quad \gamma = 1.47
 	$$
 	Thus resulting in following ratios between the conditions in the reactor and the reservoir and a corresponding mass flow.
@@ -106,23 +106,23 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	Since for small cavities the surface area of its walls is much larger in proportion to its internal volume, heat transfer from the walls will be significant even without high mixing due to low Reynolds numbers present in microfluidics.
 	$$
 		p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-		=  p_0\, M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		=  p_0\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 	$$
 	Again using the isentropic relation \eqref{eq:total_relation_p} for $p_0$
 	$$
 		p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-		=  p_r \left(1 + \frac{\gamma - 1}{2}M_0^2 \right)^{\frac{\gamma}{\gamma - 1}}\, M_0\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+		=  p_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)^{\frac{\gamma}{\gamma - 1}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 	$$
 	Rearranging leads to an equation only dependent on $\gamma$ and the mach number $\mathrm{Ma}_0$ at the inlet.
 	$$
 		\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
-		=  M_0\,\left(1+\frac{\gamma-1}{2}\,M_0^2\right)^{\frac{1}{2}}
+		=  M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{\frac{1}{2}}
 	$$
 	Which can be solved analytically, since by squaring both sides and rearranging it resembles a simple quadratic equation:
 	\begin{equation}
-		M_0^4 + \frac{2}{\gamma - 1}M_0^2 - \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}} = 0
+		M_{in}^4 + \frac{2}{\gamma - 1}M_{in}^2 - \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}} = 0
 	\end{equation}
-	Now substituting $M_0^2 = f \quad \to \quad M_0 = \sqrt{f}$
+	Now substituting $M_{in}^2 = f \quad \to \quad M_{in} = \sqrt{f}$
 	\begin{equation}
 		f = -\frac{1}{\gamma - 1} \pm \sqrt{\frac{1}{(\gamma - 1)^2}
 		+ \frac{2}{\gamma -1}\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma + 1}{\gamma - 1}}}
@@ -132,7 +132,7 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	$$
 		f = 0.31
 			\quad \to \quad
-		M_0 = 0.55
+		M_{in} = 0.55
 	$$
 	Which corresponds to the following ration between the conditions in the reactor and the reservoir, which results in the following mass-flow:
 	$$
@@ -152,9 +152,9 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 \subsubsection*{Formulations Including the Leak}
 	Including the leak can be accounted for by assuming an additional mass flow leaving the reactor, which the inlet must compensate:
 	\begin{equation}
-	    \dot{m}_0 = \dot{m}_r + \dot{m}_L 
+	    \dot{m}_{in} = \dot{m}_r + \dot{m}_L 
 	    \quad \Rightarrow \quad 
-	    \dot{m}_L = \dot{m}_0 - \dot{m}_r \label{eq:massflow-leak}
+	    \dot{m}_L = \dot{m}_{in} - \dot{m}_r \label{eq:massflow-leak}
 	\end{equation}
 	This requires an increase in the total conditions of the reservoir to maintain constant conditions inside the reactor.
 	As a consequence, the Mach number increases until the critical pressure ratio \eqref{eq:critical-pressure} is reached, resulting in sonic flow at the inlet throat.
@@ -170,7 +170,7 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	    \label{fig:disconnected-reservoirs-leak}
 	\end{figure}
 
-	Using the isentropic mass flow Equations~\eqref{eq:massflow-inlet} and \eqref{eq:massflow-outlet}, the effect of the leak can be described by assuming $M_0 = 1$ and substituting into Equation~\eqref{eq:massflow-leak}.
+	Using the isentropic mass flow Equations~\eqref{eq:massflow-inlet} and \eqref{eq:massflow-outlet}, the effect of the leak can be described by assuming $M_{in} = 1$ and substituting into Equation~\eqref{eq:massflow-leak}.
 	Yielding:
 	$$
 	    \dot{m}_L =

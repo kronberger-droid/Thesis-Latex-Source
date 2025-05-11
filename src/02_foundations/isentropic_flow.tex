@@ -6,19 +6,23 @@
 	    \item \textbf{Adiabatic conditions}\\
 		No heat exchange with the surroundings is considered ($\delta q = 0, ds_e = 0$).
 	    \item \textbf{No external work input}\\
-		No mechanical shaft work is performed ($\delta w_s = 0$).
+		No mechanical work is performed on the system ($\delta w_s = 0$).
 	    \item \textbf{Negligible change in potential energy}\\
 		Elevation differences are assumed insignificant ($dz = 0$).
 	    \item \textbf{Reversible process}\\
-		No internal entropy generation occurs ($ds_i = 0$).
+		No internal entropy change occurs ($ds_i = 0$).
 	\end{itemize}
 	These simplifications imply that the flow is isentropic, meaning both adiabatic and reversible.
 	This allows the use of analytical relations to describe the flow behavior and connect the state variables along the flow path.
 	The gas is still considered perfect and follows the perfect gas law, as it is crucial in the derivation for the following relations which are the foundation for solving isentropic one-dimensional gas flows.
 
 	Flow velocity for continuum flows is usually encoded into the Mach number, which is defined as the ratio between the flow velocity $V$ and the local speed of sound $a$.
+	Which can be calculated using the ratio of heats $\gamma$ and the temperature $T$ of the gas and the specific gas constant $R$.
+	It describes the speed at which small pressure disturbances propagate through the gas.
 	\begin{equation}
 		\mathrm{Ma} = \frac{V}{a}
+		\quad \text{where} \quad
+		a = \sqrt{\gamma R T}
 		\label{eq:mach-number}
 	\end{equation}
 	It is a very important metric when analyzing isentropic flow, since state variables are uniquely defined through the mach number at the corresponding location, as long as either the stagnation, or critical conditions of the flow are known.
