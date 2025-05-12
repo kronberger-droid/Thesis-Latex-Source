@@ -10,7 +10,6 @@ It includes:
 To-Do:
 
 - Go over everything and make important thing's italic.
-- Lets GPT DeepResearch go over it.
 - Typst calculator and table at the end.
   - Table at the end of the main results and for specific gases.
 - Paragraph about time constant and product to the mass spec.
