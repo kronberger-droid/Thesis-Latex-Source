@@ -16,15 +16,13 @@
 	This allows the use of analytical relations to describe the flow behavior and connect the state variables along the flow path.
 	The gas is still considered perfect and follows the perfect gas law, as it is crucial in the derivation for the following relations which are the foundation for solving isentropic one-dimensional gas flows.
 
-	Flow velocity for continuum flows is usually encoded into the Mach number, which is defined as the ratio between the flow velocity $V$ and the local speed of sound $a$.
-	Which can be calculated using the ratio of heats $\gamma$ and the temperature $T$ of the gas and the specific gas constant $R$.
-	It describes the speed at which small pressure disturbances propagate through the gas.
+	In continuum-flow analysis, the Mach number $\mathrm{M}$ expresses the flow speed relative to the local speed of sound and is defined as
 	\begin{equation}
-		\mathrm{Ma} = \frac{V}{a}
-		\quad \text{where} \quad
-		a = \sqrt{\gamma R T}
+		\mathrm{M} = \frac{V}{a}
 		\label{eq:mach-number}
 	\end{equation}
+	where $V$ is the flow velocity and $a = \sqrt{\gamma R T}$ is the local speed of sound, with $\gamma$ denoting the heat-capacity ratio, $R$ the specific gas constant, and $T$ the gas temperature.
+	The Mach number therefore indicates how fast the flow moves compared with the speed at which small pressure disturbances propagate through the gas.
 	It is a very important metric when analyzing isentropic flow, since state variables are uniquely defined through the mach number at the corresponding location, as long as either the stagnation, or critical conditions of the flow are known.
 	For isentropic flow one-dimensional flow it can be directly linked to the geometry of the duct and can be calculated by defining a state in the system where Mach number is equal to 1, the so-called throat.
 	Then its area can be related to the Mach number by following non-linear equation:
