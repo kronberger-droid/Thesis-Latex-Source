@@ -56,11 +56,11 @@
     \addlegendentry{\(L_c = 20\,\mu\mathrm m\)}
 
     % now the four Reynolds‐curves
-    \addplot[blueColor!50, solid, line width=1pt] table[x=Ma,y=Re300_20] {knre_data.dat};
-    \addplot[blueColor, solid, line width=1pt] table[x=Ma,y=Re300_40] {knre_data.dat};
-    \addplot[redColor!50, solid, line width=1pt] table[x=Ma,y=Re600_20] {knre_data.dat};
-    \addplot[redColor, solid, line width=1pt] table[x=Ma,y=Re600_40] {knre_data.dat};
-    \addplot[greenColor, dashed, line width=1.5pt] table[x=Ma,y expr=2000] {knre_data.dat};
+    \addplot[blueColor!50, solid, line width=1pt] table[x=Ma,y=Re300_20] {code/knre_data.dat};
+    \addplot[blueColor, solid, line width=1pt] table[x=Ma,y=Re300_40] {code/knre_data.dat};
+    \addplot[redColor!50, solid, line width=1pt] table[x=Ma,y=Re600_20] {code/knre_data.dat};
+    \addplot[redColor, solid, line width=1pt] table[x=Ma,y=Re600_40] {code/knre_data.dat};
+    \addplot[greenColor, dashed, line width=1.5pt] table[x=Ma,y expr=2000] {code/knre_data.dat};
 
   %────────────────────────────────────────────────────────────
   % RIGHT: Knudsen
@@ -83,12 +83,12 @@
         },
       ]
     % the same four style combinations
-    \addplot[blueColor!50, solid, line width=1pt] table[x=Ma,y=Kn300_20] {knre_data.dat};
-    \addplot[blueColor, solid, line width=1pt] table[x=Ma,y=Kn300_40] {knre_data.dat};
-    \addplot[redColor!50, solid,  line width=1pt] table[x=Ma,y=Kn600_20] {knre_data.dat};
-    \addplot[redColor, solid, line width=1pt] table[x=Ma,y=Kn600_40] {knre_data.dat};
+    \addplot[blueColor!50, solid, line width=1pt] table[x=Ma,y=Kn300_20] {code/knre_data.dat};
+    \addplot[blueColor, solid, line width=1pt] table[x=Ma,y=Kn300_40] {code/knre_data.dat};
+    \addplot[redColor!50, solid,  line width=1pt] table[x=Ma,y=Kn600_20] {code/knre_data.dat};
+    \addplot[redColor, solid, line width=1pt] table[x=Ma,y=Kn600_40] {code/knre_data.dat};
     % reference line (omit from legend)
-    \addplot[greenColor, dashed, line width=1.5pt] table[x=Ma,y expr=0.1] {knre_data.dat};
+    \addplot[greenColor, dashed, line width=1.5pt] table[x=Ma,y expr=0.1] {code/knre_data.dat};
 
   \end{groupplot}
 \end{tikzpicture}
