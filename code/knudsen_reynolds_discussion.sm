@@ -1,0 +1,745 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Studio in the Cloud" version="0.834.0.9126"?>
+<worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
+  <settings ppi="96">
+    <identity>
+      <id>e27e2f91-5faf-43f0-8a5d-85ac3d2bc676</id>
+      <revision>89</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <trailingZeros>false</trailingZeros>
+      <significantDigitsMode>false</significantDigitsMode>
+      <mixedNumbers>false</mixedNumbers>
+      <roundingMode>0</roundingMode>
+      <approximateEqualAccuracy>3</approximateEqualAccuracy>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" viewMode="1" printGrid="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true" hideElementsHighlightings="true">
+      <paper id="0" orientation="Portrait" width="850" height="1100" />
+      <margins left="39" right="39" top="49" bottom="49" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Core" version="1.73.9126.0" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.73.9126.0" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="TextRegion" version="1.73.9126.0" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <regions type="content">
+    <region left="36" top="36" width="96" height="26" color="#000000" fontSize="12" isBreakable="false">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p style="font-size: 12px;">Discussion:</p>
+        </content>
+      </text>
+    </region>
+    <region left="54" top="90" width="287" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" width="286" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Dynamic Viscosity using sutherlands formular:</p>
+        </content>
+      </text>
+    </region>
+    <region left="99" top="117" width="417" height="75" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="4">sutherland</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T</e>
+          <e type="operand">T.ref</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">3</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">T</e>
+          <e type="operand">S.μ</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="54" top="216" width="119" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Knudsen number:</p>
+        </content>
+      </text>
+    </region>
+    <region left="81" top="252" width="596" height="55" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p</e>
+          <e type="operand">T</e>
+          <e type="operand">L.c</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="6">knudsen</e>
+          <e type="operand">T</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="4">sutherland</e>
+          <e type="operand">R.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">p</e>
+          <e type="operand">L.c</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">π</e>
+          <e type="operand">M.m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2</e>
+          <e type="operand" style="unit">k</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N.A</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="54" top="315" width="122" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Reynolds number:</p>
+        </content>
+      </text>
+    </region>
+    <region left="72" top="351" width="632" height="51" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p</e>
+          <e type="operand">T</e>
+          <e type="operand">L.c</e>
+          <e type="operand">Ma</e>
+          <e type="operand">γ</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="8">reynolds</e>
+          <e type="operand">Ma</e>
+          <e type="operand">p</e>
+          <e type="operand">T</e>
+          <e type="operand">L.c</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="6">knudsen</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">γ</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">/</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="54" top="450" width="164" height="23" color="#000000" fontSize="10">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Fixed variable definitions:</p>
+        </content>
+      </text>
+    </region>
+    <region left="63" top="495" width="80" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.0</e>
+          <e type="operand">300</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="153" top="495" width="95" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p.0</e>
+          <e type="operand">1.5</e>
+          <e type="operand" style="unit">bar</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="270" top="495" width="111" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">L.c</e>
+          <e type="operand">20</e>
+          <e type="operand" style="unit">micron</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="63" top="549" width="75" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Hydrogen:</p>
+        </content>
+      </text>
+    </region>
+    <region left="99" top="585" width="171" height="51" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">μ.ref</e>
+          <e type="operand">8.411</e>
+          <e type="operand">10</e>
+          <e type="operand">5</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="621" top="585" width="115" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">M.m</e>
+          <e type="operand">2.02</e>
+          <e type="operand" style="unit">gram</e>
+          <e type="operand" style="unit">mol</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="765" top="585" width="195" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">R.s</e>
+          <e type="operand" style="unit">R.m</e>
+          <e type="operand">M.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">J</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">4116.0753</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="531" top="594" width="69" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">γ</e>
+          <e type="operand">1.41</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="297" top="603" width="93" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.ref</e>
+          <e type="operand">273</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="423" top="603" width="72" height="30" color="#000000" fontSize="10">
+      <math optimize="2">
+        <input>
+          <e type="operand">S.μ</e>
+          <e type="operand">97</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="99" top="639" width="253" height="69" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operand">2</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">γ</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.5266</e>
+        </result>
+      </math>
+    </region>
+    <region left="441" top="666" width="203" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operand">2</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.8299</e>
+        </result>
+      </math>
+    </region>
+    <region left="99" top="729" width="601" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Re.H2</e>
+          <e type="operand">p.0</e>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.0</e>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">L.c</e>
+          <e type="operand">1</e>
+          <e type="operand">γ</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="8">reynolds</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">23.6553</e>
+        </result>
+      </math>
+    </region>
+    <region left="99" top="783" width="543" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Kn.H2</e>
+          <e type="operand">p.0</e>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.0</e>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">L.c</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="6">knudsen</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0629</e>
+        </result>
+      </math>
+    </region>
+    <region left="63" top="837" width="104" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Carbondioxide:</p>
+        </content>
+      </text>
+    </region>
+    <region left="90" top="882" width="171" height="51" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">μ.ref</e>
+          <e type="operand">1.370</e>
+          <e type="operand">10</e>
+          <e type="operand">5</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="288" top="891" width="93" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.ref</e>
+          <e type="operand">273</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="414" top="891" width="80" height="30" color="#000000" fontSize="10">
+      <math optimize="2">
+        <input>
+          <e type="operand">S.μ</e>
+          <e type="operand">222</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="630" top="891" width="123" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">M.m</e>
+          <e type="operand">44.01</e>
+          <e type="operand" style="unit">gram</e>
+          <e type="operand" style="unit">mol</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="774" top="891" width="187" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">R.s</e>
+          <e type="operand" style="unit">R.m</e>
+          <e type="operand">M.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">J</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">188.9223</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="540" top="900" width="69" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">γ</e>
+          <e type="operand">1.28</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="90" top="945" width="253" height="69" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operand">2</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">γ</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.5494</e>
+        </result>
+      </math>
+    </region>
+    <region left="432" top="972" width="203" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operand">2</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.8772</e>
+        </result>
+      </math>
+    </region>
+    <region left="90" top="1035" width="615" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Re.CO2</e>
+          <e type="operand">p.0</e>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.0</e>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">L.c</e>
+          <e type="operand">1</e>
+          <e type="operand">γ</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="8">reynolds</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">632.1449</e>
+        </result>
+      </math>
+    </region>
+    <region left="90" top="1089" width="550" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Kn.CO2</e>
+          <e type="operand">p.0</e>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.0</e>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">L.c</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="6">knudsen</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0022</e>
+        </result>
+      </math>
+    </region>
+    <region left="72" top="1143" width="53" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial, Courier New, Courier, mono" fontSize="10">
+        <content>
+          <p>Argon:</p>
+        </content>
+      </text>
+    </region>
+    <region left="99" top="1170" width="171" height="51" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">μ.ref</e>
+          <e type="operand">2.125</e>
+          <e type="operand">10</e>
+          <e type="operand">5</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="297" top="1179" width="93" height="30" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.ref</e>
+          <e type="operand">273</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="423" top="1179" width="80" height="30" color="#000000" fontSize="10">
+      <math optimize="2">
+        <input>
+          <e type="operand">S.μ</e>
+          <e type="operand">114</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="549" top="1179" width="69" height="24" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">γ</e>
+          <e type="operand">1.66</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="639" top="1179" width="123" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">M.m</e>
+          <e type="operand">39.95</e>
+          <e type="operand" style="unit">gram</e>
+          <e type="operand" style="unit">mol</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="783" top="1179" width="180" height="53" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">R.s</e>
+          <e type="operand" style="unit">R.m</e>
+          <e type="operand">M.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">J</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">/</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">208.122</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">K</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="99" top="1242" width="253" height="69" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operand">2</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">γ</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.4881</e>
+        </result>
+      </math>
+    </region>
+    <region left="441" top="1269" width="203" height="41" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operand">2</e>
+          <e type="operand">γ</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.7519</e>
+        </result>
+      </math>
+    </region>
+    <region left="99" top="1332" width="607" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Re.CO2</e>
+          <e type="operand">p.0</e>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.0</e>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">L.c</e>
+          <e type="operand">1</e>
+          <e type="operand">γ</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="8">reynolds</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">478.704</e>
+        </result>
+      </math>
+    </region>
+    <region left="99" top="1386" width="550" height="32" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Kn.CO2</e>
+          <e type="operand">p.0</e>
+          <e type="operand">p.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">T.0</e>
+          <e type="operand">T.crit.ratio</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">L.c</e>
+          <e type="operand">μ.ref</e>
+          <e type="operand">T.ref</e>
+          <e type="operand">S.μ</e>
+          <e type="function" args="6">knudsen</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0034</e>
+        </result>
+      </math>
+    </region>
+  </regions>
+</worksheet>

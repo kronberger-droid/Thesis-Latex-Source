@@ -8,7 +8,7 @@ Hence, more advanced modeling approaches are required.
 
 	\paragraph*{Ideal nozzle design}
 		The method of characteristics is a mathematical technique used to design supersonic nozzles so that gas flows expand smoothly from sonic to supersonic speeds without generating internal shocks.
-		It works by tracing characteristic lines—paths along which flow properties remain constant—through the nozzle region.
+		It works by tracing characteristic lines, paths along which flow properties remain constant, through the nozzle region.
 		By aligning the walls with these lines it ensures that each incremental flow turn occurs through a series of controlled expansion waves, rather than abrupt angle changes that could cause shocks.
 		If fully expanded this leads to a straight column of gas leaving the nozzle, where all of its energy is converted into kinetic energy without significant losses due to shocks.
 		This approach is not feasible in this case since the length of the nozzle grows as the back pressure gets lower, the ideal nozzle for the high vacuum found in the surrounding chamber would not be able to fit due to space constraints.
@@ -48,8 +48,8 @@ Hence, more advanced modeling approaches are required.
 				\qquad \text{and} \qquad
 			v_\infty(T_{0_{max}}) = 1056 \; \frac{\text{m}}{\text{s}}
 		$$
+		\newpage
 		Figure~\ref{fig:velocity-distribution-reduced} shows the best-matching solution identified in the findings of Cassanova \cite{Cassanova1965}, demonstrating how the method of characteristics can predict the post-nozzle flow field under similar conditions.
-
 		\begin{figure}[H]
 			\centering
 		    \includegraphics[width=0.9\textwidth]{src/03_analytical-work/fig_velocity-distribution-reduced.pdf}
@@ -76,13 +76,13 @@ Hence, more advanced modeling approaches are required.
 		Experiments, such as those by Cassanova and Stephenson, support the method of characteristics for analyzing free expansions and confirm it provides accurate predictions of gas density changes from continuous flow conditions to rarefied conditions.
 		However, these studies also highlight important limitations due to condensation and boundary layer effects.
 		Condensation, especially at pressures between 1–7 atm for nitrogen, significantly alters the gas's thermodynamic properties, limiting the method's accuracy.
-
+		\newpage
 		In summary, while the method of characteristics effectively predicts initial flow conditions, fully accurate modeling of supersonic expansions must also consider rotational freezing, boundary layer effects, and potential condensation.
 		\cite{jousten_handbook_2016, robertson_investigation_1970, noauthor_zucrow_nodate}
 
 \subsubsection*{Navier-Stokes Equations}
 	A second option is to solve the Navier–Stokes equations numerically, using no-slip or first/second-order slip boundary conditions as appropriate.
-	Near the nozzle exit—where the flow is still predominantly continuum—Navier–Stokes simulations can provide detailed velocity and pressure fields, including shock structures and boundary-layer effects.
+	Near the nozzle exit, where the flow is still predominantly continuum, Navier-Stokes simulations can provide detailed velocity and pressure fields, including shock structures and boundary-layer effects.
 	As the gas expands and its density decreases, however, continuum assumptions start to break down.
 	While slip or transitional models can extend the validity range, ultimately they cannot fully describe the molecular-level interactions that dominate in highly rarefied regions.
 	Consequently, beyond a certain distance from the nozzle exit or under conditions favorable to partial condensation, Navier–Stokes solutions must be supplemented by more advanced kinetic-based methods.
@@ -96,10 +96,10 @@ Hence, more advanced modeling approaches are required.
 		\item Condensation Phenomena: By including collision physics and intermolecular potentials, DSMC can handle the onset of condensation or two-phase flow more reliably than continuum or purely isentropic approaches. \cite{EMMONS1958}
 		\item Free Expansion: As the jet spreads into the vacuum and transitions toward free-molecular flow, DSMC seamlessly handles extremely high Mach numbers and very low densities, maintaining physical fidelity across a wide range of Knudsen numbers.
 	\end{itemize}
-	Although more computationally expensive than continuum-based methods, DSMC provides the most robust depiction of outlet flows—particularly for condensable gases like nitrogen—and ensures high accuracy from near-nozzle regions all the way to the fully rarefied state.
+	Although more computationally expensive than continuum-based methods, DSMC provides the most robust depiction of outlet flows, particularly for condensable gases like nitrogen, and ensures high accuracy from near-nozzle regions all the way to the fully rarefied state.
 	\cite{putignano2012supersonic, liu_study_2006}
 
 \subsubsection*{Summary}
 	Overall, while the method of characteristics remains a cornerstone of ideal nozzle design and near-exit expansions (including the prediction of Prandtl–Meyer fans and maximum turning angles), condensation and severe rarefaction invalidate its purely isentropic assumption further downstream.
 	Navier–Stokes simulations can capture intermediate regimes near the exit, but eventually fail in the highly rarefied or partially condensed flow domain.
-	For a comprehensive treatment of under-expanded plumes—particularly with nitrogen or other condensable working fluids—the DSMC technique offers the necessary level of detail, bridging the gap from continuum flow at the nozzle exit to free-molecular flow far downstream.
+	For a comprehensive treatment of under-expanded plumes, particularly with nitrogen or other condensable working fluids, the DSMC technique offers the necessary level of detail, bridging the gap from continuum flow at the nozzle exit to free-molecular flow far downstream.

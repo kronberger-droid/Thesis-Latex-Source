@@ -2,7 +2,12 @@ In Section \ref{sec:one-dim-isentropic}, the flow within the reactor is modeled 
 
 Section \ref{sec:micro-channels} introduces several phenomena relevant to micro-scale flows that are difficult to incorporate analytically. To enable an analytical treatment of the leak and its effects, this section proposes an alternative system formulation. Here, both the inlet reservoir and the reactor chamber are modeled as separate reservoirs, each defined by their respective stagnation conditions. This simplification decouples the system into two independent problems: one describing the gas expansion from a reservoir into a discharge region, and the other relating to the reactor outlet. This approach effectively models the change in stagnation conditions across the reactor as the result of non-isentropic processes, such as those occurring when the gas enters and exits the reactor.
 
-To reconnect the two reservoirs analytically—initially without including the leak—additional assumptions are made. Stagnation conditions for the reactor are prescribed so that the resulting mass flow at the outlet can be balanced by the inlet conditions, without imposing sonic flow at the inlet throat. To solve this system, a connection between the inlet reservoir conditions and those within the reactor must be established. Two approaches are considered: First, the back pressure and temperature of the discharge region are assumed to correspond to the reactor chamber conditions and are linked isentropically to the inlet reservoir. Second, the temperature is assumed constant, while the pressure follows the same isentropic relation. This simplification effectively models possible heat exchange within the reactor.
+To reconnect the two reservoirs analytically, initially without including the leak, additional assumptions are made.
+Stagnation conditions for the reactor are prescribed so that the resulting mass flow at the outlet can be balanced by the inlet conditions, without imposing sonic flow at the inlet throat.
+To solve this system, a connection between the inlet reservoir conditions and those within the reactor must be established.
+Two approaches are considered: First, the back pressure and temperature of the discharge region are assumed to correspond to the reactor chamber conditions and are linked isentropically to the inlet reservoir.
+Second, the temperature is assumed constant, while the pressure follows the same isentropic relation.
+This simplification effectively models possible heat exchange within the reactor.
 
 Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the reactor through the leak is considered. The impact of this additional flow on the inlet Mach number $M_{in}$ is analyzed, aiming to identify an upper limit for the leak mass flow. This limit is defined by the point at which the inlet is again forced to reach sonic conditions. Notably, this analysis does not attempt to derive an explicit formula for $\dot{m}_L$ but instead focuses on the qualitative influence of the leak on the inlet flow conditions.
 
@@ -52,48 +57,6 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	$$
 	Which constitutes the general conservation of mass equation for the system without connecting the state variables of the reservoirs in any way.
 	This will be the starting point for both of the following approaches.\\
-\paragraph{Isentropic approach}
-	In this approach, the reactor is treated as a downstream reservoir with distinct stagnation conditions, implying that irreversibilities have occurred somewhere in the flow path.
-	Instead of modeling the associated entropy generation, local isentropic relations are used to connect the inlet reservoir’s stagnation state to the reactor boundary.
-	This method effectively embeds any non-isentropic effects into a “shift” in stagnation values, so the reactor’s reduced pressure and/or temperature serve as an isentropic back condition.
-	As a result, flow properties in the nozzles or ducts can still be obtained from standard one-dimensional isentropic equations, even though the actual flow inside the reactor may be more complex.
-	$$
-		T_b = T_r
-		\quad \to \quad
-		T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)
-	$$
-	and
-	$$
-		p_b = p_r
-		\quad \to \quad
-		p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)^{\frac{\gamma}{\gamma - 1}}
-	$$
-	Assuming the conditions of the discharge region to match the values in the reactor and using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_b$ and $P_b$ the previously defined conservation of mass equation yields:
-	$$
-		A\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\
-	$$
-	$$
-		=
-	$$
-	$$
-		A\, p_r\left(1 + \frac{\gamma - 1}{2}M_{in}^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_{in}\right)^{-\frac{1}{2}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
-	$$
-	Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_{in}$ only dependent on $\gamma$, since the summing the exponents equals zero.
-	$$
-		M_{in} = \left(1 + \frac{\gamma - 1}{2}\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
-		\quad \text{for} \quad \gamma = 1.47
-	$$
-	Thus resulting in following ratios between the conditions in the reactor and the reservoir and a corresponding mass flow.
-	$$
-		\frac{T_b}{T_0} = \frac{T_r}{T_0} = 0.93\;,
-			\quad
-		\frac{p_b}{p_0} = \frac{p_r}{p_0} = 0.79\;,
-			\quad
-		\frac{\rho_b}{\rho_0} = \frac{\rho_r}{\rho_0} = 0.85
-			\quad \rightarrow \quad
-		\dot{m} = 6.4 \cdot 10^{-8}\; \frac{\text{kg}}{\text{s}}
-	$$
-	At reservoir conditions of $T_{0_{max}} = 600\;\text{K}$ and $p_{0_{ref}} = 1.5\;\text{bar}$.
 \paragraph{Constant temperature approach}
 	The isothermal approach similarly separates the reactor as an independent reservoir, but enforces a uniform temperature shared with the inlet reservoir.
 	Despite holding temperature constant, a pressure difference can still arise, which inherently indicates a net entropy change.
@@ -113,7 +76,7 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 		p_r\, \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 		=  p_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)^{\frac{\gamma}{\gamma - 1}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
 	$$
-	Rearranging leads to an equation only dependent on $\gamma$ and the mach number $\mathrm{Ma}_0$ at the inlet.
+	Rearranging leads to an equation only dependent on $\gamma$ and the mach number $M_{in}$ at the inlet.
 	$$
 		\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}
 		=  M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{\frac{1}{2}}
@@ -136,24 +99,74 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	$$
 	Which corresponds to the following ration between the conditions in the reactor and the reservoir, which results in the following mass-flow:
 	$$
-		\frac{T_r}{T_0} \neq \frac{T_b}{T_0} = 0.93\;,
+		\frac{T_r}{T_0} = 1 \quad \neq \quad \frac{T_b}{T_0} = 0.93\;,
 			\quad
 		\frac{p_r}{p_0} = 0.79\;,
 			\quad
 		\frac{\rho_r}{\rho_0} \neq \frac{\rho_b}{\rho_0} = 0.85
+	$$
+	$$
+		\dot{m}_{iso} = 8.84 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
 			\quad \rightarrow \quad
-		\dot{m} = 6.3 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
+		q_{m,\;iso} = 1.90 \cdot 10^{18} \; \frac{\text{N}_2}{\text{s}}
 	$$
 	at reservoir conditions of $T_{0_{max}} = 600\;\text{K}$ and $p_{0_{ref}} = 1.5\;\text{bar}$.
 	Which is in the same order of magnitude as the mass-flow for the fully isentropic formulation in Section \ref{sec:one-dim-isentropic}.
 	The discrepancy in mass-flow can be attributed to the change in entropy, indicated by the change in stagnation conditions.
 	Also, now that the temperature of the discharge area and the reactor don't match anymore, heat transfer has to be assumed.
 
+\paragraph{Isentropic approach}
+	In this approach, the reactor is treated as a downstream reservoir with distinct stagnation conditions, implying that irreversibilities have occurred somewhere in the flow path.
+	Instead of modeling the associated entropy generation, local isentropic relations are used to connect the inlet reservoir’s stagnation state to the reactor boundary.
+	This method effectively embeds any non-isentropic effects into a “shift” in stagnation values, so the reactor’s reduced pressure and/or temperature serve as an isentropic back condition.
+	As a result, flow properties in the nozzles or ducts can still be obtained from standard one-dimensional isentropic equations, even though the actual flow inside the reactor may be more complex.
+	$$
+		T_b = T_r
+		\quad \to \quad
+		T_0 = T_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)
+	$$
+	and
+	$$
+		p_b = p_r
+		\quad \to \quad
+		p_0 = p_r \left(1 + \frac{\gamma - 1}{2}M_{in}^2 \right)^{\frac{\gamma}{\gamma - 1}}
+	$$
+	\newpage
+	Assuming the conditions of the discharge region to match the values in the reactor and using the isentropic relations to express $T_0$ and $p_0$ in terms of $T_b$ and $P_b$ the previously defined conservation of mass equation yields:
+	$$
+		A\, p_r\, \sqrt{\frac{\gamma}{R\,T_r}}\,\left(1+\frac{\gamma-1}{2}\right)^{-\frac{\gamma+1}{2(\gamma-1)}}\\
+	$$
+	$$
+		=
+	$$
+	$$
+		A\, p_r\left(1 + \frac{\gamma - 1}{2}M_{in}^2\right)^{\frac{\gamma}{\gamma-1}}\, \sqrt{\frac{\gamma}{R\,T_r}}\left(1 + \frac{\gamma - 1}{2}M_{in}\right)^{-\frac{1}{2}}\, M_{in}\,\left(1+\frac{\gamma-1}{2}\,M_{in}^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}}
+	$$
+	Canceling out variables present on both sides and combining the potential expressions on the right side it results a function of $M_{in}$ only dependent on $\gamma$, since the summing the exponents equals zero.
+	$$
+		M_{in} = \left(1 + \frac{\gamma - 1}{2}\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}= 0.57
+		\quad \text{for} \quad \gamma = 1.47
+	$$
+	Thus resulting in following ratios between the conditions in the reactor and the reservoir and a corresponding mass flow.
+	$$
+		\frac{T_b}{T_0} = \frac{T_r}{T_0} = 0.93\;,
+			\quad
+		\frac{p_b}{p_0} = \frac{p_r}{p_0} = 0.79\;,
+			\quad
+		\frac{\rho_b}{\rho_0} = \frac{\rho_r}{\rho_0} = 0.85
+	$$
+	$$
+		\dot{m}_{isen} = 9.04 \cdot 10^{-8}\; \frac{\text{kg}}{\text{s}}
+			\quad \rightarrow \quad
+		q_{m,\;isen} = 1.94 \cdot 10^{18}\; \frac{\text{N}_2}{\text{s}} 
+	$$
+	At reservoir conditions of $T_{0_{max}} = 600\;\text{K}$ and $p_{0_{ref}} = 1.5\;\text{bar}$.
+
 \subsubsection*{Formulations Including the Leak}
 	Including the leak can be accounted for by assuming an additional mass flow leaving the reactor, which the inlet must compensate:
 	\begin{equation}
 	    \dot{m}_{in} = \dot{m}_r + \dot{m}_L 
-	    \quad \Rightarrow \quad 
+	    \quad \rightarrow \quad 
 	    \dot{m}_L = \dot{m}_{in} - \dot{m}_r \label{eq:massflow-leak}
 	\end{equation}
 	This requires an increase in the total conditions of the reservoir to maintain constant conditions inside the reactor.
@@ -189,10 +202,12 @@ Finally, the influence of an additional mass flow rate $\dot{m}_L$ leaving the r
 	Assuming reservoir conditions of $p_{0_{ref}} = 1.5\;\text{bar}$ and $T_{0_{max}} = 600\;\text{K}$, the corresponding reservoir state can be calculated using the critical ratios discussed in Section \ref{sec:isentropic-1D-foundations}.
 	The additional mass flow through the leak required to cause sonic conditions at the inlet is then:
 	$$
-	    \dot{m}_L = 3.3 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}.
+	    \dot{m}_L = 4.68 \cdot 10^{-8} \; \frac{\text{kg}}{\text{s}}
+			\quad \rightarrow \quad
+		q_{m,L} = 1.00 \cdot 10^{18} \; \frac{(\text{N}_2)}{\text{s}}
 	$$
 	This value is approximately half of the mass flow calculated for the disconnected reservoir model.
 	It can thus be concluded that if the mass flow through the leak is comparable to the mass flow through the outlet, this will force the inlet throat to go sonic.
 	This can induce significant changes in the gas behavior downstream of the inlet, such as shock waves and rapid variations in state variables.
 
-	Since this setup still constitutes a coupled system—where the leak influences the outlet, for instance, via pressure losses, and vice versa—the exact distribution of the mass flow between the two, as well as the reservoir conditions at which the inlet becomes sonic, must be further investigated through numerical simulation.
+	Since this setup still constitutes a coupled system, where the leak influences the outlet, for instance, via pressure losses, and vice versa, the exact distribution of the mass flow between the two, as well as the reservoir conditions at which the inlet becomes sonic, must be further investigated through numerical simulation.

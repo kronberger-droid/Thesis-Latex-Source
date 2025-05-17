@@ -61,7 +61,7 @@ The general form of the Navier–Stokes equations for a compressible, viscous fl
     $$
 	    \frac{d}{dt} \int_V \rho\,dV + \int_S \rho\, \vec{V}\cdot d\vec{A} = 0
     $$
-    For steady, one-dimensional flow (constant cross-sectional area):
+    For steady, one-dimensional flow (quasi-constant cross-sectional area):
     $$
 		\sum \rho\,V\,A = 0
     $$
@@ -130,9 +130,14 @@ The general form of the Navier–Stokes equations for a compressible, viscous fl
     $$
 \end{itemize}
 
-\subsection*{Mass Flow Rate (Compressible, Isentropic Flow)}
+\subsection*{Mass flow}
 $$
-	\dot{m} = A\,p_0\,\sqrt{\frac{\gamma}{R\,T_0}}\,M\left(1+\frac{\gamma-1}{2}M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}} \quad \eqref{eq:1-d-massflow}
+	\dot{m} = A\,p_0\,\sqrt{\frac{\gamma}{R\,T_0}}\,M\left(1+\frac{\gamma-1}{2}M^2\right)^{-\frac{\gamma+1}{2(\gamma-1)}} \quad \texttt{[isen, perf]} \quad \eqref{eq:1-d-massflow}
+$$
+
+\subsubsection*{Throughput (molecules per second)}
+$$
+	q_m = \dot{m} \cdot \frac{N_A}{M_m} \quad \eqref{eq:throughput}
 $$
 
 \subsection*{Additional Useful Relations}

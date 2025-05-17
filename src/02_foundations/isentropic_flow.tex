@@ -16,9 +16,9 @@
 	This allows the use of analytical relations to describe the flow behavior and connect the state variables along the flow path.
 	The gas is still considered perfect and follows the perfect gas law, as it is crucial in the derivation for the following relations which are the foundation for solving isentropic one-dimensional gas flows.
 
-	In continuum-flow analysis, the Mach number $\mathrm{M}$ expresses the flow speed relative to the local speed of sound and is defined as
+	In continuum-flow analysis, the Mach number $M$ expresses the flow speed relative to the local speed of sound and is defined as
 	\begin{equation}
-		\mathrm{M} = \frac{V}{a}
+		M = \frac{V}{a}
 		\label{eq:mach-number}
 	\end{equation}
 	where $V$ is the flow velocity and $a = \sqrt{\gamma R T}$ is the local speed of sound, with $\gamma$ denoting the heat-capacity ratio, $R$ the specific gas constant, and $T$ the gas temperature.
@@ -27,27 +27,27 @@
 	For isentropic flow one-dimensional flow it can be directly linked to the geometry of the duct and can be calculated by defining a state in the system where Mach number is equal to 1, the so-called throat.
 	Then its area can be related to the Mach number by following non-linear equation:
 	\begin{equation}
-		\frac{A}{A^*} = \frac{1}{\mathrm{Ma}} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} \mathrm{Ma}^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
+		\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma + 1} \left( 1 + \frac{\gamma - 1}{2} M^2 \right) \right]^{\frac{\gamma + 1}{2(\gamma - 1)}}
 		\label{eq:area_ratio_mach}
 	\end{equation}
-	where $A$ is the local cross-sectional area, $A^*$ the throat area (minimum cross-section), $\mathrm{Ma}$ the Mach number at the given location, and $\gamma$ the specific heat ratio.
+	where $A$ is the local cross-sectional area, $A^*$ the throat area (minimum cross-section), $M$ the Mach number at the given location, and $\gamma$ the specific heat ratio.
 
-	One of the most important ideas in isentropic flow are the stagnation/total conditions, which represent the state of a moving gas when fully decelerating it isentropically ($\mathrm{Ma} = 0$).
+	One of the most important ideas in isentropic flow are the stagnation/total conditions, which represent the state of a moving gas when fully decelerating it isentropically ($M = 0$).
 	They exist for the fundamental state variables of the gas notated as ($P_0,\;T_0,\;\rho_0$) and represent conserved quantities when dealing with isentropic flow.
 	This stagnation state does not have to exist in the system, but can be derived if state variables and the geometry at some point in the system are known.
 	Total conditions represent the highest values for any state variable in the system other than velocity, as long as the flow stays isentropic.
-	Therefore, changes of state variables are usually represented in relation to the total conditions of the corresponding state variables, and depend only on the ratio of heats of the gas $\gamma$ and the Mach number $\mathrm{Ma}$.
+	Therefore, changes of state variables are usually represented in relation to the total conditions of the corresponding state variables, and depend only on the ratio of heats of the gas $\gamma$ and the Mach number $M$.
 	\begin{alignat}{2}
-	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} \mathrm{Ma}^2 \right)^{-1} \label{eq:total_relation_T}\\
-	    \frac{p}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} \mathrm{Ma}^2 \right)^{-\frac{\gamma}{\gamma - 1}} \label{eq:total_relation_p}\\
-	    \frac{\rho}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} \mathrm{Ma}^2 \right)^{-\frac{1}{\gamma - 1}} \label{eq:total_relation_rho}
+	    \frac{T}{T_0}   & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-1} \label{eq:total_relation_T}\\
+	    \frac{p}{p_0}   & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{\gamma}{\gamma - 1}} \label{eq:total_relation_p}\\
+	    \frac{\rho}{\rho_0} & = \left( 1 + \frac{\gamma - 1}{2} M^2 \right)^{-\frac{1}{\gamma - 1}} \label{eq:total_relation_rho}
 	\end{alignat}
 
-	\paragraph{Low subsonic regime ($\mathrm{Ma} < 0.3$)}
+	\paragraph{Low subsonic regime ($M < 0.3$)}
 		For low Mach numbers, compressibility effects of a gas can be neglected, and the gas can be treated as an incompressible fluid.
 		In the figures, regions where the flow is expected to have very low Mach numbers are indicated by yellow arrows (as shown in Figure~\ref{fig:technical-drawing}).
 
-	\paragraph{Subsonic regime ($0.3 < \mathrm{Ma} < 1.0$)} 
+	\paragraph{Subsonic regime ($0.3 < M < 1.0$)} 
 		Inside system of variable area ducts the gas flow generally stays subsonic.
 		Once sonic speed is reached in a converging duct, the behavior reverses, and the velocity decreases, limiting the flow to subsonic or sonic speeds within purely converging ducts.
 		In the figures, regions where the flow is expected to be subsonic are indicated by green arrows (as shown in Figure~\ref{fig:technical-drawing}).\\
@@ -64,9 +64,9 @@
 			}
 		\end{figure}
 
-	\paragraph{Sonic regime ($\mathrm{Ma} = 1$)}
+	\paragraph{Sonic regime ($M = 1$)}
 		Sonic flow occurs at the exit of a converging duct when the pressure ratio between the upstream and downstream reservoirs drops below a certain critical value. 
-		This condition is referred to as \emph{choked flow} and represents the maximum possible mass flow rate for the given stagnation conditions. 
+		This condition is referred to as choked flow and represents the maximum possible mass flow rate for the given stagnation conditions. 
 		The corresponding critical pressure ratio is defined as:
 		\begin{equation}
 			\frac{P^*}{P_0}=\left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma}{\gamma - 1}}
@@ -77,13 +77,14 @@
 		Once the flow becomes choked at the throat, any further decrease in back pressure does not affect the mass flow rate but causes the flow to accelerate beyond the throat, leading to supersonic conditions in the diverging section. 
 		The critical pressure ratio can be derived from the isentropic flow relations (see Equation~\eqref{eq:total_relation_T}) and can equivalently be expressed in terms of other thermodynamic variables, as summarized in the formulary.
 
-	\paragraph{Supersonic regime ($\mathrm{Ma} > 1$)}
+	\paragraph{Supersonic regime ($M > 1$)}
 		If there are critical conditions at the end of a converging duct and a diverging duct follows.
 		The flow continues to accelerate and reaches supersonic speeds.
 		The location where the flow reaches critical condition is called throat and represents the minimal diameter of the duct.\\
 		In supersonic flows, state variables change rapidly causing phenomenons like shock waves and expansion fans.
 		Just like for previous regimes, this regime will be indicated using an arrow colored red.
 		\cite{Cantwell_AA210A}
+		\newpage
 		\begin{figure}[H]
 		    \centering
 		    \includegraphics[width=0.85\textwidth]{src/02_foundations/fig_variable-change-supersonic.pdf}
@@ -100,16 +101,25 @@
 		Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [Equations~\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}] and the ideal gas law.
 		\cite{benson_mass_nodate}
 		\begin{equation}
-			\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{T_0 R}} \cdot \mathrm{M}\cdot \left(1 + \frac{\gamma - 1}{2} \mathrm{M}^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
+			\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{T_0 R}} \cdot M \left(1 + \frac{\gamma - 1}{2} M^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
 			\label{eq:1-d-massflow}
 		\end{equation}
-		where $A$ is the flow area at the current location, $P_0$ and $T_0$ are the total pressure and temperature respectively, R is the    
+		where $A$ is the cross-sectional area at the current location, $P_0$ and $T_0$ are the total pressure and temperature respectively, $R$ is the specific gas constant, $\gamma$ is the heat ratio of the gas and M is the Mach number at the current location.
+
+		This type of mass flow is in units $\frac{\text{kg}}{\text{s}}$, therefore describing the amount of mass passing the cross-sectional area per second, which is not the most informative, since only a very small amount of gas is flowing through the assembly.
+		To be able to quantify the molecules reaching the mass-spec it is useful to use another version of mass-flow which describes molecules per second passing some cross-sectional area, which can be calculated using the following formula:
+		\begin{equation}
+			q_m = \dot{m} \cdot \frac{N_A}{M_m}
+			\label{eq:throughput}
+		\end{equation}
+		Where $\dot{m}$ is the mass-flow calculated using Equation~\eqref{eq:1-d-massflow}, $M_m$ is the molar mass of the gas and $N_A$ is Avogadro's number.
+		This will be the main unit used in this thesis.
 	\paragraph{Relation of dimensionless numbers in continuum flow}
 		It is possible to relate the three dimensionless numbers mentioned in the preceding chapters.
 		Leading to following relation:
 		\begin{equation}
-			\mathrm{Kn} = \frac{\mathrm{M}}{\mathrm{Re}} \sqrt{\frac{\gamma \pi}{2}}
+			\mathrm{Kn} = \frac{M}{\mathrm{Re}} \sqrt{\frac{\gamma \pi}{2}}
 			\label{eq:nondim-relation}
 		\end{equation}
-		Where $\mathrm{M}$ is the Mach number, $\mathrm{Re}$ the Reynolds number and $\mathrm{Kn}$ the Knudsen number at some point along the flow of gas with the ratio of heat $\gamma$.
+		Where $M$ is the Mach number, $\mathrm{Re}$ the Reynolds number and $\mathrm{Kn}$ the Knudsen number at some point along the flow of gas with the ratio of heat $\gamma$.
 		\cite{Cengel2017, LiLam1964, EMMONS1958}

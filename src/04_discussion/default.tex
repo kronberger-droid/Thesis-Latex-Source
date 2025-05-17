@@ -2,23 +2,41 @@
 \markboth{Discussion}{Discussion}
 \addcontentsline{toc}{section}{Discussion}
 The analytical work presented in this thesis has provided a basic understanding of gas flow behavior within the micro-reactor assembly.
-Starting with the detailed geometrical characterization in Section \ref{sec:geometry}, we simplified the reactor’s complex structure into discrete segments—reservoir, inlet/outlet nozzles, and the central reaction volume—to enable a quasi one-dimensional approximation.
+Starting with the detailed geometrical characterization in Section \ref{sec:geometry}, we simplified the reactor’s complex structure into discrete segments, like reservoir, inlet/outlet nozzles, and the central reaction volume, to enable a quasi one-dimensional approximation.
 This initial abstraction set the stage for applying isentropic flow theory and provided a baseline for the values of characteristic lengths and flow areas.
 
 In Section \ref{sec:expected-flow-regimes}, the expected flow regimes were determined by calculating key dimensionless numbers.
 The analysis revealed that, under typical operating conditions, the system predominantly falls within the continuum regime with slip at the walls.
 This finding is crucial because it validates the use of continuum-based formulations for the majority of the flow, while also pointing to specific zones (e.g., near the outlet) where the transition to molecular flow might occur.
 
+As also mentioned in this Section it is assumed that the flow stays subsonic inside the geometry and both Reynolds and Knudsen number reach its maximum around Mach one.
+With this in mind it is possible to confirm laminar flow and the applicability of the continuum regime for more gases representing common groups of gasses, either identified by the shape of its molecule (mono- or diatomic) or its weight.
+The Table~\ref{tab:knudsen_reynolds_discussion} shows the value of Knudsen and Reynolds numbers for one reference gas for each category at $M = 1$ and reservoir conditions of $p_0 = 1.5 \; \text{bar}$ and $T_0 = 300\;\text{K}$.
+
+\input{src/04_discussion/tab_knudsen_reynolds.tex}
+
 Section \ref{sec:one-dim-isentropic} delved into one-dimensional isentropic variable area flow, where state variables were linked to changes in cross-sectional areas along the flow path.
-Although two mathematically viable solutions emerged—corresponding to subsonic and supersonic branches—the physical reasoning, supported by the geometry and boundary conditions, guided the selection of the more likely scenario of subsonic, slow moving flow inside the reactor and supersonic flow leaving the outlet.
+Although two mathematically viable solutions emerged, corresponding to subsonic and supersonic branches, the physical reasoning, supported by the geometry and boundary conditions, guided the selection of the more likely scenario of subsonic, slow moving flow inside the reactor and supersonic flow leaving the outlet.
 
 The discussion then moved to the microscale in Section \ref{sec:micro-channels}, addressing flow behaviors in micro channels.
 Here, factors such as slip effects, surface roughness, and sudden geometric expansions were discussed qualitatively.
 These effects, which become significant as the characteristic lengths shrink, hint at deviations from classical isentropic behavior and suggest that empirical corrections or advanced simulation techniques may be necessary for a more accurate description.
 
+Moreover, the characteristic time constant for mass exchange between the bulk flow and the reactive surface can be estimated by considering molecular diffusion across the Knudsen boundary layer that separates the high-speed core flow from the solid walls.
+Here, the layer thickness scales with the local mean free path, and the effective diffusion coefficient reflects the transition-flow regime.
+By defining a diffusion time constant $\tau_{D}\;\sim\;\frac{\delta_{K}^{2}}{D_{K}},$ one obtains a straightforward estimate of how long it takes for species in the main stream to traverse the slip layer and reach the surface.
+The convective residence time refers to the average duration a fluid element spends traveling through the reactor under the imposed volumetric flow, essentially the “flow-through” time from inlet to outlet.
+If $\tau_{D}$ were on the order of, or even shorter than, the convective residence time in the micro-reactor, cross-layer diffusion through the Knudsen film would not constitute a rate-limiting step in the overall reaction dynamics.
+
 Recognizing these limitations, Section \ref{sec:disconnected-reservoirs} extended the analysis to include non-isentropic behaviors.
 By treating the reservoir and the reactor as distinct entities with independent stagnation conditions, the approach captured the impact of leaks on the overall mass flow and the flow velocity at the inlet.
 Although this formulation introduces further approximations, it serves to bridge the gap between idealized isentropic models and the more complex reality of the system.
+
+Now that the formulations have been extended to include a leak, Table~\ref{tab:massflow_discussion} presents the resulting throughput for three reference gases: argon (monatomic), nitrogen (diatomic), and carbon dioxide (triatomic).
+The first column shows the inlet mass‐flow with no leak ($q_{m,\;L}=0$), the second gives the inlet mass‐flow when the leak is operating at its maximum choked rate, the third lists the leak flow itself ($q_{m,\;L}$), and the fourth reports the net outlet flow to the mass-spec($q_{m,\;out}$).
+All values are expressed in units of $10^{18}$ molecules per s for each gas for reservoir conditions of $p_0 = 1.5$ bar and $T_0 = 300$ K.
+
+\input{src/04_discussion/tab_massflow.tex}
 
 Finally, Section \ref{sec:outlet_plume} addressed the under-expanded nozzle plume at the outlet, where rapid expansion, shock structures, and rarefaction effects dominate.
 The discussion here emphasized that while traditional one-dimensional models offer a first approximation, advanced methods such as the method of characteristics, Navier–Stokes simulations, or DSMC are required to capture the full complexity of the free expansion into vacuum.
