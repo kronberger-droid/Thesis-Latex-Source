@@ -100,15 +100,16 @@
 		Mass flow is conserved along the flow and can be calculated using following equation, which derives from the equation for mass-flow in a steady one-dimensional flow \eqref{eq:1-d-massflow}, the isentropic relations [Equations~\eqref{eq:total_relation_T} - \eqref{eq:total_relation_p}] and the ideal gas law.
 		\cite{benson_mass_nodate}
 		\begin{equation}
-			\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma M_m}{T_0 R_u}} \cdot \mathrm{Ma}\cdot \left(1 + \frac{\gamma - 1}{2} \mathrm{Ma}^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
+			\dot{m} = A \cdot P_0 \cdot \sqrt{\frac{\gamma}{T_0 R}} \cdot \mathrm{M}\cdot \left(1 + \frac{\gamma - 1}{2} \mathrm{M}^2\right)^{-\frac{\gamma + 1}{2(\gamma - 1)}}
 			\label{eq:1-d-massflow}
 		\end{equation}
+		where $A$ is the flow area at the current location, $P_0$ and $T_0$ are the total pressure and temperature respectively, R is the    
 	\paragraph{Relation of dimensionless numbers in continuum flow}
 		It is possible to relate the three dimensionless numbers mentioned in the preceding chapters.
 		Leading to following relation:
 		\begin{equation}
-			\mathrm{Kn} = \frac{\mathrm{Ma}}{\mathrm{Re}} \sqrt{\frac{\gamma \pi}{2}}
+			\mathrm{Kn} = \frac{\mathrm{M}}{\mathrm{Re}} \sqrt{\frac{\gamma \pi}{2}}
 			\label{eq:nondim-relation}
 		\end{equation}
-		Where $\mathrm{Ma}$ is the Mach number, $\mathrm{Re}$ the Reynolds number and $\mathrm{Kn}$ the Knudsen number at some point along the flow of gas with the ratio of heat $\gamma$.
+		Where $\mathrm{M}$ is the Mach number, $\mathrm{Re}$ the Reynolds number and $\mathrm{Kn}$ the Knudsen number at some point along the flow of gas with the ratio of heat $\gamma$.
 		\cite{Cengel2017, LiLam1964, EMMONS1958}
