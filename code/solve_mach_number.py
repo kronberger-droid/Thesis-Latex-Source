@@ -20,5 +20,5 @@ A_Astar = 318     # Given area ratio (A/A*)
 gamma = 1.47      # Specific heat ratio for the gas
 
 # Solve Mach number with initial guess of 0.1 (indicating expected subsonic solution)
-M_solution = solve_mach(A_Astar, gamma, 0.1)
+M_solution = solve_mach(4, 1.47, 5)
 print(f"Solved Mach number: {M_solution:.5f}")
