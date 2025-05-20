@@ -5,7 +5,7 @@
 	The plot in Figure~\ref{fig:knudsen-reynolds-plot} was created by calculating local temperatures and pressures using Equations~\eqref{eq:total_relation_T} and \eqref{eq:total_relation_p} for the reference total conditions given in Section~\ref{sec:geometry}.
 	Further, calculating Knudsen number using Equation~\eqref{eq:knudsen-number}, where dynamic viscosity is expressed using Sutherland's formula~\eqref{eq:sutherland} with the following empirical constants which are generally used for nitrogen gas \cite{kim2004numericalanalysisflowcharacteristics}:
 	$$
-		\text{Nitrogen }(N_2):
+		\text{Nitrogen }(\text{N}_2):
 			\qquad
 		S_\mu = 111\;\text{K}
 			\qquad
@@ -14,7 +14,7 @@
 		\mu_{ref} = 17.81\; \text{sPa}
 	$$
 	Now the corresponding Reynolds numbers are calculated using the known relation between dimensionless numbers as stated in Equation~\eqref{eq:nondim-relation}.
-	The values are plotted for two different characteristic lengths, $L_c = 20\;\mu m$ corresponding to throats of the inlet and outlet nozzles and $L_c = 40\;\mu m$ corresponding to the reactor volume and the maximum diameters of the inlet and outlet nozzles.
+	The values are plotted for two different characteristic lengths, $L_c = 20\;\mu \text{m}$ corresponding to throats of the inlet and outlet nozzles and $L_c = 40\;\mu \text{m}$ corresponding to the reactor volume and the maximum diameters of the inlet and outlet nozzles.
 
 	Figure~\ref{fig:knudsen-reynolds-plot} clearly shows that for a flow with Mach numbers under 3.5 which is expected within the assembly, Knudsen numbers typically remain below 0.1, validating the continuum assumption.
 	Although some regions may fall within the slip regime, where slip boundary conditions have to be introduced to yield more accurate solutions, continuum-based models remain applicable. 
@@ -26,9 +26,10 @@
 		\input{src/03_analytical-work/plt_expected-flow-regimes.tex}
 		\caption[Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales.]{
 			\textbf{Reynolds and Knudsen numbers as functions of Mach number on logarithmic scales:}
-			The plot shows values of $\mathrm{Re}$ and $\mathrm{Kn}$ for two temperatures ($T_0 = 300\,\mathrm{K}$ and $T_0 = 600\,\mathrm{K}$) and two characteristic lengths ($L_c = 20\,\mu\mathrm{m}$ and $L_c = 40\,\mu\mathrm{m}$) over the expected Mach numbers inside the assembly for nitrogen ($\text{N}_2$).
-			The reference pressure $p_\mathrm{ref}$ is fixed and chosen such that it corresponds to the limiting cases of the considered $T_0$ and $L_c$.
-			The horizontal dotted green line indicates the threshold ($\mathrm{Kn} = 0.1$, $\mathrm{Re} = 2000$) beyond which transitional flow behavior is expected.
+			The plot shows values of $Re$ and $Kn$ for two temperatures ($T_0 = 300\,\text{K}$ and $T_0 = 600\,\text{K}$) and two characteristic lengths ($L_c = 20\,\mu\text{m}$ and $L_c = 40\,\mu\text{m}$) over the expected Mach numbers inside the assembly for nitrogen ($\text{N}_2$).
+			The reference pressure $p_{ref}$ is fixed and chosen such that it corresponds to the limiting cases of the considered $T_0$ and $L_c$.
+			The horizontal dotted green line indicates the threshold ($Kn = 0.1$, $Re = 2000$) beyond which transitional flow behavior is expected.
+			The areas shaded in green mark the most probable flow velocities encountered inside the assembly before the flow reaches the outlet.
 		}
 		\label{fig:knudsen-reynolds-plot}
 	\end{figure}
@@ -41,7 +42,7 @@
 		  Kn_L
 		  = \frac{\lambda}{\phi}\left|\frac{d\phi}{dx}\right|,
 		\end{equation}
-		where \(\phi\) is a flow property (e.g., \(p\), \(\rho\), \(T\), or \(U\)).
+		where $\phi$ is a flow property (e.g., $p$, $\rho$, $T$, or $V$).
 		This definition enables identifying where the flow transitions from continuum to free molecular behavior \cite{bird_dsmc_2013,Grabe2008,LiLam1964}.
 		Since the focus here is on internal assembly flow, we do not account for rarefied effects outside the nozzle and omit slip-layer modeling for simplicity.
 

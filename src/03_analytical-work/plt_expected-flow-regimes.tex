@@ -32,13 +32,14 @@
     ymode=log,
     ymin=1, ymax=2000,
     % draw bottom & left borders only:
+    grid=major,
     axis x line=bottom,
     axis y line=box,
     axis line style={-},
     % left ticks only:
     ytick pos=left,
     xtick pos=bottom,
-    ylabel={\footnotesize Reynolds number (Re)},
+    ylabel={\footnotesize Reynolds number ($Re$)},
     % after finishing this axis, draw the right border:
     after end axis={
       \draw[black,line width=0.8pt]
@@ -46,15 +47,18 @@
     },
   ]    % Manual legend: colours = temperature
     \addlegendimage{redColor,  solid, line width=1pt}
-    \addlegendentry{\(T_0 = 600\,\mathrm K\)}
+    \addlegendentry{$T_0 = 600\,\text{K}$}
     \addlegendimage{black, solid, line width=1pt}
-    \addlegendentry{\(L_c = 40\,\mu\mathrm m\)}
+    \addlegendentry{$L_c = 40\,\mu\text{m}$}
     % Manual legend: line‐styles = characteristic length
     \addlegendimage{blueColor,   solid, line width=1pt}
-    \addlegendentry{\(T_0 = 300\,\mathrm K\)}
+    \addlegendentry{$T_0 = 300\,\text{K}$}
     \addlegendimage{black!50, solid, line width=1pt}
-    \addlegendentry{\(L_c = 20\,\mu\mathrm m\)}
+    \addlegendentry{$L_c = 20\,\mu\text{m}$}
 
+    \begin{pgfonlayer}{axis background}
+      \path[fill=greenColor!10] (axis cs:0, 1) rectangle (axis cs:1, 2000);
+    \end{pgfonlayer}
     % now the four Reynolds‐curves
     \addplot[blueColor!50, solid, line width=1pt] table[x=Ma,y=Re300_20] {code/knre_data.dat};
     \addplot[blueColor, solid, line width=1pt] table[x=Ma,y=Re300_40] {code/knre_data.dat};
@@ -69,19 +73,23 @@
      ymode=log,
      ymin=1e-3, ymax=1e-1,
      % draw bottom & left borders only:
+     grid=major,
      axis x line=bottom,
      axis y line=box,
      axis line style={-},
      % right ticks:
      ytick pos=right,
      xtick pos=bottom,
-     ylabel={\footnotesize Knudsen number (Kn)},
+     ylabel={\footnotesize Knudsen number ($Kn$)},
      % after finishing this axis, draw the right border:
      after end axis={
           \draw[black,line width=0.8pt]
             (rel axis cs:0,0) -- (rel axis cs:0,1);
         },
       ]
+    \begin{pgfonlayer}{axis background}
+      \path[fill=greenColor!10] (axis cs:0, 1e-3) rectangle (axis cs:1, 1e-1);
+    \end{pgfonlayer}
     % the same four style combinations
     \addplot[blueColor!50, solid, line width=1pt] table[x=Ma,y=Kn300_20] {code/knre_data.dat};
     \addplot[blueColor, solid, line width=1pt] table[x=Ma,y=Kn300_40] {code/knre_data.dat};
@@ -89,7 +97,7 @@
     \addplot[redColor, solid, line width=1pt] table[x=Ma,y=Kn600_40] {code/knre_data.dat};
     % reference line (omit from legend)
     \addplot[greenColor, dashed, line width=1.5pt] table[x=Ma,y expr=0.1] {code/knre_data.dat};
-
+    % shade the M∈[0,1] region under the curve
   \end{groupplot}
 \end{tikzpicture}
 \end{center}

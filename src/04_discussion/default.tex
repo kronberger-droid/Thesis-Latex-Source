@@ -24,11 +24,22 @@ These effects, which become significant as the characteristic lengths shrink, hi
 
 Moreover, the characteristic time constant for mass exchange between the bulk flow and the reactive surface can be estimated by considering molecular diffusion across the Knudsen boundary layer that separates the high-speed core flow from the solid walls.
 Here, the layer thickness scales with the local mean free path, and the effective diffusion coefficient reflects the transition-flow regime.
-By defining a diffusion time constant $\tau_{D}\;\sim\;\frac{\delta_{K}^{2}}{D_{K}},$ one obtains a straightforward estimate of how long it takes for species in the main stream to traverse the slip layer and reach the surface.
+By defining a diffusion time constant
+$$
+	\tau_{D}\;\sim\;\frac{\delta_{K}^{2}}{D_{K}},
+$$
+one obtains a straightforward estimate of how long it takes for species in the main stream to traverse the slip layer and reach the surface.
+If two reactants must diffuse to the surface (say A and B), each will have its own time constant
+$$
+	\tau_{D,A}\sim\frac{\delta_{K}^{2}}{D_{K,A}}
+	\quad\text{and}\quad
+	\tau_{D,B}\sim\frac{\delta_{K}^{2}}{D_{K,B}},
+$$
+and the overall diffusive delivery will be governed by the slower species—that is, the larger of the two $\tau_{D}$ values.
 The convective residence time refers to the average duration a fluid element spends traveling through the reactor under the imposed volumetric flow, essentially the “flow-through” time from inlet to outlet.
 If $\tau_{D}$ were on the order of, or even shorter than, the convective residence time in the micro-reactor, cross-layer diffusion through the Knudsen film would not constitute a rate-limiting step in the overall reaction dynamics.
 
-Recognizing these limitations, Section \ref{sec:disconnected-reservoirs} extended the analysis to include non-isentropic behaviors.
+Recognizing the limitations mentioned in the previous Section, Section \ref{sec:disconnected-reservoirs} extended the analysis to include non-isentropic behaviors.
 By treating the reservoir and the reactor as distinct entities with independent stagnation conditions, the approach captured the impact of leaks on the overall mass flow and the flow velocity at the inlet.
 Although this formulation introduces further approximations, it serves to bridge the gap between idealized isentropic models and the more complex reality of the system.
 

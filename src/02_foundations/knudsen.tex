@@ -1,11 +1,11 @@
 	In fluid dynamics a flow can also be categorized by its particle interaction using the Knudsen number, which represents the ratio between the mean-free-path $\lambda$ of the gas and the characteristic length $L_c$ of the flow geometry.
 	\begin{equation}
-		\mathrm{Kn} = \frac{\lambda}{L_c}
-		= \frac{\mu(T)}{p\,L_c}\,\sqrt{\frac{\pi\,T\,R_u}{2\,M_m}},
+		Kn = \frac{\lambda}{L_c}
+		= \frac{\mu(T)}{p\,L_c}\,\sqrt{\frac{\pi\,T\,R}{2}},
 		\label{eq:knudsen-number}
 	\end{equation}
 
-\subsubsection*{Molecular regime ($\mathrm{Kn} \geq 10$)}
+\subsubsection*{Molecular regime ($Kn \geq 10$)}
 	In this regime, the mean free path $\lambda$ is much larger than the distance between boundaries.
 	This leads to particle interactions themselves becoming negligible in comparison to the interaction of particles with the boundary.
 	\begin{figure}[H]
@@ -18,13 +18,13 @@
 		\label{fig:molecular-flow}
 	\end{figure}
 
-\subsubsection*{Transition regime ($0.1 \leq \mathrm{Kn} \leq 10$)}
+\subsubsection*{Transition regime ($0.1 \leq Kn \leq 10$)}
 	This regime constitutes the middle ground between continuum and molecular flow.
 	Neither the continuum assumptions of fluid dynamics nor the free molecular flow assumptions hold completely.
 	The interactions between the gas molecules and the boundaries become significant, and the flow characteristics may vary widely.
 	The transition between continuum and molecular flow is commonly referred to as rarefaction, with fully developed molecular flow being classified as rarefied flow. 
 
-\subsubsection*{Slip regime ($0.001 \leq \mathrm{Kn} \leq 0.1$)}
+\subsubsection*{Slip regime ($0.001 \leq Kn \leq 0.1$)}
 	For increasing Knudsen numbers, the mean free path of the gas molecules becomes comparable to the characteristic length scale of the system.
 	In this regime, the assumptions of continuum flow still largely hold, but noticeable deviations arise, particularly near the boundaries.
 	While continuum mechanics assumes a strict no-slip condition at the boundary, in this transitional regime, a finite slip velocity must be considered.
@@ -39,7 +39,7 @@
 		\label{fig:slip-flow}
 	\end{figure}
 
-\subsubsection*{Continuum regime ($\mathrm{Kn} \leq 0.001$)}
+\subsubsection*{Continuum regime ($Kn \leq 0.001$)}
 	As the characteristic length starts to become much larger than the mean free path of the gas, the interactions of particles in the medium are much more frequent than the interactions of particles with the boundaries of the duct.
 	This makes it possible to describe the fluid itself as a continuous medium with the assumption of non-slip boundary conditions.
 	The Navier-Stokes equations govern the calculations in this regime.

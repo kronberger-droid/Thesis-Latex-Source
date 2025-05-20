@@ -137,17 +137,26 @@ $$
 
 \subsubsection*{Throughput (molecules per second)}
 $$
-	q_m = \dot{m} \cdot \frac{N_A}{M_m} \quad \eqref{eq:throughput}
+	q_N = \dot{m} \cdot \frac{N_A}{M_m} \quad \eqref{eq:throughput}
 $$
 
 \subsection*{Additional Useful Relations}
 \begin{itemize}
     \item \textbf{Prandtl-Meyer Function (Expansion Fan):}  
     $$
-    \nu(M) = \sqrt{\frac{\gamma+1}{\gamma-1}}\,\arctan\!\left(\sqrt{\frac{\gamma-1}{\gamma+1}(M^2-1)}\right) - \arctan\!\left(\sqrt{M^2-1}\right)
+	    \nu(M) = \sqrt{\frac{\gamma+1}{\gamma-1}}\,\arctan\!\left(\sqrt{\frac{\gamma-1}{\gamma+1}(M^2-1)}\right) - \arctan\!\left(\sqrt{M^2-1}\right)
+		\quad \texttt{[isen]}
     $$
     The maximum turning angle is given by:
     $$
-	    \theta_{\text{max}} = \nu(M\to\infty) - \nu(M) \quad \eqref{eq:max-turning-angle}
+	    \theta_{\text{max}} = \nu(M\to\infty) - \nu(M) = 
+		\quad \texttt{[isen]}
+		\quad \eqref{eq:max-turning-angle}
     $$
+	\item \textbf{Terminal Velocity:}
+	$$
+		v_{\infty} = \sqrt{2R \cdot \frac{\gamma}{\gamma - 1} \cdot T_0},
+		\quad \texttt{[adiab, perf]}
+		\quad \eqref{eq:terminal_velocity}
+	$$
 \end{itemize}

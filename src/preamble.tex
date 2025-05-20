@@ -16,6 +16,7 @@
 % Maths
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \numberwithin{equation}{section}
@@ -71,6 +72,9 @@
 \usetikzlibrary{arrows.meta, positioning, 3d}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
+\pgfdeclarelayer{axis background}
+\pgfdeclarelayer{axis foreground}
+\pgfsetlayers{axis background,main,axis foreground}
 \usepackage{pgfplotstable}
 \usepackage{textcomp} % for \textmu
 \usepackage{siunitx}   % if you use \SI, \si, \unit
