@@ -17,7 +17,7 @@ S_mu = 111.0
 T_ref_mu = 300.55
 mu_ref = 17.81e-6
 
-# Mach number range (use as many points as you like)
+# Mach number range
 Ma_vals = np.linspace(0.0, 3.5, 100)
 
 def local_temperature(Ma, T0):
